@@ -1,0 +1,4 @@
+enum DiscountRuleAllocation {
+  total,
+  item,
+}

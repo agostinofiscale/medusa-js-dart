@@ -1,39 +1,65 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# MedusaJS Client for Dart
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+A Dart client library for MedusaJS, providing a seamless way for Dart and Flutter developers to interact with MedusaJS services. 
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+This library is designed to match the functionality of its JavaScript counterpart, offering a comprehensive suite of features tailored for e-commerce applications.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Badges
 
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **User Authentication:** Enables multiple authentication strategies, including API keys and OAuth tokens, to secure your e-commerce applications.
 
-## Getting started
+- **API Interaction:** Provides complete access to the MedusaJS API endpoints, allowing for robust management and operation of your store.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- **Data Types and Models:** Offers strongly-typed Dart classes for all MedusaJS data types, enhancing type safety and development efficiency.
+## Documentation
 
-## Usage
+While there is currently no dedicated documentation for this Dart client, you can refer to the [JavaScript client documentation](https://docs.medusajs.com/js-client/overview) as the functionality closely aligns. Additionally, explore the [API reference](https://docs.medusajs.com/api/store) for detailed information on the available endpoints.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+## Installation
 
-```dart
-const like = 'sample';
+Install `medusa-js-dart` using pub:
+
+```bash
+  Coming soon...
 ```
 
-## Additional information
+## Usage/Examples
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+To start using the MedusaJS Client in your Dart or Flutter project, follow these steps:
+
+
+1. Import the library in your Dart or Flutter project:
+
+```dart
+import 'package:medusa_js_dart/medusa_js_dart.dart';
+```
+
+2. Initialize the client with your server's details:
+
+```dart
+final Configuration configuration = Configuration(
+  baseUrl: 'http://localhost:9000',
+  maxRetries: 3,
+);
+
+final Medusa medusa = Medusa(configuration);
+```
+
+3. Make requests as needed:
+
+```dart
+final AdminAuthRes response = await medusa.admin.auth.createSession(
+  AdminPostAuthReq(
+    'jonhdoe@mail.com',
+    'password',
+  ),
+);
+
+print(response.user);
+```
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

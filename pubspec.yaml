@@ -1,15 +1,21 @@
 name: medusa_js_dart
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: A Dart client for interacting with the MedusaJS API.
+version: 0.0.1
+homepage: https://github.com/agostinofiscale/medusa-js-dart
 
 environment:
-  sdk: ^3.1.0
+  sdk: '^3.3.0'
 
-# Add regular dependencies here.
 dependencies:
-  # path: ^1.8.0
-
+  dio_smart_retry: ^5.0.0
+  retrofit: ^4.1.0
+  dio: ^5.4.1
+  json_annotation: ^4.8.1
+  dio_cookie_manager: ^3.1.1
+  cookie_jar: any
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0
+  retrofit_generator: '>=7.0.0 <8.0.0'
+  lint: ^2.0.0
+  build_runner: ^2.4.8
+  single_import_generator: ^1.0.0
+  json_serializable: ^6.7.1

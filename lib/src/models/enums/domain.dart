@@ -1,0 +1,4 @@
+enum Domain {
+  admin,
+  store,
+}
