@@ -11,28 +11,29 @@ DiscountCondition _$DiscountConditionFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       type: json['type'] as String,
       operator: json['operator'] as String,
-      discountRuleId: json['discountRuleId'] as String,
-      discountRule: json['discountRule'] == null
+      discountRuleId: json['discount_rule_id'] as String,
+      discountRule: json['discount_rule'] == null
           ? null
-          : DiscountRule.fromJson(json['discountRule'] as Map<String, dynamic>),
+          : DiscountRule.fromJson(
+              json['discount_rule'] as Map<String, dynamic>),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTypes: (json['productTypes'] as List<dynamic>?)
+      productTypes: (json['product_types'] as List<dynamic>?)
           ?.map((e) => ProductType.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTags: (json['productTags'] as List<dynamic>?)
+      productTags: (json['product_tags'] as List<dynamic>?)
           ?.map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productCollections: (json['productCollections'] as List<dynamic>?)
+      productCollections: (json['product_collections'] as List<dynamic>?)
           ?.map((e) => ProductCollection.fromJson(e as Map<String, dynamic>))
           .toList(),
-      customerGroups: (json['customerGroups'] as List<dynamic>?)
+      customerGroups: (json['customer_groups'] as List<dynamic>?)
           ?.map((e) => CustomerGroup.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
@@ -41,15 +42,17 @@ Map<String, dynamic> _$DiscountConditionToJson(DiscountCondition instance) =>
       'id': instance.id,
       'type': instance.type,
       'operator': instance.operator,
-      'discountRuleId': instance.discountRuleId,
-      'discountRule': instance.discountRule,
-      'products': instance.products,
-      'productTypes': instance.productTypes,
-      'productTags': instance.productTags,
-      'productCollections': instance.productCollections,
-      'customerGroups': instance.customerGroups,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'discount_rule_id': instance.discountRuleId,
+      'discount_rule': instance.discountRule?.toJson(),
+      'products': instance.products?.map((e) => e.toJson()).toList(),
+      'product_types': instance.productTypes?.map((e) => e.toJson()).toList(),
+      'product_tags': instance.productTags?.map((e) => e.toJson()).toList(),
+      'product_collections':
+          instance.productCollections?.map((e) => e.toJson()).toList(),
+      'customer_groups':
+          instance.customerGroups?.map((e) => e.toJson()).toList(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

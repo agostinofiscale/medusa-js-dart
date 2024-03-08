@@ -9,7 +9,7 @@ part of '../admin_stock_locations_list_res.dart';
 AdminStockLocationsListRes _$AdminStockLocationsListResFromJson(
         Map<String, dynamic> json) =>
     AdminStockLocationsListRes(
-      stockLocations: (json['stockLocations'] as List<dynamic>)
+      stockLocations: (json['stock_locations'] as List<dynamic>)
           .map((e) =>
               StockLocationExpandedDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -21,7 +21,8 @@ AdminStockLocationsListRes _$AdminStockLocationsListResFromJson(
 Map<String, dynamic> _$AdminStockLocationsListResToJson(
         AdminStockLocationsListRes instance) =>
     <String, dynamic>{
-      'stockLocations': instance.stockLocations,
+      'stock_locations':
+          instance.stockLocations.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

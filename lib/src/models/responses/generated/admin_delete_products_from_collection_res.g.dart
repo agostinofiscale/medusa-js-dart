@@ -11,15 +11,15 @@ AdminDeleteProductsFromCollectionRes
         AdminDeleteProductsFromCollectionRes(
           id: json['id'] as String,
           object: json['object'] as String,
-          removedProducts: (json['removedProducts'] as List<dynamic>)
+          removedProducts: (json['removed_products'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
 
 Map<String, dynamic> _$AdminDeleteProductsFromCollectionResToJson(
-        AdminDeleteProductsFromCollectionRes instance,) =>
+        AdminDeleteProductsFromCollectionRes instance) =>
     <String, dynamic>{
       'id': instance.id,
       'object': instance.object,
-      'removedProducts': instance.removedProducts,
+      'removed_products': instance.removedProducts,
     };

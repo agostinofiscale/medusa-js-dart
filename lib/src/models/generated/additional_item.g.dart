@@ -8,12 +8,12 @@ part of '../additional_item.dart';
 
 AdditionalItem _$AdditionalItemFromJson(Map<String, dynamic> json) =>
     AdditionalItem(
-      variantId: json['variantId'] as String,
+      variantId: json['variant_id'] as String,
       quantity: json['quantity'] as int,
     );
 
 Map<String, dynamic> _$AdditionalItemToJson(AdditionalItem instance) =>
     <String, dynamic>{
-      'variantId': instance.variantId,
+      'variant_id': instance.variantId,
       'quantity': instance.quantity,
     };

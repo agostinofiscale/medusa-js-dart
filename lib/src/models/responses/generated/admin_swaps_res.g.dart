@@ -13,5 +13,5 @@ AdminSwapsRes _$AdminSwapsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminSwapsResToJson(AdminSwapsRes instance) =>
     <String, dynamic>{
-      'swap': instance.swap,
+      'swap': instance.swap.toJson(),
     };

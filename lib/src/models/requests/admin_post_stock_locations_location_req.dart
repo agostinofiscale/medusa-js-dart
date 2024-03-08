@@ -9,17 +9,18 @@ class AdminPostStockLocationsLocationReq {
   AdminPostStockLocationsLocationReq({
     required this.name,
     required this.addressId,
-    required this.metadata,
+    this.metadata,
     required this.address,
   });
 
   factory AdminPostStockLocationsLocationReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostStockLocationsLocationReqFromJson(json);
 
   String name;
   String addressId;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   StockLocationAddressInput address;
 
   Map<String, dynamic> toJson() =>

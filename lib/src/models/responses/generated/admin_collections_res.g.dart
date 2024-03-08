@@ -17,5 +17,5 @@ AdminCollectionsRes _$AdminCollectionsResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AdminCollectionsResToJson(
         AdminCollectionsRes instance) =>
     <String, dynamic>{
-      'collection': instance.collection,
+      'collection': instance.collection?.toJson(),
     };

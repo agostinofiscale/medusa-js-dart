@@ -12,15 +12,15 @@ AdminGetStockLocationsParams _$AdminGetStockLocationsParamsFromJson(
       id: json['id'] as String?,
       name: json['name'] as String?,
       order: json['order'] as String?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
-      deletedAt: json['deletedAt'] == null
+          : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateFilter.fromJson(json['deletedAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['deleted_at'] as Map<String, dynamic>),
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
       expand: json['expand'] as String?,
@@ -33,9 +33,9 @@ Map<String, dynamic> _$AdminGetStockLocationsParamsToJson(
       'id': instance.id,
       'name': instance.name,
       'order': instance.order,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'deleted_at': instance.deletedAt?.toJson(),
       'offset': instance.offset,
       'limit': instance.limit,
       'expand': instance.expand,

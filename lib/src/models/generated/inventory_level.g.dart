@@ -9,30 +9,30 @@ part of '../inventory_level.dart';
 InventoryLevel _$InventoryLevelFromJson(Map<String, dynamic> json) =>
     InventoryLevel(
       id: json['id'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      deletedAt: DateTime.parse(json['deletedAt'] as String),
-      inventoryItemId: json['inventoryItemId'] as String,
-      locationId: json['locationId'] as String,
-      stockedQuantity: json['stockedQuantity'] as int,
-      reservedQuantity: json['reservedQuantity'] as int,
-      incomingQuantity: json['incomingQuantity'] as int,
-      metadata: json['metadata'] as Map<String, dynamic>,
-      inventoryItem:
-          InventoryItem.fromJson(json['inventoryItem'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
+      inventoryItemId: json['inventory_item_id'] as String,
+      locationId: json['location_id'] as String,
+      stockedQuantity: json['stocked_quantity'] as int,
+      reservedQuantity: json['reserved_quantity'] as int,
+      incomingQuantity: json['incoming_quantity'] as int,
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      inventoryItem: InventoryItem.fromJson(
+          json['inventory_item'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$InventoryLevelToJson(InventoryLevel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt.toIso8601String(),
-      'inventoryItemId': instance.inventoryItemId,
-      'locationId': instance.locationId,
-      'stockedQuantity': instance.stockedQuantity,
-      'reservedQuantity': instance.reservedQuantity,
-      'incomingQuantity': instance.incomingQuantity,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
+      'inventory_item_id': instance.inventoryItemId,
+      'location_id': instance.locationId,
+      'stocked_quantity': instance.stockedQuantity,
+      'reserved_quantity': instance.reservedQuantity,
+      'incoming_quantity': instance.incomingQuantity,
       'metadata': instance.metadata,
-      'inventoryItem': instance.inventoryItem,
+      'inventory_item': instance.inventoryItem.toJson(),
     };

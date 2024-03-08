@@ -17,7 +17,7 @@ FeatureFlagsResponse _$FeatureFlagsResponseFromJson(
 Map<String, dynamic> _$FeatureFlagsResponseToJson(
         FeatureFlagsResponse instance) =>
     <String, dynamic>{
-      'flags': instance.flags,
+      'flags': instance.flags.map((e) => e.toJson()).toList(),
     };
 
 FeatureFlag _$FeatureFlagFromJson(Map<String, dynamic> json) => FeatureFlag(

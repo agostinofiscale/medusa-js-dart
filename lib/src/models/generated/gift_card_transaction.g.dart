@@ -9,30 +9,30 @@ part of '../gift_card_transaction.dart';
 GiftCardTransaction _$GiftCardTransactionFromJson(Map<String, dynamic> json) =>
     GiftCardTransaction(
       id: json['id'] as String,
-      giftCardId: json['giftCardId'] as String,
-      giftCard: json['giftCard'] == null
+      giftCardId: json['gift_card_id'] as String,
+      giftCard: json['gift_card'] == null
           ? null
-          : GiftCard.fromJson(json['giftCard'] as Map<String, dynamic>),
-      orderId: json['orderId'] as String,
+          : GiftCard.fromJson(json['gift_card'] as Map<String, dynamic>),
+      orderId: json['order_id'] as String,
       order: json['order'] == null
           ? null
           : Order.fromJson(json['order'] as Map<String, dynamic>),
       amount: (json['amount'] as num).toDouble(),
-      createdAt: json['createdAt'] as String,
-      isTaxable: json['isTaxable'] as bool?,
-      taxRate: (json['taxRate'] as num?)?.toDouble(),
+      createdAt: json['created_at'] as String,
+      isTaxable: json['is_taxable'] as bool?,
+      taxRate: (json['tax_rate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$GiftCardTransactionToJson(
         GiftCardTransaction instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'giftCardId': instance.giftCardId,
-      'giftCard': instance.giftCard,
-      'orderId': instance.orderId,
-      'order': instance.order,
+      'gift_card_id': instance.giftCardId,
+      'gift_card': instance.giftCard?.toJson(),
+      'order_id': instance.orderId,
+      'order': instance.order?.toJson(),
       'amount': instance.amount,
-      'createdAt': instance.createdAt,
-      'isTaxable': instance.isTaxable,
-      'taxRate': instance.taxRate,
+      'created_at': instance.createdAt,
+      'is_taxable': instance.isTaxable,
+      'tax_rate': instance.taxRate,
     };

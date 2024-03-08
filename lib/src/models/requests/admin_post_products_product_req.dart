@@ -30,7 +30,7 @@ class AdminPostProductsProductReq {
     required this.originCountry,
     required this.midCode,
     required this.material,
-    required this.metadata,
+    this.metadata,
   });
   factory AdminPostProductsProductReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductsProductReqFromJson(json);
@@ -59,7 +59,7 @@ class AdminPostProductsProductReq {
   String originCountry;
   String midCode;
   String material;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }
 
 @JsonSerializable()
@@ -102,7 +102,8 @@ class AdminPostProductsProductReqSalesChannel {
   });
 
   factory AdminPostProductsProductReqSalesChannel.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsProductReqSalesChannelFromJson(json);
 
   String id;
@@ -131,13 +132,14 @@ class AdminPostProductsProductReqVariant {
     required this.originCountry,
     required this.midCode,
     required this.material,
-    required this.metadata,
+    this.metadata,
     required this.prices,
     required this.options,
   });
 
   factory AdminPostProductsProductReqVariant.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsProductReqVariantFromJson(json);
 
   String id;
@@ -157,7 +159,7 @@ class AdminPostProductsProductReqVariant {
   String originCountry;
   String midCode;
   String material;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   List<Price> prices;
   List<ProductVariantOption> options;
 

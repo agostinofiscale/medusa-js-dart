@@ -9,72 +9,75 @@ part of '../swap.dart';
 Swap _$SwapFromJson(Map<String, dynamic> json) => Swap(
       id: json['id'] as String,
       fulfillmentStatus:
-          $enumDecode(_$FulfillmentStatusEnumMap, json['fulfillmentStatus']),
-      paymentStatus: $enumDecode(_$PaymentStatusEnumMap, json['paymentStatus']),
-      orderId: json['orderId'] as String,
+          $enumDecode(_$FulfillmentStatusEnumMap, json['fulfillment_status']),
+      paymentStatus:
+          $enumDecode(_$PaymentStatusEnumMap, json['payment_status']),
+      orderId: json['order_id'] as String,
       order: json['order'] == null
           ? null
           : Order.fromJson(json['order'] as Map<String, dynamic>),
-      additionalItems: (json['additionalItems'] as List<dynamic>?)
+      additionalItems: (json['additional_items'] as List<dynamic>?)
           ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
           .toList(),
-      returnOrder: json['returnOrder'] == null
+      returnOrder: json['return_order'] == null
           ? null
-          : Return.fromJson(json['returnOrder'] as Map<String, dynamic>),
+          : Return.fromJson(json['return_order'] as Map<String, dynamic>),
       fulfillments: (json['fulfillments'] as List<dynamic>?)
           ?.map((e) => Fulfillment.fromJson(e as Map<String, dynamic>))
           .toList(),
       payment: json['payment'] == null
           ? null
           : Payment.fromJson(json['payment'] as Map<String, dynamic>),
-      differenceDue: (json['differenceDue'] as num?)?.toDouble(),
-      shippingAddressId: json['shippingAddressId'] as String?,
-      shippingAddress: json['shippingAddress'] == null
+      differenceDue: (json['difference_due'] as num?)?.toDouble(),
+      shippingAddressId: json['shipping_address_id'] as String?,
+      shippingAddress: json['shipping_address'] == null
           ? null
-          : Address.fromJson(json['shippingAddress'] as Map<String, dynamic>),
-      shippingMethods: (json['shippingMethods'] as List<dynamic>?)
+          : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
+      shippingMethods: (json['shipping_methods'] as List<dynamic>?)
           ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
           .toList(),
-      cartId: json['cartId'] as String?,
+      cartId: json['cart_id'] as String?,
       cart: json['cart'] == null
           ? null
           : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-      confirmedAt: json['confirmedAt'] as String?,
-      canceledAt: json['canceledAt'] as String?,
-      noNotification: json['noNotification'] as bool?,
-      allowBackorder: json['allowBackorder'] as bool,
-      idempotencyKey: json['idempotencyKey'] as String?,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      confirmedAt: json['confirmed_at'] as String?,
+      canceledAt: json['canceled_at'] as String?,
+      noNotification: json['no_notification'] as bool?,
+      allowBackorder: json['allow_backorder'] as bool,
+      idempotencyKey: json['idempotency_key'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$SwapToJson(Swap instance) => <String, dynamic>{
       'id': instance.id,
-      'fulfillmentStatus':
+      'fulfillment_status':
           _$FulfillmentStatusEnumMap[instance.fulfillmentStatus]!,
-      'paymentStatus': _$PaymentStatusEnumMap[instance.paymentStatus]!,
-      'orderId': instance.orderId,
-      'order': instance.order,
-      'additionalItems': instance.additionalItems,
-      'returnOrder': instance.returnOrder,
-      'fulfillments': instance.fulfillments,
-      'payment': instance.payment,
-      'differenceDue': instance.differenceDue,
-      'shippingAddressId': instance.shippingAddressId,
-      'shippingAddress': instance.shippingAddress,
-      'shippingMethods': instance.shippingMethods,
-      'cartId': instance.cartId,
-      'cart': instance.cart,
-      'confirmedAt': instance.confirmedAt,
-      'canceledAt': instance.canceledAt,
-      'noNotification': instance.noNotification,
-      'allowBackorder': instance.allowBackorder,
-      'idempotencyKey': instance.idempotencyKey,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus]!,
+      'order_id': instance.orderId,
+      'order': instance.order?.toJson(),
+      'additional_items':
+          instance.additionalItems?.map((e) => e.toJson()).toList(),
+      'return_order': instance.returnOrder?.toJson(),
+      'fulfillments': instance.fulfillments?.map((e) => e.toJson()).toList(),
+      'payment': instance.payment?.toJson(),
+      'difference_due': instance.differenceDue,
+      'shipping_address_id': instance.shippingAddressId,
+      'shipping_address': instance.shippingAddress?.toJson(),
+      'shipping_methods':
+          instance.shippingMethods?.map((e) => e.toJson()).toList(),
+      'cart_id': instance.cartId,
+      'cart': instance.cart?.toJson(),
+      'confirmed_at': instance.confirmedAt,
+      'canceled_at': instance.canceledAt,
+      'no_notification': instance.noNotification,
+      'allow_backorder': instance.allowBackorder,
+      'idempotency_key': instance.idempotencyKey,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };
 

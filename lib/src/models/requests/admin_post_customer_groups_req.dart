@@ -11,5 +11,5 @@ class AdminPostCustomerGroupsReq {
   Map<String, dynamic> toJson() => _$AdminPostCustomerGroupsReqToJson(this);
 
   String name;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

@@ -10,7 +10,7 @@ AdminDeleteTaxRatesTaxRateProductTypesReq
     _$AdminDeleteTaxRatesTaxRateProductTypesReqFromJson(
             Map<String, dynamic> json) =>
         AdminDeleteTaxRatesTaxRateProductTypesReq(
-          productTypes: (json['productTypes'] as List<dynamic>)
+          productTypes: (json['product_types'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
@@ -18,5 +18,5 @@ AdminDeleteTaxRatesTaxRateProductTypesReq
 Map<String, dynamic> _$AdminDeleteTaxRatesTaxRateProductTypesReqToJson(
         AdminDeleteTaxRatesTaxRateProductTypesReq instance) =>
     <String, dynamic>{
-      'productTypes': instance.productTypes,
+      'product_types': instance.productTypes,
     };

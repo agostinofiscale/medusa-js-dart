@@ -8,13 +8,13 @@ part of '../get_publishable_api_key_sales_channels_params.dart';
 
 GetPublishableApiKeySalesChannelsParams
     _$GetPublishableApiKeySalesChannelsParamsFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         GetPublishableApiKeySalesChannelsParams(
           query: json['query'] as String?,
         );
 
 Map<String, dynamic> _$GetPublishableApiKeySalesChannelsParamsToJson(
-        GetPublishableApiKeySalesChannelsParams instance,) =>
+        GetPublishableApiKeySalesChannelsParams instance) =>
     <String, dynamic>{
       'query': instance.query,
     };

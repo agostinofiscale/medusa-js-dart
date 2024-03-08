@@ -10,7 +10,7 @@ StorePostPaymentCollectionsBatchSessionsAuthorizeReq
     _$StorePostPaymentCollectionsBatchSessionsAuthorizeReqFromJson(
             Map<String, dynamic> json) =>
         StorePostPaymentCollectionsBatchSessionsAuthorizeReq(
-          sessionIds: (json['sessionIds'] as List<dynamic>)
+          sessionIds: (json['session_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
@@ -19,5 +19,5 @@ Map<String, dynamic>
     _$StorePostPaymentCollectionsBatchSessionsAuthorizeReqToJson(
             StorePostPaymentCollectionsBatchSessionsAuthorizeReq instance) =>
         <String, dynamic>{
-          'sessionIds': instance.sessionIds,
+          'session_ids': instance.sessionIds,
         };

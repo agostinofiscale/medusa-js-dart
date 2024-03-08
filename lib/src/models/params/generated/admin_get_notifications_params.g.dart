@@ -13,11 +13,11 @@ AdminGetNotificationsParams _$AdminGetNotificationsParamsFromJson(
       limit: json['limit'] as int?,
       fields: json['fields'] as String?,
       expand: json['expand'] as String?,
-      eventName: json['eventName'] as String?,
-      resourceType: json['resourceType'] as String?,
-      resourceId: json['resourceId'] as String?,
+      eventName: json['event_name'] as String?,
+      resourceType: json['resource_type'] as String?,
+      resourceId: json['resource_id'] as String?,
       to: json['to'] as String?,
-      includeResends: json['includeResends'] as String?,
+      includeResends: json['include_resends'] as String?,
     );
 
 Map<String, dynamic> _$AdminGetNotificationsParamsToJson(
@@ -27,9 +27,9 @@ Map<String, dynamic> _$AdminGetNotificationsParamsToJson(
       'limit': instance.limit,
       'fields': instance.fields,
       'expand': instance.expand,
-      'eventName': instance.eventName,
-      'resourceType': instance.resourceType,
-      'resourceId': instance.resourceId,
+      'event_name': instance.eventName,
+      'resource_type': instance.resourceType,
+      'resource_id': instance.resourceId,
       'to': instance.to,
-      'includeResends': instance.includeResends,
+      'include_resends': instance.includeResends,
     };

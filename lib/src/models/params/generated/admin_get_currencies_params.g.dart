@@ -10,7 +10,7 @@ AdminGetCurrenciesParams _$AdminGetCurrenciesParamsFromJson(
         Map<String, dynamic> json) =>
     AdminGetCurrenciesParams(
       code: json['code'] as String?,
-      includesTax: json['includesTax'] as bool?,
+      includesTax: json['includes_tax'] as bool?,
       order: json['order'] as String?,
       q: json['q'] as String?,
       offset: json['offset'] as int?,
@@ -21,7 +21,7 @@ Map<String, dynamic> _$AdminGetCurrenciesParamsToJson(
         AdminGetCurrenciesParams instance) =>
     <String, dynamic>{
       'code': instance.code,
-      'includesTax': instance.includesTax,
+      'includes_tax': instance.includesTax,
       'order': instance.order,
       'q': instance.q,
       'offset': instance.offset,

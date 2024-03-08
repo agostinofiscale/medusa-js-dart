@@ -19,7 +19,7 @@ AdminRegionsListRes _$AdminRegionsListResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AdminRegionsListResToJson(
         AdminRegionsListRes instance) =>
     <String, dynamic>{
-      'regions': instance.regions,
+      'regions': instance.regions.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

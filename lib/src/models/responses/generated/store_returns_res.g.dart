@@ -9,10 +9,10 @@ part of '../store_returns_res.dart';
 StoreReturnsRes _$StoreReturnsResFromJson(Map<String, dynamic> json) =>
     StoreReturnsRes(
       returnDetails:
-          Return.fromJson(json['returnDetails'] as Map<String, dynamic>),
+          Return.fromJson(json['return_details'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreReturnsResToJson(StoreReturnsRes instance) =>
     <String, dynamic>{
-      'returnDetails': instance.returnDetails,
+      'return_details': instance.returnDetails.toJson(),
     };

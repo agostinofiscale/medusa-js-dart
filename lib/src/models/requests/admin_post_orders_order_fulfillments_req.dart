@@ -16,5 +16,5 @@ class AdminPostOrdersOrderFulfillmentsReq {
   List<FulfillmentItem> items;
   String locationId;
   bool noNotification;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

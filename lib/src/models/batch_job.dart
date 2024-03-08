@@ -22,7 +22,7 @@ class BatchJob {
     required this.failedAt,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
+    this.deletedAt,
   });
   factory BatchJob.fromJson(Map<String, dynamic> json) =>
       _$BatchJobFromJson(json);
@@ -45,5 +45,5 @@ class BatchJob {
   String failedAt;
   String createdAt;
   String updatedAt;
-  String deletedAt;
+  String? deletedAt;
 }

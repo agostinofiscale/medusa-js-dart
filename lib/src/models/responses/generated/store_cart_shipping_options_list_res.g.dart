@@ -9,7 +9,7 @@ part of '../store_cart_shipping_options_list_res.dart';
 StoreCartShippingOptionsListRes _$StoreCartShippingOptionsListResFromJson(
         Map<String, dynamic> json) =>
     StoreCartShippingOptionsListRes(
-      shippingOptions: (json['shippingOptions'] as List<dynamic>)
+      shippingOptions: (json['shipping_options'] as List<dynamic>)
           .map((e) => PricedShippingOption.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -17,5 +17,6 @@ StoreCartShippingOptionsListRes _$StoreCartShippingOptionsListResFromJson(
 Map<String, dynamic> _$StoreCartShippingOptionsListResToJson(
         StoreCartShippingOptionsListRes instance) =>
     <String, dynamic>{
-      'shippingOptions': instance.shippingOptions,
+      'shipping_options':
+          instance.shippingOptions.map((e) => e.toJson()).toList(),
     };

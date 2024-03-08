@@ -17,5 +17,5 @@ class AdminPostOrdersOrderClaimsClaimReq {
   List<ClaimItem> claimItems;
   List<ShippingMethod> shippingMethods;
   bool noNotification;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

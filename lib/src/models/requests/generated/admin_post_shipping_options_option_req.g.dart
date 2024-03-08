@@ -7,27 +7,27 @@ part of '../admin_post_shipping_options_option_req.dart';
 // **************************************************************************
 
 AdminPostShippingOptionsOptionReq _$AdminPostShippingOptionsOptionReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostShippingOptionsOptionReq(
       name: json['name'] as String?,
       amount: json['amount'] as num?,
-      adminOnly: json['adminOnly'] as bool?,
+      adminOnly: json['admin_only'] as bool?,
       metadata: json['metadata'] as Map<String, dynamic>?,
       requirements: (json['requirements'] as List<dynamic>?)
           ?.map((e) => Requirement.fromJson(e as Map<String, dynamic>))
           .toList(),
-      includesTax: json['includesTax'] as bool?,
+      includesTax: json['includes_tax'] as bool?,
     );
 
 Map<String, dynamic> _$AdminPostShippingOptionsOptionReqToJson(
-        AdminPostShippingOptionsOptionReq instance,) =>
+        AdminPostShippingOptionsOptionReq instance) =>
     <String, dynamic>{
       'name': instance.name,
       'amount': instance.amount,
-      'adminOnly': instance.adminOnly,
+      'admin_only': instance.adminOnly,
       'metadata': instance.metadata,
-      'requirements': instance.requirements,
-      'includesTax': instance.includesTax,
+      'requirements': instance.requirements?.map((e) => e.toJson()).toList(),
+      'includes_tax': instance.includesTax,
     };
 
 Requirement _$RequirementFromJson(Map<String, dynamic> json) => Requirement(

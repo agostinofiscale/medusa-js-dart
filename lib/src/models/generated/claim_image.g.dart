@@ -8,25 +8,25 @@ part of '../claim_image.dart';
 
 ClaimImage _$ClaimImageFromJson(Map<String, dynamic> json) => ClaimImage(
       id: json['id'] as String,
-      claimItemId: json['claimItemId'] as String,
-      claimItem: json['claimItem'] == null
+      claimItemId: json['claim_item_id'] as String,
+      claimItem: json['claim_item'] == null
           ? null
-          : ClaimItem.fromJson(json['claimItem'] as Map<String, dynamic>),
+          : ClaimItem.fromJson(json['claim_item'] as Map<String, dynamic>),
       url: json['url'] as String,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ClaimImageToJson(ClaimImage instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'claimItemId': instance.claimItemId,
-      'claimItem': instance.claimItem,
+      'claim_item_id': instance.claimItemId,
+      'claim_item': instance.claimItem?.toJson(),
       'url': instance.url,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

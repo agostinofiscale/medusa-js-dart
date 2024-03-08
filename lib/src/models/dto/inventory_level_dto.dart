@@ -32,7 +32,7 @@ class InventoryLevelDTO {
   int incomingQuantity;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 
   /// The date with timezone at which the resource was created.
   String createdAt;

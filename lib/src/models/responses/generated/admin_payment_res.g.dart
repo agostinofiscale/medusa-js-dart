@@ -13,5 +13,5 @@ AdminPaymentRes _$AdminPaymentResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminPaymentResToJson(AdminPaymentRes instance) =>
     <String, dynamic>{
-      'payment': instance.payment,
+      'payment': instance.payment.toJson(),
     };

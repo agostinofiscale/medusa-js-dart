@@ -9,20 +9,20 @@ part of '../admin_update_user_request.dart';
 AdminUpdateUserRequest _$AdminUpdateUserRequestFromJson(
         Map<String, dynamic> json) =>
     AdminUpdateUserRequest(
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
+      firstName: json['first_name'] as String?,
+      lastName: json['last_name'] as String?,
       role: $enumDecodeNullable(_$UserRoleEnumMap, json['role']),
-      apiToken: json['apiToken'] as String?,
+      apiToken: json['api_token'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminUpdateUserRequestToJson(
         AdminUpdateUserRequest instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'role': _$UserRoleEnumMap[instance.role],
-      'apiToken': instance.apiToken,
+      'api_token': instance.apiToken,
       'metadata': instance.metadata,
     };
 

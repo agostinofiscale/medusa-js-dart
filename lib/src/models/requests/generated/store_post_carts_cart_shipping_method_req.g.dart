@@ -9,13 +9,13 @@ part of '../store_post_carts_cart_shipping_method_req.dart';
 StorePostCartsCartShippingMethodReq
     _$StorePostCartsCartShippingMethodReqFromJson(Map<String, dynamic> json) =>
         StorePostCartsCartShippingMethodReq(
-          optionId: json['optionId'] as String,
+          optionId: json['option_id'] as String,
           data: json['data'] as Map<String, dynamic>,
         );
 
 Map<String, dynamic> _$StorePostCartsCartShippingMethodReqToJson(
         StorePostCartsCartShippingMethodReq instance) =>
     <String, dynamic>{
-      'optionId': instance.optionId,
+      'option_id': instance.optionId,
       'data': instance.data,
     };

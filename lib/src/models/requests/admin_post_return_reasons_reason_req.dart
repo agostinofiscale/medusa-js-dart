@@ -8,7 +8,7 @@ class AdminPostReturnReasonsReasonReq {
     required this.label,
     required this.value,
     required this.description,
-    required this.metadata,
+    this.metadata,
   });
 
   factory AdminPostReturnReasonsReasonReq.fromJson(Map<String, dynamic> json) =>
@@ -17,7 +17,7 @@ class AdminPostReturnReasonsReasonReq {
   String label;
   String value;
   String description;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() =>
       _$AdminPostReturnReasonsReasonReqToJson(this);

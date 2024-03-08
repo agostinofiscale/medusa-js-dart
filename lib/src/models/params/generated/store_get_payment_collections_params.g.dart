@@ -7,14 +7,14 @@ part of '../store_get_payment_collections_params.dart';
 // **************************************************************************
 
 StoreGetPaymentCollectionsParams _$StoreGetPaymentCollectionsParamsFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     StoreGetPaymentCollectionsParams(
       fields: json['fields'] as String?,
       expand: json['expand'] as String?,
     );
 
 Map<String, dynamic> _$StoreGetPaymentCollectionsParamsToJson(
-        StoreGetPaymentCollectionsParams instance,) =>
+        StoreGetPaymentCollectionsParams instance) =>
     <String, dynamic>{
       'fields': instance.fields,
       'expand': instance.expand,

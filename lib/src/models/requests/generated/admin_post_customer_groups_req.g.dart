@@ -10,7 +10,7 @@ AdminPostCustomerGroupsReq _$AdminPostCustomerGroupsReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostCustomerGroupsReq(
       json['name'] as String,
-      json['metadata'] as Map<String, dynamic>,
+      json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminPostCustomerGroupsReqToJson(

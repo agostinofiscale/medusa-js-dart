@@ -44,7 +44,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }
@@ -58,7 +58,7 @@ class _AddressesResource implements AddressesResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreCustomersRes>(Options(
       method: 'DELETE',
@@ -75,7 +75,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }
@@ -107,7 +107,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }

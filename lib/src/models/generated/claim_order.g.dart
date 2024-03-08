@@ -9,28 +9,28 @@ part of '../claim_order.dart';
 ClaimOrder _$ClaimOrderFromJson(Map<String, dynamic> json) => ClaimOrder(
       id: json['id'] as String,
       type: json['type'] as String,
-      paymentStatus: json['paymentStatus'] as String,
-      fulfillmentStatus: json['fulfillmentStatus'] as String,
-      claimItems: (json['claimItems'] as List<dynamic>?)
+      paymentStatus: json['payment_status'] as String,
+      fulfillmentStatus: json['fulfillment_status'] as String,
+      claimItems: (json['claim_items'] as List<dynamic>?)
               ?.map((e) => ClaimItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      additionalItems: (json['additionalItems'] as List<dynamic>?)
+      additionalItems: (json['additional_items'] as List<dynamic>?)
               ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      orderId: json['orderId'] as String,
+      orderId: json['order_id'] as String,
       order: json['order'] == null
           ? null
           : Order.fromJson(json['order'] as Map<String, dynamic>),
-      returnOrder: json['returnOrder'] == null
+      returnOrder: json['return_order'] == null
           ? null
-          : Return.fromJson(json['returnOrder'] as Map<String, dynamic>),
-      shippingAddressId: json['shippingAddressId'] as String?,
-      shippingAddress: json['shippingAddress'] == null
+          : Return.fromJson(json['return_order'] as Map<String, dynamic>),
+      shippingAddressId: json['shipping_address_id'] as String?,
+      shippingAddress: json['shipping_address'] == null
           ? null
-          : Address.fromJson(json['shippingAddress'] as Map<String, dynamic>),
-      shippingMethods: (json['shippingMethods'] as List<dynamic>?)
+          : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
+      shippingMethods: (json['shipping_methods'] as List<dynamic>?)
               ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -38,37 +38,39 @@ ClaimOrder _$ClaimOrderFromJson(Map<String, dynamic> json) => ClaimOrder(
               ?.map((e) => Fulfillment.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      refundAmount: (json['refundAmount'] as num).toDouble(),
-      canceledAt: json['canceledAt'] as String?,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      refundAmount: (json['refund_amount'] as num).toDouble(),
+      canceledAt: json['canceled_at'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
-      noNotification: json['noNotification'] as bool,
-      idempotencyKey: json['idempotencyKey'] as String?,
+      noNotification: json['no_notification'] as bool,
+      idempotencyKey: json['idempotency_key'] as String?,
     );
 
 Map<String, dynamic> _$ClaimOrderToJson(ClaimOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': instance.type,
-      'paymentStatus': instance.paymentStatus,
-      'fulfillmentStatus': instance.fulfillmentStatus,
-      'claimItems': instance.claimItems,
-      'additionalItems': instance.additionalItems,
-      'orderId': instance.orderId,
-      'order': instance.order,
-      'returnOrder': instance.returnOrder,
-      'shippingAddressId': instance.shippingAddressId,
-      'shippingAddress': instance.shippingAddress,
-      'shippingMethods': instance.shippingMethods,
-      'fulfillments': instance.fulfillments,
-      'refundAmount': instance.refundAmount,
-      'canceledAt': instance.canceledAt,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'payment_status': instance.paymentStatus,
+      'fulfillment_status': instance.fulfillmentStatus,
+      'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
+      'additional_items':
+          instance.additionalItems.map((e) => e.toJson()).toList(),
+      'order_id': instance.orderId,
+      'order': instance.order?.toJson(),
+      'return_order': instance.returnOrder?.toJson(),
+      'shipping_address_id': instance.shippingAddressId,
+      'shipping_address': instance.shippingAddress?.toJson(),
+      'shipping_methods':
+          instance.shippingMethods.map((e) => e.toJson()).toList(),
+      'fulfillments': instance.fulfillments.map((e) => e.toJson()).toList(),
+      'refund_amount': instance.refundAmount,
+      'canceled_at': instance.canceledAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
-      'noNotification': instance.noNotification,
-      'idempotencyKey': instance.idempotencyKey,
+      'no_notification': instance.noNotification,
+      'idempotency_key': instance.idempotencyKey,
     };

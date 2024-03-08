@@ -12,10 +12,10 @@ AdminPostProductCategoriesReq _$AdminPostProductCategoriesReqFromJson(
       name: json['name'] as String,
       description: json['description'] as String,
       handle: json['handle'] as String,
-      isInternal: json['isInternal'] as bool? ?? false,
-      isActive: json['isActive'] as bool? ?? true,
-      parentCategoryId: json['parentCategoryId'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      isInternal: json['is_internal'] as bool? ?? false,
+      isActive: json['is_active'] as bool? ?? true,
+      parentCategoryId: json['parent_category_id'] as String,
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminPostProductCategoriesReqToJson(
@@ -24,8 +24,8 @@ Map<String, dynamic> _$AdminPostProductCategoriesReqToJson(
       'name': instance.name,
       'description': instance.description,
       'handle': instance.handle,
-      'isInternal': instance.isInternal,
-      'isActive': instance.isActive,
-      'parentCategoryId': instance.parentCategoryId,
+      'is_internal': instance.isInternal,
+      'is_active': instance.isActive,
+      'parent_category_id': instance.parentCategoryId,
       'metadata': instance.metadata,
     };

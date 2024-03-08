@@ -11,7 +11,7 @@ AdminPostReturnReasonsReq _$AdminPostReturnReasonsReqFromJson(
     AdminPostReturnReasonsReq(
       label: json['label'] as String,
       value: json['value'] as String,
-      parentReturnReasonId: json['parentReturnReasonId'] as String,
+      parentReturnReasonId: json['parent_return_reason_id'] as String,
       description: json['description'] as String,
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
@@ -21,7 +21,7 @@ Map<String, dynamic> _$AdminPostReturnReasonsReqToJson(
     <String, dynamic>{
       'label': instance.label,
       'value': instance.value,
-      'parentReturnReasonId': instance.parentReturnReasonId,
+      'parent_return_reason_id': instance.parentReturnReasonId,
       'description': instance.description,
       'metadata': instance.metadata,
     };

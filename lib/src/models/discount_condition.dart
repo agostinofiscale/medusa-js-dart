@@ -24,7 +24,7 @@ class DiscountCondition {
     this.customerGroups,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
+    this.deletedAt,
     this.metadata = const {},
   });
   factory DiscountCondition.fromJson(Map<String, dynamic> json) =>
@@ -69,8 +69,8 @@ class DiscountCondition {
   String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String deletedAt;
+  String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

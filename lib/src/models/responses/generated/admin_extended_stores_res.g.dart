@@ -15,5 +15,5 @@ AdminExtendedStoresRes _$AdminExtendedStoresResFromJson(
 Map<String, dynamic> _$AdminExtendedStoresResToJson(
         AdminExtendedStoresRes instance) =>
     <String, dynamic>{
-      'store': instance.store,
+      'store': instance.store.toJson(),
     };

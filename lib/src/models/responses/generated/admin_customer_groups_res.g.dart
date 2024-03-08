@@ -9,12 +9,12 @@ part of '../admin_customer_groups_res.dart';
 AdminCustomerGroupsRes _$AdminCustomerGroupsResFromJson(
         Map<String, dynamic> json) =>
     AdminCustomerGroupsRes(
-      customerGroup:
-          CustomerGroup.fromJson(json['customerGroup'] as Map<String, dynamic>),
+      customerGroup: CustomerGroup.fromJson(
+          json['customer_group'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminCustomerGroupsResToJson(
         AdminCustomerGroupsRes instance) =>
     <String, dynamic>{
-      'customerGroup': instance.customerGroup,
+      'customer_group': instance.customerGroup.toJson(),
     };

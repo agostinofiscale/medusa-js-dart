@@ -10,11 +10,11 @@ AdminGetVariantsVariantInventoryRes
     _$AdminGetVariantsVariantInventoryResFromJson(Map<String, dynamic> json) =>
         AdminGetVariantsVariantInventoryRes(
           variant: VariantInventory.fromJson(
-              json['variant'] as Map<String, dynamic>,),
+              json['variant'] as Map<String, dynamic>),
         );
 
 Map<String, dynamic> _$AdminGetVariantsVariantInventoryResToJson(
-        AdminGetVariantsVariantInventoryRes instance,) =>
+        AdminGetVariantsVariantInventoryRes instance) =>
     <String, dynamic>{
-      'variant': instance.variant,
+      'variant': instance.variant.toJson(),
     };

@@ -12,9 +12,9 @@ PriceList _$PriceListFromJson(Map<String, dynamic> json) => PriceList(
       description: json['description'] as String,
       type: json['type'] as String,
       status: json['status'] as String,
-      startsAt: json['startsAt'] as String,
-      endsAt: json['endsAt'] as String,
-      customerGroups: (json['customerGroups'] as List<dynamic>?)
+      startsAt: json['starts_at'] as String?,
+      endsAt: json['ends_at'] as String?,
+      customerGroups: (json['customer_groups'] as List<dynamic>?)
               ?.map((e) => CustomerGroup.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -22,10 +22,10 @@ PriceList _$PriceListFromJson(Map<String, dynamic> json) => PriceList(
               ?.map((e) => MoneyAmount.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      includesTax: json['includesTax'] as bool? ?? false,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      includesTax: json['includes_tax'] as bool? ?? false,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
     );
 
 Map<String, dynamic> _$PriceListToJson(PriceList instance) => <String, dynamic>{
@@ -34,12 +34,13 @@ Map<String, dynamic> _$PriceListToJson(PriceList instance) => <String, dynamic>{
       'description': instance.description,
       'type': instance.type,
       'status': instance.status,
-      'startsAt': instance.startsAt,
-      'endsAt': instance.endsAt,
-      'customerGroups': instance.customerGroups,
-      'prices': instance.prices,
-      'includesTax': instance.includesTax,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'starts_at': instance.startsAt,
+      'ends_at': instance.endsAt,
+      'customer_groups':
+          instance.customerGroups.map((e) => e.toJson()).toList(),
+      'prices': instance.prices.map((e) => e.toJson()).toList(),
+      'includes_tax': instance.includesTax,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
     };

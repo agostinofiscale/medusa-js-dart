@@ -6,78 +6,78 @@ part 'generated/admin_get_products_params.g.dart';
 @JsonSerializable()
 class AdminGetProductsParams {
   AdminGetProductsParams({
-    required this.q,
-    required this.discountConditionId,
-    required this.id,
-    required this.status,
-    required this.collectionId,
-    required this.tags,
-    required this.priceListId,
-    required this.salesChannelId,
-    required this.typeId,
-    required this.categoryId,
-    required this.includeCategoryChildren,
-    required this.title,
-    required this.description,
-    required this.handle,
-    required this.isGiftcard,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.deletedAt,
-    required this.offset,
-    required this.limit,
-    required this.expand,
-    required this.fields,
-    required this.order,
+    this.q,
+    this.discountConditionId,
+    this.id,
+    this.status,
+    this.collectionId,
+    this.tags,
+    this.priceListId,
+    this.salesChannelId,
+    this.typeId,
+    this.categoryId,
+    this.includeCategoryChildren,
+    this.title,
+    this.description,
+    this.handle,
+    this.isGiftcard,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.offset,
+    this.limit,
+    this.expand,
+    this.fields,
+    this.order,
   });
   factory AdminGetProductsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetProductsParamsFromJson(json);
 
   Map<String, dynamic> toJson() => _$AdminGetProductsParamsToJson(this);
 
-  String q;
+  String? q;
 
-  String discountConditionId;
+  String? discountConditionId;
 
-  String id;
+  String? id;
 
-  List<String> status;
+  List<String>? status;
 
-  List<String> collectionId;
+  List<String>? collectionId;
 
-  List<String> tags;
+  List<String>? tags;
 
-  List<String> priceListId;
+  List<String>? priceListId;
 
-  List<String> salesChannelId;
+  List<String>? salesChannelId;
 
-  List<String> typeId;
+  List<String>? typeId;
 
-  List<String> categoryId;
+  List<String>? categoryId;
 
-  bool includeCategoryChildren;
+  bool? includeCategoryChildren;
 
-  String title;
+  String? title;
 
-  String description;
+  String? description;
 
-  String handle;
+  String? handle;
 
-  bool isGiftcard;
+  bool? isGiftcard;
 
-  DateFilter createdAt;
+  DateFilter? createdAt;
 
-  DateFilter updatedAt;
+  DateFilter? updatedAt;
 
-  DateFilter deletedAt;
+  DateFilter? deletedAt;
 
-  int offset;
+  int? offset;
 
-  int limit;
+  int? limit;
 
-  String expand;
+  String? expand;
 
-  String fields;
+  String? fields;
 
-  String order;
+  String? order;
 }

@@ -15,15 +15,15 @@ GetPublishableApiKeysParams _$GetPublishableApiKeysParamsFromJson(
       expand: json['expand'] as String?,
       fields: json['fields'] as String?,
       order: json['order'] as String?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : CreatedAtRange.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : CreatedAtRange.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : UpdatedAtRange.fromJson(json['updatedAt'] as Map<String, dynamic>),
-      revokedAt: json['revokedAt'] == null
+          : UpdatedAtRange.fromJson(json['updated_at'] as Map<String, dynamic>),
+      revokedAt: json['revoked_at'] == null
           ? null
-          : RevokedAtRange.fromJson(json['revokedAt'] as Map<String, dynamic>),
+          : RevokedAtRange.fromJson(json['revoked_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$GetPublishableApiKeysParamsToJson(
@@ -35,9 +35,9 @@ Map<String, dynamic> _$GetPublishableApiKeysParamsToJson(
       'expand': instance.expand,
       'fields': instance.fields,
       'order': instance.order,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'revokedAt': instance.revokedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'revoked_at': instance.revokedAt?.toJson(),
     };
 
 CreatedAtRange _$CreatedAtRangeFromJson(Map<String, dynamic> json) =>

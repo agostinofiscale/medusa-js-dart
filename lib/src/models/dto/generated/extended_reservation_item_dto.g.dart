@@ -10,37 +10,37 @@ ExtendedReservationItem _$ExtendedReservationItemFromJson(
         Map<String, dynamic> json) =>
     ExtendedReservationItem(
       id: json['id'] as String,
-      locationId: json['locationId'] as String,
-      inventoryItemId: json['inventoryItemId'] as String,
+      locationId: json['location_id'] as String,
+      inventoryItemId: json['inventory_item_id'] as String,
       quantity: json['quantity'] as int,
       description: json['description'] as String?,
-      createdBy: json['createdBy'] as String?,
+      createdBy: json['created_by'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-      deletedAt: json['deletedAt'] as String?,
-      lineItem: json['lineItem'] == null
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
+      deletedAt: json['deleted_at'] as String?,
+      lineItem: json['line_item'] == null
           ? null
-          : LineItem.fromJson(json['lineItem'] as Map<String, dynamic>),
-      inventoryItem: json['inventoryItem'] == null
+          : LineItem.fromJson(json['line_item'] as Map<String, dynamic>),
+      inventoryItem: json['inventory_item'] == null
           ? null
           : InventoryItemDTO.fromJson(
-              json['inventoryItem'] as Map<String, dynamic>),
+              json['inventory_item'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ExtendedReservationItemToJson(
         ExtendedReservationItem instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'locationId': instance.locationId,
-      'inventoryItemId': instance.inventoryItemId,
+      'location_id': instance.locationId,
+      'inventory_item_id': instance.inventoryItemId,
       'description': instance.description,
-      'createdBy': instance.createdBy,
+      'created_by': instance.createdBy,
       'quantity': instance.quantity,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
-      'lineItem': instance.lineItem,
-      'inventoryItem': instance.inventoryItem,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
+      'line_item': instance.lineItem?.toJson(),
+      'inventory_item': instance.inventoryItem?.toJson(),
     };

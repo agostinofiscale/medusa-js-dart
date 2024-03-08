@@ -28,7 +28,7 @@ class _ProductsResource implements ProductsResource {
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreProductsListRes>(Options(
       method: 'GET',
@@ -45,7 +45,7 @@ class _ProductsResource implements ProductsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreProductsListRes.fromJson(_result.data!);
     return value;
   }
@@ -59,7 +59,7 @@ class _ProductsResource implements ProductsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreProductsRes>(Options(
       method: 'GET',
@@ -76,7 +76,7 @@ class _ProductsResource implements ProductsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreProductsRes.fromJson(_result.data!);
     return value;
   }

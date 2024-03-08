@@ -21,7 +21,7 @@ class Product extends BaseProduct {
     super.subtitle,
     super.description,
     super.handle,
-    required super.isGiftCard,
+    required super.isGiftcard,
     required super.status,
     super.images,
     super.thumbnail,

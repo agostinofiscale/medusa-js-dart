@@ -9,7 +9,7 @@ part of '../admin_shipping_options_list_res.dart';
 AdminShippingOptionsListRes _$AdminShippingOptionsListResFromJson(
         Map<String, dynamic> json) =>
     AdminShippingOptionsListRes(
-      shippingOptions: (json['shippingOptions'] as List<dynamic>)
+      shippingOptions: (json['shipping_options'] as List<dynamic>)
           .map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,8 @@ AdminShippingOptionsListRes _$AdminShippingOptionsListResFromJson(
 Map<String, dynamic> _$AdminShippingOptionsListResToJson(
         AdminShippingOptionsListRes instance) =>
     <String, dynamic>{
-      'shippingOptions': instance.shippingOptions,
+      'shipping_options':
+          instance.shippingOptions.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

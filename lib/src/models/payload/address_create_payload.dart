@@ -32,5 +32,5 @@ class AddressCreatePayload {
   String countryCode;
   String? province;
   String postalCode;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

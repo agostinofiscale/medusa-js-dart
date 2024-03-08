@@ -9,7 +9,7 @@ part of '../admin_products_delete_variant_res.dart';
 AdminProductsDeleteVariantRes _$AdminProductsDeleteVariantResFromJson(
         Map<String, dynamic> json) =>
     AdminProductsDeleteVariantRes(
-      variantId: json['variantId'] as String,
+      variantId: json['variant_id'] as String,
       object: json['object'] as String,
       deleted: json['deleted'] as bool,
       product: PricedProduct.fromJson(json['product'] as Map<String, dynamic>),
@@ -18,8 +18,8 @@ AdminProductsDeleteVariantRes _$AdminProductsDeleteVariantResFromJson(
 Map<String, dynamic> _$AdminProductsDeleteVariantResToJson(
         AdminProductsDeleteVariantRes instance) =>
     <String, dynamic>{
-      'variantId': instance.variantId,
+      'variant_id': instance.variantId,
       'object': instance.object,
       'deleted': instance.deleted,
-      'product': instance.product,
+      'product': instance.product.toJson(),
     };

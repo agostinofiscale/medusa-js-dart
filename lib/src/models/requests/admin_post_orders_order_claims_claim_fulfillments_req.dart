@@ -10,7 +10,7 @@ class AdminPostOrdersOrderClaimsClaimFulfillmentsReq {
     required this.locationId,
   });
 
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   bool noNotification;
   String locationId;
 }

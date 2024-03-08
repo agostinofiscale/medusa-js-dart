@@ -14,7 +14,7 @@ abstract class BaseProduct {
     this.subtitle,
     this.description,
     this.handle,
-    required this.isGiftCard,
+    required this.isGiftcard,
     required this.status,
     this.images,
     this.thumbnail,
@@ -61,7 +61,7 @@ abstract class BaseProduct {
   String? handle;
 
   /// Whether the Product represents a Gift Card. Products that represent Gift Cards will automatically generate a redeemable Gift Card code once they are purchased.
-  bool isGiftCard;
+  bool isGiftcard;
 
   /// The status of the product
   String status;

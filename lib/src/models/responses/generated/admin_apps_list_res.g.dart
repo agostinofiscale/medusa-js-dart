@@ -15,5 +15,5 @@ AdminAppsListRes _$AdminAppsListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminAppsListResToJson(AdminAppsListRes instance) =>
     <String, dynamic>{
-      'apps': instance.apps,
+      'apps': instance.apps.map((e) => e.toJson()).toList(),
     };

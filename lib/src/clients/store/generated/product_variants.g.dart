@@ -28,7 +28,7 @@ class _ProductVariantsResource implements ProductVariantsResource {
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreVariantsListRes>(Options(
       method: 'GET',
@@ -45,7 +45,7 @@ class _ProductVariantsResource implements ProductVariantsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreVariantsListRes.fromJson(_result.data!);
     return value;
   }
@@ -59,7 +59,7 @@ class _ProductVariantsResource implements ProductVariantsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreVariantsRes>(Options(
       method: 'GET',
@@ -76,7 +76,7 @@ class _ProductVariantsResource implements ProductVariantsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreVariantsRes.fromJson(_result.data!);
     return value;
   }

@@ -7,7 +7,7 @@ class AdminPostShippingProfilesReq {
   AdminPostShippingProfilesReq({
     required this.name,
     required this.type,
-    required this.metadata,
+    this.metadata,
   });
   factory AdminPostShippingProfilesReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostShippingProfilesReqFromJson(json);
@@ -16,5 +16,5 @@ class AdminPostShippingProfilesReq {
 
   String name;
   String type;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

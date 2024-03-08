@@ -21,7 +21,7 @@ AdminReservationsListRes _$AdminReservationsListResFromJson(
 Map<String, dynamic> _$AdminReservationsListResToJson(
         AdminReservationsListRes instance) =>
     <String, dynamic>{
-      'reservations': instance.reservations,
+      'reservations': instance.reservations.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

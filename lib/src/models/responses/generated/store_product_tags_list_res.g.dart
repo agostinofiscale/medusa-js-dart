@@ -9,7 +9,7 @@ part of '../store_product_tags_list_res.dart';
 StoreProductTagsListRes _$StoreProductTagsListResFromJson(
         Map<String, dynamic> json) =>
     StoreProductTagsListRes(
-      productTags: (json['productTags'] as List<dynamic>)
+      productTags: (json['product_tags'] as List<dynamic>)
           .map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,7 @@ StoreProductTagsListRes _$StoreProductTagsListResFromJson(
 Map<String, dynamic> _$StoreProductTagsListResToJson(
         StoreProductTagsListRes instance) =>
     <String, dynamic>{
-      'productTags': instance.productTags,
+      'product_tags': instance.productTags.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

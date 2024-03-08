@@ -8,27 +8,27 @@ part of '../shipping_tax_rate.dart';
 
 ShippingTaxRate _$ShippingTaxRateFromJson(Map<String, dynamic> json) =>
     ShippingTaxRate(
-      shippingOptionId: json['shippingOptionId'] as String,
-      shippingOption: json['shippingOption'] == null
+      shippingOptionId: json['shipping_option_id'] as String,
+      shippingOption: json['shipping_option'] == null
           ? null
           : ShippingOption.fromJson(
-              json['shippingOption'] as Map<String, dynamic>),
-      rateId: json['rateId'] as String,
-      taxRate: json['taxRate'] == null
+              json['shipping_option'] as Map<String, dynamic>),
+      rateId: json['rate_id'] as String,
+      taxRate: json['tax_rate'] == null
           ? null
-          : TaxRate.fromJson(json['taxRate'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
+          : TaxRate.fromJson(json['tax_rate'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ShippingTaxRateToJson(ShippingTaxRate instance) =>
     <String, dynamic>{
-      'shippingOptionId': instance.shippingOptionId,
-      'shippingOption': instance.shippingOption,
-      'rateId': instance.rateId,
-      'taxRate': instance.taxRate,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'shipping_option_id': instance.shippingOptionId,
+      'shipping_option': instance.shippingOption?.toJson(),
+      'rate_id': instance.rateId,
+      'tax_rate': instance.taxRate?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

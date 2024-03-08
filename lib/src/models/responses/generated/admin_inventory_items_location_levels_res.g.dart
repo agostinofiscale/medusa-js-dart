@@ -10,11 +10,11 @@ AdminInventoryItemsLocationLevelsRes
     _$AdminInventoryItemsLocationLevelsResFromJson(Map<String, dynamic> json) =>
         AdminInventoryItemsLocationLevelsRes(
           inventoryItem: InventoryItem.fromJson(
-              json['inventoryItem'] as Map<String, dynamic>),
+              json['inventory_item'] as Map<String, dynamic>),
         );
 
 Map<String, dynamic> _$AdminInventoryItemsLocationLevelsResToJson(
         AdminInventoryItemsLocationLevelsRes instance) =>
     <String, dynamic>{
-      'inventoryItem': instance.inventoryItem,
+      'inventory_item': instance.inventoryItem.toJson(),
     };

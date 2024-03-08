@@ -9,11 +9,11 @@ part of '../admin_post_uploads_download_url_req.dart';
 AdminPostUploadsDownloadUrlReq _$AdminPostUploadsDownloadUrlReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostUploadsDownloadUrlReq(
-      fileKey: json['fileKey'] as String,
+      fileKey: json['file_key'] as String,
     );
 
 Map<String, dynamic> _$AdminPostUploadsDownloadUrlReqToJson(
         AdminPostUploadsDownloadUrlReq instance) =>
     <String, dynamic>{
-      'fileKey': instance.fileKey,
+      'file_key': instance.fileKey,
     };

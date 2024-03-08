@@ -11,18 +11,18 @@ ReturnReason _$ReturnReasonFromJson(Map<String, dynamic> json) => ReturnReason(
       value: json['value'] as String,
       label: json['label'] as String,
       description: json['description'] as String?,
-      parentReturnReasonId: json['parentReturnReasonId'] as String?,
-      parentReturnReason: json['parentReturnReason'] == null
+      parentReturnReasonId: json['parent_return_reason_id'] as String?,
+      parentReturnReason: json['parent_return_reason'] == null
           ? null
           : ReturnReason.fromJson(
-              json['parentReturnReason'] as Map<String, dynamic>),
-      returnReasonChildren: json['returnReasonChildren'] == null
+              json['parent_return_reason'] as Map<String, dynamic>),
+      returnReasonChildren: json['return_reason_children'] == null
           ? null
           : ReturnReason.fromJson(
-              json['returnReasonChildren'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+              json['return_reason_children'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -32,11 +32,11 @@ Map<String, dynamic> _$ReturnReasonToJson(ReturnReason instance) =>
       'value': instance.value,
       'label': instance.label,
       'description': instance.description,
-      'parentReturnReasonId': instance.parentReturnReasonId,
-      'parentReturnReason': instance.parentReturnReason,
-      'returnReasonChildren': instance.returnReasonChildren,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'parent_return_reason_id': instance.parentReturnReasonId,
+      'parent_return_reason': instance.parentReturnReason?.toJson(),
+      'return_reason_children': instance.returnReasonChildren?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

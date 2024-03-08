@@ -9,13 +9,13 @@ class InventoryLevel {
     required this.id,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
+    this.deletedAt,
     required this.inventoryItemId,
     required this.locationId,
     required this.stockedQuantity,
     required this.reservedQuantity,
     required this.incomingQuantity,
-    required this.metadata,
+    this.metadata,
     required this.inventoryItem,
   });
   factory InventoryLevel.fromJson(Map<String, dynamic> json) =>
@@ -25,11 +25,11 @@ class InventoryLevel {
 
   String id;
 
-  DateTime createdAt;
+  String createdAt;
 
-  DateTime updatedAt;
+  String updatedAt;
 
-  DateTime deletedAt;
+  String? deletedAt;
 
   String inventoryItemId;
 
@@ -41,7 +41,7 @@ class InventoryLevel {
 
   int incomingQuantity;
 
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 
   InventoryItem inventoryItem;
 }

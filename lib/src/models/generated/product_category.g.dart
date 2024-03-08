@@ -13,22 +13,22 @@ ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       handle: json['handle'] as String,
       mpath: json['mpath'] as String?,
-      isInternal: json['isInternal'] as bool,
-      isActive: json['isActive'] as bool,
+      isInternal: json['is_internal'] as bool,
+      isActive: json['is_active'] as bool,
       rank: json['rank'] as int?,
-      categoryChildren: (json['categoryChildren'] as List<dynamic>)
+      categoryChildren: (json['category_children'] as List<dynamic>)
           .map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
           .toList(),
-      parentCategoryId: json['parentCategoryId'] as String?,
-      parentCategory: json['parentCategory'] == null
+      parentCategoryId: json['parent_category_id'] as String?,
+      parentCategory: json['parent_category'] == null
           ? null
           : ProductCategory.fromJson(
-              json['parentCategory'] as Map<String, dynamic>),
+              json['parent_category'] as Map<String, dynamic>),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -39,14 +39,15 @@ Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) =>
       'description': instance.description,
       'handle': instance.handle,
       'mpath': instance.mpath,
-      'isInternal': instance.isInternal,
-      'isActive': instance.isActive,
+      'is_internal': instance.isInternal,
+      'is_active': instance.isActive,
       'rank': instance.rank,
-      'categoryChildren': instance.categoryChildren,
-      'parentCategoryId': instance.parentCategoryId,
-      'parentCategory': instance.parentCategory,
-      'products': instance.products,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'category_children':
+          instance.categoryChildren.map((e) => e.toJson()).toList(),
+      'parent_category_id': instance.parentCategoryId,
+      'parent_category': instance.parentCategory?.toJson(),
+      'products': instance.products?.map((e) => e.toJson()).toList(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

@@ -13,22 +13,22 @@ AdminPostOrdersOrderReturnsReq _$AdminPostOrdersOrderReturnsReqFromJson(
           .map((e) => ReturnItem.fromJson(e as Map<String, dynamic>))
           .toList(),
       returnShipping: ReturnShipping.fromJson(
-          json['returnShipping'] as Map<String, dynamic>),
+          json['return_shipping'] as Map<String, dynamic>),
       note: json['note'] as String,
-      receiveNow: json['receiveNow'] as bool,
-      noNotification: json['noNotification'] as bool,
+      receiveNow: json['receive_now'] as bool,
+      noNotification: json['no_notification'] as bool,
       refund: (json['refund'] as num).toDouble(),
-      locationId: json['locationId'] as String,
+      locationId: json['location_id'] as String,
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderReturnsReqToJson(
         AdminPostOrdersOrderReturnsReq instance) =>
     <String, dynamic>{
-      'items': instance.items,
-      'returnShipping': instance.returnShipping,
+      'items': instance.items.map((e) => e.toJson()).toList(),
+      'return_shipping': instance.returnShipping.toJson(),
       'note': instance.note,
-      'receiveNow': instance.receiveNow,
-      'noNotification': instance.noNotification,
+      'receive_now': instance.receiveNow,
+      'no_notification': instance.noNotification,
       'refund': instance.refund,
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
     };

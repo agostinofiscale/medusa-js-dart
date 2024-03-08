@@ -8,15 +8,15 @@ part of '../admin_post_customer_groups_group_customers_batch_req.dart';
 
 AdminPostCustomerGroupsGroupCustomersBatchReq
     _$AdminPostCustomerGroupsGroupCustomersBatchReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostCustomerGroupsGroupCustomersBatchReq(
-          customerIds: (json['customerIds'] as List<dynamic>)
+          customerIds: (json['customer_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
 
 Map<String, dynamic> _$AdminPostCustomerGroupsGroupCustomersBatchReqToJson(
-        AdminPostCustomerGroupsGroupCustomersBatchReq instance,) =>
+        AdminPostCustomerGroupsGroupCustomersBatchReq instance) =>
     <String, dynamic>{
-      'customerIds': instance.customerIds,
+      'customer_ids': instance.customerIds,
     };

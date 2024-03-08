@@ -8,10 +8,10 @@ part of '../admin_order_edits_res.dart';
 
 AdminOrderEditsRes _$AdminOrderEditsResFromJson(Map<String, dynamic> json) =>
     AdminOrderEditsRes(
-      orderEdit: OrderEdit.fromJson(json['orderEdit'] as Map<String, dynamic>),
+      orderEdit: OrderEdit.fromJson(json['order_edit'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminOrderEditsResToJson(AdminOrderEditsRes instance) =>
     <String, dynamic>{
-      'orderEdit': instance.orderEdit,
+      'order_edit': instance.orderEdit.toJson(),
     };

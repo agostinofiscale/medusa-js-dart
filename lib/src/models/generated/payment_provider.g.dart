@@ -9,11 +9,11 @@ part of '../payment_provider.dart';
 PaymentProvider _$PaymentProviderFromJson(Map<String, dynamic> json) =>
     PaymentProvider(
       id: json['id'] as String,
-      isInstalled: json['isInstalled'] as bool,
+      isInstalled: json['is_installed'] as bool,
     );
 
 Map<String, dynamic> _$PaymentProviderToJson(PaymentProvider instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'isInstalled': instance.isInstalled,
+      'is_installed': instance.isInstalled,
     };

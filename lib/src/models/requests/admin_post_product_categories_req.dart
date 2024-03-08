@@ -11,7 +11,7 @@ class AdminPostProductCategoriesReq {
     this.isInternal = false,
     this.isActive = true,
     required this.parentCategoryId,
-    required this.metadata,
+    this.metadata,
   });
   factory AdminPostProductCategoriesReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostProductCategoriesReqFromJson(json);
@@ -24,5 +24,5 @@ class AdminPostProductCategoriesReq {
   bool isInternal;
   bool isActive;
   String parentCategoryId;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

@@ -7,7 +7,7 @@ part of '../admin_post_products_product_req.dart';
 // **************************************************************************
 
 AdminPostProductsProductReq _$AdminPostProductsProductReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostProductsProductReq(
       title: json['title'] as String,
       subtitle: json['subtitle'] as String,
@@ -19,34 +19,34 @@ AdminPostProductsProductReq _$AdminPostProductsProductReqFromJson(
       handle: json['handle'] as String,
       status: json['status'] as String,
       type: AdminPostProductsProductReqType.fromJson(
-          json['type'] as Map<String, dynamic>,),
-      collectionId: json['collectionId'] as String,
+          json['type'] as Map<String, dynamic>),
+      collectionId: json['collection_id'] as String,
       tags: (json['tags'] as List<dynamic>)
           .map((e) => AdminPostProductsProductReqTag.fromJson(
-              e as Map<String, dynamic>,),)
+              e as Map<String, dynamic>))
           .toList(),
-      salesChannels: (json['salesChannels'] as List<dynamic>)
+      salesChannels: (json['sales_channels'] as List<dynamic>)
           .map((e) => AdminPostProductsProductReqSalesChannel.fromJson(
-              e as Map<String, dynamic>,),)
+              e as Map<String, dynamic>))
           .toList(),
       categories: json['categories'] as List<dynamic>,
       variants: (json['variants'] as List<dynamic>)
           .map((e) => AdminPostProductsProductReqVariant.fromJson(
-              e as Map<String, dynamic>,),)
+              e as Map<String, dynamic>))
           .toList(),
       weight: json['weight'] as num,
       length: json['length'] as num,
       height: json['height'] as num,
       width: json['width'] as num,
-      hsCode: json['hsCode'] as String,
-      originCountry: json['originCountry'] as String,
-      midCode: json['midCode'] as String,
+      hsCode: json['hs_code'] as String,
+      originCountry: json['origin_country'] as String,
+      midCode: json['mid_code'] as String,
       material: json['material'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminPostProductsProductReqToJson(
-        AdminPostProductsProductReq instance,) =>
+        AdminPostProductsProductReq instance) =>
     <String, dynamic>{
       'title': instance.title,
       'subtitle': instance.subtitle,
@@ -56,46 +56,46 @@ Map<String, dynamic> _$AdminPostProductsProductReqToJson(
       'thumbnail': instance.thumbnail,
       'handle': instance.handle,
       'status': instance.status,
-      'type': instance.type,
-      'collectionId': instance.collectionId,
-      'tags': instance.tags,
-      'salesChannels': instance.salesChannels,
+      'type': instance.type.toJson(),
+      'collection_id': instance.collectionId,
+      'tags': instance.tags.map((e) => e.toJson()).toList(),
+      'sales_channels': instance.salesChannels.map((e) => e.toJson()).toList(),
       'categories': instance.categories,
-      'variants': instance.variants,
+      'variants': instance.variants.map((e) => e.toJson()).toList(),
       'weight': instance.weight,
       'length': instance.length,
       'height': instance.height,
       'width': instance.width,
-      'hsCode': instance.hsCode,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'hs_code': instance.hsCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
       'metadata': instance.metadata,
     };
 
 AdminPostProductsProductReqType _$AdminPostProductsProductReqTypeFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostProductsProductReqType(
       id: json['id'] as String,
       value: json['value'] as String,
     );
 
 Map<String, dynamic> _$AdminPostProductsProductReqTypeToJson(
-        AdminPostProductsProductReqType instance,) =>
+        AdminPostProductsProductReqType instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,
     };
 
 AdminPostProductsProductReqTag _$AdminPostProductsProductReqTagFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostProductsProductReqTag(
       id: json['id'] as String,
       value: json['value'] as String,
     );
 
 Map<String, dynamic> _$AdminPostProductsProductReqTagToJson(
-        AdminPostProductsProductReqTag instance,) =>
+        AdminPostProductsProductReqTag instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,
@@ -103,19 +103,19 @@ Map<String, dynamic> _$AdminPostProductsProductReqTagToJson(
 
 AdminPostProductsProductReqSalesChannel
     _$AdminPostProductsProductReqSalesChannelFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostProductsProductReqSalesChannel(
           id: json['id'] as String,
         );
 
 Map<String, dynamic> _$AdminPostProductsProductReqSalesChannelToJson(
-        AdminPostProductsProductReqSalesChannel instance,) =>
+        AdminPostProductsProductReqSalesChannel instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
 
 AdminPostProductsProductReqVariant _$AdminPostProductsProductReqVariantFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostProductsProductReqVariant(
       id: json['id'] as String,
       title: json['title'] as String,
@@ -123,18 +123,18 @@ AdminPostProductsProductReqVariant _$AdminPostProductsProductReqVariantFromJson(
       ean: json['ean'] as String,
       upc: json['upc'] as String,
       barcode: json['barcode'] as String,
-      hsCode: json['hsCode'] as String,
-      inventoryQuantity: json['inventoryQuantity'] as num,
-      allowBackorder: json['allowBackorder'] as bool,
-      manageInventory: json['manageInventory'] as bool,
+      hsCode: json['hs_code'] as String,
+      inventoryQuantity: json['inventory_quantity'] as num,
+      allowBackorder: json['allow_backorder'] as bool,
+      manageInventory: json['manage_inventory'] as bool,
       weight: json['weight'] as num,
       length: json['length'] as num,
       height: json['height'] as num,
       width: json['width'] as num,
-      originCountry: json['originCountry'] as String,
-      midCode: json['midCode'] as String,
+      originCountry: json['origin_country'] as String,
+      midCode: json['mid_code'] as String,
       material: json['material'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
       prices: (json['prices'] as List<dynamic>)
           .map((e) => Price.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -144,7 +144,7 @@ AdminPostProductsProductReqVariant _$AdminPostProductsProductReqVariantFromJson(
     );
 
 Map<String, dynamic> _$AdminPostProductsProductReqVariantToJson(
-        AdminPostProductsProductReqVariant instance,) =>
+        AdminPostProductsProductReqVariant instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -152,18 +152,18 @@ Map<String, dynamic> _$AdminPostProductsProductReqVariantToJson(
       'ean': instance.ean,
       'upc': instance.upc,
       'barcode': instance.barcode,
-      'hsCode': instance.hsCode,
-      'inventoryQuantity': instance.inventoryQuantity,
-      'allowBackorder': instance.allowBackorder,
-      'manageInventory': instance.manageInventory,
+      'hs_code': instance.hsCode,
+      'inventory_quantity': instance.inventoryQuantity,
+      'allow_backorder': instance.allowBackorder,
+      'manage_inventory': instance.manageInventory,
       'weight': instance.weight,
       'length': instance.length,
       'height': instance.height,
       'width': instance.width,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
       'metadata': instance.metadata,
-      'prices': instance.prices,
-      'options': instance.options,
+      'prices': instance.prices.map((e) => e.toJson()).toList(),
+      'options': instance.options.map((e) => e.toJson()).toList(),
     };

@@ -16,6 +16,6 @@ MultipleErrors _$MultipleErrorsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MultipleErrorsToJson(MultipleErrors instance) =>
     <String, dynamic>{
-      'errors': instance.errors,
+      'errors': instance.errors?.map((e) => e.toJson()).toList(),
       'message': instance.message,
     };

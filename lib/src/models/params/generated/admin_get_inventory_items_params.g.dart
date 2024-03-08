@@ -14,20 +14,20 @@ AdminGetInventoryItemsParams _$AdminGetInventoryItemsParamsFromJson(
       expand: json['expand'] as String?,
       fields: json['fields'] as String?,
       q: json['q'] as String?,
-      locationId: (json['locationId'] as List<dynamic>?)
+      locationId: (json['location_id'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       id: json['id'] as String?,
       sku: json['sku'] as String?,
-      originCountry: json['originCountry'] as String?,
-      midCode: json['midCode'] as String?,
+      originCountry: json['origin_country'] as String?,
+      midCode: json['mid_code'] as String?,
       material: json['material'] as String?,
-      hsCode: json['hsCode'] as String?,
+      hsCode: json['hs_code'] as String?,
       weight: json['weight'] as String?,
       length: json['length'] as String?,
       height: json['height'] as String?,
       width: json['width'] as String?,
-      requiresShipping: json['requiresShipping'] as String?,
+      requiresShipping: json['requires_shipping'] as String?,
     );
 
 Map<String, dynamic> _$AdminGetInventoryItemsParamsToJson(
@@ -38,16 +38,16 @@ Map<String, dynamic> _$AdminGetInventoryItemsParamsToJson(
       'expand': instance.expand,
       'fields': instance.fields,
       'q': instance.q,
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
       'id': instance.id,
       'sku': instance.sku,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
-      'hsCode': instance.hsCode,
+      'hs_code': instance.hsCode,
       'weight': instance.weight,
       'length': instance.length,
       'height': instance.height,
       'width': instance.width,
-      'requiresShipping': instance.requiresShipping,
+      'requires_shipping': instance.requiresShipping,
     };

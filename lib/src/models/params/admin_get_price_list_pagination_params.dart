@@ -19,11 +19,12 @@ class AdminGetPriceListPaginationParams {
     required this.type,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
+    this.deletedAt,
   });
 
   factory AdminGetPriceListPaginationParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetPriceListPaginationParamsFromJson(json);
 
   final int limit;

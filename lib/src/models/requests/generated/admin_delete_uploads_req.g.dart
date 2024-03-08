@@ -9,11 +9,11 @@ part of '../admin_delete_uploads_req.dart';
 AdminDeleteUploadsReq _$AdminDeleteUploadsReqFromJson(
         Map<String, dynamic> json) =>
     AdminDeleteUploadsReq(
-      fileKey: json['fileKey'] as String,
+      fileKey: json['file_key'] as String,
     );
 
 Map<String, dynamic> _$AdminDeleteUploadsReqToJson(
         AdminDeleteUploadsReq instance) =>
     <String, dynamic>{
-      'fileKey': instance.fileKey,
+      'file_key': instance.fileKey,
     };

@@ -10,9 +10,9 @@ AdminPostGiftCardsGiftCardReq _$AdminPostGiftCardsGiftCardReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostGiftCardsGiftCardReq(
       balance: (json['balance'] as num?)?.toDouble(),
-      isDisabled: json['isDisabled'] as bool?,
-      endsAt: json['endsAt'] as String?,
-      regionId: json['regionId'] as String?,
+      isDisabled: json['is_disabled'] as bool?,
+      endsAt: json['ends_at'] as String?,
+      regionId: json['region_id'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -20,8 +20,8 @@ Map<String, dynamic> _$AdminPostGiftCardsGiftCardReqToJson(
         AdminPostGiftCardsGiftCardReq instance) =>
     <String, dynamic>{
       'balance': instance.balance,
-      'isDisabled': instance.isDisabled,
-      'endsAt': instance.endsAt,
-      'regionId': instance.regionId,
+      'is_disabled': instance.isDisabled,
+      'ends_at': instance.endsAt,
+      'region_id': instance.regionId,
       'metadata': instance.metadata,
     };

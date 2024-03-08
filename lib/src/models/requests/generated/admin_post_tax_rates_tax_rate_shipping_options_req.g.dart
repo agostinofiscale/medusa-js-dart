@@ -10,7 +10,7 @@ AdminPostTaxRatesTaxRateShippingOptionsReq
     _$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostTaxRatesTaxRateShippingOptionsReq(
-          shippingOptions: (json['shippingOptions'] as List<dynamic>)
+          shippingOptions: (json['shipping_options'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
@@ -18,5 +18,5 @@ AdminPostTaxRatesTaxRateShippingOptionsReq
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateShippingOptionsReqToJson(
         AdminPostTaxRatesTaxRateShippingOptionsReq instance) =>
     <String, dynamic>{
-      'shippingOptions': instance.shippingOptions,
+      'shipping_options': instance.shippingOptions,
     };

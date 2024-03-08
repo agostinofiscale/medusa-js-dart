@@ -12,16 +12,16 @@ AdminPostOrdersOrderFulfillmentsReq
           (json['items'] as List<dynamic>)
               .map((e) => FulfillmentItem.fromJson(e as Map<String, dynamic>))
               .toList(),
-          json['locationId'] as String,
-          json['noNotification'] as bool,
-          json['metadata'] as Map<String, dynamic>,
+          json['location_id'] as String,
+          json['no_notification'] as bool,
+          json['metadata'] as Map<String, dynamic>?,
         );
 
 Map<String, dynamic> _$AdminPostOrdersOrderFulfillmentsReqToJson(
         AdminPostOrdersOrderFulfillmentsReq instance) =>
     <String, dynamic>{
-      'items': instance.items,
-      'locationId': instance.locationId,
-      'noNotification': instance.noNotification,
+      'items': instance.items.map((e) => e.toJson()).toList(),
+      'location_id': instance.locationId,
+      'no_notification': instance.noNotification,
       'metadata': instance.metadata,
     };

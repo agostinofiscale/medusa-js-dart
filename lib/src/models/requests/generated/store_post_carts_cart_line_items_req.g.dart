@@ -9,7 +9,7 @@ part of '../store_post_carts_cart_line_items_req.dart';
 StorePostCartsCartLineItemsReq _$StorePostCartsCartLineItemsReqFromJson(
         Map<String, dynamic> json) =>
     StorePostCartsCartLineItemsReq(
-      variantId: json['variantId'] as String,
+      variantId: json['variant_id'] as String,
       quantity: json['quantity'] as int,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
@@ -17,7 +17,7 @@ StorePostCartsCartLineItemsReq _$StorePostCartsCartLineItemsReqFromJson(
 Map<String, dynamic> _$StorePostCartsCartLineItemsReqToJson(
         StorePostCartsCartLineItemsReq instance) =>
     <String, dynamic>{
-      'variantId': instance.variantId,
+      'variant_id': instance.variantId,
       'quantity': instance.quantity,
       'metadata': instance.metadata,
     };

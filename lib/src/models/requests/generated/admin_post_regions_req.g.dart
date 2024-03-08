@@ -9,29 +9,29 @@ part of '../admin_post_regions_req.dart';
 AdminPostRegionsReq _$AdminPostRegionsReqFromJson(Map<String, dynamic> json) =>
     AdminPostRegionsReq(
       name: json['name'] as String,
-      currencyCode: json['currencyCode'] as String,
-      taxCode: json['taxCode'] as String?,
-      taxRate: json['taxRate'] as num,
-      paymentProviders: (json['paymentProviders'] as List<dynamic>)
+      currencyCode: json['currency_code'] as String,
+      taxCode: json['tax_code'] as String?,
+      taxRate: json['tax_rate'] as num,
+      paymentProviders: (json['payment_providers'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      fulfillmentProviders: (json['fulfillmentProviders'] as List<dynamic>)
+      fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
       countries:
           (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
-      includesTax: json['includesTax'] as bool?,
+      includesTax: json['includes_tax'] as bool?,
     );
 
 Map<String, dynamic> _$AdminPostRegionsReqToJson(
         AdminPostRegionsReq instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'currencyCode': instance.currencyCode,
-      'taxCode': instance.taxCode,
-      'taxRate': instance.taxRate,
-      'paymentProviders': instance.paymentProviders,
-      'fulfillmentProviders': instance.fulfillmentProviders,
+      'currency_code': instance.currencyCode,
+      'tax_code': instance.taxCode,
+      'tax_rate': instance.taxRate,
+      'payment_providers': instance.paymentProviders,
+      'fulfillment_providers': instance.fulfillmentProviders,
       'countries': instance.countries,
-      'includesTax': instance.includesTax,
+      'includes_tax': instance.includesTax,
     };

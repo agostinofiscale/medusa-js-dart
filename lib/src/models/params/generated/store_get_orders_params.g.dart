@@ -9,20 +9,20 @@ part of '../store_get_orders_params.dart';
 StoreGetOrdersParams _$StoreGetOrdersParamsFromJson(
         Map<String, dynamic> json) =>
     StoreGetOrdersParams(
-      displayId: json['displayId'] as int,
+      displayId: json['display_id'] as int,
       fields: json['fields'] as String,
       expand: json['expand'] as String,
       email: json['email'] as String,
       shippingAddress:
-          Address.fromJson(json['shippingAddress'] as Map<String, dynamic>),
+          Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreGetOrdersParamsToJson(
         StoreGetOrdersParams instance) =>
     <String, dynamic>{
-      'displayId': instance.displayId,
+      'display_id': instance.displayId,
       'fields': instance.fields,
       'expand': instance.expand,
       'email': instance.email,
-      'shippingAddress': instance.shippingAddress,
+      'shipping_address': instance.shippingAddress.toJson(),
     };

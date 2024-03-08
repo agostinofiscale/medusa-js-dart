@@ -14,12 +14,12 @@ AdminGetVariantsParams _$AdminGetVariantsParamsFromJson(
       fields: json['fields'] as String,
       offset: json['offset'] as int,
       limit: json['limit'] as int,
-      cartId: json['cartId'] as String,
-      regionId: json['regionId'] as String,
-      currencyCode: json['currencyCode'] as String,
-      customerId: json['customerId'] as String,
+      cartId: json['cart_id'] as String,
+      regionId: json['region_id'] as String,
+      currencyCode: json['currency_code'] as String,
+      customerId: json['customer_id'] as String,
       title: json['title'] as String,
-      inventoryQuantity: json['inventoryQuantity'] as int,
+      inventoryQuantity: json['inventory_quantity'] as int,
     );
 
 Map<String, dynamic> _$AdminGetVariantsParamsToJson(
@@ -30,10 +30,10 @@ Map<String, dynamic> _$AdminGetVariantsParamsToJson(
       'fields': instance.fields,
       'offset': instance.offset,
       'limit': instance.limit,
-      'cartId': instance.cartId,
-      'regionId': instance.regionId,
-      'currencyCode': instance.currencyCode,
-      'customerId': instance.customerId,
+      'cart_id': instance.cartId,
+      'region_id': instance.regionId,
+      'currency_code': instance.currencyCode,
+      'customer_id': instance.customerId,
       'title': instance.title,
-      'inventoryQuantity': instance.inventoryQuantity,
+      'inventory_quantity': instance.inventoryQuantity,
     };

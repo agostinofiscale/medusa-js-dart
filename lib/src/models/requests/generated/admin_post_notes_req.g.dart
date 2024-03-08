@@ -8,14 +8,14 @@ part of '../admin_post_notes_req.dart';
 
 AdminPostNotesReq _$AdminPostNotesReqFromJson(Map<String, dynamic> json) =>
     AdminPostNotesReq(
-      resourceId: json['resourceId'] as String,
-      resourceType: json['resourceType'] as String,
+      resourceId: json['resource_id'] as String,
+      resourceType: json['resource_type'] as String,
       value: json['value'] as String,
     );
 
 Map<String, dynamic> _$AdminPostNotesReqToJson(AdminPostNotesReq instance) =>
     <String, dynamic>{
-      'resourceId': instance.resourceId,
-      'resourceType': instance.resourceType,
+      'resource_id': instance.resourceId,
+      'resource_type': instance.resourceType,
       'value': instance.value,
     };

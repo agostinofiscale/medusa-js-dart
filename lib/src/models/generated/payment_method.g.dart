@@ -8,12 +8,12 @@ part of '../payment_method.dart';
 
 PaymentMethod _$PaymentMethodFromJson(Map<String, dynamic> json) =>
     PaymentMethod(
-      providerId: json['providerId'] as String?,
+      providerId: json['provider_id'] as String?,
       data: json['data'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) =>
     <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
       'data': instance.data,
     };

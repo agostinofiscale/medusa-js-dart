@@ -5,3 +5,7 @@ targets:
         options:
           build_extensions:
             '^lib/{{dir}}/{{file}}.dart': 'lib/{{dir}}/generated/{{file}}.g.dart'
+      json_serializable:
+        options:
+          explicit_to_json: true
+          field_rename: snake

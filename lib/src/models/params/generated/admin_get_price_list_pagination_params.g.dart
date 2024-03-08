@@ -7,7 +7,7 @@ part of '../admin_get_price_list_pagination_params.dart';
 // **************************************************************************
 
 AdminGetPriceListPaginationParams _$AdminGetPriceListPaginationParamsFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminGetPriceListPaginationParams(
       limit: json['limit'] as int,
       offset: json['offset'] as int,
@@ -19,23 +19,23 @@ AdminGetPriceListPaginationParams _$AdminGetPriceListPaginationParamsFromJson(
       status:
           (json['status'] as List<dynamic>).map((e) => e as String).toList(),
       name: json['name'] as String,
-      customerGroups: (json['customerGroups'] as List<dynamic>)
+      customerGroups: (json['customer_groups'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
       type: (json['type'] as List<dynamic>).map((e) => e as String).toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
-      deletedAt: json['deletedAt'] == null
+          : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateFilter.fromJson(json['deletedAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['deleted_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminGetPriceListPaginationParamsToJson(
-        AdminGetPriceListPaginationParams instance,) =>
+        AdminGetPriceListPaginationParams instance) =>
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,
@@ -46,9 +46,9 @@ Map<String, dynamic> _$AdminGetPriceListPaginationParamsToJson(
       'q': instance.q,
       'status': instance.status,
       'name': instance.name,
-      'customerGroups': instance.customerGroups,
+      'customer_groups': instance.customerGroups,
       'type': instance.type,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'deleted_at': instance.deletedAt?.toJson(),
     };

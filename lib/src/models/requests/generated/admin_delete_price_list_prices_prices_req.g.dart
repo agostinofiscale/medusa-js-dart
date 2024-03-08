@@ -9,7 +9,7 @@ part of '../admin_delete_price_list_prices_prices_req.dart';
 AdminDeletePriceListPricesPricesReq
     _$AdminDeletePriceListPricesPricesReqFromJson(Map<String, dynamic> json) =>
         AdminDeletePriceListPricesPricesReq(
-          priceIds: (json['priceIds'] as List<dynamic>?)
+          priceIds: (json['price_ids'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
         );
@@ -17,5 +17,5 @@ AdminDeletePriceListPricesPricesReq
 Map<String, dynamic> _$AdminDeletePriceListPricesPricesReqToJson(
         AdminDeletePriceListPricesPricesReq instance) =>
     <String, dynamic>{
-      'priceIds': instance.priceIds,
+      'price_ids': instance.priceIds,
     };

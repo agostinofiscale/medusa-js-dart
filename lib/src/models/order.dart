@@ -80,7 +80,7 @@ class Order {
     required this.returnableItems,
     required this.createdAt,
     required this.updatedAt,
-    required this.metadata,
+    this.metadata,
     required this.salesChannels,
   });
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
@@ -253,7 +253,7 @@ class Order {
   String updatedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 
   /// The associated sales channels.
   List<SalesChannel> salesChannels;

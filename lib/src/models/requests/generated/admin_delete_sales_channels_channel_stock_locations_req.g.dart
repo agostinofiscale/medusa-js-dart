@@ -10,11 +10,11 @@ AdminDeleteSalesChannelsChannelStockLocationsReq
     _$AdminDeleteSalesChannelsChannelStockLocationsReqFromJson(
             Map<String, dynamic> json) =>
         AdminDeleteSalesChannelsChannelStockLocationsReq(
-          locationId: json['locationId'] as String,
+          locationId: json['location_id'] as String,
         );
 
 Map<String, dynamic> _$AdminDeleteSalesChannelsChannelStockLocationsReqToJson(
         AdminDeleteSalesChannelsChannelStockLocationsReq instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
     };

@@ -10,11 +10,11 @@ AdminSalesChannelsRes _$AdminSalesChannelsResFromJson(
         Map<String, dynamic> json) =>
     AdminSalesChannelsRes(
       salesChannel:
-          SalesChannel.fromJson(json['salesChannel'] as Map<String, dynamic>),
+          SalesChannel.fromJson(json['sales_channel'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminSalesChannelsResToJson(
         AdminSalesChannelsRes instance) =>
     <String, dynamic>{
-      'salesChannel': instance.salesChannel,
+      'sales_channel': instance.salesChannel.toJson(),
     };

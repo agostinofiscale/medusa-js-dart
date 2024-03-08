@@ -9,18 +9,18 @@ part of '../customer.dart';
 Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
       id: json['id'] as String,
       email: json['email'] as String,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
-      billingAddressId: json['billingAddressId'] as String?,
-      billingAddress: json['billingAddress'] == null
+      firstName: json['first_name'] as String?,
+      lastName: json['last_name'] as String?,
+      billingAddressId: json['billing_address_id'] as String?,
+      billingAddress: json['billing_address'] == null
           ? null
-          : Address.fromJson(json['billingAddress'] as Map<String, dynamic>),
-      shippingAddresses: (json['shippingAddresses'] as List<dynamic>?)
+          : Address.fromJson(json['billing_address'] as Map<String, dynamic>),
+      shippingAddresses: (json['shipping_addresses'] as List<dynamic>?)
               ?.map((e) => Address.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       phone: json['phone'] as String?,
-      hasAccount: json['hasAccount'] as bool,
+      hasAccount: json['has_account'] as bool,
       orders: (json['orders'] as List<dynamic>?)
               ?.map((e) => Order.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -29,26 +29,27 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
               ?.map((e) => CustomerGroup.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$CustomerToJson(Customer instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'billingAddressId': instance.billingAddressId,
-      'billingAddress': instance.billingAddress,
-      'shippingAddresses': instance.shippingAddresses,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
+      'billing_address_id': instance.billingAddressId,
+      'billing_address': instance.billingAddress?.toJson(),
+      'shipping_addresses':
+          instance.shippingAddresses.map((e) => e.toJson()).toList(),
       'phone': instance.phone,
-      'hasAccount': instance.hasAccount,
-      'orders': instance.orders,
-      'groups': instance.groups,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'has_account': instance.hasAccount,
+      'orders': instance.orders.map((e) => e.toJson()).toList(),
+      'groups': instance.groups.map((e) => e.toJson()).toList(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

@@ -10,5 +10,5 @@ class StorePostCartsCartLineItemsItemReq {
   });
 
   final int quantity;
-  final Map<String, dynamic> metadata;
+  final Map<String, dynamic>? metadata;
 }

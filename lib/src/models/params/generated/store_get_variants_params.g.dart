@@ -11,20 +11,20 @@ StoreGetVariantsParams _$StoreGetVariantsParamsFromJson(
     StoreGetVariantsParams(
       ids: json['ids'] as String?,
       id: (json['id'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      salesChannelId: json['salesChannelId'] as String?,
+      salesChannelId: json['sales_channel_id'] as String?,
       expand: json['expand'] as String?,
       fields: json['fields'] as String?,
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
-      cartId: json['cartId'] as String?,
-      regionId: json['regionId'] as String?,
-      currencyCode: json['currencyCode'] as String?,
+      cartId: json['cart_id'] as String?,
+      regionId: json['region_id'] as String?,
+      currencyCode: json['currency_code'] as String?,
       title:
           (json['title'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      inventoryQuantity: json['inventoryQuantity'] == null
+      inventoryQuantity: json['inventory_quantity'] == null
           ? null
           : InventoryQuantity.fromJson(
-              json['inventoryQuantity'] as Map<String, dynamic>),
+              json['inventory_quantity'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreGetVariantsParamsToJson(
@@ -32,16 +32,16 @@ Map<String, dynamic> _$StoreGetVariantsParamsToJson(
     <String, dynamic>{
       'ids': instance.ids,
       'id': instance.id,
-      'salesChannelId': instance.salesChannelId,
+      'sales_channel_id': instance.salesChannelId,
       'expand': instance.expand,
       'fields': instance.fields,
       'offset': instance.offset,
       'limit': instance.limit,
-      'cartId': instance.cartId,
-      'regionId': instance.regionId,
-      'currencyCode': instance.currencyCode,
+      'cart_id': instance.cartId,
+      'region_id': instance.regionId,
+      'currency_code': instance.currencyCode,
       'title': instance.title,
-      'inventoryQuantity': instance.inventoryQuantity,
+      'inventory_quantity': instance.inventoryQuantity?.toJson(),
     };
 
 InventoryQuantity _$InventoryQuantityFromJson(Map<String, dynamic> json) =>

@@ -7,7 +7,7 @@ part of '../admin_post_collections_collection_req.dart';
 // **************************************************************************
 
 AdminPostCollectionsCollectionReq _$AdminPostCollectionsCollectionReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostCollectionsCollectionReq(
       title: json['title'] as String?,
       handle: json['handle'] as String?,
@@ -15,7 +15,7 @@ AdminPostCollectionsCollectionReq _$AdminPostCollectionsCollectionReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCollectionsCollectionReqToJson(
-        AdminPostCollectionsCollectionReq instance,) =>
+        AdminPostCollectionsCollectionReq instance) =>
     <String, dynamic>{
       'title': instance.title,
       'handle': instance.handle,

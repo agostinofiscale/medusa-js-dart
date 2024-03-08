@@ -10,7 +10,7 @@ AdminPostStockLocationsReq _$AdminPostStockLocationsReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostStockLocationsReq(
       name: json['name'] as String,
-      addressId: json['addressId'] as String?,
+      addressId: json['address_id'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
       address: json['address'] == null
           ? null
@@ -22,7 +22,7 @@ Map<String, dynamic> _$AdminPostStockLocationsReqToJson(
         AdminPostStockLocationsReq instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'addressId': instance.addressId,
+      'address_id': instance.addressId,
       'metadata': instance.metadata,
-      'address': instance.address,
+      'address': instance.address?.toJson(),
     };

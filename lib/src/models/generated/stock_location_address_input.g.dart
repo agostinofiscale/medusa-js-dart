@@ -12,9 +12,9 @@ StockLocationAddressInput _$StockLocationAddressInputFromJson(
       address1: json['address1'] as String,
       address2: json['address2'] as String?,
       city: json['city'] as String?,
-      countryCode: json['countryCode'] as String,
+      countryCode: json['country_code'] as String,
       phone: json['phone'] as String?,
-      postalCode: json['postalCode'] as String?,
+      postalCode: json['postal_code'] as String?,
       province: json['province'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
@@ -25,9 +25,9 @@ Map<String, dynamic> _$StockLocationAddressInputToJson(
       'address1': instance.address1,
       'address2': instance.address2,
       'city': instance.city,
-      'countryCode': instance.countryCode,
+      'country_code': instance.countryCode,
       'phone': instance.phone,
-      'postalCode': instance.postalCode,
+      'postal_code': instance.postalCode,
       'province': instance.province,
       'metadata': instance.metadata,
     };

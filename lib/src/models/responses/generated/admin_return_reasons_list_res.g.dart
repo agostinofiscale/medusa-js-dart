@@ -9,7 +9,7 @@ part of '../admin_return_reasons_list_res.dart';
 AdminReturnReasonsListRes _$AdminReturnReasonsListResFromJson(
         Map<String, dynamic> json) =>
     AdminReturnReasonsListRes(
-      (json['returnReasons'] as List<dynamic>)
+      (json['return_reasons'] as List<dynamic>)
           .map((e) => ReturnReason.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -17,5 +17,5 @@ AdminReturnReasonsListRes _$AdminReturnReasonsListResFromJson(
 Map<String, dynamic> _$AdminReturnReasonsListResToJson(
         AdminReturnReasonsListRes instance) =>
     <String, dynamic>{
-      'returnReasons': instance.returnReasons,
+      'return_reasons': instance.returnReasons.map((e) => e.toJson()).toList(),
     };

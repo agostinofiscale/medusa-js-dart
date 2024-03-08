@@ -8,14 +8,14 @@ part of '../admin_post_apps_req.dart';
 
 AdminPostAppsReq _$AdminPostAppsReqFromJson(Map<String, dynamic> json) =>
     AdminPostAppsReq(
-      applicationName: json['applicationName'] as String,
+      applicationName: json['application_name'] as String,
       state: json['state'] as String,
       code: json['code'] as String,
     );
 
 Map<String, dynamic> _$AdminPostAppsReqToJson(AdminPostAppsReq instance) =>
     <String, dynamic>{
-      'applicationName': instance.applicationName,
+      'application_name': instance.applicationName,
       'state': instance.state,
       'code': instance.code,
     };

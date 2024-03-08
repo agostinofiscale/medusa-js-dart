@@ -7,7 +7,7 @@ part of '../admin_publishable_api_key_delete_res.dart';
 // **************************************************************************
 
 AdminPublishableApiKeyDeleteRes _$AdminPublishableApiKeyDeleteResFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPublishableApiKeyDeleteRes(
       id: json['id'] as String,
       object: json['object'] as String,
@@ -15,7 +15,7 @@ AdminPublishableApiKeyDeleteRes _$AdminPublishableApiKeyDeleteResFromJson(
     );
 
 Map<String, dynamic> _$AdminPublishableApiKeyDeleteResToJson(
-        AdminPublishableApiKeyDeleteRes instance,) =>
+        AdminPublishableApiKeyDeleteRes instance) =>
     <String, dynamic>{
       'id': instance.id,
       'object': instance.object,

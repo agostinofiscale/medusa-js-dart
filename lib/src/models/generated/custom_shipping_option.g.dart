@@ -9,13 +9,13 @@ part of '../custom_shipping_option.dart';
 CustomShippingOption _$CustomShippingOptionFromJson(
         Map<String, dynamic> json) =>
     CustomShippingOption(
-      optionId: json['optionId'] as String,
+      optionId: json['option_id'] as String,
       price: json['price'] as int,
     );
 
 Map<String, dynamic> _$CustomShippingOptionToJson(
         CustomShippingOption instance) =>
     <String, dynamic>{
-      'optionId': instance.optionId,
+      'option_id': instance.optionId,
       'price': instance.price,
     };

@@ -10,11 +10,11 @@ AdminShippingProfilesRes _$AdminShippingProfilesResFromJson(
         Map<String, dynamic> json) =>
     AdminShippingProfilesRes(
       shippingProfile: ShippingProfile.fromJson(
-          json['shippingProfile'] as Map<String, dynamic>),
+          json['shipping_profile'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminShippingProfilesResToJson(
         AdminShippingProfilesRes instance) =>
     <String, dynamic>{
-      'shippingProfile': instance.shippingProfile,
+      'shipping_profile': instance.shippingProfile.toJson(),
     };

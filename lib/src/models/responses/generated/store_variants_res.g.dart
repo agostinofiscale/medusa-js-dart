@@ -13,5 +13,5 @@ StoreVariantsRes _$StoreVariantsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StoreVariantsResToJson(StoreVariantsRes instance) =>
     <String, dynamic>{
-      'variant': instance.variant,
+      'variant': instance.variant.toJson(),
     };

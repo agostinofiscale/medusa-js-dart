@@ -13,15 +13,15 @@ AdminPostShippingProfilesProfileReq
           metadata: json['metadata'] as Map<String, dynamic>?,
           type: json['type'] as String?,
           products: json['products'] as List<dynamic>?,
-          shippingOptions: json['shippingOptions'] as List<dynamic>?,
+          shippingOptions: json['shipping_options'] as List<dynamic>?,
         );
 
 Map<String, dynamic> _$AdminPostShippingProfilesProfileReqToJson(
-        AdminPostShippingProfilesProfileReq instance,) =>
+        AdminPostShippingProfilesProfileReq instance) =>
     <String, dynamic>{
       'name': instance.name,
       'metadata': instance.metadata,
       'type': instance.type,
       'products': instance.products,
-      'shippingOptions': instance.shippingOptions,
+      'shipping_options': instance.shippingOptions,
     };

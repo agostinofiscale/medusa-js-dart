@@ -9,21 +9,21 @@ part of '../store_get_products_product_params.dart';
 StoreGetProductsProductParams _$StoreGetProductsProductParamsFromJson(
         Map<String, dynamic> json) =>
     StoreGetProductsProductParams(
-      salesChannelId: json['salesChannelId'] as String,
-      cartId: json['cartId'] as String,
-      regionId: json['regionId'] as String,
+      salesChannelId: json['sales_channel_id'] as String,
+      cartId: json['cart_id'] as String,
+      regionId: json['region_id'] as String,
       expand: json['expand'] as String,
       fields: json['fields'] as String,
-      currencyCode: json['currencyCode'] as String,
+      currencyCode: json['currency_code'] as String,
     );
 
 Map<String, dynamic> _$StoreGetProductsProductParamsToJson(
         StoreGetProductsProductParams instance) =>
     <String, dynamic>{
-      'salesChannelId': instance.salesChannelId,
-      'cartId': instance.cartId,
-      'regionId': instance.regionId,
+      'sales_channel_id': instance.salesChannelId,
+      'cart_id': instance.cartId,
+      'region_id': instance.regionId,
       'expand': instance.expand,
       'fields': instance.fields,
-      'currencyCode': instance.currencyCode,
+      'currency_code': instance.currencyCode,
     };

@@ -12,11 +12,12 @@ class AdminPostProductCategoriesCategoryReq {
     required this.isActive,
     required this.parentCategoryId,
     required this.rank,
-    required this.metadata,
+    this.metadata,
   });
 
   factory AdminPostProductCategoriesCategoryReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductCategoriesCategoryReqFromJson(json);
 
   String name;
@@ -26,7 +27,7 @@ class AdminPostProductCategoriesCategoryReq {
   bool isActive;
   String parentCategoryId;
   int rank;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 
   Map<String, dynamic> toJson() =>
       _$AdminPostProductCategoriesCategoryReqToJson(this);

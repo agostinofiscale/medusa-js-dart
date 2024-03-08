@@ -8,10 +8,10 @@ part of '../admin_batch_job_res.dart';
 
 AdminBatchJobRes _$AdminBatchJobResFromJson(Map<String, dynamic> json) =>
     AdminBatchJobRes(
-      batchJob: BatchJob.fromJson(json['batchJob'] as Map<String, dynamic>),
+      batchJob: BatchJob.fromJson(json['batch_job'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminBatchJobResToJson(AdminBatchJobRes instance) =>
     <String, dynamic>{
-      'batchJob': instance.batchJob,
+      'batch_job': instance.batchJob.toJson(),
     };

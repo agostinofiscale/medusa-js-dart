@@ -15,7 +15,7 @@ AdminPriceListDeleteVariantPricesRes
         );
 
 Map<String, dynamic> _$AdminPriceListDeleteVariantPricesResToJson(
-        AdminPriceListDeleteVariantPricesRes instance,) =>
+        AdminPriceListDeleteVariantPricesRes instance) =>
     <String, dynamic>{
       'ids': instance.ids,
       'object': instance.object,

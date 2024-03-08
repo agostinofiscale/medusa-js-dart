@@ -20,7 +20,7 @@ AdminCurrenciesListRes _$AdminCurrenciesListResFromJson(
 Map<String, dynamic> _$AdminCurrenciesListResToJson(
         AdminCurrenciesListRes instance) =>
     <String, dynamic>{
-      'currencies': instance.currencies,
+      'currencies': instance.currencies.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

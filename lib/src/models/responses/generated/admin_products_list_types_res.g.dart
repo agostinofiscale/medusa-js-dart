@@ -17,5 +17,5 @@ AdminProductsListTypesRes _$AdminProductsListTypesResFromJson(
 Map<String, dynamic> _$AdminProductsListTypesResToJson(
         AdminProductsListTypesRes instance) =>
     <String, dynamic>{
-      'types': instance.types,
+      'types': instance.types.map((e) => e.toJson()).toList(),
     };

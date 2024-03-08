@@ -9,29 +9,29 @@ part of '../discount_condition_customer_group.dart';
 DiscountConditionCustomerGroup _$DiscountConditionCustomerGroupFromJson(
         Map<String, dynamic> json) =>
     DiscountConditionCustomerGroup(
-      customerGroupId: json['customerGroupId'] as String,
-      conditionId: json['conditionId'] as String,
-      customerGroup: json['customerGroup'] == null
+      customerGroupId: json['customer_group_id'] as String,
+      conditionId: json['condition_id'] as String,
+      customerGroup: json['customer_group'] == null
           ? null
           : CustomerGroup.fromJson(
-              json['customerGroup'] as Map<String, dynamic>),
-      discountCondition: json['discountCondition'] == null
+              json['customer_group'] as Map<String, dynamic>),
+      discountCondition: json['discount_condition'] == null
           ? null
           : DiscountCondition.fromJson(
-              json['discountCondition'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+              json['discount_condition'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$DiscountConditionCustomerGroupToJson(
         DiscountConditionCustomerGroup instance) =>
     <String, dynamic>{
-      'customerGroupId': instance.customerGroupId,
-      'conditionId': instance.conditionId,
-      'customerGroup': instance.customerGroup,
-      'discountCondition': instance.discountCondition,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'customer_group_id': instance.customerGroupId,
+      'condition_id': instance.conditionId,
+      'customer_group': instance.customerGroup?.toJson(),
+      'discount_condition': instance.discountCondition?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

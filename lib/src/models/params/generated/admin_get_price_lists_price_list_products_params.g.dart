@@ -8,14 +8,14 @@ part of '../admin_get_price_lists_price_list_products_params.dart';
 
 AdminGetPriceListsPriceListProductsParams
     _$AdminGetPriceListsPriceListProductsParamsFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminGetPriceListsPriceListProductsParams(
           q: json['q'] as String?,
           id: json['id'] as String?,
           status: (json['status'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
-          collectionId: (json['collectionId'] as List<dynamic>?)
+          collectionId: (json['collection_id'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
           tags: (json['tags'] as List<dynamic>?)
@@ -24,18 +24,18 @@ AdminGetPriceListsPriceListProductsParams
           title: json['title'] as String?,
           description: json['description'] as String?,
           handle: json['handle'] as String?,
-          isGiftcard: json['isGiftcard'] as String?,
+          isGiftcard: json['is_giftcard'] as String?,
           type: json['type'] as String?,
           order: json['order'] as String?,
-          createdAt: json['createdAt'] == null
+          createdAt: json['created_at'] == null
               ? null
-              : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-          updatedAt: json['updatedAt'] == null
+              : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+          updatedAt: json['updated_at'] == null
               ? null
-              : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
-          deletedAt: json['deletedAt'] == null
+              : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
+          deletedAt: json['deleted_at'] == null
               ? null
-              : DateFilter.fromJson(json['deletedAt'] as Map<String, dynamic>),
+              : DateFilter.fromJson(json['deleted_at'] as Map<String, dynamic>),
           offset: json['offset'] as int?,
           limit: json['limit'] as int?,
           expand: json['expand'] as String?,
@@ -43,22 +43,22 @@ AdminGetPriceListsPriceListProductsParams
         );
 
 Map<String, dynamic> _$AdminGetPriceListsPriceListProductsParamsToJson(
-        AdminGetPriceListsPriceListProductsParams instance,) =>
+        AdminGetPriceListsPriceListProductsParams instance) =>
     <String, dynamic>{
       'q': instance.q,
       'id': instance.id,
       'status': instance.status,
-      'collectionId': instance.collectionId,
+      'collection_id': instance.collectionId,
       'tags': instance.tags,
       'title': instance.title,
       'description': instance.description,
       'handle': instance.handle,
-      'isGiftcard': instance.isGiftcard,
+      'is_giftcard': instance.isGiftcard,
       'type': instance.type,
       'order': instance.order,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'deleted_at': instance.deletedAt?.toJson(),
       'offset': instance.offset,
       'limit': instance.limit,
       'expand': instance.expand,

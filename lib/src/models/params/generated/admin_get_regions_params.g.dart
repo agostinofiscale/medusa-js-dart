@@ -13,15 +13,18 @@ AdminGetRegionsParams _$AdminGetRegionsParamsFromJson(
       order: json['order'] as String?,
       limit: json['limit'] as int?,
       offset: json['offset'] as int?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : CreatedAtFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : CreatedAtFilter.fromJson(
+              json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : UpdatedAtFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
-      deletedAt: json['deletedAt'] == null
+          : UpdatedAtFilter.fromJson(
+              json['updated_at'] as Map<String, dynamic>),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DeletedAtFilter.fromJson(json['deletedAt'] as Map<String, dynamic>),
+          : DeletedAtFilter.fromJson(
+              json['deleted_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminGetRegionsParamsToJson(
@@ -31,9 +34,9 @@ Map<String, dynamic> _$AdminGetRegionsParamsToJson(
       'order': instance.order,
       'limit': instance.limit,
       'offset': instance.offset,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'deleted_at': instance.deletedAt?.toJson(),
     };
 
 CreatedAtFilter _$CreatedAtFilterFromJson(Map<String, dynamic> json) =>

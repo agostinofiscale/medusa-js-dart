@@ -7,7 +7,7 @@ part of '../admin_post_tax_rates_tax_rate_params.dart';
 // **************************************************************************
 
 AdminPostTaxRatesTaxRateParams _$AdminPostTaxRatesTaxRateParamsFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostTaxRatesTaxRateParams(
       fields:
           (json['fields'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -16,7 +16,7 @@ AdminPostTaxRatesTaxRateParams _$AdminPostTaxRatesTaxRateParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateParamsToJson(
-        AdminPostTaxRatesTaxRateParams instance,) =>
+        AdminPostTaxRatesTaxRateParams instance) =>
     <String, dynamic>{
       'fields': instance.fields,
       'expand': instance.expand,

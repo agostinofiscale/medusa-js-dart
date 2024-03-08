@@ -13,5 +13,5 @@ StoreRegionsRes _$StoreRegionsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StoreRegionsResToJson(StoreRegionsRes instance) =>
     <String, dynamic>{
-      'region': instance.region,
+      'region': instance.region.toJson(),
     };

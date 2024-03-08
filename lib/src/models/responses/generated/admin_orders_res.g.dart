@@ -13,5 +13,5 @@ AdminOrdersRes _$AdminOrdersResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminOrdersResToJson(AdminOrdersRes instance) =>
     <String, dynamic>{
-      'order': instance.order,
+      'order': instance.order.toJson(),
     };

@@ -20,12 +20,12 @@ class _RegionsResource implements RegionsResource {
 
   @override
   Future<StoreRegionsListRes> list(
-      {Map<String, dynamic>? customHeaders,}) async {
+      {Map<String, dynamic>? customHeaders}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreRegionsListRes>(Options(
       method: 'GET',
@@ -42,7 +42,7 @@ class _RegionsResource implements RegionsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreRegionsListRes.fromJson(_result.data!);
     return value;
   }
@@ -56,7 +56,7 @@ class _RegionsResource implements RegionsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreRegionsRes>(Options(
       method: 'GET',
@@ -73,7 +73,7 @@ class _RegionsResource implements RegionsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreRegionsRes.fromJson(_result.data!);
     return value;
   }

@@ -13,5 +13,5 @@ AdminRefundRes _$AdminRefundResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminRefundResToJson(AdminRefundRes instance) =>
     <String, dynamic>{
-      'refund': instance.refund,
+      'refund': instance.refund.toJson(),
     };

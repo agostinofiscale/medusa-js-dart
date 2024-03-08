@@ -10,7 +10,7 @@ class AdminPostReservationsReq {
     required this.inventory_itemId,
     required this.quantity,
     required this.description,
-    required this.metadata,
+    this.metadata,
   });
   factory AdminPostReservationsReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostReservationsReqFromJson(json);
@@ -22,5 +22,5 @@ class AdminPostReservationsReq {
   final String inventory_itemId;
   final int quantity;
   final String description;
-  final Map<String, dynamic> metadata;
+  final Map<String, dynamic>? metadata;
 }

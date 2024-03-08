@@ -12,5 +12,5 @@ StoreAuthRes _$StoreAuthResFromJson(Map<String, dynamic> json) => StoreAuthRes(
 
 Map<String, dynamic> _$StoreAuthResToJson(StoreAuthRes instance) =>
     <String, dynamic>{
-      'customer': instance.customer,
+      'customer': instance.customer.toJson(),
     };

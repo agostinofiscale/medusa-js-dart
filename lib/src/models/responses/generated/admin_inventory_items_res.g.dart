@@ -10,11 +10,11 @@ AdminInventoryItemsRes _$AdminInventoryItemsResFromJson(
         Map<String, dynamic> json) =>
     AdminInventoryItemsRes(
       inventoryItem: InventoryItemDTO.fromJson(
-          json['inventoryItem'] as Map<String, dynamic>),
+          json['inventory_item'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminInventoryItemsResToJson(
         AdminInventoryItemsRes instance) =>
     <String, dynamic>{
-      'inventoryItem': instance.inventoryItem,
+      'inventory_item': instance.inventoryItem.toJson(),
     };

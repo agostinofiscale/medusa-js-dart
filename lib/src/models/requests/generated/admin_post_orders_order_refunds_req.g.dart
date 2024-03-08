@@ -12,7 +12,7 @@ AdminPostOrdersOrderRefundsReq _$AdminPostOrdersOrderRefundsReqFromJson(
       (json['amount'] as num).toDouble(),
       json['reason'] as String,
       json['note'] as String,
-      json['noNotification'] as bool,
+      json['no_notification'] as bool,
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderRefundsReqToJson(
@@ -21,5 +21,5 @@ Map<String, dynamic> _$AdminPostOrdersOrderRefundsReqToJson(
       'amount': instance.amount,
       'reason': instance.reason,
       'note': instance.note,
-      'noNotification': instance.noNotification,
+      'no_notification': instance.noNotification,
     };

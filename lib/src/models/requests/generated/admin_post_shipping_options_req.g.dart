@@ -10,36 +10,36 @@ AdminPostShippingOptionsReq _$AdminPostShippingOptionsReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostShippingOptionsReq(
       name: json['name'] as String,
-      regionId: json['regionId'] as String,
-      providerId: json['providerId'] as String,
-      profileId: json['profileId'] as int,
+      regionId: json['region_id'] as String,
+      providerId: json['provider_id'] as String,
+      profileId: json['profile_id'] as int,
       data: json['data'] as Map<String, dynamic>,
-      priceType: json['priceType'] as String,
+      priceType: json['price_type'] as String,
       amount: (json['amount'] as num).toDouble(),
       requirements: (json['requirements'] as List<dynamic>)
           .map((e) => Requirements.fromJson(e as Map<String, dynamic>))
           .toList(),
-      isReturn: json['isReturn'] as bool,
-      adminOnly: json['adminOnly'] as bool,
-      metadata: json['metadata'] as Map<String, dynamic>,
-      includesTax: json['includesTax'] as bool,
+      isReturn: json['is_return'] as bool,
+      adminOnly: json['admin_only'] as bool,
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      includesTax: json['includes_tax'] as bool,
     );
 
 Map<String, dynamic> _$AdminPostShippingOptionsReqToJson(
         AdminPostShippingOptionsReq instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'regionId': instance.regionId,
-      'providerId': instance.providerId,
-      'profileId': instance.profileId,
+      'region_id': instance.regionId,
+      'provider_id': instance.providerId,
+      'profile_id': instance.profileId,
       'data': instance.data,
-      'priceType': instance.priceType,
+      'price_type': instance.priceType,
       'amount': instance.amount,
-      'requirements': instance.requirements,
-      'isReturn': instance.isReturn,
-      'adminOnly': instance.adminOnly,
+      'requirements': instance.requirements.map((e) => e.toJson()).toList(),
+      'is_return': instance.isReturn,
+      'admin_only': instance.adminOnly,
       'metadata': instance.metadata,
-      'includesTax': instance.includesTax,
+      'includes_tax': instance.includesTax,
     };
 
 Requirements _$RequirementsFromJson(Map<String, dynamic> json) => Requirements(

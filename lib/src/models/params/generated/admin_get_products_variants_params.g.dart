@@ -16,14 +16,14 @@ AdminGetProductsVariantsParams _$AdminGetProductsVariantsParamsFromJson(
       limit: json['limit'] as int?,
       q: json['q'] as String?,
       order: json['order'] as String?,
-      manageInventory: json['manageInventory'] as bool?,
-      allowBackorder: json['allowBackorder'] as bool?,
-      createdAt: json['createdAt'] == null
+      manageInventory: json['manage_inventory'] as bool?,
+      allowBackorder: json['allow_backorder'] as bool?,
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminGetProductsVariantsParamsToJson(
@@ -36,8 +36,8 @@ Map<String, dynamic> _$AdminGetProductsVariantsParamsToJson(
       'limit': instance.limit,
       'q': instance.q,
       'order': instance.order,
-      'manageInventory': instance.manageInventory,
-      'allowBackorder': instance.allowBackorder,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'manage_inventory': instance.manageInventory,
+      'allow_backorder': instance.allowBackorder,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
     };

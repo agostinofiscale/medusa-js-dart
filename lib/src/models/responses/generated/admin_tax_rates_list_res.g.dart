@@ -9,7 +9,7 @@ part of '../admin_tax_rates_list_res.dart';
 AdminTaxRatesListRes _$AdminTaxRatesListResFromJson(
         Map<String, dynamic> json) =>
     AdminTaxRatesListRes(
-      taxRates: (json['taxRates'] as List<dynamic>)
+      taxRates: (json['tax_rates'] as List<dynamic>)
           .map((e) => TaxRate.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,7 @@ AdminTaxRatesListRes _$AdminTaxRatesListResFromJson(
 Map<String, dynamic> _$AdminTaxRatesListResToJson(
         AdminTaxRatesListRes instance) =>
     <String, dynamic>{
-      'taxRates': instance.taxRates,
+      'tax_rates': instance.taxRates.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

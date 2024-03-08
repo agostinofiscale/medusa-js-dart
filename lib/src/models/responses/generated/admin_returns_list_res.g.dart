@@ -19,7 +19,7 @@ AdminReturnsListRes _$AdminReturnsListResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$AdminReturnsListResToJson(
         AdminReturnsListRes instance) =>
     <String, dynamic>{
-      'returns': instance.returns,
+      'returns': instance.returns.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

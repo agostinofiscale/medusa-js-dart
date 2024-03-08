@@ -20,12 +20,12 @@ class _ReturnReasonsResource implements ReturnReasonsResource {
 
   @override
   Future<StoreReturnReasonsListRes> list(
-      {Map<String, dynamic>? customHeaders,}) async {
+      {Map<String, dynamic>? customHeaders}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreReturnReasonsListRes>(Options(
       method: 'GET',
@@ -42,7 +42,7 @@ class _ReturnReasonsResource implements ReturnReasonsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreReturnReasonsListRes.fromJson(_result.data!);
     return value;
   }
@@ -56,7 +56,7 @@ class _ReturnReasonsResource implements ReturnReasonsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreReturnReasonsRes>(Options(
       method: 'GET',
@@ -73,7 +73,7 @@ class _ReturnReasonsResource implements ReturnReasonsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreReturnReasonsRes.fromJson(_result.data!);
     return value;
   }

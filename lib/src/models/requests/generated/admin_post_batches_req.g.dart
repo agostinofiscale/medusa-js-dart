@@ -10,7 +10,7 @@ AdminPostBatchesReq _$AdminPostBatchesReqFromJson(Map<String, dynamic> json) =>
     AdminPostBatchesReq(
       type: json['type'] as String,
       context: json['context'] as Map<String, dynamic>,
-      dryRun: json['dryRun'] as bool,
+      dryRun: json['dry_run'] as bool,
     );
 
 Map<String, dynamic> _$AdminPostBatchesReqToJson(
@@ -18,5 +18,5 @@ Map<String, dynamic> _$AdminPostBatchesReqToJson(
     <String, dynamic>{
       'type': instance.type,
       'context': instance.context,
-      'dryRun': instance.dryRun,
+      'dry_run': instance.dryRun,
     };

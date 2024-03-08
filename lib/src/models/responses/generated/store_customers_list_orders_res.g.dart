@@ -20,7 +20,7 @@ StoreCustomersListOrdersRes _$StoreCustomersListOrdersResFromJson(
 Map<String, dynamic> _$StoreCustomersListOrdersResToJson(
         StoreCustomersListOrdersRes instance) =>
     <String, dynamic>{
-      'orders': instance.orders,
+      'orders': instance.orders.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

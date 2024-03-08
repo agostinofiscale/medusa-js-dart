@@ -13,5 +13,5 @@ StoreSwapsRes _$StoreSwapsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StoreSwapsResToJson(StoreSwapsRes instance) =>
     <String, dynamic>{
-      'swap': instance.swap,
+      'swap': instance.swap.toJson(),
     };

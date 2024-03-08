@@ -8,26 +8,26 @@ part of '../product_tax_rate.dart';
 
 ProductTaxRate _$ProductTaxRateFromJson(Map<String, dynamic> json) =>
     ProductTaxRate(
-      productId: json['productId'] as String,
+      productId: json['product_id'] as String,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      rateId: json['rateId'] as String,
-      taxRate: json['taxRate'] == null
+      rateId: json['rate_id'] as String,
+      taxRate: json['tax_rate'] == null
           ? null
-          : TaxRate.fromJson(json['taxRate'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+          : TaxRate.fromJson(json['tax_rate'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ProductTaxRateToJson(ProductTaxRate instance) =>
     <String, dynamic>{
-      'productId': instance.productId,
-      'product': instance.product,
-      'rateId': instance.rateId,
-      'taxRate': instance.taxRate,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'product_id': instance.productId,
+      'product': instance.product?.toJson(),
+      'rate_id': instance.rateId,
+      'tax_rate': instance.taxRate?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

@@ -2,7 +2,7 @@ import 'package:medusa_js_dart/src/models/enums/authentication_type.dart';
 
 /// The configuration for the API client
 class Configuration {
-  Configuration({
+  const Configuration({
     required this.baseUrl,
     required this.maxRetries,
     this.authenticationType,

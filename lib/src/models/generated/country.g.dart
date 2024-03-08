@@ -10,10 +10,10 @@ Country _$CountryFromJson(Map<String, dynamic> json) => Country(
       id: json['id'] as String,
       iso2: json['iso2'] as String,
       iso3: json['iso3'] as String,
-      numCode: json['numCode'] as String,
+      numCode: json['num_code'] as String,
       name: json['name'] as String,
-      displayName: json['displayName'] as String,
-      regionId: json['regionId'] as String?,
+      displayName: json['display_name'] as String,
+      regionId: json['region_id'] as String?,
       region: json['region'] == null
           ? null
           : Region.fromJson(json['region'] as Map<String, dynamic>),
@@ -23,9 +23,9 @@ Map<String, dynamic> _$CountryToJson(Country instance) => <String, dynamic>{
       'id': instance.id,
       'iso2': instance.iso2,
       'iso3': instance.iso3,
-      'numCode': instance.numCode,
+      'num_code': instance.numCode,
       'name': instance.name,
-      'displayName': instance.displayName,
-      'regionId': instance.regionId,
-      'region': instance.region,
+      'display_name': instance.displayName,
+      'region_id': instance.regionId,
+      'region': instance.region?.toJson(),
     };

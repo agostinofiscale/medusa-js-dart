@@ -11,14 +11,14 @@ AdminPostTaxRatesReq _$AdminPostTaxRatesReqFromJson(
     AdminPostTaxRatesReq(
       code: json['code'] as String,
       name: json['name'] as String,
-      regionId: json['regionId'] as String,
+      regionId: json['region_id'] as String,
       rate: (json['rate'] as num).toDouble(),
       products:
           (json['products'] as List<dynamic>).map((e) => e as String).toList(),
-      shippingOptions: (json['shippingOptions'] as List<dynamic>)
+      shippingOptions: (json['shipping_options'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      productTypes: (json['productTypes'] as List<dynamic>)
+      productTypes: (json['product_types'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
     );
@@ -28,9 +28,9 @@ Map<String, dynamic> _$AdminPostTaxRatesReqToJson(
     <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
-      'regionId': instance.regionId,
+      'region_id': instance.regionId,
       'rate': instance.rate,
       'products': instance.products,
-      'shippingOptions': instance.shippingOptions,
-      'productTypes': instance.productTypes,
+      'shipping_options': instance.shippingOptions,
+      'product_types': instance.productTypes,
     };

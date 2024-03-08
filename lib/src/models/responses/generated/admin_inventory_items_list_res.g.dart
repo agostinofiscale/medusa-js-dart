@@ -9,7 +9,7 @@ part of '../admin_inventory_items_list_res.dart';
 AdminInventoryItemsListRes _$AdminInventoryItemsListResFromJson(
         Map<String, dynamic> json) =>
     AdminInventoryItemsListRes(
-      inventoryItems: (json['inventoryItems'] as List<dynamic>)
+      inventoryItems: (json['inventory_items'] as List<dynamic>)
           .map((e) => InventoryItemDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,8 @@ AdminInventoryItemsListRes _$AdminInventoryItemsListResFromJson(
 Map<String, dynamic> _$AdminInventoryItemsListResToJson(
         AdminInventoryItemsListRes instance) =>
     <String, dynamic>{
-      'inventoryItems': instance.inventoryItems,
+      'inventory_items':
+          instance.inventoryItems.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,
