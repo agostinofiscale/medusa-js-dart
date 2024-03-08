@@ -19,25 +19,26 @@ Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
     };
 
 const _$ErrorCodeEnumMap = {
-  ErrorCode.invalidStateError: 'invalidStateError',
-  ErrorCode.invalidRequestError: 'invalidRequestError',
-  ErrorCode.apiError: 'apiError',
-  ErrorCode.unknownError: 'unknownError',
+  ErrorCode.invalidStateError: 'invalid_state_error',
+  ErrorCode.invalidRequestError: 'invalid_request_error',
+  ErrorCode.apiError: 'api_error',
+  ErrorCode.unknownError: 'unknown_error',
 };
 
 const _$ErrorTypeEnumMap = {
-  ErrorType.queryRunnerAlreadyReleasedError: 'queryRunnerAlreadyReleasedError',
-  ErrorType.transactionAlreadyStartedError: 'transactionAlreadyStartedError',
-  ErrorType.transactionNotStartedError: 'transactionNotStartedError',
+  ErrorType.queryRunnerAlreadyReleasedError:
+      'query_runner_already_released_error',
+  ErrorType.transactionAlreadyStartedError: 'transaction_already_started_error',
+  ErrorType.transactionNotStartedError: 'transaction_not_started_error',
   ErrorType.conflict: 'conflict',
   ErrorType.unauthorized: 'unauthorized',
-  ErrorType.paymentAuthorizationError: 'paymentAuthorizationError',
-  ErrorType.duplicateError: 'duplicateError',
-  ErrorType.notAllowed: 'notAllowed',
-  ErrorType.invalidData: 'invalidData',
-  ErrorType.notFound: 'notFound',
-  ErrorType.databaseError: 'databaseError',
-  ErrorType.unexpectedState: 'unexpectedState',
-  ErrorType.invalidArgument: 'invalidArgument',
-  ErrorType.unknownError: 'unknownError',
+  ErrorType.paymentAuthorizationError: 'payment_authorization_error',
+  ErrorType.duplicateError: 'duplicate_error',
+  ErrorType.notAllowed: 'not_allowed',
+  ErrorType.invalidData: 'invalid_data',
+  ErrorType.notFound: 'not_found',
+  ErrorType.databaseError: 'database_error',
+  ErrorType.unexpectedState: 'unexpected_state',
+  ErrorType.invalidArgument: 'invalid_argument',
+  ErrorType.unknownError: 'unknown_error',
 };

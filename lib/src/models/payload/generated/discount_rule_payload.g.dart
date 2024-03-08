@@ -32,7 +32,7 @@ Map<String, dynamic> _$DiscountRulePayloadToJson(
 const _$DicountRuleTypeEnumMap = {
   DicountRuleType.fixed: 'fixed',
   DicountRuleType.percentage: 'percentage',
-  DicountRuleType.freeShipping: 'freeShipping',
+  DicountRuleType.freeShipping: 'free_shipping',
 };
 
 const _$DiscountRuleAllocationEnumMap = {

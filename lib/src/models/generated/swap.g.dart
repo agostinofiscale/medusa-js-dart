@@ -82,22 +82,22 @@ Map<String, dynamic> _$SwapToJson(Swap instance) => <String, dynamic>{
     };
 
 const _$FulfillmentStatusEnumMap = {
-  FulfillmentStatus.notFulfilled: 'notFulfilled',
+  FulfillmentStatus.notFulfilled: 'not_fulfilled',
   FulfillmentStatus.fulfilled: 'fulfilled',
   FulfillmentStatus.shipped: 'shipped',
-  FulfillmentStatus.partiallyShipped: 'partiallyShipped',
+  FulfillmentStatus.partiallyShipped: 'partially_shipped',
   FulfillmentStatus.canceled: 'canceled',
-  FulfillmentStatus.requiresAction: 'requiresAction',
+  FulfillmentStatus.requiresAction: 'requires_action',
 };
 
 const _$PaymentStatusEnumMap = {
-  PaymentStatus.notPaid: 'notPaid',
+  PaymentStatus.notPaid: 'not_paid',
   PaymentStatus.awaiting: 'awaiting',
   PaymentStatus.captured: 'captured',
   PaymentStatus.confirmed: 'confirmed',
   PaymentStatus.canceled: 'canceled',
-  PaymentStatus.differenceRefunded: 'differenceRefunded',
-  PaymentStatus.partiallyRefunded: 'partiallyRefunded',
+  PaymentStatus.differenceRefunded: 'difference_refunded',
+  PaymentStatus.partiallyRefunded: 'partially_refunded',
   PaymentStatus.refunded: 'refunded',
-  PaymentStatus.requiresAction: 'requiresAction',
+  PaymentStatus.requiresAction: 'requires_action',
 };

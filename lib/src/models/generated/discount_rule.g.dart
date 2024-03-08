@@ -38,5 +38,5 @@ Map<String, dynamic> _$DiscountRuleToJson(DiscountRule instance) =>
 const _$DiscountTypeEnumMap = {
   DiscountType.fixed: 'fixed',
   DiscountType.percentage: 'percentage',
-  DiscountType.freeShipping: 'freeShipping',
+  DiscountType.freeShipping: 'free_shipping',
 };

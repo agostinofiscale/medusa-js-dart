@@ -7,8 +7,10 @@ import 'package:medusa_js_dart/src/clients/store/store.dart';
 import 'package:medusa_js_dart/src/configuration.dart';
 import 'package:medusa_js_dart/src/interceptors/authentication.dart';
 import 'package:medusa_js_dart/src/interceptors/custom_headers.dart';
+import 'package:medusa_js_dart/src/interceptors/error.dart';
 import 'package:medusa_js_dart/src/models/enums/authentication_type.dart';
 import 'package:medusa_js_dart/src/models/enums/domain.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 /// The main class for the Medusa API client
 ///
@@ -64,6 +66,20 @@ class Medusa {
     dio.interceptors.add(
       CustomHeadersInterceptor(),
     );
+
+    dio.interceptors.add(
+      ErrorInterceptor(),
+    );
+
+    if (configuration.debug) {
+      dio.interceptors.add(
+        PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseHeader: true,
+        ),
+      );
+    }
 
     return dio;
   }

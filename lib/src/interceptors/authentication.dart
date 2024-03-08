@@ -27,4 +27,19 @@ class AuthenticationInterceptor extends Interceptor {
 
     super.onRequest(options, handler);
   }
+
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    if (response.realUri.path.contains('/admin/auth')) {
+      final String? cookie = response.headers.map['set-cookie']?.first;
+
+      if (cookie != null) {
+        medusa.configuration = medusa.configuration.copyWith(
+          cookieToken: cookie,
+        );
+      }
+    }
+
+    super.onResponse(response, handler);
+  }
 }
