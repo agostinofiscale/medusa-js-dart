@@ -9,4 +9,8 @@ class StoreCustomersResetPasswordRes {
   StoreCustomersResetPasswordRes({required this.customer});
 
   Customer customer;
+
+  factory StoreCustomersResetPasswordRes.fromJson(Map<String, dynamic> json) => _$StoreCustomersResetPasswordResFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StoreCustomersResetPasswordResToJson(this);
 }

@@ -12,4 +12,8 @@ class AdminDeleteTaxRatesTaxRateShippingOptionsParams {
   List<String>? fields;
 
   List<String>? expand;
+
+  factory AdminDeleteTaxRatesTaxRateShippingOptionsParams.fromJson(Map<String, dynamic> json) => _$AdminDeleteTaxRatesTaxRateShippingOptionsParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminDeleteTaxRatesTaxRateShippingOptionsParamsToJson(this);
 }

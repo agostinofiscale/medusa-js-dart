@@ -18,4 +18,8 @@ class AdminPostReservationsReservationReq {
   String? description;
 
   Map<String, dynamic>? metadata;
+
+  factory AdminPostReservationsReservationReq.fromJson(Map<String, dynamic> json) => _$AdminPostReservationsReservationReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostReservationsReservationReqToJson(this);
 }

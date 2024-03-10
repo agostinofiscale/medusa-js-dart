@@ -29,7 +29,8 @@ class _LineItemsResource implements LineItemsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = payload;
+    final _data = <String, dynamic>{};
+    _data.addAll(payload.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreCartsRes>(Options(
       method: 'POST',
@@ -63,7 +64,8 @@ class _LineItemsResource implements LineItemsResource {
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = payload;
+    final _data = <String, dynamic>{};
+    _data.addAll(payload.toJson());
     final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
       headers: _headers,

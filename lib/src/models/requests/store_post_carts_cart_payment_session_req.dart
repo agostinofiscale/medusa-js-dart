@@ -7,4 +7,8 @@ class StorePostCartsCartPaymentSessionReq {
   StorePostCartsCartPaymentSessionReq({required this.providerId});
 
   final String providerId;
+
+  factory StorePostCartsCartPaymentSessionReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartPaymentSessionReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StorePostCartsCartPaymentSessionReqToJson(this);
 }

@@ -7,4 +7,8 @@ class AdminPostSalesChannelsChannelStockLocationsReq {
   AdminPostSalesChannelsChannelStockLocationsReq({required this.locationId});
 
   final String locationId;
+
+  factory AdminPostSalesChannelsChannelStockLocationsReq.fromJson(Map<String, dynamic> json) => _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostSalesChannelsChannelStockLocationsReqToJson(this);
 }

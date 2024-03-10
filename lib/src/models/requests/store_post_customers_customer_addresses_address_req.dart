@@ -8,4 +8,8 @@ class StorePostCustomersCustomerAddressesAddressReq {
   StorePostCustomersCustomerAddressesAddressReq(this.address);
 
   final AddressPayload address;
+
+  factory StorePostCustomersCustomerAddressesAddressReq.fromJson(Map<String, dynamic> json) => _$StorePostCustomersCustomerAddressesAddressReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StorePostCustomersCustomerAddressesAddressReqToJson(this);
 }

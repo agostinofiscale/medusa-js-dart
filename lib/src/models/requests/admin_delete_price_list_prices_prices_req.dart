@@ -7,4 +7,8 @@ class AdminDeletePriceListPricesPricesReq {
   AdminDeletePriceListPricesPricesReq({this.priceIds});
 
   List<String>? priceIds;
+
+  factory AdminDeletePriceListPricesPricesReq.fromJson(Map<String, dynamic> json) => _$AdminDeletePriceListPricesPricesReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminDeletePriceListPricesPricesReqToJson(this);
 }

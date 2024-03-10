@@ -7,4 +7,8 @@ class AdminPostUploadsDownloadUrlReq {
   AdminPostUploadsDownloadUrlReq({required this.fileKey});
 
   final String fileKey;
+
+  factory AdminPostUploadsDownloadUrlReq.fromJson(Map<String, dynamic> json) => _$AdminPostUploadsDownloadUrlReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostUploadsDownloadUrlReqToJson(this);
 }

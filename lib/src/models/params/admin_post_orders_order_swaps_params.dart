@@ -8,4 +8,8 @@ class AdminPostOrdersOrderSwapsParams {
 
   String? expand;
   String? fields;
+
+  factory AdminPostOrdersOrderSwapsParams.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderSwapsParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderSwapsParamsToJson(this);
 }

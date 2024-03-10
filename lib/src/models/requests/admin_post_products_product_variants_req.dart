@@ -47,4 +47,8 @@ class AdminPostProductsProductVariantsReq {
   Map<String, dynamic>? metadata;
   List<VariantPricePayload> prices;
   List<ProductOptionValue> options;
+
+  factory AdminPostProductsProductVariantsReq.fromJson(Map<String, dynamic> json) => _$AdminPostProductsProductVariantsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostProductsProductVariantsReqToJson(this);
 }

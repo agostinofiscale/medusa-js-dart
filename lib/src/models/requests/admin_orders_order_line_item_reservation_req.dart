@@ -11,4 +11,8 @@ class AdminOrdersOrderLineItemReservationReq {
 
   String locationId;
   int quantity;
+
+  factory AdminOrdersOrderLineItemReservationReq.fromJson(Map<String, dynamic> json) => _$AdminOrdersOrderLineItemReservationReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminOrdersOrderLineItemReservationReqToJson(this);
 }

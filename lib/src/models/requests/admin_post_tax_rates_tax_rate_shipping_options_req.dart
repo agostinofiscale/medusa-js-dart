@@ -7,4 +7,8 @@ class AdminPostTaxRatesTaxRateShippingOptionsReq {
   AdminPostTaxRatesTaxRateShippingOptionsReq({required this.shippingOptions});
 
   final List<String> shippingOptions;
+
+  factory AdminPostTaxRatesTaxRateShippingOptionsReq.fromJson(Map<String, dynamic> json) => _$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateShippingOptionsReqToJson(this);
 }

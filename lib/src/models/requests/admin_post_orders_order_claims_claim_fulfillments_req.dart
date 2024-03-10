@@ -13,4 +13,8 @@ class AdminPostOrdersOrderClaimsClaimFulfillmentsReq {
   Map<String, dynamic>? metadata;
   bool noNotification;
   String locationId;
+
+  factory AdminPostOrdersOrderClaimsClaimFulfillmentsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderClaimsClaimFulfillmentsReqToJson(this);
 }

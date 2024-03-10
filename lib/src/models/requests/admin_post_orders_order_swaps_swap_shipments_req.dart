@@ -13,4 +13,8 @@ class AdminPostOrdersOrderSwapsSwapShipmentsReq {
   String fulfillmentId;
   List<String> trackingNumbers;
   bool noNotification;
+
+  factory AdminPostOrdersOrderSwapsSwapShipmentsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderSwapsSwapShipmentsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderSwapsSwapShipmentsReqToJson(this);
 }

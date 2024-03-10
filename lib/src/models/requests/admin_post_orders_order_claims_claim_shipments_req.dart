@@ -11,4 +11,8 @@ class AdminPostOrdersOrderClaimsClaimShipmentsReq {
 
   String fulfillmentId;
   List<String>? trackingNumbers;
+
+  factory AdminPostOrdersOrderClaimsClaimShipmentsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderClaimsClaimShipmentsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderClaimsClaimShipmentsReqToJson(this);
 }

@@ -9,4 +9,8 @@ class AdminGetStockLocationsLocationParams {
   String? expand;
 
   String? fields;
+
+  factory AdminGetStockLocationsLocationParams.fromJson(Map<String, dynamic> json) => _$AdminGetStockLocationsLocationParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminGetStockLocationsLocationParamsToJson(this);
 }
