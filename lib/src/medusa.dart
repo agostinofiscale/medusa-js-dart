@@ -1,6 +1,4 @@
-import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:medusa_js_dart/src/clients/admin/admin.dart';
 import 'package:medusa_js_dart/src/clients/store/store.dart';
@@ -27,8 +25,6 @@ class Medusa {
   late final Admin admin;
 
   late final Store store;
-
-  late final CookieJar cookieJar = CookieJar();
 
   void _createClients(Configuration configuration) {
     final Dio dio = _getClient(configuration);
