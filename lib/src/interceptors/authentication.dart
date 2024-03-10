@@ -46,7 +46,7 @@ class AuthenticationInterceptor extends Interceptor {
     /// as the cookie is set in the same way for both.
     ///
     /// TODO: Should we split this into two different variables?
-    if (response.realUri.path.contains('/auth')) {
+    if (response.realUri.path.endsWith('/auth')) {
       final String? cookie =
           response.headers.map[HttpHeaders.setCookieHeader]?.first;
 
@@ -60,10 +60,10 @@ class AuthenticationInterceptor extends Interceptor {
     }
 
     /// JWT support
-    if (response.realUri.path.contains('/auth/token')) {
+    if (response.realUri.path.endsWith('/auth/token')) {
       String? jwtToken;
 
-      final Map<String, dynamic> data = response.data as Map<String, String>;
+      final Map<String, dynamic> data = response.data as Map<String, dynamic>;
 
       if (data.containsKey('access_token')) {
         jwtToken = data['access_token'] as String;
