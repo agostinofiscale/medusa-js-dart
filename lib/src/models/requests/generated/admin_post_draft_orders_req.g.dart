@@ -11,24 +11,24 @@ AdminPostDraftOrdersReq _$AdminPostDraftOrdersReqFromJson(
     AdminPostDraftOrdersReq(
       status: json['status'] as String?,
       email: json['email'] as String,
-      billingAddress: json['billingAddress'] == null
+      billingAddress: json['billing_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['billingAddress'] as Map<String, dynamic>),
-      shippingAddress: json['shippingAddress'] == null
+              json['billing_address'] as Map<String, dynamic>),
+      shippingAddress: json['shipping_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>),
+              json['shipping_address'] as Map<String, dynamic>),
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
           .toList(),
-      regionId: json['regionId'] as String,
+      regionId: json['region_id'] as String,
       discounts: (json['discounts'] as List<dynamic>?)
           ?.map((e) => Discount.fromJson(e as Map<String, dynamic>))
           .toList(),
-      customerId: json['customerId'] as String?,
-      noNotificationOrder: json['noNotificationOrder'] as bool?,
-      shippingMethods: (json['shippingMethods'] as List<dynamic>)
+      customerId: json['customer_id'] as String?,
+      noNotificationOrder: json['no_notification_order'] as bool?,
+      shippingMethods: (json['shipping_methods'] as List<dynamic>)
           .map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
           .toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
@@ -39,13 +39,14 @@ Map<String, dynamic> _$AdminPostDraftOrdersReqToJson(
     <String, dynamic>{
       'status': instance.status,
       'email': instance.email,
-      'billingAddress': instance.billingAddress,
-      'shippingAddress': instance.shippingAddress,
-      'items': instance.items,
-      'regionId': instance.regionId,
-      'discounts': instance.discounts,
-      'customerId': instance.customerId,
-      'noNotificationOrder': instance.noNotificationOrder,
-      'shippingMethods': instance.shippingMethods,
+      'billing_address': instance.billingAddress?.toJson(),
+      'shipping_address': instance.shippingAddress?.toJson(),
+      'items': instance.items?.map((e) => e.toJson()).toList(),
+      'region_id': instance.regionId,
+      'discounts': instance.discounts?.map((e) => e.toJson()).toList(),
+      'customer_id': instance.customerId,
+      'no_notification_order': instance.noNotificationOrder,
+      'shipping_methods':
+          instance.shippingMethods.map((e) => e.toJson()).toList(),
       'metadata': instance.metadata,
     };

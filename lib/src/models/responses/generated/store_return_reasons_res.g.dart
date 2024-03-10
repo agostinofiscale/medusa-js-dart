@@ -10,11 +10,11 @@ StoreReturnReasonsRes _$StoreReturnReasonsResFromJson(
         Map<String, dynamic> json) =>
     StoreReturnReasonsRes(
       returnReason:
-          ReturnReason.fromJson(json['returnReason'] as Map<String, dynamic>),
+          ReturnReason.fromJson(json['return_reason'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreReturnReasonsResToJson(
         StoreReturnReasonsRes instance) =>
     <String, dynamic>{
-      'returnReason': instance.returnReason,
+      'return_reason': instance.returnReason.toJson(),
     };

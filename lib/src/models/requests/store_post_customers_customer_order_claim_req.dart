@@ -7,4 +7,8 @@ class StorePostCustomersCustomerOrderClaimReq {
   StorePostCustomersCustomerOrderClaimReq(this.orderIds);
 
   List<String> orderIds;
+
+  factory StorePostCustomersCustomerOrderClaimReq.fromJson(Map<String, dynamic> json) => _$StorePostCustomersCustomerOrderClaimReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StorePostCustomersCustomerOrderClaimReqToJson(this);
 }

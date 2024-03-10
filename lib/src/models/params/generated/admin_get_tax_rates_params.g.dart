@@ -10,7 +10,7 @@ AdminGetTaxRatesParams _$AdminGetTaxRatesParamsFromJson(
         Map<String, dynamic> json) =>
     AdminGetTaxRatesParams(
       name: json['name'] as String?,
-      regionId: json['regionId'] as String?,
+      regionId: json['region_id'] as String?,
       code: json['code'] as String?,
       rate: json['rate'],
       offset: json['offset'] as int?,
@@ -25,7 +25,7 @@ Map<String, dynamic> _$AdminGetTaxRatesParamsToJson(
         AdminGetTaxRatesParams instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'regionId': instance.regionId,
+      'region_id': instance.regionId,
       'code': instance.code,
       'rate': instance.rate,
       'offset': instance.offset,

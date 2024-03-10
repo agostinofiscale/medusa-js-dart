@@ -12,7 +12,7 @@ class StorePostCustomersCustomerReq {
     required this.password,
     required this.phone,
     required this.email,
-    required this.metadata,
+    this.metadata,
   });
   factory StorePostCustomersCustomerReq.fromJson(Map<String, dynamic> json) =>
       _$StorePostCustomersCustomerReqFromJson(json);

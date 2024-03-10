@@ -9,13 +9,13 @@ part of '../admin_get_reservations_params.dart';
 AdminGetReservationsParams _$AdminGetReservationsParamsFromJson(
         Map<String, dynamic> json) =>
     AdminGetReservationsParams(
-      locationId: (json['locationId'] as List<dynamic>?)
+      locationId: (json['location_id'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      inventoryItemId: (json['inventoryItemId'] as List<dynamic>?)
+      inventoryItemId: (json['inventory_item_id'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      lineItemId: (json['lineItemId'] as List<dynamic>?)
+      lineItemId: (json['line_item_id'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       quantity: json['quantity'] == null
@@ -25,9 +25,9 @@ AdminGetReservationsParams _$AdminGetReservationsParamsFromJson(
           ? null
           : ReservationDescriptionFilter.fromJson(
               json['description'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
       expand: json['expand'] as String?,
@@ -37,12 +37,12 @@ AdminGetReservationsParams _$AdminGetReservationsParamsFromJson(
 Map<String, dynamic> _$AdminGetReservationsParamsToJson(
         AdminGetReservationsParams instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
-      'inventoryItemId': instance.inventoryItemId,
-      'lineItemId': instance.lineItemId,
-      'quantity': instance.quantity,
-      'description': instance.description,
-      'createdAt': instance.createdAt,
+      'location_id': instance.locationId,
+      'inventory_item_id': instance.inventoryItemId,
+      'line_item_id': instance.lineItemId,
+      'quantity': instance.quantity?.toJson(),
+      'description': instance.description?.toJson(),
+      'created_at': instance.createdAt?.toJson(),
       'offset': instance.offset,
       'limit': instance.limit,
       'expand': instance.expand,
@@ -53,14 +53,14 @@ ReservationDescriptionFilter _$ReservationDescriptionFilterFromJson(
         Map<String, dynamic> json) =>
     ReservationDescriptionFilter(
       contains: json['contains'] as String?,
-      startsWith: json['startsWith'] as String?,
-      endsWith: json['endsWith'] as String?,
+      startsWith: json['starts_with'] as String?,
+      endsWith: json['ends_with'] as String?,
     );
 
 Map<String, dynamic> _$ReservationDescriptionFilterToJson(
         ReservationDescriptionFilter instance) =>
     <String, dynamic>{
       'contains': instance.contains,
-      'startsWith': instance.startsWith,
-      'endsWith': instance.endsWith,
+      'starts_with': instance.startsWith,
+      'ends_with': instance.endsWith,
     };

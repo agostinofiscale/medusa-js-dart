@@ -12,4 +12,8 @@ class StorePostCartsCartShippingMethodReq {
   String optionId;
 
   Map<String, dynamic> data;
+
+  factory StorePostCartsCartShippingMethodReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartShippingMethodReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StorePostCartsCartShippingMethodReqToJson(this);
 }

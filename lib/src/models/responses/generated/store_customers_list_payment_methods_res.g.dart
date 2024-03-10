@@ -9,13 +9,14 @@ part of '../store_customers_list_payment_methods_res.dart';
 StoreCustomersListPaymentMethodsRes
     _$StoreCustomersListPaymentMethodsResFromJson(Map<String, dynamic> json) =>
         StoreCustomersListPaymentMethodsRes(
-          (json['paymentMethods'] as List<dynamic>)
+          (json['payment_methods'] as List<dynamic>)
               .map((e) => PaymentMethod.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 
 Map<String, dynamic> _$StoreCustomersListPaymentMethodsResToJson(
-        StoreCustomersListPaymentMethodsRes instance,) =>
+        StoreCustomersListPaymentMethodsRes instance) =>
     <String, dynamic>{
-      'paymentMethods': instance.paymentMethods,
+      'payment_methods':
+          instance.paymentMethods.map((e) => e.toJson()).toList(),
     };

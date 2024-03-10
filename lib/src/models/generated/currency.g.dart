@@ -9,15 +9,15 @@ part of '../currency.dart';
 Currency _$CurrencyFromJson(Map<String, dynamic> json) => Currency(
       code: json['code'] as String,
       symbol: json['symbol'] as String,
-      symbolNative: json['symbolNative'] as String,
+      symbolNative: json['symbol_native'] as String,
       name: json['name'] as String,
-      includesTax: json['includesTax'] as bool? ?? false,
+      includesTax: json['includes_tax'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CurrencyToJson(Currency instance) => <String, dynamic>{
       'code': instance.code,
       'symbol': instance.symbol,
-      'symbolNative': instance.symbolNative,
+      'symbol_native': instance.symbolNative,
       'name': instance.name,
-      'includesTax': instance.includesTax,
+      'includes_tax': instance.includesTax,
     };

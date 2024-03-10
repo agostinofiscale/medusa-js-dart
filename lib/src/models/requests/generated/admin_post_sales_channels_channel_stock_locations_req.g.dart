@@ -10,11 +10,11 @@ AdminPostSalesChannelsChannelStockLocationsReq
     _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostSalesChannelsChannelStockLocationsReq(
-          locationId: json['locationId'] as String,
+          locationId: json['location_id'] as String,
         );
 
 Map<String, dynamic> _$AdminPostSalesChannelsChannelStockLocationsReqToJson(
         AdminPostSalesChannelsChannelStockLocationsReq instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
     };

@@ -21,5 +21,5 @@ Map<String, dynamic> _$AdminDiscountConditionsDeleteResToJson(
       'id': instance.id,
       'object': instance.object,
       'deleted': instance.deleted,
-      'discount': instance.discount,
+      'discount': instance.discount.toJson(),
     };

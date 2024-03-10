@@ -9,15 +9,15 @@ part of '../admin_post_order_edits_edit_line_items_req.dart';
 AdminPostOrderEditsEditLineItemsReq
     _$AdminPostOrderEditsEditLineItemsReqFromJson(Map<String, dynamic> json) =>
         AdminPostOrderEditsEditLineItemsReq(
-          variantId: json['variantId'] as String,
+          variantId: json['variant_id'] as String,
           quantity: json['quantity'] as int,
           metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
         );
 
 Map<String, dynamic> _$AdminPostOrderEditsEditLineItemsReqToJson(
-        AdminPostOrderEditsEditLineItemsReq instance,) =>
+        AdminPostOrderEditsEditLineItemsReq instance) =>
     <String, dynamic>{
-      'variantId': instance.variantId,
+      'variant_id': instance.variantId,
       'quantity': instance.quantity,
       'metadata': instance.metadata,
     };

@@ -14,12 +14,14 @@ AdminGetCustomersParams _$AdminGetCustomersParamsFromJson(
       expand: json['expand'] as String,
       fields: json['fields'] as String,
       q: json['q'] as String,
-      hasAccount: json['hasAccount'] as bool,
+      hasAccount: json['has_account'] as bool,
       order: json['order'] as String,
       groups:
           (json['groups'] as List<dynamic>).map((e) => e as String).toList(),
-      createdAt: DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
+      createdAt:
+          DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt:
+          DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminGetCustomersParamsToJson(
@@ -30,9 +32,9 @@ Map<String, dynamic> _$AdminGetCustomersParamsToJson(
       'expand': instance.expand,
       'fields': instance.fields,
       'q': instance.q,
-      'hasAccount': instance.hasAccount,
+      'has_account': instance.hasAccount,
       'order': instance.order,
       'groups': instance.groups,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt.toJson(),
+      'updated_at': instance.updatedAt.toJson(),
     };

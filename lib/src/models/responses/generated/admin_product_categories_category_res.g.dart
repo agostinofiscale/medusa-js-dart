@@ -7,14 +7,14 @@ part of '../admin_product_categories_category_res.dart';
 // **************************************************************************
 
 AdminProductCategoriesCategoryRes _$AdminProductCategoriesCategoryResFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminProductCategoriesCategoryRes(
       productCategory: ProductCategory.fromJson(
-          json['productCategory'] as Map<String, dynamic>,),
+          json['product_category'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminProductCategoriesCategoryResToJson(
-        AdminProductCategoriesCategoryRes instance,) =>
+        AdminProductCategoriesCategoryRes instance) =>
     <String, dynamic>{
-      'productCategory': instance.productCategory,
+      'product_category': instance.productCategory.toJson(),
     };

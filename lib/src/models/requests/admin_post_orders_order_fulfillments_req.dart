@@ -16,5 +16,9 @@ class AdminPostOrdersOrderFulfillmentsReq {
   List<FulfillmentItem> items;
   String locationId;
   bool noNotification;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
+
+  factory AdminPostOrdersOrderFulfillmentsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderFulfillmentsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderFulfillmentsReqToJson(this);
 }

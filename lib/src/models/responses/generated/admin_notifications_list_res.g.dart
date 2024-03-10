@@ -20,7 +20,7 @@ AdminNotificationsListRes _$AdminNotificationsListResFromJson(
 Map<String, dynamic> _$AdminNotificationsListResToJson(
         AdminNotificationsListRes instance) =>
     <String, dynamic>{
-      'notifications': instance.notifications,
+      'notifications': instance.notifications.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

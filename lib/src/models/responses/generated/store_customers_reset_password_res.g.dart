@@ -15,5 +15,5 @@ StoreCustomersResetPasswordRes _$StoreCustomersResetPasswordResFromJson(
 Map<String, dynamic> _$StoreCustomersResetPasswordResToJson(
         StoreCustomersResetPasswordRes instance) =>
     <String, dynamic>{
-      'customer': instance.customer,
+      'customer': instance.customer.toJson(),
     };

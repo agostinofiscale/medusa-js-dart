@@ -20,8 +20,9 @@ class _RegionsResource implements RegionsResource {
 
   @override
   Future<StoreRegionsListRes> list(
-      {Map<String, dynamic>? customHeaders,}) async {
-    const _extra = <String, dynamic>{};
+      {Map<String, dynamic>? customHeaders}) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -42,7 +43,7 @@ class _RegionsResource implements RegionsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreRegionsListRes.fromJson(_result.data!);
     return value;
   }
@@ -52,7 +53,8 @@ class _RegionsResource implements RegionsResource {
     String id, {
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -73,7 +75,7 @@ class _RegionsResource implements RegionsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreRegionsRes.fromJson(_result.data!);
     return value;
   }

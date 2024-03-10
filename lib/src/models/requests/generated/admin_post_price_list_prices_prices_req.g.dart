@@ -18,6 +18,6 @@ AdminPostPriceListPricesPricesReq _$AdminPostPriceListPricesPricesReqFromJson(
 Map<String, dynamic> _$AdminPostPriceListPricesPricesReqToJson(
         AdminPostPriceListPricesPricesReq instance) =>
     <String, dynamic>{
-      'prices': instance.prices,
+      'prices': instance.prices.map((e) => e.toJson()).toList(),
       'override': instance.override,
     };

@@ -17,5 +17,5 @@ StorePostCustomersCustomerAddressesReq
 Map<String, dynamic> _$StorePostCustomersCustomerAddressesReqToJson(
         StorePostCustomersCustomerAddressesReq instance) =>
     <String, dynamic>{
-      'address': instance.address,
+      'address': instance.address.toJson(),
     };

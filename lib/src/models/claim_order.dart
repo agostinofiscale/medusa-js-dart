@@ -57,7 +57,7 @@ class ClaimOrder {
   String createdAt;
   String updatedAt;
   String? deletedAt;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   bool noNotification;
   String? idempotencyKey;
 }

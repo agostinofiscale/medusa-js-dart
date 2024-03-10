@@ -9,15 +9,15 @@ part of '../store_get_shipping_options_params.dart';
 StoreGetShippingOptionsParams _$StoreGetShippingOptionsParamsFromJson(
         Map<String, dynamic> json) =>
     StoreGetShippingOptionsParams(
-      isReturn: json['isReturn'] as bool,
-      productIds: json['productIds'] as String,
-      regionId: json['regionId'] as String,
+      isReturn: json['is_return'] as bool,
+      productIds: json['product_ids'] as String,
+      regionId: json['region_id'] as String,
     );
 
 Map<String, dynamic> _$StoreGetShippingOptionsParamsToJson(
         StoreGetShippingOptionsParams instance) =>
     <String, dynamic>{
-      'isReturn': instance.isReturn,
-      'productIds': instance.productIds,
-      'regionId': instance.regionId,
+      'is_return': instance.isReturn,
+      'product_ids': instance.productIds,
+      'region_id': instance.regionId,
     };

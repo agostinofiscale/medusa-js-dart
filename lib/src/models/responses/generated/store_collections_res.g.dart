@@ -15,5 +15,5 @@ StoreCollectionsRes _$StoreCollectionsResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$StoreCollectionsResToJson(
         StoreCollectionsRes instance) =>
     <String, dynamic>{
-      'collection': instance.collection,
+      'collection': instance.collection.toJson(),
     };

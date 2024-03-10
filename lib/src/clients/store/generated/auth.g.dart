@@ -23,7 +23,8 @@ class _AuthResource implements AuthResource {
     StorePostAuthReq payload, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -52,11 +53,12 @@ class _AuthResource implements AuthResource {
 
   @override
   Future<void> deleteSession({Map<String, String>? customHeaders}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'DELETE',
       headers: _headers,
@@ -77,11 +79,12 @@ class _AuthResource implements AuthResource {
 
   @override
   Future<StoreAuthRes> getSession({Map<String, String>? customHeaders}) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreAuthRes>(Options(
       method: 'GET',
@@ -108,11 +111,12 @@ class _AuthResource implements AuthResource {
     String email, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<StoreGetAuthEmailRes>(Options(
       method: 'GET',
@@ -139,7 +143,8 @@ class _AuthResource implements AuthResource {
     StorePostAuthReq payload, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

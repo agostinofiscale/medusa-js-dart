@@ -12,7 +12,7 @@ AdminPostReturnReasonsReasonReq _$AdminPostReturnReasonsReasonReqFromJson(
       label: json['label'] as String,
       value: json['value'] as String,
       description: json['description'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminPostReturnReasonsReasonReqToJson(

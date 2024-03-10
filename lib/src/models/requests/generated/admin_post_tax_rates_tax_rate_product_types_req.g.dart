@@ -10,7 +10,7 @@ AdminPostTaxRatesTaxRateProductTypesReq
     _$AdminPostTaxRatesTaxRateProductTypesReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostTaxRatesTaxRateProductTypesReq(
-          productTypes: (json['productTypes'] as List<dynamic>)
+          productTypes: (json['product_types'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
@@ -18,5 +18,5 @@ AdminPostTaxRatesTaxRateProductTypesReq
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateProductTypesReqToJson(
         AdminPostTaxRatesTaxRateProductTypesReq instance) =>
     <String, dynamic>{
-      'productTypes': instance.productTypes,
+      'product_types': instance.productTypes,
     };

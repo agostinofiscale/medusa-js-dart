@@ -9,4 +9,8 @@ class AdminDeleteSalesChannelsChannelStockLocationsReq {
   });
 
   String locationId;
+
+  factory AdminDeleteSalesChannelsChannelStockLocationsReq.fromJson(Map<String, dynamic> json) => _$AdminDeleteSalesChannelsChannelStockLocationsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminDeleteSalesChannelsChannelStockLocationsReqToJson(this);
 }

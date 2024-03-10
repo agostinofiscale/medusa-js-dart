@@ -10,13 +10,13 @@ AdminOrdersOrderLineItemReservationReq
     _$AdminOrdersOrderLineItemReservationReqFromJson(
             Map<String, dynamic> json) =>
         AdminOrdersOrderLineItemReservationReq(
-          locationId: json['locationId'] as String,
+          locationId: json['location_id'] as String,
           quantity: json['quantity'] as int,
         );
 
 Map<String, dynamic> _$AdminOrdersOrderLineItemReservationReqToJson(
         AdminOrdersOrderLineItemReservationReq instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
       'quantity': instance.quantity,
     };

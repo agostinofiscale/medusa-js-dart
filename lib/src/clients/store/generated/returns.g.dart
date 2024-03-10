@@ -20,7 +20,7 @@ class _ReturnsResource implements ReturnsResource {
 
   @override
   Future<StoreReturnsRes> create(StorePostReturnsReq? data) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

@@ -11,7 +11,7 @@ AdminPostSalesChannelsReq _$AdminPostSalesChannelsReqFromJson(
     AdminPostSalesChannelsReq(
       name: json['name'] as String,
       description: json['description'] as String?,
-      isDisabled: json['isDisabled'] as bool?,
+      isDisabled: json['is_disabled'] as bool?,
     );
 
 Map<String, dynamic> _$AdminPostSalesChannelsReqToJson(
@@ -19,5 +19,5 @@ Map<String, dynamic> _$AdminPostSalesChannelsReqToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
-      'isDisabled': instance.isDisabled,
+      'is_disabled': instance.isDisabled,
     };

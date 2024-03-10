@@ -9,11 +9,11 @@ part of '../admin_post_order_edits_order_edit_req.dart';
 AdminPostOrderEditsOrderEditReq _$AdminPostOrderEditsOrderEditReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostOrderEditsOrderEditReq(
-      internalNote: json['internalNote'] as String,
+      internalNote: json['internal_note'] as String,
     );
 
 Map<String, dynamic> _$AdminPostOrderEditsOrderEditReqToJson(
         AdminPostOrderEditsOrderEditReq instance) =>
     <String, dynamic>{
-      'internalNote': instance.internalNote,
+      'internal_note': instance.internalNote,
     };

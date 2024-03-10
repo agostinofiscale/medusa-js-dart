@@ -13,25 +13,25 @@ PaymentCollection _$PaymentCollectionFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String,
       description: json['description'] as String?,
       amount: (json['amount'] as num).toDouble(),
-      authorizedAmount: (json['authorizedAmount'] as num?)?.toDouble(),
-      regionId: json['regionId'] as String,
+      authorizedAmount: (json['authorized_amount'] as num?)?.toDouble(),
+      regionId: json['region_id'] as String,
       region: json['region'] == null
           ? null
           : Region.fromJson(json['region'] as Map<String, dynamic>),
-      currencyCode: json['currencyCode'] as String,
+      currencyCode: json['currency_code'] as String,
       currency: json['currency'] == null
           ? null
           : Currency.fromJson(json['currency'] as Map<String, dynamic>),
-      paymentSessions: (json['paymentSessions'] as List<dynamic>?)
+      paymentSessions: (json['payment_sessions'] as List<dynamic>?)
           ?.map((e) => PaymentSession.fromJson(e as Map<String, dynamic>))
           .toList(),
       payments: (json['payments'] as List<dynamic>?)
           ?.map((e) => Payment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdBy: json['createdBy'] as String,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdBy: json['created_by'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -42,16 +42,17 @@ Map<String, dynamic> _$PaymentCollectionToJson(PaymentCollection instance) =>
       'status': instance.status,
       'description': instance.description,
       'amount': instance.amount,
-      'authorizedAmount': instance.authorizedAmount,
-      'regionId': instance.regionId,
-      'region': instance.region,
-      'currencyCode': instance.currencyCode,
-      'currency': instance.currency,
-      'paymentSessions': instance.paymentSessions,
-      'payments': instance.payments,
-      'createdBy': instance.createdBy,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'authorized_amount': instance.authorizedAmount,
+      'region_id': instance.regionId,
+      'region': instance.region?.toJson(),
+      'currency_code': instance.currencyCode,
+      'currency': instance.currency?.toJson(),
+      'payment_sessions':
+          instance.paymentSessions?.map((e) => e.toJson()).toList(),
+      'payments': instance.payments?.map((e) => e.toJson()).toList(),
+      'created_by': instance.createdBy,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

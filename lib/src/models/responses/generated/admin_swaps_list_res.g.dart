@@ -18,7 +18,7 @@ AdminSwapsListRes _$AdminSwapsListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminSwapsListResToJson(AdminSwapsListRes instance) =>
     <String, dynamic>{
-      'swaps': instance.swaps,
+      'swaps': instance.swaps.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

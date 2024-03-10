@@ -9,17 +9,17 @@ part of '../admin_post_orders_order_shipment_req.dart';
 AdminPostOrdersOrderShipmentReq _$AdminPostOrdersOrderShipmentReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostOrdersOrderShipmentReq(
-      fulfillmentId: json['fulfillmentId'] as String,
-      trackingNumbers: (json['trackingNumbers'] as List<dynamic>)
+      fulfillmentId: json['fulfillment_id'] as String,
+      trackingNumbers: (json['tracking_numbers'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      noNotification: json['noNotification'] as bool,
+      noNotification: json['no_notification'] as bool,
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderShipmentReqToJson(
         AdminPostOrdersOrderShipmentReq instance) =>
     <String, dynamic>{
-      'fulfillmentId': instance.fulfillmentId,
-      'trackingNumbers': instance.trackingNumbers,
-      'noNotification': instance.noNotification,
+      'fulfillment_id': instance.fulfillmentId,
+      'tracking_numbers': instance.trackingNumbers,
+      'no_notification': instance.noNotification,
     };

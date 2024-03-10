@@ -23,12 +23,13 @@ class _InventoryItemsResource implements InventoryItemsResource {
     AdminGetInventoryItemsParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<List<AdminGetInventoryItemsParams>>(Options(
       method: 'GET',
@@ -59,7 +60,8 @@ class _InventoryItemsResource implements InventoryItemsResource {
     AdminPostInventoryItemsParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -95,11 +97,12 @@ class _InventoryItemsResource implements InventoryItemsResource {
     String inventoryItemId, {
     AdminGetInventoryItemsItemParams? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders?.toJson() ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminInventoryItemsRes>(Options(
       method: 'GET',
@@ -128,7 +131,8 @@ class _InventoryItemsResource implements InventoryItemsResource {
     AdminPostInventoryItemsInventoryItemParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -161,11 +165,12 @@ class _InventoryItemsResource implements InventoryItemsResource {
     String inventoryItemId,
     Map<String, String>? customHeaders,
   ) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminInventoryItemsDeleteRes>(Options(
       method: 'DELETE',
@@ -192,11 +197,12 @@ class _InventoryItemsResource implements InventoryItemsResource {
     String inventoryItemId, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'GET',
       headers: _headers,
@@ -224,7 +230,8 @@ class _InventoryItemsResource implements InventoryItemsResource {
     AdminPostInventoryItemsItemLocationLevelsParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -260,7 +267,8 @@ class _InventoryItemsResource implements InventoryItemsResource {
     AdminPostInventoryItemsItemLocationLevelsLevelParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -294,11 +302,12 @@ class _InventoryItemsResource implements InventoryItemsResource {
     String locationId, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminInventoryItemsRes>(Options(
       method: 'DELETE',

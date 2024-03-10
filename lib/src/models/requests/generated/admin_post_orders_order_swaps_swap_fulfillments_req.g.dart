@@ -10,15 +10,15 @@ AdminPostOrdersOrderSwapsSwapFulfillmentsReq
     _$AdminPostOrdersOrderSwapsSwapFulfillmentsReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostOrdersOrderSwapsSwapFulfillmentsReq(
-          metadata: json['metadata'] as Map<String, dynamic>,
-          noNotification: json['noNotification'] as bool,
-          locationId: json['locationId'] as String,
+          metadata: json['metadata'] as Map<String, dynamic>?,
+          noNotification: json['no_notification'] as bool,
+          locationId: json['location_id'] as String,
         );
 
 Map<String, dynamic> _$AdminPostOrdersOrderSwapsSwapFulfillmentsReqToJson(
         AdminPostOrdersOrderSwapsSwapFulfillmentsReq instance) =>
     <String, dynamic>{
       'metadata': instance.metadata,
-      'noNotification': instance.noNotification,
-      'locationId': instance.locationId,
+      'no_notification': instance.noNotification,
+      'location_id': instance.locationId,
     };

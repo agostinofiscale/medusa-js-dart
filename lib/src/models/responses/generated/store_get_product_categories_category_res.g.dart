@@ -10,11 +10,11 @@ StoreGetProductCategoriesCategoryRes
     _$StoreGetProductCategoriesCategoryResFromJson(Map<String, dynamic> json) =>
         StoreGetProductCategoriesCategoryRes(
           productCategory: ProductCategory.fromJson(
-              json['productCategory'] as Map<String, dynamic>,),
+              json['product_category'] as Map<String, dynamic>),
         );
 
 Map<String, dynamic> _$StoreGetProductCategoriesCategoryResToJson(
-        StoreGetProductCategoriesCategoryRes instance,) =>
+        StoreGetProductCategoriesCategoryRes instance) =>
     <String, dynamic>{
-      'productCategory': instance.productCategory,
+      'product_category': instance.productCategory.toJson(),
     };

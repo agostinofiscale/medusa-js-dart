@@ -13,5 +13,5 @@ StoreCartsRes _$StoreCartsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StoreCartsResToJson(StoreCartsRes instance) =>
     <String, dynamic>{
-      'cart': instance.cart,
+      'cart': instance.cart.toJson(),
     };

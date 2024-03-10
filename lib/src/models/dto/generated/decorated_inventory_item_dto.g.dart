@@ -11,9 +11,9 @@ DecoratedInventoryItemDTO _$DecoratedInventoryItemDTOFromJson(
     DecoratedInventoryItemDTO(
       id: json['id'] as String?,
       sku: json['sku'] as String,
-      hsCode: json['hsCode'] as String?,
-      originCountry: json['originCountry'] as String?,
-      midCode: json['midCode'] as String?,
+      hsCode: json['hs_code'] as String?,
+      originCountry: json['origin_country'] as String?,
+      midCode: json['mid_code'] as String?,
       title: json['title'] as String?,
       description: json['description'] as String?,
       thumbnail: json['thumbnail'] as String?,
@@ -22,19 +22,19 @@ DecoratedInventoryItemDTO _$DecoratedInventoryItemDTOFromJson(
       height: (json['height'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       length: (json['length'] as num?)?.toDouble(),
-      requiresShipping: json['requiresShipping'] as bool?,
+      requiresShipping: json['requires_shipping'] as bool?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-      deletedAt: json['deletedAt'] as String?,
-      locationLevels: (json['locationLevels'] as List<dynamic>)
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
+      deletedAt: json['deleted_at'] as String?,
+      locationLevels: (json['location_levels'] as List<dynamic>)
           .map((e) => LocationLevel.fromJson(e as Map<String, dynamic>))
           .toList(),
       variants: (json['variants'] as List<dynamic>)
           .map((e) => ProductVariant.fromJson(e as Map<String, dynamic>))
           .toList(),
-      stockedQuantity: json['stockedQuantity'] as int,
-      reservedQuantity: json['reservedQuantity'] as int,
+      stockedQuantity: json['stocked_quantity'] as int,
+      reservedQuantity: json['reserved_quantity'] as int,
     );
 
 Map<String, dynamic> _$DecoratedInventoryItemDTOToJson(
@@ -42,9 +42,9 @@ Map<String, dynamic> _$DecoratedInventoryItemDTOToJson(
     <String, dynamic>{
       'id': instance.id,
       'sku': instance.sku,
-      'hsCode': instance.hsCode,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'hs_code': instance.hsCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'title': instance.title,
       'description': instance.description,
       'thumbnail': instance.thumbnail,
@@ -53,13 +53,14 @@ Map<String, dynamic> _$DecoratedInventoryItemDTOToJson(
       'height': instance.height,
       'width': instance.width,
       'length': instance.length,
-      'requiresShipping': instance.requiresShipping,
+      'requires_shipping': instance.requiresShipping,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
-      'locationLevels': instance.locationLevels,
-      'variants': instance.variants,
-      'stockedQuantity': instance.stockedQuantity,
-      'reservedQuantity': instance.reservedQuantity,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
+      'location_levels':
+          instance.locationLevels.map((e) => e.toJson()).toList(),
+      'variants': instance.variants.map((e) => e.toJson()).toList(),
+      'stocked_quantity': instance.stockedQuantity,
+      'reserved_quantity': instance.reservedQuantity,
     };

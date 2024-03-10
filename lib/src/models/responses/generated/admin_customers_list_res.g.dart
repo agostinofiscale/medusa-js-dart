@@ -20,7 +20,7 @@ AdminCustomersListRes _$AdminCustomersListResFromJson(
 Map<String, dynamic> _$AdminCustomersListResToJson(
         AdminCustomersListRes instance) =>
     <String, dynamic>{
-      'customers': instance.customers,
+      'customers': instance.customers.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

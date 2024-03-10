@@ -10,11 +10,11 @@ StorePostCustomersCustomerOrderClaimReq
     _$StorePostCustomersCustomerOrderClaimReqFromJson(
             Map<String, dynamic> json) =>
         StorePostCustomersCustomerOrderClaimReq(
-          (json['orderIds'] as List<dynamic>).map((e) => e as String).toList(),
+          (json['order_ids'] as List<dynamic>).map((e) => e as String).toList(),
         );
 
 Map<String, dynamic> _$StorePostCustomersCustomerOrderClaimReqToJson(
         StorePostCustomersCustomerOrderClaimReq instance) =>
     <String, dynamic>{
-      'orderIds': instance.orderIds,
+      'order_ids': instance.orderIds,
     };

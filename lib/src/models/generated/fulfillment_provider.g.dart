@@ -9,12 +9,12 @@ part of '../fulfillment_provider.dart';
 FulfillmentProvider _$FulfillmentProviderFromJson(Map<String, dynamic> json) =>
     FulfillmentProvider(
       id: json['id'] as String,
-      isInstalled: json['isInstalled'] as bool,
+      isInstalled: json['is_installed'] as bool,
     );
 
 Map<String, dynamic> _$FulfillmentProviderToJson(
         FulfillmentProvider instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'isInstalled': instance.isInstalled,
+      'is_installed': instance.isInstalled,
     };

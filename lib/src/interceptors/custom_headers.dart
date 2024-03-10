@@ -1,16 +1,14 @@
 import 'package:dio/dio.dart';
 
+/// Custom headers interceptor
+///
+/// This interceptor is used to add custom headers to the request
 class CustomHeadersInterceptor extends Interceptor {
   CustomHeadersInterceptor();
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    final Map<String, String>? customHeaders =
-        options.extra['customHeaders'] as Map<String, String>?;
-
-    if (customHeaders != null) {
-      options.headers.addAll(customHeaders);
-    }
+    options.headers.addAll(options.extra);
 
     super.onRequest(options, handler);
   }

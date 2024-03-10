@@ -2,7 +2,7 @@ import 'package:medusa_js_dart/src/models/enums/authentication_type.dart';
 
 /// The configuration for the API client
 class Configuration {
-  Configuration({
+  const Configuration({
     required this.baseUrl,
     required this.maxRetries,
     this.authenticationType,
@@ -12,6 +12,7 @@ class Configuration {
     this.cookieToken,
     this.publishableApiKey,
     this.customHeaders,
+    this.debug = false,
   });
 
   /// The base URL for the API
@@ -41,6 +42,9 @@ class Configuration {
   /// Custom headers to use for requests
   final Map<String, String>? customHeaders;
 
+  /// Whether to enable debug mode, which logs requests and responses
+  final bool debug;
+
   Configuration copyWith({
     String? baseUrl,
     int? maxRetries,
@@ -51,6 +55,7 @@ class Configuration {
     String? cookieToken,
     String? publishableApiKey,
     Map<String, String>? customHeaders,
+    bool debug = false,
   }) {
     return Configuration(
       baseUrl: baseUrl ?? this.baseUrl,
@@ -62,6 +67,7 @@ class Configuration {
       cookieToken: cookieToken ?? this.cookieToken,
       publishableApiKey: publishableApiKey ?? this.publishableApiKey,
       customHeaders: customHeaders ?? this.customHeaders,
+      debug: debug,
     );
   }
 }

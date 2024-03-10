@@ -17,5 +17,5 @@ Map<String, dynamic> _$AdminPostInvitesInviteAcceptReqToJson(
         AdminPostInvitesInviteAcceptReq instance) =>
     <String, dynamic>{
       'token': instance.token,
-      'user': instance.user,
+      'user': instance.user.toJson(),
     };

@@ -9,13 +9,13 @@ part of '../admin_post_order_edits_req.dart';
 AdminPostOrderEditsReq _$AdminPostOrderEditsReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostOrderEditsReq(
-      orderId: json['orderId'] as String,
-      internalNote: json['internalNote'] as String,
+      orderId: json['order_id'] as String,
+      internalNote: json['internal_note'] as String,
     );
 
 Map<String, dynamic> _$AdminPostOrderEditsReqToJson(
         AdminPostOrderEditsReq instance) =>
     <String, dynamic>{
-      'orderId': instance.orderId,
-      'internalNote': instance.internalNote,
+      'order_id': instance.orderId,
+      'internal_note': instance.internalNote,
     };

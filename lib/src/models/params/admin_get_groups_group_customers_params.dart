@@ -15,4 +15,8 @@ class AdminGetGroupsGroupCustomersParams {
   int? offset;
   String? expand;
   String? q;
+
+  factory AdminGetGroupsGroupCustomersParams.fromJson(Map<String, dynamic> json) => _$AdminGetGroupsGroupCustomersParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminGetGroupsGroupCustomersParamsToJson(this);
 }

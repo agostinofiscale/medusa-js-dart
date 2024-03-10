@@ -9,17 +9,17 @@ part of '../claim_tag.dart';
 ClaimTag _$ClaimTagFromJson(Map<String, dynamic> json) => ClaimTag(
       id: json['id'] as String,
       value: json['value'] as String,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ClaimTagToJson(ClaimTag instance) => <String, dynamic>{
       'id': instance.id,
       'value': instance.value,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

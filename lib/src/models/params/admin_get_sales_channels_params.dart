@@ -7,34 +7,35 @@ part 'generated/admin_get_sales_channels_params.g.dart';
 @JsonSerializable()
 class AdminGetSalesChannelsParams {
   AdminGetSalesChannelsParams({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.q,
-    required this.order,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.deletedAt,
-    required this.offset,
-    required this.limit,
-    required this.expand,
-    required this.fields,
+    this.id,
+    this.name,
+    this.description,
+    this.q,
+    this.order,
+    this.createdAt,
+    this.updatedAt,
+    this.deletedAt,
+    this.offset,
+    this.limit,
+    this.expand,
+    this.fields,
   });
+
   factory AdminGetSalesChannelsParams.fromJson(Map<String, dynamic> json) =>
       _$AdminGetSalesChannelsParamsFromJson(json);
 
   Map<String, dynamic> toJson() => _$AdminGetSalesChannelsParamsToJson(this);
 
-  String id;
-  String name;
-  String description;
-  String q;
-  String order;
-  DateFilter createdAt;
-  DateFilter updatedAt;
-  DateFilter deletedAt;
-  int offset;
-  int limit;
-  String expand;
-  String fields;
+  final String? id;
+  final String? name;
+  final String? description;
+  final String? q;
+  final String? order;
+  final DateFilter? createdAt;
+  final DateFilter? updatedAt;
+  final DateFilter? deletedAt;
+  final int? offset;
+  final int? limit;
+  final String? expand;
+  final String? fields;
 }

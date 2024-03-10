@@ -20,7 +20,7 @@ class PricedProduct extends BaseProduct {
     super.subtitle,
     super.description,
     super.handle,
-    required super.isGiftCard,
+    super.isGiftcard = false,
     required super.status,
     super.images,
     super.thumbnail,

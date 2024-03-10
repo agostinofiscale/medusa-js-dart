@@ -15,5 +15,5 @@ AdminReturnsCancelRes _$AdminReturnsCancelResFromJson(
 Map<String, dynamic> _$AdminReturnsCancelResToJson(
         AdminReturnsCancelRes instance) =>
     <String, dynamic>{
-      'order': instance.order,
+      'order': instance.order.toJson(),
     };

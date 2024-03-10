@@ -15,7 +15,7 @@ ModulesResponse _$ModulesResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ModulesResponseToJson(ModulesResponse instance) =>
     <String, dynamic>{
-      'modules': instance.modules,
+      'modules': instance.modules.map((e) => e.toJson()).toList(),
     };
 
 Module _$ModuleFromJson(Map<String, dynamic> json) => Module(

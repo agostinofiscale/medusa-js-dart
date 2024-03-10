@@ -13,12 +13,14 @@ StoreGetCollectionsParams _$StoreGetCollectionsParamsFromJson(
       limit: json['limit'] as int?,
       handle:
           (json['handle'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : CreatedAtParams.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : CreatedAtParams.fromJson(
+              json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : UpdatedAtParams.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : UpdatedAtParams.fromJson(
+              json['updated_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreGetCollectionsParamsToJson(
@@ -27,8 +29,8 @@ Map<String, dynamic> _$StoreGetCollectionsParamsToJson(
       'offset': instance.offset,
       'limit': instance.limit,
       'handle': instance.handle,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
     };
 
 CreatedAtParams _$CreatedAtParamsFromJson(Map<String, dynamic> json) =>

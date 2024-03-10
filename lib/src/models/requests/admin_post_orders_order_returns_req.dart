@@ -23,4 +23,8 @@ class AdminPostOrdersOrderReturnsReq {
   bool noNotification;
   double refund;
   String locationId;
+
+  factory AdminPostOrdersOrderReturnsReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderReturnsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderReturnsReqToJson(this);
 }

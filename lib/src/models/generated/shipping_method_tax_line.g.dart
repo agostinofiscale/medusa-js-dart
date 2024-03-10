@@ -13,13 +13,13 @@ ShippingMethodTaxLine _$ShippingMethodTaxLineFromJson(
       code: json['code'] as String?,
       name: json['name'] as String,
       rate: (json['rate'] as num).toDouble(),
-      shippingMethodId: json['shippingMethodId'] as String,
-      shippingMethod: json['shippingMethod'] == null
+      shippingMethodId: json['shipping_method_id'] as String,
+      shippingMethod: json['shipping_method'] == null
           ? null
           : ShippingMethod.fromJson(
-              json['shippingMethod'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+              json['shipping_method'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -30,9 +30,9 @@ Map<String, dynamic> _$ShippingMethodTaxLineToJson(
       'code': instance.code,
       'name': instance.name,
       'rate': instance.rate,
-      'shippingMethodId': instance.shippingMethodId,
-      'shippingMethod': instance.shippingMethod,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'shipping_method_id': instance.shippingMethodId,
+      'shipping_method': instance.shippingMethod?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

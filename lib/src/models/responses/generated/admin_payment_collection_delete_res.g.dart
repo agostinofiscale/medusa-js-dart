@@ -7,7 +7,7 @@ part of '../admin_payment_collection_delete_res.dart';
 // **************************************************************************
 
 AdminPaymentCollectionDeleteRes _$AdminPaymentCollectionDeleteResFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPaymentCollectionDeleteRes(
       id: json['id'] as String,
       object: json['object'] as String,
@@ -15,7 +15,7 @@ AdminPaymentCollectionDeleteRes _$AdminPaymentCollectionDeleteResFromJson(
     );
 
 Map<String, dynamic> _$AdminPaymentCollectionDeleteResToJson(
-        AdminPaymentCollectionDeleteRes instance,) =>
+        AdminPaymentCollectionDeleteRes instance) =>
     <String, dynamic>{
       'id': instance.id,
       'object': instance.object,

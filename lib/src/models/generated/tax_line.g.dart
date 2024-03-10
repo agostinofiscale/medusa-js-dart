@@ -11,8 +11,8 @@ TaxLine _$TaxLineFromJson(Map<String, dynamic> json) => TaxLine(
       code: json['code'] as String?,
       name: json['name'] as String,
       rate: (json['rate'] as num).toDouble(),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -21,7 +21,7 @@ Map<String, dynamic> _$TaxLineToJson(TaxLine instance) => <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
       'rate': instance.rate,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

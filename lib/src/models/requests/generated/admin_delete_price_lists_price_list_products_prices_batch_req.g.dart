@@ -10,7 +10,7 @@ AdminDeletePriceListsPriceListProductsPricesBatchReq
     _$AdminDeletePriceListsPriceListProductsPricesBatchReqFromJson(
             Map<String, dynamic> json) =>
         AdminDeletePriceListsPriceListProductsPricesBatchReq(
-          productIds: (json['productIds'] as List<dynamic>?)
+          productIds: (json['product_ids'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
         );
@@ -19,5 +19,5 @@ Map<String, dynamic>
     _$AdminDeletePriceListsPriceListProductsPricesBatchReqToJson(
             AdminDeletePriceListsPriceListProductsPricesBatchReq instance) =>
         <String, dynamic>{
-          'productIds': instance.productIds,
+          'product_ids': instance.productIds,
         };

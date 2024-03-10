@@ -13,5 +13,5 @@ AdminRegionsRes _$AdminRegionsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminRegionsResToJson(AdminRegionsRes instance) =>
     <String, dynamic>{
-      'region': instance.region,
+      'region': instance.region.toJson(),
     };

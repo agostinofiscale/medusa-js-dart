@@ -8,20 +8,20 @@ part of '../admin_post_draft_orders_draft_order_line_items_req.dart';
 
 AdminPostDraftOrdersDraftOrderLineItemsReq
     _$AdminPostDraftOrdersDraftOrderLineItemsReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostDraftOrdersDraftOrderLineItemsReq(
-          variantId: json['variantId'] as String?,
-          unitPrice: (json['unitPrice'] as num?)?.toDouble(),
+          variantId: json['variant_id'] as String?,
+          unitPrice: (json['unit_price'] as num?)?.toDouble(),
           title: json['title'] as String?,
           quantity: json['quantity'] as int,
           metadata: json['metadata'] as Map<String, dynamic>?,
         );
 
 Map<String, dynamic> _$AdminPostDraftOrdersDraftOrderLineItemsReqToJson(
-        AdminPostDraftOrdersDraftOrderLineItemsReq instance,) =>
+        AdminPostDraftOrdersDraftOrderLineItemsReq instance) =>
     <String, dynamic>{
-      'variantId': instance.variantId,
-      'unitPrice': instance.unitPrice,
+      'variant_id': instance.variantId,
+      'unit_price': instance.unitPrice,
       'title': instance.title,
       'quantity': instance.quantity,
       'metadata': instance.metadata,

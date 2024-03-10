@@ -8,9 +8,9 @@ part of '../store_post_cart_req.dart';
 
 StorePostCartReq _$StorePostCartReqFromJson(Map<String, dynamic> json) =>
     StorePostCartReq(
-      regionId: json['regionId'] as String?,
-      salesChannelId: json['salesChannelId'] as String?,
-      countryCode: json['countryCode'] as String?,
+      regionId: json['region_id'] as String?,
+      salesChannelId: json['sales_channel_id'] as String?,
+      countryCode: json['country_code'] as String?,
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => CartItem.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -19,19 +19,19 @@ StorePostCartReq _$StorePostCartReqFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StorePostCartReqToJson(StorePostCartReq instance) =>
     <String, dynamic>{
-      'regionId': instance.regionId,
-      'salesChannelId': instance.salesChannelId,
-      'countryCode': instance.countryCode,
-      'items': instance.items,
+      'region_id': instance.regionId,
+      'sales_channel_id': instance.salesChannelId,
+      'country_code': instance.countryCode,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
       'context': instance.context,
     };
 
 CartItem _$CartItemFromJson(Map<String, dynamic> json) => CartItem(
-      variantId: json['variantId'] as String,
+      variantId: json['variant_id'] as String,
       quantity: json['quantity'] as int,
     );
 
 Map<String, dynamic> _$CartItemToJson(CartItem instance) => <String, dynamic>{
-      'variantId': instance.variantId,
+      'variant_id': instance.variantId,
       'quantity': instance.quantity,
     };

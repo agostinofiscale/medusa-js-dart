@@ -11,7 +11,7 @@ AdminPostDiscountsDiscountDynamicCodesReq
             Map<String, dynamic> json) =>
         AdminPostDiscountsDiscountDynamicCodesReq(
           code: json['code'] as String,
-          usageLimit: json['usageLimit'] as int?,
+          usageLimit: json['usage_limit'] as int?,
           metadata: json['metadata'] as Map<String, dynamic>?,
         );
 
@@ -19,6 +19,6 @@ Map<String, dynamic> _$AdminPostDiscountsDiscountDynamicCodesReqToJson(
         AdminPostDiscountsDiscountDynamicCodesReq instance) =>
     <String, dynamic>{
       'code': instance.code,
-      'usageLimit': instance.usageLimit,
+      'usage_limit': instance.usageLimit,
       'metadata': instance.metadata,
     };

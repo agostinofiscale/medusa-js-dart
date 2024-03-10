@@ -18,4 +18,8 @@ class AdminPostDiscountsDiscountDynamicCodesReq {
 
   /// An optional set of key-value pairs to hold additional information.
   final Map<String, dynamic>? metadata;
+
+  factory AdminPostDiscountsDiscountDynamicCodesReq.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountDynamicCodesReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostDiscountsDiscountDynamicCodesReqToJson(this);
 }

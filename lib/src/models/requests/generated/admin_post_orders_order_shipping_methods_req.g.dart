@@ -11,7 +11,7 @@ AdminPostOrdersOrderShippingMethodsReq
             Map<String, dynamic> json) =>
         AdminPostOrdersOrderShippingMethodsReq(
           price: (json['price'] as num).toDouble(),
-          optionId: json['optionId'] as String,
+          optionId: json['option_id'] as String,
           data: json['data'] as Map<String, dynamic>,
         );
 
@@ -19,6 +19,6 @@ Map<String, dynamic> _$AdminPostOrdersOrderShippingMethodsReqToJson(
         AdminPostOrdersOrderShippingMethodsReq instance) =>
     <String, dynamic>{
       'price': instance.price,
-      'optionId': instance.optionId,
+      'option_id': instance.optionId,
       'data': instance.data,
     };

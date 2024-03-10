@@ -10,11 +10,11 @@ AdminDiscountConditionsRes _$AdminDiscountConditionsResFromJson(
         Map<String, dynamic> json) =>
     AdminDiscountConditionsRes(
       DiscountCondition.fromJson(
-          json['discountCondition'] as Map<String, dynamic>),
+          json['discount_condition'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminDiscountConditionsResToJson(
         AdminDiscountConditionsRes instance) =>
     <String, dynamic>{
-      'discountCondition': instance.discountCondition,
+      'discount_condition': instance.discountCondition.toJson(),
     };

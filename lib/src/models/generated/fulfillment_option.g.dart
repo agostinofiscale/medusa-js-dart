@@ -8,7 +8,7 @@ part of '../fulfillment_option.dart';
 
 FulfillmentOption _$FulfillmentOptionFromJson(Map<String, dynamic> json) =>
     FulfillmentOption(
-      providerId: json['providerId'] as String,
+      providerId: json['provider_id'] as String,
       options: (json['options'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -16,6 +16,6 @@ FulfillmentOption _$FulfillmentOptionFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FulfillmentOptionToJson(FulfillmentOption instance) =>
     <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
       'options': instance.options,
     };

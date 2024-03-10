@@ -10,7 +10,7 @@ AdminGetInventoryItemsItemLocationLevelsParams
     _$AdminGetInventoryItemsItemLocationLevelsParamsFromJson(
             Map<String, dynamic> json) =>
         AdminGetInventoryItemsItemLocationLevelsParams(
-          locationId: (json['locationId'] as List<dynamic>?)
+          locationId: (json['location_id'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
           expand: json['expand'] as String?,
@@ -20,7 +20,7 @@ AdminGetInventoryItemsItemLocationLevelsParams
 Map<String, dynamic> _$AdminGetInventoryItemsItemLocationLevelsParamsToJson(
         AdminGetInventoryItemsItemLocationLevelsParams instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
+      'location_id': instance.locationId,
       'expand': instance.expand,
       'fields': instance.fields,
     };

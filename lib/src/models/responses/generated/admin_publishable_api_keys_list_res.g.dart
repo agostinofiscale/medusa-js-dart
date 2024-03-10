@@ -7,9 +7,9 @@ part of '../admin_publishable_api_keys_list_res.dart';
 // **************************************************************************
 
 AdminPublishableApiKeysListRes _$AdminPublishableApiKeysListResFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPublishableApiKeysListRes(
-      publishableApiKeys: (json['publishableApiKeys'] as List<dynamic>)
+      publishableApiKeys: (json['publishable_api_keys'] as List<dynamic>)
           .map((e) => PublishableApiKey.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -18,9 +18,10 @@ AdminPublishableApiKeysListRes _$AdminPublishableApiKeysListResFromJson(
     );
 
 Map<String, dynamic> _$AdminPublishableApiKeysListResToJson(
-        AdminPublishableApiKeysListRes instance,) =>
+        AdminPublishableApiKeysListRes instance) =>
     <String, dynamic>{
-      'publishableApiKeys': instance.publishableApiKeys,
+      'publishable_api_keys':
+          instance.publishableApiKeys.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

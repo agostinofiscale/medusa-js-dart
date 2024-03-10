@@ -16,5 +16,5 @@ AdminNotificationsRes _$AdminNotificationsResFromJson(
 Map<String, dynamic> _$AdminNotificationsResToJson(
         AdminNotificationsRes instance) =>
     <String, dynamic>{
-      'notification': instance.notification,
+      'notification': instance.notification.toJson(),
     };

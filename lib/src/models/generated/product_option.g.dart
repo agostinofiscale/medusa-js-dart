@@ -13,13 +13,13 @@ ProductOption _$ProductOptionFromJson(Map<String, dynamic> json) =>
       values: (json['values'] as List<dynamic>?)
           ?.map((e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productId: json['productId'] as String,
+      productId: json['product_id'] as String,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -27,11 +27,11 @@ Map<String, dynamic> _$ProductOptionToJson(ProductOption instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
-      'values': instance.values,
-      'productId': instance.productId,
-      'product': instance.product,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'values': instance.values?.map((e) => e.toJson()).toList(),
+      'product_id': instance.productId,
+      'product': instance.product?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
     };

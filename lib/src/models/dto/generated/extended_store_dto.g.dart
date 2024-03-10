@@ -10,33 +10,33 @@ ExtendedStoreDTO _$ExtendedStoreDTOFromJson(Map<String, dynamic> json) =>
     ExtendedStoreDTO(
       id: json['id'] as String,
       name: json['name'] as String,
-      defaultCurrencyCode: json['defaultCurrencyCode'] as String,
-      defaultCurrency: json['defaultCurrency'] == null
+      defaultCurrencyCode: json['default_currency_code'] as String,
+      defaultCurrency: json['default_currency'] == null
           ? null
-          : Currency.fromJson(json['defaultCurrency'] as Map<String, dynamic>),
+          : Currency.fromJson(json['default_currency'] as Map<String, dynamic>),
       currencies: (json['currencies'] as List<dynamic>?)
           ?.map((e) => Currency.fromJson(e as Map<String, dynamic>))
           .toList(),
-      swapLinkTemplate: json['swapLinkTemplate'] as String?,
-      paymentLinkTemplate: json['paymentLinkTemplate'] as String?,
-      inviteLinkTemplate: json['inviteLinkTemplate'] as String?,
-      defaultLocationId: json['defaultLocationId'] as String?,
-      defaultSalesChannelId: json['defaultSalesChannelId'] as String?,
-      defaultSalesChannel: json['defaultSalesChannel'] == null
+      swapLinkTemplate: json['swap_link_template'] as String?,
+      paymentLinkTemplate: json['payment_link_template'] as String?,
+      inviteLinkTemplate: json['invite_link_template'] as String?,
+      defaultLocationId: json['default_location_id'] as String?,
+      defaultSalesChannelId: json['default_sales_channel_id'] as String?,
+      defaultSalesChannel: json['default_sales_channel'] == null
           ? null
           : SalesChannel.fromJson(
-              json['defaultSalesChannel'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+              json['default_sales_channel'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      paymentProviders: (json['paymentProviders'] as List<dynamic>)
+      paymentProviders: (json['payment_providers'] as List<dynamic>)
           .map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
           .toList(),
-      fulfillmentProviders: (json['fulfillmentProviders'] as List<dynamic>)
+      fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>)
           .map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
           .toList(),
       featureFlags: FeatureFlagsResponse.fromJson(
-          json['featureFlags'] as Map<String, dynamic>),
+          json['feature_flags'] as Map<String, dynamic>),
       modules:
           ModulesResponse.fromJson(json['modules'] as Map<String, dynamic>),
     );
@@ -45,20 +45,22 @@ Map<String, dynamic> _$ExtendedStoreDTOToJson(ExtendedStoreDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'defaultCurrencyCode': instance.defaultCurrencyCode,
-      'defaultCurrency': instance.defaultCurrency,
-      'currencies': instance.currencies,
-      'swapLinkTemplate': instance.swapLinkTemplate,
-      'paymentLinkTemplate': instance.paymentLinkTemplate,
-      'inviteLinkTemplate': instance.inviteLinkTemplate,
-      'defaultLocationId': instance.defaultLocationId,
-      'defaultSalesChannelId': instance.defaultSalesChannelId,
-      'defaultSalesChannel': instance.defaultSalesChannel,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'default_currency_code': instance.defaultCurrencyCode,
+      'default_currency': instance.defaultCurrency?.toJson(),
+      'currencies': instance.currencies?.map((e) => e.toJson()).toList(),
+      'swap_link_template': instance.swapLinkTemplate,
+      'payment_link_template': instance.paymentLinkTemplate,
+      'invite_link_template': instance.inviteLinkTemplate,
+      'default_location_id': instance.defaultLocationId,
+      'default_sales_channel_id': instance.defaultSalesChannelId,
+      'default_sales_channel': instance.defaultSalesChannel?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
-      'paymentProviders': instance.paymentProviders,
-      'fulfillmentProviders': instance.fulfillmentProviders,
-      'featureFlags': instance.featureFlags,
-      'modules': instance.modules,
+      'payment_providers':
+          instance.paymentProviders.map((e) => e.toJson()).toList(),
+      'fulfillment_providers':
+          instance.fulfillmentProviders.map((e) => e.toJson()).toList(),
+      'feature_flags': instance.featureFlags.toJson(),
+      'modules': instance.modules.toJson(),
     };

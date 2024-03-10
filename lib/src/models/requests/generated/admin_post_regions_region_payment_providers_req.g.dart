@@ -10,11 +10,11 @@ AdminPostRegionsRegionPaymentProvidersReq
     _$AdminPostRegionsRegionPaymentProvidersReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostRegionsRegionPaymentProvidersReq(
-          providerId: json['providerId'] as String,
+          providerId: json['provider_id'] as String,
         );
 
 Map<String, dynamic> _$AdminPostRegionsRegionPaymentProvidersReqToJson(
         AdminPostRegionsRegionPaymentProvidersReq instance) =>
     <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
     };

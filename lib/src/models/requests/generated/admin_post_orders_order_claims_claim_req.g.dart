@@ -9,21 +9,22 @@ part of '../admin_post_orders_order_claims_claim_req.dart';
 AdminPostOrdersOrderClaimsClaimReq _$AdminPostOrdersOrderClaimsClaimReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostOrdersOrderClaimsClaimReq(
-      claimItems: (json['claimItems'] as List<dynamic>)
+      claimItems: (json['claim_items'] as List<dynamic>)
           .map((e) => ClaimItem.fromJson(e as Map<String, dynamic>))
           .toList(),
-      shippingMethods: (json['shippingMethods'] as List<dynamic>)
+      shippingMethods: (json['shipping_methods'] as List<dynamic>)
           .map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
           .toList(),
-      noNotification: json['noNotification'] as bool,
+      noNotification: json['no_notification'] as bool,
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsClaimReqToJson(
         AdminPostOrdersOrderClaimsClaimReq instance) =>
     <String, dynamic>{
-      'claimItems': instance.claimItems,
-      'shippingMethods': instance.shippingMethods,
-      'noNotification': instance.noNotification,
+      'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
+      'shipping_methods':
+          instance.shippingMethods.map((e) => e.toJson()).toList(),
+      'no_notification': instance.noNotification,
       'metadata': instance.metadata,
     };

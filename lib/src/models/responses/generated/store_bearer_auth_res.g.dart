@@ -8,10 +8,10 @@ part of '../store_bearer_auth_res.dart';
 
 StoreBearerAuthRes _$StoreBearerAuthResFromJson(Map<String, dynamic> json) =>
     StoreBearerAuthRes(
-      accessToken: json['accessToken'] as String?,
+      accessToken: json['access_token'] as String?,
     );
 
 Map<String, dynamic> _$StoreBearerAuthResToJson(StoreBearerAuthRes instance) =>
     <String, dynamic>{
-      'accessToken': instance.accessToken,
+      'access_token': instance.accessToken,
     };

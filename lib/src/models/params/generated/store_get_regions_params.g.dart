@@ -11,12 +11,12 @@ StoreGetRegionsParams _$StoreGetRegionsParamsFromJson(
     StoreGetRegionsParams(
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreGetRegionsParamsToJson(
@@ -24,6 +24,6 @@ Map<String, dynamic> _$StoreGetRegionsParamsToJson(
     <String, dynamic>{
       'offset': instance.offset,
       'limit': instance.limit,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
     };

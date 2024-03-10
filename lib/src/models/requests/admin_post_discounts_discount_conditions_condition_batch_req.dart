@@ -9,4 +9,8 @@ class AdminPostDiscountsDiscountConditionsConditionBatchReq {
   });
 
   final List<String> resources;
+
+  factory AdminPostDiscountsDiscountConditionsConditionBatchReq.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountConditionsConditionBatchReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostDiscountsDiscountConditionsConditionBatchReqToJson(this);
 }

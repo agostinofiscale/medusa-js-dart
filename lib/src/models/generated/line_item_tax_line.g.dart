@@ -12,12 +12,12 @@ LineItemTaxLine _$LineItemTaxLineFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String?,
       name: json['name'] as String,
       rate: (json['rate'] as num).toDouble(),
-      itemId: json['itemId'] as String,
+      itemId: json['item_id'] as String,
       item: json['item'] == null
           ? null
           : LineItem.fromJson(json['item'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -27,9 +27,9 @@ Map<String, dynamic> _$LineItemTaxLineToJson(LineItemTaxLine instance) =>
       'code': instance.code,
       'name': instance.name,
       'rate': instance.rate,
-      'itemId': instance.itemId,
-      'item': instance.item,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'item_id': instance.itemId,
+      'item': instance.item?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

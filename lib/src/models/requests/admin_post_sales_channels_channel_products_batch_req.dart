@@ -9,4 +9,8 @@ class AdminPostSalesChannelsChannelProductsBatchReq {
   });
 
   List<String> productIds;
+
+  factory AdminPostSalesChannelsChannelProductsBatchReq.fromJson(Map<String, dynamic> json) => _$AdminPostSalesChannelsChannelProductsBatchReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostSalesChannelsChannelProductsBatchReqToJson(this);
 }

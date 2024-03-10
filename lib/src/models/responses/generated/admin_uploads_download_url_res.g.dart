@@ -9,11 +9,11 @@ part of '../admin_uploads_download_url_res.dart';
 AdminUploadsDownloadUrlRes _$AdminUploadsDownloadUrlResFromJson(
         Map<String, dynamic> json) =>
     AdminUploadsDownloadUrlRes(
-      downloadUrl: json['downloadUrl'] as String,
+      downloadUrl: json['download_url'] as String,
     );
 
 Map<String, dynamic> _$AdminUploadsDownloadUrlResToJson(
         AdminUploadsDownloadUrlRes instance) =>
     <String, dynamic>{
-      'downloadUrl': instance.downloadUrl,
+      'download_url': instance.downloadUrl,
     };

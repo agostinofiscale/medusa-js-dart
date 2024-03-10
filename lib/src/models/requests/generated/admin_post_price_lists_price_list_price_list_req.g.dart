@@ -12,17 +12,17 @@ AdminPostPriceListsPriceListPriceListReq
         AdminPostPriceListsPriceListPriceListReq(
           name: json['name'] as String?,
           description: json['description'] as String?,
-          startsAt: json['startsAt'] as String?,
-          endsAt: json['endsAt'] as String?,
+          startsAt: json['starts_at'] as String?,
+          endsAt: json['ends_at'] as String?,
           type: json['type'] as String?,
           status: json['status'] as String?,
           prices: (json['prices'] as List<dynamic>?)
               ?.map((e) => Price.fromJson(e as Map<String, dynamic>))
               .toList(),
-          customerGroups: (json['customerGroups'] as List<dynamic>?)
+          customerGroups: (json['customer_groups'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
-          includesTax: json['includesTax'] as bool?,
+          includesTax: json['includes_tax'] as bool?,
         );
 
 Map<String, dynamic> _$AdminPostPriceListsPriceListPriceListReqToJson(
@@ -30,11 +30,11 @@ Map<String, dynamic> _$AdminPostPriceListsPriceListPriceListReqToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
-      'startsAt': instance.startsAt,
-      'endsAt': instance.endsAt,
+      'starts_at': instance.startsAt,
+      'ends_at': instance.endsAt,
       'type': instance.type,
       'status': instance.status,
-      'prices': instance.prices,
-      'customerGroups': instance.customerGroups,
-      'includesTax': instance.includesTax,
+      'prices': instance.prices?.map((e) => e.toJson()).toList(),
+      'customer_groups': instance.customerGroups,
+      'includes_tax': instance.includesTax,
     };

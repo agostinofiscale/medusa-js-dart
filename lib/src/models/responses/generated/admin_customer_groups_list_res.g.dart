@@ -9,7 +9,7 @@ part of '../admin_customer_groups_list_res.dart';
 AdminCustomerGroupsListRes _$AdminCustomerGroupsListResFromJson(
         Map<String, dynamic> json) =>
     AdminCustomerGroupsListRes(
-      customerGroups: (json['customerGroups'] as List<dynamic>)
+      customerGroups: (json['customer_groups'] as List<dynamic>)
           .map((e) => CustomerGroup.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,8 @@ AdminCustomerGroupsListRes _$AdminCustomerGroupsListResFromJson(
 Map<String, dynamic> _$AdminCustomerGroupsListResToJson(
         AdminCustomerGroupsListRes instance) =>
     <String, dynamic>{
-      'customerGroups': instance.customerGroups,
+      'customer_groups':
+          instance.customerGroups.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

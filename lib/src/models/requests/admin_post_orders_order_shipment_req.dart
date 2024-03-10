@@ -13,4 +13,8 @@ class AdminPostOrdersOrderShipmentReq {
   String fulfillmentId;
   List<String> trackingNumbers;
   bool noNotification;
+
+  factory AdminPostOrdersOrderShipmentReq.fromJson(Map<String, dynamic> json) => _$AdminPostOrdersOrderShipmentReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostOrdersOrderShipmentReqToJson(this);
 }

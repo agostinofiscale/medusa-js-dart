@@ -9,11 +9,11 @@ part of '../admin_post_regions_region_countries_req.dart';
 AdminPostRegionsRegionCountriesReq _$AdminPostRegionsRegionCountriesReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostRegionsRegionCountriesReq(
-      countryCode: json['countryCode'] as String,
+      countryCode: json['country_code'] as String,
     );
 
 Map<String, dynamic> _$AdminPostRegionsRegionCountriesReqToJson(
         AdminPostRegionsRegionCountriesReq instance) =>
     <String, dynamic>{
-      'countryCode': instance.countryCode,
+      'country_code': instance.countryCode,
     };

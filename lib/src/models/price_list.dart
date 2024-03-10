@@ -12,8 +12,8 @@ class PriceList {
     required this.description,
     required this.type,
     required this.status,
-    required this.startsAt,
-    required this.endsAt,
+    this.startsAt,
+    this.endsAt,
     this.customerGroups = const [],
     this.prices = const [],
     this.includesTax = false,
@@ -31,8 +31,8 @@ class PriceList {
   String description;
   String type;
   String status;
-  String startsAt;
-  String endsAt;
+  String? startsAt;
+  String? endsAt;
   List<CustomerGroup> customerGroups;
   List<MoneyAmount> prices;
   bool includesTax;

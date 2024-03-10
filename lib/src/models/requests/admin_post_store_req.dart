@@ -11,7 +11,7 @@ class AdminPostStoreReq {
     required this.inviteLinkTemplate,
     required this.defaultCurrencyCode,
     required this.currencies,
-    required this.metadata,
+    this.metadata,
   });
   factory AdminPostStoreReq.fromJson(Map<String, dynamic> json) =>
       _$AdminPostStoreReqFromJson(json);
@@ -24,5 +24,5 @@ class AdminPostStoreReq {
   final String inviteLinkTemplate;
   final String defaultCurrencyCode;
   final List<String> currencies;
-  final Map<String, dynamic> metadata;
+  final Map<String, dynamic>? metadata;
 }

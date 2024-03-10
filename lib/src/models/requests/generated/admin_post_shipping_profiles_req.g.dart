@@ -11,7 +11,7 @@ AdminPostShippingProfilesReq _$AdminPostShippingProfilesReqFromJson(
     AdminPostShippingProfilesReq(
       name: json['name'] as String,
       type: json['type'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminPostShippingProfilesReqToJson(

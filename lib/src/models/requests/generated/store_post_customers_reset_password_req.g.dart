@@ -7,7 +7,7 @@ part of '../store_post_customers_reset_password_req.dart';
 // **************************************************************************
 
 StorePostCustomersResetPasswordReq _$StorePostCustomersResetPasswordReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     StorePostCustomersResetPasswordReq(
       email: json['email'] as String,
       password: json['password'] as String,
@@ -15,7 +15,7 @@ StorePostCustomersResetPasswordReq _$StorePostCustomersResetPasswordReqFromJson(
     );
 
 Map<String, dynamic> _$StorePostCustomersResetPasswordReqToJson(
-        StorePostCustomersResetPasswordReq instance,) =>
+        StorePostCustomersResetPasswordReq instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,

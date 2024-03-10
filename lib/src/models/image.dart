@@ -10,8 +10,8 @@ class Image {
     required this.url,
     required this.createdAt,
     required this.updatedAt,
-    required this.deletedAt,
-    required this.metadata,
+    this.deletedAt,
+    this.metadata,
   });
   factory Image.fromJson(Map<String, dynamic> json) => _$ImageFromJson(json);
 
@@ -30,8 +30,8 @@ class Image {
   String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  String deletedAt;
+  String? deletedAt;
 
   /// An optional key-value map with additional details
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

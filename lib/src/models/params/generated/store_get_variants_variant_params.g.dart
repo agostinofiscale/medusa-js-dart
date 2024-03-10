@@ -9,17 +9,17 @@ part of '../store_get_variants_variant_params.dart';
 StoreGetVariantsVariantParams _$StoreGetVariantsVariantParamsFromJson(
         Map<String, dynamic> json) =>
     StoreGetVariantsVariantParams(
-      salesChannelId: json['salesChannelId'] as String?,
-      cartId: json['cartId'] as String?,
-      regionId: json['regionId'] as String?,
-      currencyCode: json['currencyCode'] as String?,
+      salesChannelId: json['sales_channel_id'] as String?,
+      cartId: json['cart_id'] as String?,
+      regionId: json['region_id'] as String?,
+      currencyCode: json['currency_code'] as String?,
     );
 
 Map<String, dynamic> _$StoreGetVariantsVariantParamsToJson(
         StoreGetVariantsVariantParams instance) =>
     <String, dynamic>{
-      'salesChannelId': instance.salesChannelId,
-      'cartId': instance.cartId,
-      'regionId': instance.regionId,
-      'currencyCode': instance.currencyCode,
+      'sales_channel_id': instance.salesChannelId,
+      'cart_id': instance.cartId,
+      'region_id': instance.regionId,
+      'currency_code': instance.currencyCode,
     };

@@ -23,13 +23,14 @@ class _TaxRatesResource implements TaxRatesResource {
     AdminGetTaxRatesParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.addAll(customHeaders ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminTaxRatesListRes>(Options(
       method: 'GET',
@@ -57,7 +58,8 @@ class _TaxRatesResource implements TaxRatesResource {
     AdminPostTaxRatesParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -91,12 +93,13 @@ class _TaxRatesResource implements TaxRatesResource {
     AdminGetTaxRatesTaxRateParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<AdminTaxRatesRes>(Options(
       method: 'GET',
@@ -125,7 +128,8 @@ class _TaxRatesResource implements TaxRatesResource {
     AdminPostTaxRatesTaxRateParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -158,11 +162,12 @@ class _TaxRatesResource implements TaxRatesResource {
     String taxRateId,
     Map<String, String>? customHeaders,
   ) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminTaxRatesDeleteRes>(Options(
       method: 'DELETE',

@@ -8,10 +8,10 @@ part of '../store_order_edits_res.dart';
 
 StoreOrderEditsRes _$StoreOrderEditsResFromJson(Map<String, dynamic> json) =>
     StoreOrderEditsRes(
-      orderEdit: OrderEdit.fromJson(json['orderEdit'] as Map<String, dynamic>),
+      orderEdit: OrderEdit.fromJson(json['order_edit'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreOrderEditsResToJson(StoreOrderEditsRes instance) =>
     <String, dynamic>{
-      'orderEdit': instance.orderEdit,
+      'order_edit': instance.orderEdit.toJson(),
     };

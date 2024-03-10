@@ -16,5 +16,5 @@ AdminReservationsRes _$AdminReservationsResFromJson(
 Map<String, dynamic> _$AdminReservationsResToJson(
         AdminReservationsRes instance) =>
     <String, dynamic>{
-      'reservation': instance.reservation,
+      'reservation': instance.reservation.toJson(),
     };

@@ -10,7 +10,7 @@ AdminDraftOrdersListRes _$AdminDraftOrdersListResFromJson(
         Map<String, dynamic> json) =>
     AdminDraftOrdersListRes(
       draftOrders:
-          DraftOrder.fromJson(json['draftOrders'] as Map<String, dynamic>),
+          DraftOrder.fromJson(json['draft_orders'] as Map<String, dynamic>),
       count: json['count'] as int,
       offset: json['offset'] as int,
       limit: json['limit'] as int,
@@ -19,7 +19,7 @@ AdminDraftOrdersListRes _$AdminDraftOrdersListResFromJson(
 Map<String, dynamic> _$AdminDraftOrdersListResToJson(
         AdminDraftOrdersListRes instance) =>
     <String, dynamic>{
-      'draftOrders': instance.draftOrders,
+      'draft_orders': instance.draftOrders.toJson(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

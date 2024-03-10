@@ -11,4 +11,8 @@ class AdminPostDiscountsDiscountConditionsConditionBatchParams {
 
   String? expand;
   String? fields;
+
+  factory AdminPostDiscountsDiscountConditionsConditionBatchParams.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountConditionsConditionBatchParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostDiscountsDiscountConditionsConditionBatchParamsToJson(this);
 }

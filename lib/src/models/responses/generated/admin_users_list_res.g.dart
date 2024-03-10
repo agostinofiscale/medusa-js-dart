@@ -18,7 +18,7 @@ AdminUsersListRes _$AdminUsersListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminUsersListResToJson(AdminUsersListRes instance) =>
     <String, dynamic>{
-      'users': instance.users,
+      'users': instance.users.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

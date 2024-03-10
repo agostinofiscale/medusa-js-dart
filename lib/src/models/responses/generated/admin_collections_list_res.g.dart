@@ -20,7 +20,7 @@ AdminCollectionsListRes _$AdminCollectionsListResFromJson(
 Map<String, dynamic> _$AdminCollectionsListResToJson(
         AdminCollectionsListRes instance) =>
     <String, dynamic>{
-      'collections': instance.collections,
+      'collections': instance.collections.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

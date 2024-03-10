@@ -23,12 +23,13 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminGetCustomerGroupsParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminCustomerGroupsListRes>(Options(
       method: 'GET',
@@ -55,7 +56,8 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminPostCustomerGroupsReq request, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -88,12 +90,13 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminGetCustomerGroupsGroupParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminCustomerGroupsRes>(Options(
       method: 'GET',
@@ -121,7 +124,8 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminPostCustomerGroupsGroupReq body,
     Map<String, String>? customHeaders,
   ) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -153,11 +157,12 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     String customerGroupId,
     Map<String, String>? customHeaders,
   ) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminCustomerGroupsDeleteRes>(Options(
       method: 'DELETE',
@@ -185,7 +190,8 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminPostCustomerGroupsGroupCustomersBatchReq body, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -218,7 +224,8 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminDeleteCustomerGroupsGroupCustomerBatchReq body, {
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -251,12 +258,13 @@ class _CustomerGroupsResource implements CustomerGroupsResource {
     AdminGetCustomersParams? query,
     Map<String, String>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AdminCustomersListRes>(Options(
       method: 'GET',

@@ -10,7 +10,7 @@ AdminGetNotesParams _$AdminGetNotesParamsFromJson(Map<String, dynamic> json) =>
     AdminGetNotesParams(
       limit: json['limit'] as int,
       offset: json['offset'] as int,
-      resourceId: json['resourceId'] as String,
+      resourceId: json['resource_id'] as String,
     );
 
 Map<String, dynamic> _$AdminGetNotesParamsToJson(
@@ -18,5 +18,5 @@ Map<String, dynamic> _$AdminGetNotesParamsToJson(
     <String, dynamic>{
       'limit': instance.limit,
       'offset': instance.offset,
-      'resourceId': instance.resourceId,
+      'resource_id': instance.resourceId,
     };

@@ -20,7 +20,7 @@ AdminVariantsListRes _$AdminVariantsListResFromJson(
 Map<String, dynamic> _$AdminVariantsListResToJson(
         AdminVariantsListRes instance) =>
     <String, dynamic>{
-      'variants': instance.variants,
+      'variants': instance.variants.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

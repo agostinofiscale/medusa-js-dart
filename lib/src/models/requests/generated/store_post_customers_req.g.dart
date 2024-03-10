@@ -9,8 +9,8 @@ part of '../store_post_customers_req.dart';
 StorePostCustomersReq _$StorePostCustomersReqFromJson(
         Map<String, dynamic> json) =>
     StorePostCustomersReq(
-      firstName: json['firstName'] as String,
-      lastName: json['lastName'] as String,
+      firstName: json['first_name'] as String,
+      lastName: json['last_name'] as String,
       email: json['email'] as String,
       password: json['password'] as String,
       phone: json['phone'] as String,
@@ -19,8 +19,8 @@ StorePostCustomersReq _$StorePostCustomersReqFromJson(
 Map<String, dynamic> _$StorePostCustomersReqToJson(
         StorePostCustomersReq instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'email': instance.email,
       'password': instance.password,
       'phone': instance.phone,

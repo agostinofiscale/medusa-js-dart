@@ -12,7 +12,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       subtitle: json['subtitle'] as String?,
       description: json['description'] as String?,
       handle: json['handle'] as String?,
-      isGiftCard: json['isGiftCard'] as bool,
+      isGiftcard: json['is_giftcard'] as bool,
       status: json['status'] as String,
       images: (json['images'] as List<dynamic>?)
           ?.map((e) => Image.fromJson(e as Map<String, dynamic>))
@@ -27,7 +27,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       categories: (json['categories'] as List<dynamic>?)
           ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
           .toList(),
-      profileId: json['profileId'] as String,
+      profileId: json['profile_id'] as String,
       profile: json['profile'] == null
           ? null
           : ShippingProfile.fromJson(json['profile'] as Map<String, dynamic>),
@@ -38,16 +38,16 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       length: (json['length'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
-      hsCode: json['hsCode'] as String?,
-      originCountry: json['originCountry'] as String?,
-      midCode: json['midCode'] as String?,
+      hsCode: json['hs_code'] as String?,
+      originCountry: json['origin_country'] as String?,
+      midCode: json['mid_code'] as String?,
       material: json['material'] as String?,
-      collectionId: json['collectionId'] as String?,
+      collectionId: json['collection_id'] as String?,
       collection: json['collection'] == null
           ? null
           : ProductCollection.fromJson(
               json['collection'] as Map<String, dynamic>),
-      typeId: json['typeId'] as String?,
+      typeId: json['type_id'] as String?,
       type: json['type'] == null
           ? null
           : ProductType.fromJson(json['type'] as Map<String, dynamic>),
@@ -55,13 +55,13 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
           ?.map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
           .toList(),
       discountable: json['discountable'] as bool,
-      externalId: json['externalId'] as String?,
-      salesChannels: (json['salesChannels'] as List<dynamic>?)
+      externalId: json['external_id'] as String?,
+      salesChannels: (json['sales_channels'] as List<dynamic>?)
           ?.map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -71,34 +71,34 @@ Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
       'subtitle': instance.subtitle,
       'description': instance.description,
       'handle': instance.handle,
-      'isGiftCard': instance.isGiftCard,
+      'is_giftcard': instance.isGiftcard,
       'status': instance.status,
-      'images': instance.images,
+      'images': instance.images?.map((e) => e.toJson()).toList(),
       'thumbnail': instance.thumbnail,
-      'options': instance.options,
-      'categories': instance.categories,
-      'profileId': instance.profileId,
-      'profile': instance.profile,
-      'profiles': instance.profiles,
+      'options': instance.options?.map((e) => e.toJson()).toList(),
+      'categories': instance.categories?.map((e) => e.toJson()).toList(),
+      'profile_id': instance.profileId,
+      'profile': instance.profile?.toJson(),
+      'profiles': instance.profiles?.map((e) => e.toJson()).toList(),
       'weight': instance.weight,
       'length': instance.length,
       'height': instance.height,
       'width': instance.width,
-      'hsCode': instance.hsCode,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'hs_code': instance.hsCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
-      'collectionId': instance.collectionId,
-      'collection': instance.collection,
-      'typeId': instance.typeId,
-      'type': instance.type,
-      'tags': instance.tags,
+      'collection_id': instance.collectionId,
+      'collection': instance.collection?.toJson(),
+      'type_id': instance.typeId,
+      'type': instance.type?.toJson(),
+      'tags': instance.tags?.map((e) => e.toJson()).toList(),
       'discountable': instance.discountable,
-      'externalId': instance.externalId,
-      'salesChannels': instance.salesChannels,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'external_id': instance.externalId,
+      'sales_channels': instance.salesChannels?.map((e) => e.toJson()).toList(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
       'metadata': instance.metadata,
-      'variants': instance.variants,
+      'variants': instance.variants?.map((e) => e.toJson()).toList(),
     };

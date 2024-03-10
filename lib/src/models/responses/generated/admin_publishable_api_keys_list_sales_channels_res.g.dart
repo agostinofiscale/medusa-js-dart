@@ -8,15 +8,15 @@ part of '../admin_publishable_api_keys_list_sales_channels_res.dart';
 
 AdminPublishableApiKeysListSalesChannelsRes
     _$AdminPublishableApiKeysListSalesChannelsResFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPublishableApiKeysListSalesChannelsRes(
-          salesChannels: (json['salesChannels'] as List<dynamic>)
+          salesChannels: (json['sales_channels'] as List<dynamic>)
               .map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 
 Map<String, dynamic> _$AdminPublishableApiKeysListSalesChannelsResToJson(
-        AdminPublishableApiKeysListSalesChannelsRes instance,) =>
+        AdminPublishableApiKeysListSalesChannelsRes instance) =>
     <String, dynamic>{
-      'salesChannels': instance.salesChannels,
+      'sales_channels': instance.salesChannels.map((e) => e.toJson()).toList(),
     };

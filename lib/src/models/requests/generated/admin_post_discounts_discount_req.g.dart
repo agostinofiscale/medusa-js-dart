@@ -13,11 +13,11 @@ AdminPostDiscountsDiscountReq _$AdminPostDiscountsDiscountReqFromJson(
       rule: json['rule'] == null
           ? null
           : DiscountRule.fromJson(json['rule'] as Map<String, dynamic>),
-      isDisabled: json['isDisabled'] as bool?,
-      startsAt: json['startsAt'] as String?,
-      endsAt: json['endsAt'] as String?,
-      validDuration: json['validDuration'] as String?,
-      usageLimit: json['usageLimit'] as int?,
+      isDisabled: json['is_disabled'] as bool?,
+      startsAt: json['starts_at'] as String?,
+      endsAt: json['ends_at'] as String?,
+      validDuration: json['valid_duration'] as String?,
+      usageLimit: json['usage_limit'] as int?,
       regions:
           (json['regions'] as List<dynamic>?)?.map((e) => e as String).toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
@@ -27,12 +27,12 @@ Map<String, dynamic> _$AdminPostDiscountsDiscountReqToJson(
         AdminPostDiscountsDiscountReq instance) =>
     <String, dynamic>{
       'code': instance.code,
-      'rule': instance.rule,
-      'isDisabled': instance.isDisabled,
-      'startsAt': instance.startsAt,
-      'endsAt': instance.endsAt,
-      'validDuration': instance.validDuration,
-      'usageLimit': instance.usageLimit,
+      'rule': instance.rule?.toJson(),
+      'is_disabled': instance.isDisabled,
+      'starts_at': instance.startsAt,
+      'ends_at': instance.endsAt,
+      'valid_duration': instance.validDuration,
+      'usage_limit': instance.usageLimit,
       'regions': instance.regions,
       'metadata': instance.metadata,
     };

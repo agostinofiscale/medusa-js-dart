@@ -9,20 +9,20 @@ part of '../admin_get_users_params.dart';
 AdminGetUsersParams _$AdminGetUsersParamsFromJson(Map<String, dynamic> json) =>
     AdminGetUsersParams(
       email: json['email'] as String?,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
+      firstName: json['first_name'] as String?,
+      lastName: json['last_name'] as String?,
       q: json['q'] as String?,
       order: json['order'] as String?,
       id: json['id'] as String?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateFilter.fromJson(json['createdAt'] as Map<String, dynamic>),
-      updatedAt: json['updatedAt'] == null
+          : DateFilter.fromJson(json['created_at'] as Map<String, dynamic>),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateFilter.fromJson(json['updatedAt'] as Map<String, dynamic>),
-      deletedAt: json['deletedAt'] == null
+          : DateFilter.fromJson(json['updated_at'] as Map<String, dynamic>),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateFilter.fromJson(json['deletedAt'] as Map<String, dynamic>),
+          : DateFilter.fromJson(json['deleted_at'] as Map<String, dynamic>),
       offset: json['offset'] as int?,
       limit: json['limit'] as int?,
       fields: json['fields'] as String?,
@@ -32,14 +32,14 @@ Map<String, dynamic> _$AdminGetUsersParamsToJson(
         AdminGetUsersParams instance) =>
     <String, dynamic>{
       'email': instance.email,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'q': instance.q,
       'order': instance.order,
       'id': instance.id,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt?.toJson(),
+      'updated_at': instance.updatedAt?.toJson(),
+      'deleted_at': instance.deletedAt?.toJson(),
       'offset': instance.offset,
       'limit': instance.limit,
       'fields': instance.fields,

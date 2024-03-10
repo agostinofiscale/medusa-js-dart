@@ -9,21 +9,21 @@ part of '../publishable_api_key.dart';
 PublishableApiKey _$PublishableApiKeyFromJson(Map<String, dynamic> json) =>
     PublishableApiKey(
       id: json['id'] as String,
-      createdBy: json['createdBy'] as String?,
-      revokedBy: json['revokedBy'] as String?,
-      revokedAt: json['revokedAt'] as String?,
+      createdBy: json['created_by'] as String?,
+      revokedBy: json['revoked_by'] as String?,
+      revokedAt: json['revoked_at'] as String?,
       title: json['title'] as String,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
     );
 
 Map<String, dynamic> _$PublishableApiKeyToJson(PublishableApiKey instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createdBy': instance.createdBy,
-      'revokedBy': instance.revokedBy,
-      'revokedAt': instance.revokedAt,
+      'created_by': instance.createdBy,
+      'revoked_by': instance.revokedBy,
+      'revoked_at': instance.revokedAt,
       'title': instance.title,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
     };

@@ -26,13 +26,13 @@ Map<String, dynamic> _$DiscountRulePayloadToJson(
       'type': _$DicountRuleTypeEnumMap[instance.type]!,
       'value': instance.value,
       'allocation': _$DiscountRuleAllocationEnumMap[instance.allocation]!,
-      'conditions': instance.conditions,
+      'conditions': instance.conditions?.map((e) => e.toJson()).toList(),
     };
 
 const _$DicountRuleTypeEnumMap = {
   DicountRuleType.fixed: 'fixed',
   DicountRuleType.percentage: 'percentage',
-  DicountRuleType.freeShipping: 'freeShipping',
+  DicountRuleType.freeShipping: 'free_shipping',
 };
 
 const _$DiscountRuleAllocationEnumMap = {

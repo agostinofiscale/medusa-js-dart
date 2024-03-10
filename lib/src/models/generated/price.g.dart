@@ -8,20 +8,20 @@ part of '../price.dart';
 
 Price _$PriceFromJson(Map<String, dynamic> json) => Price(
       id: json['id'] as String?,
-      regionId: json['regionId'] as String?,
-      currencyCode: json['currencyCode'] as String?,
-      variantId: json['variantId'] as String?,
+      regionId: json['region_id'] as String?,
+      currencyCode: json['currency_code'] as String?,
+      variantId: json['variant_id'] as String?,
       amount: (json['amount'] as num?)?.toDouble(),
-      minQuantity: json['minQuantity'] as int?,
-      maxQuantity: json['maxQuantity'] as int?,
+      minQuantity: json['min_quantity'] as int?,
+      maxQuantity: json['max_quantity'] as int?,
     );
 
 Map<String, dynamic> _$PriceToJson(Price instance) => <String, dynamic>{
       'id': instance.id,
-      'regionId': instance.regionId,
-      'currencyCode': instance.currencyCode,
-      'variantId': instance.variantId,
+      'region_id': instance.regionId,
+      'currency_code': instance.currencyCode,
+      'variant_id': instance.variantId,
       'amount': instance.amount,
-      'minQuantity': instance.minQuantity,
-      'maxQuantity': instance.maxQuantity,
+      'min_quantity': instance.minQuantity,
+      'max_quantity': instance.maxQuantity,
     };

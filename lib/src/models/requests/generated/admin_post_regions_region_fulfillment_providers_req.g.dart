@@ -10,11 +10,11 @@ AdminPostRegionsRegionFulfillmentProvidersReq
     _$AdminPostRegionsRegionFulfillmentProvidersReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostRegionsRegionFulfillmentProvidersReq(
-          providerId: json['providerId'] as String,
+          providerId: json['provider_id'] as String,
         );
 
 Map<String, dynamic> _$AdminPostRegionsRegionFulfillmentProvidersReqToJson(
         AdminPostRegionsRegionFulfillmentProvidersReq instance) =>
     <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
     };

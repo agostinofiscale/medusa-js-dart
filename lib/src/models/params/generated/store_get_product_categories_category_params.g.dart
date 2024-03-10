@@ -8,14 +8,14 @@ part of '../store_get_product_categories_category_params.dart';
 
 StoreGetProductCategoriesCategoryParams
     _$StoreGetProductCategoriesCategoryParamsFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         StoreGetProductCategoriesCategoryParams(
           fields: json['fields'] as String,
           expand: json['expand'] as String,
         );
 
 Map<String, dynamic> _$StoreGetProductCategoriesCategoryParamsToJson(
-        StoreGetProductCategoriesCategoryParams instance,) =>
+        StoreGetProductCategoriesCategoryParams instance) =>
     <String, dynamic>{
       'fields': instance.fields,
       'expand': instance.expand,

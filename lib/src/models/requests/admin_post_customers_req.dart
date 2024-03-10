@@ -22,5 +22,5 @@ class AdminPostCustomersReq {
   String lastName;
   String password;
   String? phone;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

@@ -9,26 +9,26 @@ part of '../inventory_item.dart';
 InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
     InventoryItem(
       id: json['id'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+      createdAt: DateTime.parse(json['created_at'] as String),
+      updatedAt: DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       sku: json['sku'] as String?,
-      originCountry: json['originCountry'] as String?,
-      hsCode: json['hsCode'] as String?,
-      midCode: json['midCode'] as String?,
+      originCountry: json['origin_country'] as String?,
+      hsCode: json['hs_code'] as String?,
+      midCode: json['mid_code'] as String?,
       material: json['material'] as String?,
       weight: json['weight'] as int?,
       length: json['length'] as int?,
       height: json['height'] as int?,
       width: json['width'] as int?,
-      requiresShipping: json['requiresShipping'] as bool,
+      requiresShipping: json['requires_shipping'] as bool,
       description: json['description'] as String?,
       title: json['title'] as String?,
       thumbnail: json['thumbnail'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      inventoryLevels: (json['inventoryLevels'] as List<dynamic>)
+      inventoryLevels: (json['inventory_levels'] as List<dynamic>)
           .map((e) => InventoryLevel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -36,22 +36,23 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'sku': instance.sku,
-      'originCountry': instance.originCountry,
-      'hsCode': instance.hsCode,
-      'midCode': instance.midCode,
+      'origin_country': instance.originCountry,
+      'hs_code': instance.hsCode,
+      'mid_code': instance.midCode,
       'material': instance.material,
       'weight': instance.weight,
       'length': instance.length,
       'height': instance.height,
       'width': instance.width,
-      'requiresShipping': instance.requiresShipping,
+      'requires_shipping': instance.requiresShipping,
       'description': instance.description,
       'title': instance.title,
       'thumbnail': instance.thumbnail,
       'metadata': instance.metadata,
-      'inventoryLevels': instance.inventoryLevels,
+      'inventory_levels':
+          instance.inventoryLevels.map((e) => e.toJson()).toList(),
     };

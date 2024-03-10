@@ -9,39 +9,39 @@ part of '../store_post_carts_cart_req.dart';
 StorePostCartsCartReq _$StorePostCartsCartReqFromJson(
         Map<String, dynamic> json) =>
     StorePostCartsCartReq(
-      regionId: json['regionId'] as String?,
-      countryCode: json['countryCode'] as String?,
+      regionId: json['region_id'] as String?,
+      countryCode: json['country_code'] as String?,
       email: json['email'] as String?,
-      salesChannelId: json['salesChannelId'] as String?,
-      billingAddress: json['billingAddress'] == null
+      salesChannelId: json['sales_channel_id'] as String?,
+      billingAddress: json['billing_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['billingAddress'] as Map<String, dynamic>),
-      shippingAddress: json['shippingAddress'] == null
+              json['billing_address'] as Map<String, dynamic>),
+      shippingAddress: json['shipping_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>),
-      giftCards: (json['giftCards'] as List<dynamic>?)
+              json['shipping_address'] as Map<String, dynamic>),
+      giftCards: (json['gift_cards'] as List<dynamic>?)
           ?.map((e) => Map<String, String>.from(e as Map))
           .toList(),
       discounts: (json['discounts'] as List<dynamic>?)
           ?.map((e) => Map<String, String>.from(e as Map))
           .toList(),
-      customerId: json['customerId'] as String?,
+      customerId: json['customer_id'] as String?,
       context: json['context'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$StorePostCartsCartReqToJson(
         StorePostCartsCartReq instance) =>
     <String, dynamic>{
-      'regionId': instance.regionId,
-      'countryCode': instance.countryCode,
+      'region_id': instance.regionId,
+      'country_code': instance.countryCode,
       'email': instance.email,
-      'salesChannelId': instance.salesChannelId,
-      'billingAddress': instance.billingAddress,
-      'shippingAddress': instance.shippingAddress,
-      'giftCards': instance.giftCards,
+      'sales_channel_id': instance.salesChannelId,
+      'billing_address': instance.billingAddress?.toJson(),
+      'shipping_address': instance.shippingAddress?.toJson(),
+      'gift_cards': instance.giftCards,
       'discounts': instance.discounts,
-      'customerId': instance.customerId,
+      'customer_id': instance.customerId,
       'context': instance.context,
     };

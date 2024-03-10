@@ -10,8 +10,8 @@ AdminPostOrdersOrderClaimsClaimShipmentsReq
     _$AdminPostOrdersOrderClaimsClaimShipmentsReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostOrdersOrderClaimsClaimShipmentsReq(
-          fulfillmentId: json['fulfillmentId'] as String,
-          trackingNumbers: (json['trackingNumbers'] as List<dynamic>?)
+          fulfillmentId: json['fulfillment_id'] as String,
+          trackingNumbers: (json['tracking_numbers'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
         );
@@ -19,6 +19,6 @@ AdminPostOrdersOrderClaimsClaimShipmentsReq
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsClaimShipmentsReqToJson(
         AdminPostOrdersOrderClaimsClaimShipmentsReq instance) =>
     <String, dynamic>{
-      'fulfillmentId': instance.fulfillmentId,
-      'trackingNumbers': instance.trackingNumbers,
+      'fulfillment_id': instance.fulfillmentId,
+      'tracking_numbers': instance.trackingNumbers,
     };

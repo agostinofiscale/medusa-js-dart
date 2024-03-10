@@ -23,7 +23,7 @@ class AdminPostProductsProductVariantsReq {
     required this.originCountry,
     required this.midCode,
     required this.material,
-    required this.metadata,
+    this.metadata,
     required this.prices,
     required this.options,
   });
@@ -44,7 +44,11 @@ class AdminPostProductsProductVariantsReq {
   String originCountry;
   String midCode;
   String material;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   List<VariantPricePayload> prices;
   List<ProductOptionValue> options;
+
+  factory AdminPostProductsProductVariantsReq.fromJson(Map<String, dynamic> json) => _$AdminPostProductsProductVariantsReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostProductsProductVariantsReqToJson(this);
 }

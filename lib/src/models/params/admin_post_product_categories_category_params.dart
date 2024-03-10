@@ -12,4 +12,8 @@ class AdminPostProductCategoriesCategoryParams {
   String expand;
 
   String fields;
+
+  factory AdminPostProductCategoriesCategoryParams.fromJson(Map<String, dynamic> json) => _$AdminPostProductCategoriesCategoryParamsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminPostProductCategoriesCategoryParamsToJson(this);
 }

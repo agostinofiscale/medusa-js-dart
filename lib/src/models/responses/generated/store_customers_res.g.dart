@@ -13,5 +13,5 @@ StoreCustomersRes _$StoreCustomersResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$StoreCustomersResToJson(StoreCustomersRes instance) =>
     <String, dynamic>{
-      'customer': instance.customer,
+      'customer': instance.customer.toJson(),
     };

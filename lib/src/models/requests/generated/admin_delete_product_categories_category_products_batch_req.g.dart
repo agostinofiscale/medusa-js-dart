@@ -8,16 +8,16 @@ part of '../admin_delete_product_categories_category_products_batch_req.dart';
 
 AdminDeleteProductCategoriesCategoryProductsBatchReq
     _$AdminDeleteProductCategoriesCategoryProductsBatchReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminDeleteProductCategoriesCategoryProductsBatchReq(
-          productIds: (json['productIds'] as List<dynamic>)
+          productIds: (json['product_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
 
 Map<String, dynamic>
     _$AdminDeleteProductCategoriesCategoryProductsBatchReqToJson(
-            AdminDeleteProductCategoriesCategoryProductsBatchReq instance,) =>
+            AdminDeleteProductCategoriesCategoryProductsBatchReq instance) =>
         <String, dynamic>{
-          'productIds': instance.productIds,
+          'product_ids': instance.productIds,
         };

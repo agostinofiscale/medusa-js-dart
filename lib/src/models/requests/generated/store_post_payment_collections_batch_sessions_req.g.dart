@@ -18,17 +18,17 @@ StorePostPaymentCollectionsBatchSessionsReq
 Map<String, dynamic> _$StorePostPaymentCollectionsBatchSessionsReqToJson(
         StorePostPaymentCollectionsBatchSessionsReq instance) =>
     <String, dynamic>{
-      'sessions': instance.sessions,
+      'sessions': instance.sessions.map((e) => e.toJson()).toList(),
     };
 
 Session _$SessionFromJson(Map<String, dynamic> json) => Session(
-      providerId: json['providerId'] as String,
+      providerId: json['provider_id'] as String,
       amount: json['amount'] as int,
-      sessionId: json['sessionId'] as String,
+      sessionId: json['session_id'] as String,
     );
 
 Map<String, dynamic> _$SessionToJson(Session instance) => <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
       'amount': instance.amount,
-      'sessionId': instance.sessionId,
+      'session_id': instance.sessionId,
     };

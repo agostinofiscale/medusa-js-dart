@@ -7,35 +7,35 @@ part of '../admin_post_draft_orders_draft_order_req.dart';
 // **************************************************************************
 
 AdminPostDraftOrdersDraftOrderReq _$AdminPostDraftOrdersDraftOrderReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminPostDraftOrdersDraftOrderReq(
-      regionId: json['regionId'] as String?,
-      countryCode: json['countryCode'] as String?,
+      regionId: json['region_id'] as String?,
+      countryCode: json['country_code'] as String?,
       email: json['email'] as String?,
-      billingAddress: json['billingAddress'] == null
+      billingAddress: json['billing_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['billingAddress'] as Map<String, dynamic>,),
-      shippingAddress: json['shippingAddress'] == null
+              json['billing_address'] as Map<String, dynamic>),
+      shippingAddress: json['shipping_address'] == null
           ? null
           : AddressPayload.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>,),
+              json['shipping_address'] as Map<String, dynamic>),
       discounts: (json['discounts'] as List<dynamic>?)
           ?.map((e) => Map<String, String>.from(e as Map))
           .toList(),
-      noNotificationOrder: json['noNotificationOrder'] as bool?,
-      customerId: json['customerId'] as String?,
+      noNotificationOrder: json['no_notification_order'] as bool?,
+      customerId: json['customer_id'] as String?,
     );
 
 Map<String, dynamic> _$AdminPostDraftOrdersDraftOrderReqToJson(
-        AdminPostDraftOrdersDraftOrderReq instance,) =>
+        AdminPostDraftOrdersDraftOrderReq instance) =>
     <String, dynamic>{
-      'regionId': instance.regionId,
-      'countryCode': instance.countryCode,
+      'region_id': instance.regionId,
+      'country_code': instance.countryCode,
       'email': instance.email,
-      'billingAddress': instance.billingAddress,
-      'shippingAddress': instance.shippingAddress,
+      'billing_address': instance.billingAddress?.toJson(),
+      'shipping_address': instance.shippingAddress?.toJson(),
       'discounts': instance.discounts,
-      'noNotificationOrder': instance.noNotificationOrder,
-      'customerId': instance.customerId,
+      'no_notification_order': instance.noNotificationOrder,
+      'customer_id': instance.customerId,
     };

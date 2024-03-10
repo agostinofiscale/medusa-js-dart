@@ -18,7 +18,7 @@ AdminOrdersListRes _$AdminOrdersListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminOrdersListResToJson(AdminOrdersListRes instance) =>
     <String, dynamic>{
-      'orders': instance.orders,
+      'orders': instance.orders.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

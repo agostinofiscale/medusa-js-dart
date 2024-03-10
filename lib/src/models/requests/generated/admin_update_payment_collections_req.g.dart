@@ -7,14 +7,14 @@ part of '../admin_update_payment_collections_req.dart';
 // **************************************************************************
 
 AdminUpdatePaymentCollectionsReq _$AdminUpdatePaymentCollectionsReqFromJson(
-        Map<String, dynamic> json,) =>
+        Map<String, dynamic> json) =>
     AdminUpdatePaymentCollectionsReq(
       description: json['description'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$AdminUpdatePaymentCollectionsReqToJson(
-        AdminUpdatePaymentCollectionsReq instance,) =>
+        AdminUpdatePaymentCollectionsReq instance) =>
     <String, dynamic>{
       'description': instance.description,
       'metadata': instance.metadata,

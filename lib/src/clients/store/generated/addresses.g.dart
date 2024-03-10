@@ -23,11 +23,13 @@ class _AddressesResource implements AddressesResource {
     StorePostCustomersCustomerAddressesReq payload, {
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = payload;
+    final _data = <String, dynamic>{};
+    _data.addAll(payload.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreCustomersRes>(Options(
       method: 'POST',
@@ -44,7 +46,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }
@@ -54,7 +56,8 @@ class _AddressesResource implements AddressesResource {
     String id, {
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -75,7 +78,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }
@@ -86,11 +89,13 @@ class _AddressesResource implements AddressesResource {
     StorePostCustomersCustomerAddressesAddressReq payload, {
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = payload;
+    final _data = <String, dynamic>{};
+    _data.addAll(payload.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<StoreCustomersRes>(Options(
       method: 'POST',
@@ -107,7 +112,7 @@ class _AddressesResource implements AddressesResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreCustomersRes.fromJson(_result.data!);
     return value;
   }

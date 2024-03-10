@@ -9,11 +9,11 @@ part of '../admin_draft_orders_res.dart';
 AdminDraftOrdersRes _$AdminDraftOrdersResFromJson(Map<String, dynamic> json) =>
     AdminDraftOrdersRes(
       draftOrder:
-          DraftOrder.fromJson(json['draftOrder'] as Map<String, dynamic>),
+          DraftOrder.fromJson(json['draft_order'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminDraftOrdersResToJson(
         AdminDraftOrdersRes instance) =>
     <String, dynamic>{
-      'draftOrder': instance.draftOrder,
+      'draft_order': instance.draftOrder.toJson(),
     };

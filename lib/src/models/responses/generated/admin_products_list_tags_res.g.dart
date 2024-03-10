@@ -17,17 +17,17 @@ AdminProductsListTagsRes _$AdminProductsListTagsResFromJson(
 Map<String, dynamic> _$AdminProductsListTagsResToJson(
         AdminProductsListTagsRes instance) =>
     <String, dynamic>{
-      'tags': instance.tags,
+      'tags': instance.tags.map((e) => e.toJson()).toList(),
     };
 
 Tag _$TagFromJson(Map<String, dynamic> json) => Tag(
       id: json['id'] as String,
-      usageCount: json['usageCount'] as String,
+      usageCount: json['usage_count'] as String,
       value: json['value'] as String,
     );
 
 Map<String, dynamic> _$TagToJson(Tag instance) => <String, dynamic>{
       'id': instance.id,
-      'usageCount': instance.usageCount,
+      'usage_count': instance.usageCount,
       'value': instance.value,
     };

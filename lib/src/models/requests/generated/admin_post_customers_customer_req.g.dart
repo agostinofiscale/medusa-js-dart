@@ -10,8 +10,8 @@ AdminPostCustomersCustomerReq _$AdminPostCustomersCustomerReqFromJson(
         Map<String, dynamic> json) =>
     AdminPostCustomersCustomerReq(
       email: json['email'] as String?,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
+      firstName: json['first_name'] as String?,
+      lastName: json['last_name'] as String?,
       phone: json['phone'] as String?,
       password: json['password'] as String?,
       groups: (json['groups'] as List<dynamic>?)
@@ -24,10 +24,10 @@ Map<String, dynamic> _$AdminPostCustomersCustomerReqToJson(
         AdminPostCustomersCustomerReq instance) =>
     <String, dynamic>{
       'email': instance.email,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'phone': instance.phone,
       'password': instance.password,
-      'groups': instance.groups,
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
       'metadata': instance.metadata,
     };

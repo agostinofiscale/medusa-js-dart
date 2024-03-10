@@ -8,24 +8,24 @@ part of '../inventory_level_dto.dart';
 
 InventoryLevelDTO _$InventoryLevelDTOFromJson(Map<String, dynamic> json) =>
     InventoryLevelDTO(
-      locationId: json['locationId'] as String,
-      stockedQuantity: json['stockedQuantity'] as int,
-      reservedQuantity: json['reservedQuantity'] as int,
-      incomingQuantity: json['incomingQuantity'] as int,
+      locationId: json['location_id'] as String,
+      stockedQuantity: json['stocked_quantity'] as int,
+      reservedQuantity: json['reserved_quantity'] as int,
+      incomingQuantity: json['incoming_quantity'] as int,
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      deletedAt: json['deletedAt'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
     );
 
 Map<String, dynamic> _$InventoryLevelDTOToJson(InventoryLevelDTO instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
-      'stockedQuantity': instance.stockedQuantity,
-      'reservedQuantity': instance.reservedQuantity,
-      'incomingQuantity': instance.incomingQuantity,
+      'location_id': instance.locationId,
+      'stocked_quantity': instance.stockedQuantity,
+      'reserved_quantity': instance.reservedQuantity,
+      'incoming_quantity': instance.incomingQuantity,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'deletedAt': instance.deletedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
     };

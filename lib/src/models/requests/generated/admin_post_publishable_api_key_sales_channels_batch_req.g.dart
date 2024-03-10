@@ -8,15 +8,15 @@ part of '../admin_post_publishable_api_key_sales_channels_batch_req.dart';
 
 AdminPostPublishableApiKeySalesChannelsBatchReq
     _$AdminPostPublishableApiKeySalesChannelsBatchReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostPublishableApiKeySalesChannelsBatchReq(
-          salesChannelIds: (json['salesChannelIds'] as List<dynamic>)
+          salesChannelIds: (json['sales_channel_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
 
 Map<String, dynamic> _$AdminPostPublishableApiKeySalesChannelsBatchReqToJson(
-        AdminPostPublishableApiKeySalesChannelsBatchReq instance,) =>
+        AdminPostPublishableApiKeySalesChannelsBatchReq instance) =>
     <String, dynamic>{
-      'salesChannelIds': instance.salesChannelIds,
+      'sales_channel_ids': instance.salesChannelIds,
     };

@@ -23,7 +23,8 @@ class _ProductsResource implements ProductsResource {
     StoreGetProductsParams? query,
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
@@ -45,7 +46,7 @@ class _ProductsResource implements ProductsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreProductsListRes.fromJson(_result.data!);
     return value;
   }
@@ -55,7 +56,8 @@ class _ProductsResource implements ProductsResource {
     String id, {
     Map<String, dynamic>? customHeaders,
   }) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -76,7 +78,7 @@ class _ProductsResource implements ProductsResource {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ),),),);
+            ))));
     final value = StoreProductsRes.fromJson(_result.data!);
     return value;
   }

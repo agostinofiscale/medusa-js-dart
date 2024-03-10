@@ -10,11 +10,11 @@ AdminShippingOptionsRes _$AdminShippingOptionsResFromJson(
         Map<String, dynamic> json) =>
     AdminShippingOptionsRes(
       shippingOption: ShippingOption.fromJson(
-          json['shippingOption'] as Map<String, dynamic>),
+          json['shipping_option'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminShippingOptionsResToJson(
         AdminShippingOptionsRes instance) =>
     <String, dynamic>{
-      'shippingOption': instance.shippingOption,
+      'shipping_option': instance.shippingOption.toJson(),
     };

@@ -8,11 +8,11 @@ part of '../admin_post_inventory_items_inventory_item_req.dart';
 
 AdminPostInventoryItemsInventoryItemReq
     _$AdminPostInventoryItemsInventoryItemReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostInventoryItemsInventoryItemReq(
-          hsCode: json['hsCode'] as String?,
-          originCountry: json['originCountry'] as String?,
-          midCode: json['midCode'] as String?,
+          hsCode: json['hs_code'] as String?,
+          originCountry: json['origin_country'] as String?,
+          midCode: json['mid_code'] as String?,
           material: json['material'] as String?,
           weight: (json['weight'] as num?)?.toDouble(),
           height: (json['height'] as num?)?.toDouble(),
@@ -21,15 +21,15 @@ AdminPostInventoryItemsInventoryItemReq
           title: json['title'] as String?,
           description: json['description'] as String?,
           thumbnail: json['thumbnail'] as String?,
-          requiresShipping: json['requiresShipping'] as bool?,
+          requiresShipping: json['requires_shipping'] as bool?,
         );
 
 Map<String, dynamic> _$AdminPostInventoryItemsInventoryItemReqToJson(
-        AdminPostInventoryItemsInventoryItemReq instance,) =>
+        AdminPostInventoryItemsInventoryItemReq instance) =>
     <String, dynamic>{
-      'hsCode': instance.hsCode,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'hs_code': instance.hsCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
       'weight': instance.weight,
       'height': instance.height,
@@ -38,5 +38,5 @@ Map<String, dynamic> _$AdminPostInventoryItemsInventoryItemReqToJson(
       'title': instance.title,
       'description': instance.description,
       'thumbnail': instance.thumbnail,
-      'requiresShipping': instance.requiresShipping,
+      'requires_shipping': instance.requiresShipping,
     };

@@ -8,8 +8,8 @@ part of '../fulfillment_item.dart';
 
 FulfillmentItem _$FulfillmentItemFromJson(Map<String, dynamic> json) =>
     FulfillmentItem(
-      fulfillmentId: json['fulfillmentId'] as String,
-      itemId: json['itemId'] as String,
+      fulfillmentId: json['fulfillment_id'] as String,
+      itemId: json['item_id'] as String,
       fulfillment: json['fulfillment'] == null
           ? null
           : Fulfillment.fromJson(json['fulfillment'] as Map<String, dynamic>),
@@ -21,9 +21,9 @@ FulfillmentItem _$FulfillmentItemFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FulfillmentItemToJson(FulfillmentItem instance) =>
     <String, dynamic>{
-      'fulfillmentId': instance.fulfillmentId,
-      'itemId': instance.itemId,
-      'fulfillment': instance.fulfillment,
-      'item': instance.item,
+      'fulfillment_id': instance.fulfillmentId,
+      'item_id': instance.itemId,
+      'fulfillment': instance.fulfillment?.toJson(),
+      'item': instance.item?.toJson(),
       'quantity': instance.quantity,
     };

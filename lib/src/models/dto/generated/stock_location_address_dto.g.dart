@@ -13,17 +13,17 @@ StockLocationAddressDTO _$StockLocationAddressDTOFromJson(
       address1: json['address1'] as String,
       address2: json['address2'] as String?,
       company: json['company'] as String?,
-      countryCode: json['countryCode'] as String,
+      countryCode: json['country_code'] as String,
       city: json['city'] as String?,
       phone: json['phone'] as String?,
-      postalCode: json['postalCode'] as String?,
+      postalCode: json['postal_code'] as String?,
       province: json['province'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+      createdAt: DateTime.parse(json['created_at'] as String),
+      updatedAt: DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
     );
 
 Map<String, dynamic> _$StockLocationAddressDTOToJson(
@@ -33,13 +33,13 @@ Map<String, dynamic> _$StockLocationAddressDTOToJson(
       'address1': instance.address1,
       'address2': instance.address2,
       'company': instance.company,
-      'countryCode': instance.countryCode,
+      'country_code': instance.countryCode,
       'city': instance.city,
       'phone': instance.phone,
-      'postalCode': instance.postalCode,
+      'postal_code': instance.postalCode,
       'province': instance.province,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };

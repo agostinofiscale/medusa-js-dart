@@ -10,11 +10,11 @@ AdminPublishableApiKeysRes _$AdminPublishableApiKeysResFromJson(
         Map<String, dynamic> json) =>
     AdminPublishableApiKeysRes(
       publishableApiKey: PublishableApiKey.fromJson(
-          json['publishableApiKey'] as Map<String, dynamic>),
+          json['publishable_api_key'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminPublishableApiKeysResToJson(
         AdminPublishableApiKeysRes instance) =>
     <String, dynamic>{
-      'publishableApiKey': instance.publishableApiKey,
+      'publishable_api_key': instance.publishableApiKey.toJson(),
     };

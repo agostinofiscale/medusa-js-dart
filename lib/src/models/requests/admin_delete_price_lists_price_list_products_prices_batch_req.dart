@@ -9,4 +9,8 @@ class AdminDeletePriceListsPriceListProductsPricesBatchReq {
   });
 
   final List<String>? productIds;
+
+  factory AdminDeletePriceListsPriceListProductsPricesBatchReq.fromJson(Map<String, dynamic> json) => _$AdminDeletePriceListsPriceListProductsPricesBatchReqFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AdminDeletePriceListsPriceListProductsPricesBatchReqToJson(this);
 }

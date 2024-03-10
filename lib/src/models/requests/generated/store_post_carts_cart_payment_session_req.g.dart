@@ -9,11 +9,11 @@ part of '../store_post_carts_cart_payment_session_req.dart';
 StorePostCartsCartPaymentSessionReq
     _$StorePostCartsCartPaymentSessionReqFromJson(Map<String, dynamic> json) =>
         StorePostCartsCartPaymentSessionReq(
-          providerId: json['providerId'] as String,
+          providerId: json['provider_id'] as String,
         );
 
 Map<String, dynamic> _$StorePostCartsCartPaymentSessionReqToJson(
         StorePostCartsCartPaymentSessionReq instance) =>
     <String, dynamic>{
-      'providerId': instance.providerId,
+      'provider_id': instance.providerId,
     };

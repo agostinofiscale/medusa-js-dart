@@ -13,5 +13,5 @@ AdminNotesRes _$AdminNotesResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminNotesResToJson(AdminNotesRes instance) =>
     <String, dynamic>{
-      'note': instance.note,
+      'note': instance.note.toJson(),
     };

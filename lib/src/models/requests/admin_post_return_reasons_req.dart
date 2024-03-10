@@ -24,5 +24,5 @@ class AdminPostReturnReasonsReq {
 
   String description;
 
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
 }

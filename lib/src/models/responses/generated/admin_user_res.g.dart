@@ -12,5 +12,5 @@ AdminUserRes _$AdminUserResFromJson(Map<String, dynamic> json) => AdminUserRes(
 
 Map<String, dynamic> _$AdminUserResToJson(AdminUserRes instance) =>
     <String, dynamic>{
-      'user': instance.user,
+      'user': instance.user.toJson(),
     };

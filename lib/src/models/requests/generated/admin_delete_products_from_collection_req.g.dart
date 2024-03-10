@@ -9,13 +9,13 @@ part of '../admin_delete_products_from_collection_req.dart';
 AdminDeleteProductsFromCollectionReq
     _$AdminDeleteProductsFromCollectionReqFromJson(Map<String, dynamic> json) =>
         AdminDeleteProductsFromCollectionReq(
-          productIds: (json['productIds'] as List<dynamic>)
+          productIds: (json['product_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
 
 Map<String, dynamic> _$AdminDeleteProductsFromCollectionReqToJson(
-        AdminDeleteProductsFromCollectionReq instance,) =>
+        AdminDeleteProductsFromCollectionReq instance) =>
     <String, dynamic>{
-      'productIds': instance.productIds,
+      'product_ids': instance.productIds,
     };

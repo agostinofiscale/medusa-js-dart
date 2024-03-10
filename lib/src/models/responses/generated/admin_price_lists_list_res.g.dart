@@ -9,7 +9,7 @@ part of '../admin_price_lists_list_res.dart';
 AdminPriceListsListRes _$AdminPriceListsListResFromJson(
         Map<String, dynamic> json) =>
     AdminPriceListsListRes(
-      priceLists: (json['priceLists'] as List<dynamic>)
+      priceLists: (json['price_lists'] as List<dynamic>)
           .map((e) => PriceList.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: json['count'] as int,
@@ -20,7 +20,7 @@ AdminPriceListsListRes _$AdminPriceListsListResFromJson(
 Map<String, dynamic> _$AdminPriceListsListResToJson(
         AdminPriceListsListRes instance) =>
     <String, dynamic>{
-      'priceLists': instance.priceLists,
+      'price_lists': instance.priceLists.map((e) => e.toJson()).toList(),
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

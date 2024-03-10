@@ -10,11 +10,11 @@ AdminPaymentCollectionsRes _$AdminPaymentCollectionsResFromJson(
         Map<String, dynamic> json) =>
     AdminPaymentCollectionsRes(
       paymentCollection: PaymentCollection.fromJson(
-          json['paymentCollection'] as Map<String, dynamic>),
+          json['payment_collection'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminPaymentCollectionsResToJson(
         AdminPaymentCollectionsRes instance) =>
     <String, dynamic>{
-      'paymentCollection': instance.paymentCollection,
+      'payment_collection': instance.paymentCollection.toJson(),
     };

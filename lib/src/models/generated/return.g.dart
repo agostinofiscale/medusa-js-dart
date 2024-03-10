@@ -12,51 +12,51 @@ Return _$ReturnFromJson(Map<String, dynamic> json) => Return(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => ReturnItem.fromJson(e as Map<String, dynamic>))
           .toList(),
-      swapId: json['swapId'] as String?,
+      swapId: json['swap_id'] as String?,
       swap: json['swap'] == null
           ? null
           : Swap.fromJson(json['swap'] as Map<String, dynamic>),
-      claimOrderId: json['claimOrderId'] as String?,
-      claimOrder: json['claimOrder'] == null
+      claimOrderId: json['claim_order_id'] as String?,
+      claimOrder: json['claim_order'] == null
           ? null
-          : ClaimOrder.fromJson(json['claimOrder'] as Map<String, dynamic>),
-      orderId: json['orderId'] as String?,
+          : ClaimOrder.fromJson(json['claim_order'] as Map<String, dynamic>),
+      orderId: json['order_id'] as String?,
       order: json['order'] == null
           ? null
           : Order.fromJson(json['order'] as Map<String, dynamic>),
-      shippingMethod: json['shippingMethod'] == null
+      shippingMethod: json['shipping_method'] == null
           ? null
           : ShippingMethod.fromJson(
-              json['shippingMethod'] as Map<String, dynamic>),
-      shippingData: json['shippingData'] as Map<String, dynamic>?,
-      locationId: json['locationId'] as String?,
-      refundAmount: (json['refundAmount'] as num).toDouble(),
-      noNotification: json['noNotification'] as bool?,
-      idempotencyKey: json['idempotencyKey'] as String?,
-      receivedAt: json['receivedAt'] as String?,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+              json['shipping_method'] as Map<String, dynamic>),
+      shippingData: json['shipping_data'] as Map<String, dynamic>?,
+      locationId: json['location_id'] as String?,
+      refundAmount: (json['refund_amount'] as num).toDouble(),
+      noNotification: json['no_notification'] as bool?,
+      idempotencyKey: json['idempotency_key'] as String?,
+      receivedAt: json['received_at'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ReturnToJson(Return instance) => <String, dynamic>{
       'id': instance.id,
       'status': instance.status,
-      'items': instance.items,
-      'swapId': instance.swapId,
-      'swap': instance.swap,
-      'claimOrderId': instance.claimOrderId,
-      'claimOrder': instance.claimOrder,
-      'orderId': instance.orderId,
-      'order': instance.order,
-      'shippingMethod': instance.shippingMethod,
-      'shippingData': instance.shippingData,
-      'locationId': instance.locationId,
-      'refundAmount': instance.refundAmount,
-      'noNotification': instance.noNotification,
-      'idempotencyKey': instance.idempotencyKey,
-      'receivedAt': instance.receivedAt,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
+      'swap_id': instance.swapId,
+      'swap': instance.swap?.toJson(),
+      'claim_order_id': instance.claimOrderId,
+      'claim_order': instance.claimOrder?.toJson(),
+      'order_id': instance.orderId,
+      'order': instance.order?.toJson(),
+      'shipping_method': instance.shippingMethod?.toJson(),
+      'shipping_data': instance.shippingData,
+      'location_id': instance.locationId,
+      'refund_amount': instance.refundAmount,
+      'no_notification': instance.noNotification,
+      'idempotency_key': instance.idempotencyKey,
+      'received_at': instance.receivedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

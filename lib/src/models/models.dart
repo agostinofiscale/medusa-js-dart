@@ -94,3 +94,4 @@ export 'tax_rate.dart';
 export 'tracking_link.dart';
 export 'user.dart';
 export 'variant_inventory.dart';
+export 'medusa_exception.dart';

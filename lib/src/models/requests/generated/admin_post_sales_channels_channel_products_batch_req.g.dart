@@ -10,7 +10,7 @@ AdminPostSalesChannelsChannelProductsBatchReq
     _$AdminPostSalesChannelsChannelProductsBatchReqFromJson(
             Map<String, dynamic> json) =>
         AdminPostSalesChannelsChannelProductsBatchReq(
-          productIds: (json['productIds'] as List<dynamic>)
+          productIds: (json['product_ids'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
         );
@@ -18,5 +18,5 @@ AdminPostSalesChannelsChannelProductsBatchReq
 Map<String, dynamic> _$AdminPostSalesChannelsChannelProductsBatchReqToJson(
         AdminPostSalesChannelsChannelProductsBatchReq instance) =>
     <String, dynamic>{
-      'productIds': instance.productIds,
+      'product_ids': instance.productIds,
     };

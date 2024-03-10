@@ -10,11 +10,11 @@ AdminReturnReasonsRes _$AdminReturnReasonsResFromJson(
         Map<String, dynamic> json) =>
     AdminReturnReasonsRes(
       returnReason:
-          ReturnReason.fromJson(json['returnReason'] as Map<String, dynamic>),
+          ReturnReason.fromJson(json['return_reason'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminReturnReasonsResToJson(
         AdminReturnReasonsRes instance) =>
     <String, dynamic>{
-      'returnReason': instance.returnReason,
+      'return_reason': instance.returnReason.toJson(),
     };

@@ -9,28 +9,28 @@ part of '../discount_condition_product_tag.dart';
 DiscountConditionProductTag _$DiscountConditionProductTagFromJson(
         Map<String, dynamic> json) =>
     DiscountConditionProductTag(
-      productTagId: json['productTagId'] as String,
-      conditionId: json['conditionId'] as String,
-      productTag: json['productTag'] == null
+      productTagId: json['product_tag_id'] as String,
+      conditionId: json['condition_id'] as String,
+      productTag: json['product_tag'] == null
           ? null
-          : ProductTag.fromJson(json['productTag'] as Map<String, dynamic>),
-      discountCondition: json['discountCondition'] == null
+          : ProductTag.fromJson(json['product_tag'] as Map<String, dynamic>),
+      discountCondition: json['discount_condition'] == null
           ? null
           : DiscountCondition.fromJson(
-              json['discountCondition'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+              json['discount_condition'] as Map<String, dynamic>),
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$DiscountConditionProductTagToJson(
         DiscountConditionProductTag instance) =>
     <String, dynamic>{
-      'productTagId': instance.productTagId,
-      'conditionId': instance.conditionId,
-      'productTag': instance.productTag,
-      'discountCondition': instance.discountCondition,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'product_tag_id': instance.productTagId,
+      'condition_id': instance.conditionId,
+      'product_tag': instance.productTag?.toJson(),
+      'discount_condition': instance.discountCondition?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
     };

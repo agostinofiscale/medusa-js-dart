@@ -8,17 +8,17 @@ part of '../admin_post_inventory_items_item_location_levels_req.dart';
 
 AdminPostInventoryItemsItemLocationLevelsReq
     _$AdminPostInventoryItemsItemLocationLevelsReqFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostInventoryItemsItemLocationLevelsReq(
-          locationId: json['locationId'] as String,
-          stockedQuantity: json['stockedQuantity'] as int,
-          incomingQuantity: json['incomingQuantity'] as int,
+          locationId: json['location_id'] as String,
+          stockedQuantity: json['stocked_quantity'] as int,
+          incomingQuantity: json['incoming_quantity'] as int,
         );
 
 Map<String, dynamic> _$AdminPostInventoryItemsItemLocationLevelsReqToJson(
-        AdminPostInventoryItemsItemLocationLevelsReq instance,) =>
+        AdminPostInventoryItemsItemLocationLevelsReq instance) =>
     <String, dynamic>{
-      'locationId': instance.locationId,
-      'stockedQuantity': instance.stockedQuantity,
-      'incomingQuantity': instance.incomingQuantity,
+      'location_id': instance.locationId,
+      'stocked_quantity': instance.stockedQuantity,
+      'incoming_quantity': instance.incomingQuantity,
     };

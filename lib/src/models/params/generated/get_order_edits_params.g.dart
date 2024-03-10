@@ -8,8 +8,8 @@ part of '../get_order_edits_params.dart';
 
 GetOrderEditsParams _$GetOrderEditsParamsFromJson(Map<String, dynamic> json) =>
     GetOrderEditsParams(
-      searchTerm: json['searchTerm'] as String?,
-      orderID: json['orderID'] as String?,
+      searchTerm: json['search_term'] as String?,
+      orderID: json['order_i_d'] as String?,
       limit: json['limit'] as int?,
       offset: json['offset'] as int?,
       expand: json['expand'] as String?,
@@ -19,8 +19,8 @@ GetOrderEditsParams _$GetOrderEditsParamsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$GetOrderEditsParamsToJson(
         GetOrderEditsParams instance) =>
     <String, dynamic>{
-      'searchTerm': instance.searchTerm,
-      'orderID': instance.orderID,
+      'search_term': instance.searchTerm,
+      'order_i_d': instance.orderID,
       'limit': instance.limit,
       'offset': instance.offset,
       'expand': instance.expand,

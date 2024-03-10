@@ -8,10 +8,10 @@ part of '../store_gift_cards_res.dart';
 
 StoreGiftCardsRes _$StoreGiftCardsResFromJson(Map<String, dynamic> json) =>
     StoreGiftCardsRes(
-      giftCard: GiftCard.fromJson(json['giftCard'] as Map<String, dynamic>),
+      giftCard: GiftCard.fromJson(json['gift_card'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$StoreGiftCardsResToJson(StoreGiftCardsRes instance) =>
     <String, dynamic>{
-      'giftCard': instance.giftCard,
+      'gift_card': instance.giftCard.toJson(),
     };

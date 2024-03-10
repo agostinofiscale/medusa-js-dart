@@ -7,8 +7,10 @@ import 'package:medusa_js_dart/src/clients/store/store.dart';
 import 'package:medusa_js_dart/src/configuration.dart';
 import 'package:medusa_js_dart/src/interceptors/authentication.dart';
 import 'package:medusa_js_dart/src/interceptors/custom_headers.dart';
+import 'package:medusa_js_dart/src/interceptors/error.dart';
 import 'package:medusa_js_dart/src/models/enums/authentication_type.dart';
 import 'package:medusa_js_dart/src/models/enums/domain.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 /// The main class for the Medusa API client
 ///
@@ -35,6 +37,8 @@ class Medusa {
     store = Store(dio);
   }
 
+  /// Create a new Dio client with the given configuration
+  /// and add the necessary interceptors
   Dio _getClient(Configuration configuration) {
     final Dio dio = Dio(
       BaseOptions(
@@ -53,10 +57,9 @@ class Medusa {
       ),
     );
 
-    dio.interceptors.add(
-      CookieManager(cookieJar),
-    );
-
+    /// TODO: Should we pass the Medusa instance to the interceptors?
+    /// It is useful because we can access the configuration and the set*Token methods
+    /// and we don't need to recreate the clients we change the configuration.
     dio.interceptors.add(
       AuthenticationInterceptor(this),
     );
@@ -64,6 +67,20 @@ class Medusa {
     dio.interceptors.add(
       CustomHeadersInterceptor(),
     );
+
+    dio.interceptors.add(
+      ErrorInterceptor(),
+    );
+
+    if (configuration.debug) {
+      dio.interceptors.add(
+        PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseHeader: true,
+        ),
+      );
+    }
 
     return dio;
   }
@@ -74,8 +91,6 @@ class Medusa {
       authenticationType: AuthenticationType.apiKey,
       apiKey: apiKey,
     );
-
-    _createClients(configuration);
   }
 
   /// Set the JWT token for the client and create a new client
@@ -108,7 +123,7 @@ class Medusa {
   }
 
   /// Get the cookie token for the client
-  String? getCookieToken(Domain domain) {
+  String? getCookieToken() {
     return configuration.cookieToken;
   }
 }

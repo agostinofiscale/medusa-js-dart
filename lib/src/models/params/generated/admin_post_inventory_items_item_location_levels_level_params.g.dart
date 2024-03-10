@@ -8,7 +8,7 @@ part of '../admin_post_inventory_items_item_location_levels_level_params.dart';
 
 AdminPostInventoryItemsItemLocationLevelsLevelParams
     _$AdminPostInventoryItemsItemLocationLevelsLevelParamsFromJson(
-            Map<String, dynamic> json,) =>
+            Map<String, dynamic> json) =>
         AdminPostInventoryItemsItemLocationLevelsLevelParams(
           expand: json['expand'] as String?,
           fields: json['fields'] as String?,
@@ -16,7 +16,7 @@ AdminPostInventoryItemsItemLocationLevelsLevelParams
 
 Map<String, dynamic>
     _$AdminPostInventoryItemsItemLocationLevelsLevelParamsToJson(
-            AdminPostInventoryItemsItemLocationLevelsLevelParams instance,) =>
+            AdminPostInventoryItemsItemLocationLevelsLevelParams instance) =>
         <String, dynamic>{
           'expand': instance.expand,
           'fields': instance.fields,

@@ -7,16 +7,16 @@ part of '../return_item.dart';
 // **************************************************************************
 
 ReturnItem _$ReturnItemFromJson(Map<String, dynamic> json) => ReturnItem(
-      itemId: json['itemId'] as String,
+      itemId: json['item_id'] as String,
       quantity: json['quantity'] as int,
-      reasonId: json['reasonId'] as String?,
+      reasonId: json['reason_id'] as String?,
       note: json['note'] as String?,
     );
 
 Map<String, dynamic> _$ReturnItemToJson(ReturnItem instance) =>
     <String, dynamic>{
-      'itemId': instance.itemId,
+      'item_id': instance.itemId,
       'quantity': instance.quantity,
-      'reasonId': instance.reasonId,
+      'reason_id': instance.reasonId,
       'note': instance.note,
     };

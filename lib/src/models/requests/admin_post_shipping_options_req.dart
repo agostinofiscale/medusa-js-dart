@@ -15,7 +15,7 @@ class AdminPostShippingOptionsReq {
     required this.requirements,
     required this.isReturn,
     required this.adminOnly,
-    required this.metadata,
+    this.metadata,
     required this.includesTax,
   });
   factory AdminPostShippingOptionsReq.fromJson(Map<String, dynamic> json) =>
@@ -33,7 +33,7 @@ class AdminPostShippingOptionsReq {
   List<Requirements> requirements;
   bool isReturn;
   bool adminOnly;
-  Map<String, dynamic> metadata;
+  Map<String, dynamic>? metadata;
   bool includesTax;
 }
 

@@ -37,4 +37,8 @@ class DiscountConditionProductCollection {
 
   /// An optional key-value map with additional details
   final Map<String, dynamic>? metadata;
+
+  factory DiscountConditionProductCollection.fromJson(Map<String, dynamic> json) => _$DiscountConditionProductCollectionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DiscountConditionProductCollectionToJson(this);
 }

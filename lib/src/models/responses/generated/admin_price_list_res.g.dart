@@ -8,10 +8,10 @@ part of '../admin_price_list_res.dart';
 
 AdminPriceListRes _$AdminPriceListResFromJson(Map<String, dynamic> json) =>
     AdminPriceListRes(
-      priceList: PriceList.fromJson(json['priceList'] as Map<String, dynamic>),
+      priceList: PriceList.fromJson(json['price_list'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AdminPriceListResToJson(AdminPriceListRes instance) =>
     <String, dynamic>{
-      'priceList': instance.priceList,
+      'price_list': instance.priceList.toJson(),
     };

@@ -8,47 +8,47 @@ part of '../notification.dart';
 
 Notification _$NotificationFromJson(Map<String, dynamic> json) => Notification(
       id: json['id'] as String,
-      eventName: json['eventName'] as String?,
-      resourceType: json['resourceType'] as String,
-      resourceId: json['resourceId'] as String,
-      customerId: json['customerId'] as String?,
+      eventName: json['event_name'] as String?,
+      resourceType: json['resource_type'] as String,
+      resourceId: json['resource_id'] as String,
+      customerId: json['customer_id'] as String?,
       customer: json['customer'] == null
           ? null
           : Customer.fromJson(json['customer'] as Map<String, dynamic>),
       to: json['to'] as String,
       data: json['data'] as Map<String, dynamic>,
-      parentId: json['parentId'] as String?,
-      parentNotification: json['parentNotification'] == null
+      parentId: json['parent_id'] as String?,
+      parentNotification: json['parent_notification'] == null
           ? null
           : Notification.fromJson(
-              json['parentNotification'] as Map<String, dynamic>),
+              json['parent_notification'] as Map<String, dynamic>),
       resends: (json['resends'] as List<dynamic>?)
           ?.map((e) => Notification.fromJson(e as Map<String, dynamic>))
           .toList(),
-      providerId: json['providerId'] as String?,
+      providerId: json['provider_id'] as String?,
       provider: json['provider'] == null
           ? null
           : NotificationProvider.fromJson(
               json['provider'] as Map<String, dynamic>),
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
     );
 
 Map<String, dynamic> _$NotificationToJson(Notification instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'eventName': instance.eventName,
-      'resourceType': instance.resourceType,
-      'resourceId': instance.resourceId,
-      'customerId': instance.customerId,
-      'customer': instance.customer,
+      'event_name': instance.eventName,
+      'resource_type': instance.resourceType,
+      'resource_id': instance.resourceId,
+      'customer_id': instance.customerId,
+      'customer': instance.customer?.toJson(),
       'to': instance.to,
       'data': instance.data,
-      'parentId': instance.parentId,
-      'parentNotification': instance.parentNotification,
-      'resends': instance.resends,
-      'providerId': instance.providerId,
-      'provider': instance.provider,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'parent_id': instance.parentId,
+      'parent_notification': instance.parentNotification?.toJson(),
+      'resends': instance.resends?.map((e) => e.toJson()).toList(),
+      'provider_id': instance.providerId,
+      'provider': instance.provider?.toJson(),
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
     };

@@ -15,7 +15,7 @@ AdminUploadsRes _$AdminUploadsResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AdminUploadsResToJson(AdminUploadsRes instance) =>
     <String, dynamic>{
-      'uploads': instance.uploads,
+      'uploads': instance.uploads.map((e) => e.toJson()).toList(),
     };
 
 Upload _$UploadFromJson(Map<String, dynamic> json) => Upload(
