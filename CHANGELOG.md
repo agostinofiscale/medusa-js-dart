@@ -1,3 +1,7 @@
+# 0.0.5
+
+- Fix version in pubspec.yaml
+
 # 0.0.4
 
 - Remove cookie_jar and dio_cookie_manager as dependecies
