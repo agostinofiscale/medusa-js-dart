@@ -37,6 +37,8 @@ class Medusa {
     store = Store(dio);
   }
 
+  /// Create a new Dio client with the given configuration
+  /// and add the necessary interceptors
   Dio _getClient(Configuration configuration) {
     final Dio dio = Dio(
       BaseOptions(
@@ -55,10 +57,9 @@ class Medusa {
       ),
     );
 
-    dio.interceptors.add(
-      CookieManager(cookieJar),
-    );
-
+    /// TODO: Should we pass the Medusa instance to the interceptors?
+    /// It is useful because we can access the configuration and the set*Token methods
+    /// and we don't need to recreate the clients we change the configuration.
     dio.interceptors.add(
       AuthenticationInterceptor(this),
     );
@@ -90,8 +91,6 @@ class Medusa {
       authenticationType: AuthenticationType.apiKey,
       apiKey: apiKey,
     );
-
-    _createClients(configuration);
   }
 
   /// Set the JWT token for the client and create a new client
@@ -124,7 +123,7 @@ class Medusa {
   }
 
   /// Get the cookie token for the client
-  String? getCookieToken(Domain domain) {
+  String? getCookieToken() {
     return configuration.cookieToken;
   }
 }
