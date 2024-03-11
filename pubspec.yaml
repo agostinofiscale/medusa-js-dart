@@ -1,7 +1,7 @@
 name: medusa_js_dart
 
 description: A Dart client for interacting with the MedusaJS API.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/agostinofiscale/medusa-js-dart
 
 environment:

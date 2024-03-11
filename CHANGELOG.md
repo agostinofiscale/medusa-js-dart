@@ -1,3 +1,8 @@
+# 0.0.6
+
+- Improve serialization, now in the output null values will not be generate
+- Convert parameters to nullable in AdminPostProductsProductReq
+
 # 0.0.5
 
 - Fix version in pubspec.yaml
