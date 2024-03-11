@@ -31,18 +31,18 @@ abstract class ProductsResource {
     @Extras() Map<String, String>? customHeaders,
   });
 
-  @PUT('/admin/products/{id}')
+  @POST('/admin/products/{id}')
   Future<AdminProductsRes> update(
     @Path('id') String id,
-    @Body() AdminPostProductsProductReq body,
+    @Body() AdminPostProductsProductReq body, {
     @Extras() Map<String, String>? customHeaders,
-  );
+  });
 
   @DELETE('/admin/products/{id}')
   Future<AdminProductsDeleteRes> delete(
-    @Path('id') String id,
+    @Path('id') String id, {
     @Extras() Map<String, String>? customHeaders,
-  );
+  });
 
   // TODO: Add missing methods
 }

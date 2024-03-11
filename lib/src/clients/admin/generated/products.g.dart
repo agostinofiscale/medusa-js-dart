@@ -119,9 +119,9 @@ class _ProductsResource implements ProductsResource {
   @override
   Future<AdminProductsRes> update(
     String id,
-    AdminPostProductsProductReq body,
+    AdminPostProductsProductReq body, {
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
@@ -131,7 +131,7 @@ class _ProductsResource implements ProductsResource {
     _data.addAll(body.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
-      method: 'PUT',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -152,9 +152,9 @@ class _ProductsResource implements ProductsResource {
 
   @override
   Future<AdminProductsDeleteRes> delete(
-    String id,
+    String id, {
     Map<String, String>? customHeaders,
-  ) async {
+  }) async {
     final _extra = <String, dynamic>{};
     _extra.addAll(customHeaders ?? <String, dynamic>{});
     final queryParameters = <String, dynamic>{};
