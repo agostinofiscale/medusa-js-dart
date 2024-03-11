@@ -19,18 +19,28 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
-      'id': instance.id,
-      'role': _$UserRoleEnumMap[instance.role]!,
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'api_token': instance.apiToken,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$UserToJson(User instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'role': _$UserRoleEnumMap[instance.role]!,
+    'email': instance.email,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('api_token', instance.apiToken);
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}
 
 const _$UserRoleEnumMap = {
   UserRole.admin: 'admin',

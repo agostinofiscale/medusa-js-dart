@@ -17,11 +17,20 @@ AdminCreateUserRequest _$AdminCreateUserRequestFromJson(
     );
 
 Map<String, dynamic> _$AdminCreateUserRequestToJson(
-        AdminCreateUserRequest instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'role': instance.role,
-      'password': instance.password,
-    };
+    AdminCreateUserRequest instance) {
+  final val = <String, dynamic>{
+    'email': instance.email,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('role', instance.role);
+  val['password'] = instance.password;
+  return val;
+}

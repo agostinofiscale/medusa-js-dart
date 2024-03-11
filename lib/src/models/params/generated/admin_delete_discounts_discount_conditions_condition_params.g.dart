@@ -16,8 +16,16 @@ AdminDeleteDiscountsDiscountConditionsConditionParams
 
 Map<String, dynamic>
     _$AdminDeleteDiscountsDiscountConditionsConditionParamsToJson(
-            AdminDeleteDiscountsDiscountConditionsConditionParams instance) =>
-        <String, dynamic>{
-          'expand': instance.expand,
-          'fields': instance.fields,
-        };
+        AdminDeleteDiscountsDiscountConditionsConditionParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

@@ -14,8 +14,15 @@ AdminCollectionsRes _$AdminCollectionsResFromJson(Map<String, dynamic> json) =>
               json['collection'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AdminCollectionsResToJson(
-        AdminCollectionsRes instance) =>
-    <String, dynamic>{
-      'collection': instance.collection?.toJson(),
-    };
+Map<String, dynamic> _$AdminCollectionsResToJson(AdminCollectionsRes instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('collection', instance.collection?.toJson());
+  return val;
+}

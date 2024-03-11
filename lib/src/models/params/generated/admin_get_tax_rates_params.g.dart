@@ -22,14 +22,22 @@ AdminGetTaxRatesParams _$AdminGetTaxRatesParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetTaxRatesParamsToJson(
-        AdminGetTaxRatesParams instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'code': instance.code,
-      'rate': instance.rate,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'fields': instance.fields,
-      'expand': instance.expand,
-    };
+    AdminGetTaxRatesParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('code', instance.code);
+  writeNotNull('rate', instance.rate);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  return val;
+}

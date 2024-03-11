@@ -51,35 +51,46 @@ Swap _$SwapFromJson(Map<String, dynamic> json) => Swap(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$SwapToJson(Swap instance) => <String, dynamic>{
-      'id': instance.id,
-      'fulfillment_status':
-          _$FulfillmentStatusEnumMap[instance.fulfillmentStatus]!,
-      'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus]!,
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'additional_items':
-          instance.additionalItems?.map((e) => e.toJson()).toList(),
-      'return_order': instance.returnOrder?.toJson(),
-      'fulfillments': instance.fulfillments?.map((e) => e.toJson()).toList(),
-      'payment': instance.payment?.toJson(),
-      'difference_due': instance.differenceDue,
-      'shipping_address_id': instance.shippingAddressId,
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'shipping_methods':
-          instance.shippingMethods?.map((e) => e.toJson()).toList(),
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'confirmed_at': instance.confirmedAt,
-      'canceled_at': instance.canceledAt,
-      'no_notification': instance.noNotification,
-      'allow_backorder': instance.allowBackorder,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$SwapToJson(Swap instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'fulfillment_status':
+        _$FulfillmentStatusEnumMap[instance.fulfillmentStatus]!,
+    'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus]!,
+    'order_id': instance.orderId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('additional_items',
+      instance.additionalItems?.map((e) => e.toJson()).toList());
+  writeNotNull('return_order', instance.returnOrder?.toJson());
+  writeNotNull(
+      'fulfillments', instance.fulfillments?.map((e) => e.toJson()).toList());
+  writeNotNull('payment', instance.payment?.toJson());
+  writeNotNull('difference_due', instance.differenceDue);
+  writeNotNull('shipping_address_id', instance.shippingAddressId);
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('shipping_methods',
+      instance.shippingMethods?.map((e) => e.toJson()).toList());
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  writeNotNull('confirmed_at', instance.confirmedAt);
+  writeNotNull('canceled_at', instance.canceledAt);
+  writeNotNull('no_notification', instance.noNotification);
+  val['allow_backorder'] = instance.allowBackorder;
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}
 
 const _$FulfillmentStatusEnumMap = {
   FulfillmentStatus.notFulfilled: 'not_fulfilled',

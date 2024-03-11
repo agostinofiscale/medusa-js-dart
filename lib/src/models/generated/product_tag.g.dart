@@ -15,12 +15,21 @@ ProductTag _$ProductTagFromJson(Map<String, dynamic> json) => ProductTag(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ProductTagToJson(ProductTag instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ProductTagToJson(ProductTag instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'value': instance.value,
+    'created_at': instance.createdAt,
+    'updated_at': instance.updatedAt,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

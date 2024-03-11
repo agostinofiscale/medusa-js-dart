@@ -18,9 +18,17 @@ AdminGetInventoryItemsItemLocationLevelsParams
         );
 
 Map<String, dynamic> _$AdminGetInventoryItemsItemLocationLevelsParamsToJson(
-        AdminGetInventoryItemsItemLocationLevelsParams instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminGetInventoryItemsItemLocationLevelsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('location_id', instance.locationId);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

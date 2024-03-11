@@ -14,11 +14,20 @@ StoreCompleteCartRes _$StoreCompleteCartResFromJson(
     );
 
 Map<String, dynamic> _$StoreCompleteCartResToJson(
-        StoreCompleteCartRes instance) =>
-    <String, dynamic>{
-      'type': _$StoreCompleteCartResTypeEnumMap[instance.type]!,
-      'data': instance.data,
-    };
+    StoreCompleteCartRes instance) {
+  final val = <String, dynamic>{
+    'type': _$StoreCompleteCartResTypeEnumMap[instance.type]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('data', instance.data);
+  return val;
+}
 
 const _$StoreCompleteCartResTypeEnumMap = {
   StoreCompleteCartResType.order: 'order',

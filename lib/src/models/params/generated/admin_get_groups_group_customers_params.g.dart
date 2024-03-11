@@ -16,10 +16,18 @@ AdminGetGroupsGroupCustomersParams _$AdminGetGroupsGroupCustomersParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetGroupsGroupCustomersParamsToJson(
-        AdminGetGroupsGroupCustomersParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'expand': instance.expand,
-      'q': instance.q,
-    };
+    AdminGetGroupsGroupCustomersParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('q', instance.q);
+  return val;
+}

@@ -35,18 +35,27 @@ AdminPostDraftOrdersReq _$AdminPostDraftOrdersReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostDraftOrdersReqToJson(
-        AdminPostDraftOrdersReq instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'email': instance.email,
-      'billing_address': instance.billingAddress?.toJson(),
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'region_id': instance.regionId,
-      'discounts': instance.discounts?.map((e) => e.toJson()).toList(),
-      'customer_id': instance.customerId,
-      'no_notification_order': instance.noNotificationOrder,
-      'shipping_methods':
-          instance.shippingMethods.map((e) => e.toJson()).toList(),
-      'metadata': instance.metadata,
-    };
+    AdminPostDraftOrdersReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('status', instance.status);
+  val['email'] = instance.email;
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  val['region_id'] = instance.regionId;
+  writeNotNull(
+      'discounts', instance.discounts?.map((e) => e.toJson()).toList());
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('no_notification_order', instance.noNotificationOrder);
+  val['shipping_methods'] =
+      instance.shippingMethods.map((e) => e.toJson()).toList();
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

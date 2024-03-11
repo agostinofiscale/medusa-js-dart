@@ -30,19 +30,30 @@ Store _$StoreFromJson(Map<String, dynamic> json) => Store(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$StoreToJson(Store instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'default_currency_code': instance.defaultCurrencyCode,
-      'default_currency': instance.defaultCurrency?.toJson(),
-      'currencies': instance.currencies?.map((e) => e.toJson()).toList(),
-      'swap_link_template': instance.swapLinkTemplate,
-      'payment_link_template': instance.paymentLinkTemplate,
-      'invite_link_template': instance.inviteLinkTemplate,
-      'default_location_id': instance.defaultLocationId,
-      'default_sales_channel_id': instance.defaultSalesChannelId,
-      'default_sales_channel': instance.defaultSalesChannel?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$StoreToJson(Store instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'default_currency_code': instance.defaultCurrencyCode,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('default_currency', instance.defaultCurrency?.toJson());
+  writeNotNull(
+      'currencies', instance.currencies?.map((e) => e.toJson()).toList());
+  writeNotNull('swap_link_template', instance.swapLinkTemplate);
+  writeNotNull('payment_link_template', instance.paymentLinkTemplate);
+  writeNotNull('invite_link_template', instance.inviteLinkTemplate);
+  writeNotNull('default_location_id', instance.defaultLocationId);
+  writeNotNull('default_sales_channel_id', instance.defaultSalesChannelId);
+  writeNotNull('default_sales_channel', instance.defaultSalesChannel?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -28,20 +28,30 @@ GiftCard _$GiftCardFromJson(Map<String, dynamic> json) => GiftCard(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$GiftCardToJson(GiftCard instance) => <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'value': instance.value,
-      'balance': instance.balance,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'is_disabled': instance.isDisabled,
-      'ends_at': instance.endsAt,
-      'tax_rate': instance.taxRate,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$GiftCardToJson(GiftCard instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'code': instance.code,
+    'value': instance.value,
+    'balance': instance.balance,
+    'region_id': instance.regionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region', instance.region?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  val['is_disabled'] = instance.isDisabled;
+  writeNotNull('ends_at', instance.endsAt);
+  writeNotNull('tax_rate', instance.taxRate);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

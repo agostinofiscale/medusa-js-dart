@@ -16,11 +16,19 @@ StoreRegionsListRes _$StoreRegionsListResFromJson(Map<String, dynamic> json) =>
       limit: json['limit'] as int?,
     );
 
-Map<String, dynamic> _$StoreRegionsListResToJson(
-        StoreRegionsListRes instance) =>
-    <String, dynamic>{
-      'regions': instance.regions.map((e) => e.toJson()).toList(),
-      'count': instance.count,
-      'offset': instance.offset,
-      'limit': instance.limit,
-    };
+Map<String, dynamic> _$StoreRegionsListResToJson(StoreRegionsListRes instance) {
+  final val = <String, dynamic>{
+    'regions': instance.regions.map((e) => e.toJson()).toList(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('count', instance.count);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  return val;
+}

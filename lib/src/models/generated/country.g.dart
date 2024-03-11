@@ -19,13 +19,23 @@ Country _$CountryFromJson(Map<String, dynamic> json) => Country(
           : Region.fromJson(json['region'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CountryToJson(Country instance) => <String, dynamic>{
-      'id': instance.id,
-      'iso2': instance.iso2,
-      'iso3': instance.iso3,
-      'num_code': instance.numCode,
-      'name': instance.name,
-      'display_name': instance.displayName,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-    };
+Map<String, dynamic> _$CountryToJson(Country instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'iso2': instance.iso2,
+    'iso3': instance.iso3,
+    'num_code': instance.numCode,
+    'name': instance.name,
+    'display_name': instance.displayName,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('region', instance.region?.toJson());
+  return val;
+}

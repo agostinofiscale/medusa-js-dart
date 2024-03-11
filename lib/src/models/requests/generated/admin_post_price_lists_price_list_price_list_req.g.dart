@@ -26,15 +26,23 @@ AdminPostPriceListsPriceListPriceListReq
         );
 
 Map<String, dynamic> _$AdminPostPriceListsPriceListPriceListReqToJson(
-        AdminPostPriceListsPriceListPriceListReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'starts_at': instance.startsAt,
-      'ends_at': instance.endsAt,
-      'type': instance.type,
-      'status': instance.status,
-      'prices': instance.prices?.map((e) => e.toJson()).toList(),
-      'customer_groups': instance.customerGroups,
-      'includes_tax': instance.includesTax,
-    };
+    AdminPostPriceListsPriceListPriceListReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('description', instance.description);
+  writeNotNull('starts_at', instance.startsAt);
+  writeNotNull('ends_at', instance.endsAt);
+  writeNotNull('type', instance.type);
+  writeNotNull('status', instance.status);
+  writeNotNull('prices', instance.prices?.map((e) => e.toJson()).toList());
+  writeNotNull('customer_groups', instance.customerGroups);
+  writeNotNull('includes_tax', instance.includesTax);
+  return val;
+}

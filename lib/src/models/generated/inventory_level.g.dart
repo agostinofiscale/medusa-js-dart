@@ -22,17 +22,26 @@ InventoryLevel _$InventoryLevelFromJson(Map<String, dynamic> json) =>
           json['inventory_item'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$InventoryLevelToJson(InventoryLevel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'inventory_item_id': instance.inventoryItemId,
-      'location_id': instance.locationId,
-      'stocked_quantity': instance.stockedQuantity,
-      'reserved_quantity': instance.reservedQuantity,
-      'incoming_quantity': instance.incomingQuantity,
-      'metadata': instance.metadata,
-      'inventory_item': instance.inventoryItem.toJson(),
-    };
+Map<String, dynamic> _$InventoryLevelToJson(InventoryLevel instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'created_at': instance.createdAt,
+    'updated_at': instance.updatedAt,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('deleted_at', instance.deletedAt);
+  val['inventory_item_id'] = instance.inventoryItemId;
+  val['location_id'] = instance.locationId;
+  val['stocked_quantity'] = instance.stockedQuantity;
+  val['reserved_quantity'] = instance.reservedQuantity;
+  val['incoming_quantity'] = instance.incomingQuantity;
+  writeNotNull('metadata', instance.metadata);
+  val['inventory_item'] = instance.inventoryItem.toJson();
+  return val;
+}

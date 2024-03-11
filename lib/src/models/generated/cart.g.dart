@@ -79,49 +79,62 @@ Cart _$CartFromJson(Map<String, dynamic> json) => Cart(
           .toList(),
     );
 
-Map<String, dynamic> _$CartToJson(Cart instance) => <String, dynamic>{
-      'id': instance.id,
-      'email': instance.email,
-      'billing_address_id': instance.billingAddressId,
-      'billing_address': instance.billingAddress?.toJson(),
-      'shipping_address_id': instance.shippingAddressId,
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'discounts': instance.discounts?.map((e) => e.toJson()).toList(),
-      'gift_cards': instance.giftCards?.map((e) => e.toJson()).toList(),
-      'customer_id': instance.customerId,
-      'customer': instance.customer?.toJson(),
-      'payment_session': instance.paymentSession?.toJson(),
-      'payment_sessions':
-          instance.paymentSessions?.map((e) => e.toJson()).toList(),
-      'payment_id': instance.paymentId,
-      'payment': instance.payment?.toJson(),
-      'shipping_methods':
-          instance.shippingMethods?.map((e) => e.toJson()).toList(),
-      'type': instance.type,
-      'completed_at': instance.completedAt,
-      'payment_authorized_at': instance.paymentAuthorizedAt,
-      'idempotency_key': instance.idempotencyKey,
-      'context': instance.context,
-      'sales_channel_id': instance.salesChannelId,
-      'sales_channel': instance.salesChannel?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'shipping_total': instance.shippingTotal,
-      'discount_total': instance.discountTotal,
-      'raw_discount_total': instance.rawDiscountTotal,
-      'item_tax_total': instance.itemTaxTotal,
-      'shipping_tax_total': instance.shippingTaxTotal,
-      'tax_total': instance.taxTotal,
-      'refunded_total': instance.refundedTotal,
-      'total': instance.total,
-      'subtotal': instance.subtotal,
-      'refundable_amount': instance.refundableAmount,
-      'gift_card_total': instance.giftCardTotal,
-      'gift_card_tax_total': instance.giftCardTaxTotal,
-      'sales_channels': instance.salesChannels?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$CartToJson(Cart instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('billing_address_id', instance.billingAddressId);
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  writeNotNull('shipping_address_id', instance.shippingAddressId);
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  val['region_id'] = instance.regionId;
+  writeNotNull('region', instance.region?.toJson());
+  writeNotNull(
+      'discounts', instance.discounts?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'gift_cards', instance.giftCards?.map((e) => e.toJson()).toList());
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('customer', instance.customer?.toJson());
+  writeNotNull('payment_session', instance.paymentSession?.toJson());
+  writeNotNull('payment_sessions',
+      instance.paymentSessions?.map((e) => e.toJson()).toList());
+  writeNotNull('payment_id', instance.paymentId);
+  writeNotNull('payment', instance.payment?.toJson());
+  writeNotNull('shipping_methods',
+      instance.shippingMethods?.map((e) => e.toJson()).toList());
+  val['type'] = instance.type;
+  writeNotNull('completed_at', instance.completedAt);
+  writeNotNull('payment_authorized_at', instance.paymentAuthorizedAt);
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  writeNotNull('context', instance.context);
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('sales_channel', instance.salesChannel?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('shipping_total', instance.shippingTotal);
+  writeNotNull('discount_total', instance.discountTotal);
+  writeNotNull('raw_discount_total', instance.rawDiscountTotal);
+  writeNotNull('item_tax_total', instance.itemTaxTotal);
+  writeNotNull('shipping_tax_total', instance.shippingTaxTotal);
+  writeNotNull('tax_total', instance.taxTotal);
+  writeNotNull('refunded_total', instance.refundedTotal);
+  writeNotNull('total', instance.total);
+  writeNotNull('subtotal', instance.subtotal);
+  writeNotNull('refundable_amount', instance.refundableAmount);
+  writeNotNull('gift_card_total', instance.giftCardTotal);
+  writeNotNull('gift_card_tax_total', instance.giftCardTaxTotal);
+  writeNotNull('sales_channels',
+      instance.salesChannels?.map((e) => e.toJson()).toList());
+  return val;
+}

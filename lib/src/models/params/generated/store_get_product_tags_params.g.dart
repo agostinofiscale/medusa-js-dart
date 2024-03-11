@@ -26,15 +26,23 @@ StoreGetProductTagsParams _$StoreGetProductTagsParamsFromJson(
     );
 
 Map<String, dynamic> _$StoreGetProductTagsParamsToJson(
-        StoreGetProductTagsParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'order': instance.order,
-      'discount_condition_id': instance.discountConditionId,
-      'value': instance.value,
-      'id': instance.id,
-      'q': instance.q,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-    };
+    StoreGetProductTagsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('order', instance.order);
+  writeNotNull('discount_condition_id', instance.discountConditionId);
+  writeNotNull('value', instance.value);
+  writeNotNull('id', instance.id);
+  writeNotNull('q', instance.q);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  return val;
+}

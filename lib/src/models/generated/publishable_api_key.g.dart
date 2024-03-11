@@ -17,13 +17,22 @@ PublishableApiKey _$PublishableApiKeyFromJson(Map<String, dynamic> json) =>
       updatedAt: json['updated_at'] as String,
     );
 
-Map<String, dynamic> _$PublishableApiKeyToJson(PublishableApiKey instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'created_by': instance.createdBy,
-      'revoked_by': instance.revokedBy,
-      'revoked_at': instance.revokedAt,
-      'title': instance.title,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-    };
+Map<String, dynamic> _$PublishableApiKeyToJson(PublishableApiKey instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('created_by', instance.createdBy);
+  writeNotNull('revoked_by', instance.revokedBy);
+  writeNotNull('revoked_at', instance.revokedAt);
+  val['title'] = instance.title;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  return val;
+}

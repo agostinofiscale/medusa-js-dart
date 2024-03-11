@@ -45,27 +45,37 @@ Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) => Fulfillment(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$FulfillmentToJson(Fulfillment instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'claim_order_id': instance.claimOrderId,
-      'claim_order': instance.claimOrder?.toJson(),
-      'swap_id': instance.swapId,
-      'swap': instance.swap?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'provider_id': instance.providerId,
-      'provider': instance.provider?.toJson(),
-      'location_id': instance.locationId,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'tracking_links': instance.trackingLinks?.map((e) => e.toJson()).toList(),
-      'tracking_numbers': instance.trackingNumbers,
-      'data': instance.data,
-      'shipped_at': instance.shippedAt,
-      'no_notification': instance.noNotification,
-      'canceled_at': instance.canceledAt,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$FulfillmentToJson(Fulfillment instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('claim_order_id', instance.claimOrderId);
+  writeNotNull('claim_order', instance.claimOrder?.toJson());
+  writeNotNull('swap_id', instance.swapId);
+  writeNotNull('swap', instance.swap?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  val['provider_id'] = instance.providerId;
+  writeNotNull('provider', instance.provider?.toJson());
+  writeNotNull('location_id', instance.locationId);
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  writeNotNull('tracking_links',
+      instance.trackingLinks?.map((e) => e.toJson()).toList());
+  val['tracking_numbers'] = instance.trackingNumbers;
+  val['data'] = instance.data;
+  writeNotNull('shipped_at', instance.shippedAt);
+  writeNotNull('no_notification', instance.noNotification);
+  writeNotNull('canceled_at', instance.canceledAt);
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

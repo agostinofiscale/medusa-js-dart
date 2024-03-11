@@ -48,29 +48,38 @@ ClaimOrder _$ClaimOrderFromJson(Map<String, dynamic> json) => ClaimOrder(
       idempotencyKey: json['idempotency_key'] as String?,
     );
 
-Map<String, dynamic> _$ClaimOrderToJson(ClaimOrder instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'type': instance.type,
-      'payment_status': instance.paymentStatus,
-      'fulfillment_status': instance.fulfillmentStatus,
-      'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
-      'additional_items':
-          instance.additionalItems.map((e) => e.toJson()).toList(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'return_order': instance.returnOrder?.toJson(),
-      'shipping_address_id': instance.shippingAddressId,
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'shipping_methods':
-          instance.shippingMethods.map((e) => e.toJson()).toList(),
-      'fulfillments': instance.fulfillments.map((e) => e.toJson()).toList(),
-      'refund_amount': instance.refundAmount,
-      'canceled_at': instance.canceledAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'no_notification': instance.noNotification,
-      'idempotency_key': instance.idempotencyKey,
-    };
+Map<String, dynamic> _$ClaimOrderToJson(ClaimOrder instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'type': instance.type,
+    'payment_status': instance.paymentStatus,
+    'fulfillment_status': instance.fulfillmentStatus,
+    'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
+    'additional_items':
+        instance.additionalItems.map((e) => e.toJson()).toList(),
+    'order_id': instance.orderId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('return_order', instance.returnOrder?.toJson());
+  writeNotNull('shipping_address_id', instance.shippingAddressId);
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  val['shipping_methods'] =
+      instance.shippingMethods.map((e) => e.toJson()).toList();
+  val['fulfillments'] = instance.fulfillments.map((e) => e.toJson()).toList();
+  val['refund_amount'] = instance.refundAmount;
+  writeNotNull('canceled_at', instance.canceledAt);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  val['no_notification'] = instance.noNotification;
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  return val;
+}

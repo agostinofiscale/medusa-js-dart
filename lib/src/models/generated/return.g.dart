@@ -39,24 +39,34 @@ Return _$ReturnFromJson(Map<String, dynamic> json) => Return(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ReturnToJson(Return instance) => <String, dynamic>{
-      'id': instance.id,
-      'status': instance.status,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'swap_id': instance.swapId,
-      'swap': instance.swap?.toJson(),
-      'claim_order_id': instance.claimOrderId,
-      'claim_order': instance.claimOrder?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'shipping_method': instance.shippingMethod?.toJson(),
-      'shipping_data': instance.shippingData,
-      'location_id': instance.locationId,
-      'refund_amount': instance.refundAmount,
-      'no_notification': instance.noNotification,
-      'idempotency_key': instance.idempotencyKey,
-      'received_at': instance.receivedAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ReturnToJson(Return instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'status': instance.status,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  writeNotNull('swap_id', instance.swapId);
+  writeNotNull('swap', instance.swap?.toJson());
+  writeNotNull('claim_order_id', instance.claimOrderId);
+  writeNotNull('claim_order', instance.claimOrder?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('shipping_method', instance.shippingMethod?.toJson());
+  writeNotNull('shipping_data', instance.shippingData);
+  writeNotNull('location_id', instance.locationId);
+  val['refund_amount'] = instance.refundAmount;
+  writeNotNull('no_notification', instance.noNotification);
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  writeNotNull('received_at', instance.receivedAt);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

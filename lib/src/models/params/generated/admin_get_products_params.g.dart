@@ -51,29 +51,37 @@ AdminGetProductsParams _$AdminGetProductsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetProductsParamsToJson(
-        AdminGetProductsParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'discount_condition_id': instance.discountConditionId,
-      'id': instance.id,
-      'status': instance.status,
-      'collection_id': instance.collectionId,
-      'tags': instance.tags,
-      'price_list_id': instance.priceListId,
-      'sales_channel_id': instance.salesChannelId,
-      'type_id': instance.typeId,
-      'category_id': instance.categoryId,
-      'include_category_children': instance.includeCategoryChildren,
-      'title': instance.title,
-      'description': instance.description,
-      'handle': instance.handle,
-      'is_giftcard': instance.isGiftcard,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'order': instance.order,
-    };
+    AdminGetProductsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('discount_condition_id', instance.discountConditionId);
+  writeNotNull('id', instance.id);
+  writeNotNull('status', instance.status);
+  writeNotNull('collection_id', instance.collectionId);
+  writeNotNull('tags', instance.tags);
+  writeNotNull('price_list_id', instance.priceListId);
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('type_id', instance.typeId);
+  writeNotNull('category_id', instance.categoryId);
+  writeNotNull('include_category_children', instance.includeCategoryChildren);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('is_giftcard', instance.isGiftcard);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('order', instance.order);
+  return val;
+}

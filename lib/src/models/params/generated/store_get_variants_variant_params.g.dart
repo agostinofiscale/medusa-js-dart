@@ -16,10 +16,18 @@ StoreGetVariantsVariantParams _$StoreGetVariantsVariantParamsFromJson(
     );
 
 Map<String, dynamic> _$StoreGetVariantsVariantParamsToJson(
-        StoreGetVariantsVariantParams instance) =>
-    <String, dynamic>{
-      'sales_channel_id': instance.salesChannelId,
-      'cart_id': instance.cartId,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-    };
+    StoreGetVariantsVariantParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  return val;
+}

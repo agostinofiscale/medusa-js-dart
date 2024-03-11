@@ -32,26 +32,35 @@ AdminPostInventoryItemsReq _$AdminPostInventoryItemsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostInventoryItemsReqToJson(
-        AdminPostInventoryItemsReq instance) =>
-    <String, dynamic>{
-      'variant_id': instance.variantId,
-      'sku': instance.sku,
-      'ean': instance.ean,
-      'upc': instance.upc,
-      'barcode': instance.barcode,
-      'hs_code': instance.hsCode,
-      'inventory_quantity': instance.inventoryQuantity,
-      'allow_backorder': instance.allowBackorder,
-      'manage_inventory': instance.manageInventory,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'title': instance.title,
-      'description': instance.description,
-      'thumbnail': instance.thumbnail,
-      'metadata': instance.metadata,
-    };
+    AdminPostInventoryItemsReq instance) {
+  final val = <String, dynamic>{
+    'variant_id': instance.variantId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('sku', instance.sku);
+  writeNotNull('ean', instance.ean);
+  writeNotNull('upc', instance.upc);
+  writeNotNull('barcode', instance.barcode);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('inventory_quantity', instance.inventoryQuantity);
+  writeNotNull('allow_backorder', instance.allowBackorder);
+  writeNotNull('manage_inventory', instance.manageInventory);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

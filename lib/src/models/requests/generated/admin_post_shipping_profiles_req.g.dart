@@ -15,9 +15,18 @@ AdminPostShippingProfilesReq _$AdminPostShippingProfilesReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostShippingProfilesReqToJson(
-        AdminPostShippingProfilesReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'type': instance.type,
-      'metadata': instance.metadata,
-    };
+    AdminPostShippingProfilesReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'type': instance.type,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

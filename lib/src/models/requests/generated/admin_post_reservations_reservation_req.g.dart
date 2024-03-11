@@ -16,10 +16,18 @@ AdminPostReservationsReservationReq
         );
 
 Map<String, dynamic> _$AdminPostReservationsReservationReqToJson(
-        AdminPostReservationsReservationReq instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-      'quantity': instance.quantity,
-      'description': instance.description,
-      'metadata': instance.metadata,
-    };
+    AdminPostReservationsReservationReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('location_id', instance.locationId);
+  writeNotNull('quantity', instance.quantity);
+  writeNotNull('description', instance.description);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

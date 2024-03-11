@@ -15,8 +15,16 @@ AdminPostInventoryItemsItemLocationLevelsLevelReq
         );
 
 Map<String, dynamic> _$AdminPostInventoryItemsItemLocationLevelsLevelReqToJson(
-        AdminPostInventoryItemsItemLocationLevelsLevelReq instance) =>
-    <String, dynamic>{
-      'stocked_quantity': instance.stockedQuantity,
-      'incoming_quantity': instance.incomingQuantity,
-    };
+    AdminPostInventoryItemsItemLocationLevelsLevelReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('stocked_quantity', instance.stockedQuantity);
+  writeNotNull('incoming_quantity', instance.incomingQuantity);
+  return val;
+}

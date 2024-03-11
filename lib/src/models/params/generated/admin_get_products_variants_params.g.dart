@@ -27,17 +27,25 @@ AdminGetProductsVariantsParams _$AdminGetProductsVariantsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetProductsVariantsParamsToJson(
-        AdminGetProductsVariantsParams instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'fields': instance.fields,
-      'expand': instance.expand,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'q': instance.q,
-      'order': instance.order,
-      'manage_inventory': instance.manageInventory,
-      'allow_backorder': instance.allowBackorder,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-    };
+    AdminGetProductsVariantsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('q', instance.q);
+  writeNotNull('order', instance.order);
+  writeNotNull('manage_inventory', instance.manageInventory);
+  writeNotNull('allow_backorder', instance.allowBackorder);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  return val;
+}

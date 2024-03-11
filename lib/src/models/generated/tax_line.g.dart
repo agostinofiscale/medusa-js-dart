@@ -16,12 +16,22 @@ TaxLine _$TaxLineFromJson(Map<String, dynamic> json) => TaxLine(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$TaxLineToJson(TaxLine instance) => <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'name': instance.name,
-      'rate': instance.rate,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$TaxLineToJson(TaxLine instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code', instance.code);
+  val['name'] = instance.name;
+  val['rate'] = instance.rate;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

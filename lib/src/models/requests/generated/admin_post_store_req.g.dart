@@ -19,13 +19,22 @@ AdminPostStoreReq _$AdminPostStoreReqFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$AdminPostStoreReqToJson(AdminPostStoreReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'swap_link_template': instance.swapLinkTemplate,
-      'payment_link_template': instance.paymentLinkTemplate,
-      'invite_link_template': instance.inviteLinkTemplate,
-      'default_currency_code': instance.defaultCurrencyCode,
-      'currencies': instance.currencies,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$AdminPostStoreReqToJson(AdminPostStoreReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'swap_link_template': instance.swapLinkTemplate,
+    'payment_link_template': instance.paymentLinkTemplate,
+    'invite_link_template': instance.inviteLinkTemplate,
+    'default_currency_code': instance.defaultCurrencyCode,
+    'currencies': instance.currencies,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

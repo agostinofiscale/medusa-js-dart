@@ -7,29 +7,29 @@ part 'generated/admin_post_products_product_req.g.dart';
 
 @JsonSerializable()
 class AdminPostProductsProductReq {
-  AdminPostProductsProductReq({
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.discountable,
-    required this.images,
-    required this.thumbnail,
-    required this.handle,
-    required this.status,
-    required this.type,
-    required this.collectionId,
-    required this.tags,
-    required this.salesChannels,
-    required this.categories,
-    required this.variants,
-    required this.weight,
-    required this.length,
-    required this.height,
-    required this.width,
-    required this.hsCode,
-    required this.originCountry,
-    required this.midCode,
-    required this.material,
+  const AdminPostProductsProductReq({
+    this.title,
+    this.subtitle,
+    this.description,
+    this.discountable,
+    this.images,
+    this.thumbnail,
+    this.handle,
+    this.status,
+    this.type,
+    this.collectionId,
+    this.tags,
+    this.salesChannels,
+    this.categories,
+    this.variants,
+    this.weight,
+    this.length,
+    this.height,
+    this.width,
+    this.hsCode,
+    this.originCountry,
+    this.midCode,
+    this.material,
     this.metadata,
   });
   factory AdminPostProductsProductReq.fromJson(Map<String, dynamic> json) =>
@@ -37,29 +37,29 @@ class AdminPostProductsProductReq {
 
   Map<String, dynamic> toJson() => _$AdminPostProductsProductReqToJson(this);
 
-  String title;
-  String subtitle;
-  String description;
-  bool discountable;
-  List<String> images;
-  String thumbnail;
-  String handle;
-  String status;
-  AdminPostProductsProductReqType type;
-  String collectionId;
-  List<AdminPostProductsProductReqTag> tags;
-  List<AdminPostProductsProductReqSalesChannel> salesChannels;
-  List<dynamic> categories;
-  List<AdminPostProductsProductReqVariant> variants;
-  num weight;
-  num length;
-  num height;
-  num width;
-  String hsCode;
-  String originCountry;
-  String midCode;
-  String material;
-  Map<String, dynamic>? metadata;
+  final String? title;
+  final String? subtitle;
+  final String? description;
+  final bool? discountable;
+  final List<String>? images;
+  final String? thumbnail;
+  final String? handle;
+  final String? status;
+  final AdminPostProductsProductReqType? type;
+  final String? collectionId;
+  final List<AdminPostProductsProductReqTag>? tags;
+  final List<AdminPostProductsProductReqSalesChannel>? salesChannels;
+  final List<dynamic>? categories;
+  final List<AdminPostProductsProductReqVariant>? variants;
+  final num? weight;
+  final num? length;
+  final num? height;
+  final num? width;
+  final String? hsCode;
+  final String? originCountry;
+  final String? midCode;
+  final String? material;
+  final Map<String, dynamic>? metadata;
 }
 
 @JsonSerializable()
@@ -112,6 +112,7 @@ class AdminPostProductsProductReqSalesChannel {
       _$AdminPostProductsProductReqSalesChannelToJson(this);
 }
 
+// TODO: We should convert these into payloads classes.
 @JsonSerializable()
 class AdminPostProductsProductReqVariant {
   AdminPostProductsProductReqVariant({

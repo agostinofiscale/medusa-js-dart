@@ -20,14 +20,23 @@ StockLocationAddressInput _$StockLocationAddressInputFromJson(
     );
 
 Map<String, dynamic> _$StockLocationAddressInputToJson(
-        StockLocationAddressInput instance) =>
-    <String, dynamic>{
-      'address1': instance.address1,
-      'address2': instance.address2,
-      'city': instance.city,
-      'country_code': instance.countryCode,
-      'phone': instance.phone,
-      'postal_code': instance.postalCode,
-      'province': instance.province,
-      'metadata': instance.metadata,
-    };
+    StockLocationAddressInput instance) {
+  final val = <String, dynamic>{
+    'address1': instance.address1,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('address2', instance.address2);
+  writeNotNull('city', instance.city);
+  val['country_code'] = instance.countryCode;
+  writeNotNull('phone', instance.phone);
+  writeNotNull('postal_code', instance.postalCode);
+  writeNotNull('province', instance.province);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

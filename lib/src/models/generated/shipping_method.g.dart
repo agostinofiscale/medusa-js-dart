@@ -46,26 +46,35 @@ ShippingMethod _$ShippingMethodFromJson(Map<String, dynamic> json) =>
       taxTotal: (json['tax_total'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$ShippingMethodToJson(ShippingMethod instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'shipping_option_id': instance.shippingOptionId,
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'claim_order_id': instance.claimOrderId,
-      'claim_order': instance.claimOrder?.toJson(),
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'swap_id': instance.swapId,
-      'swap': instance.swap?.toJson(),
-      'return_id': instance.returnId,
-      'return_order': instance.returnOrder?.toJson(),
-      'shipping_option': instance.shippingOption?.toJson(),
-      'tax_lines': instance.taxLines?.map((e) => e.toJson()).toList(),
-      'price': instance.price,
-      'data': instance.data,
-      'includes_tax': instance.includesTax,
-      'subtotal': instance.subtotal,
-      'total': instance.total,
-      'tax_total': instance.taxTotal,
-    };
+Map<String, dynamic> _$ShippingMethodToJson(ShippingMethod instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'shipping_option_id': instance.shippingOptionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('claim_order_id', instance.claimOrderId);
+  writeNotNull('claim_order', instance.claimOrder?.toJson());
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  writeNotNull('swap_id', instance.swapId);
+  writeNotNull('swap', instance.swap?.toJson());
+  writeNotNull('return_id', instance.returnId);
+  writeNotNull('return_order', instance.returnOrder?.toJson());
+  writeNotNull('shipping_option', instance.shippingOption?.toJson());
+  writeNotNull('tax_lines', instance.taxLines?.map((e) => e.toJson()).toList());
+  val['price'] = instance.price;
+  val['data'] = instance.data;
+  writeNotNull('includes_tax', instance.includesTax);
+  writeNotNull('subtotal', instance.subtotal);
+  writeNotNull('total', instance.total);
+  writeNotNull('tax_total', instance.taxTotal);
+  return val;
+}

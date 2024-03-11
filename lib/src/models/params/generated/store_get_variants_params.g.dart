@@ -28,21 +28,29 @@ StoreGetVariantsParams _$StoreGetVariantsParamsFromJson(
     );
 
 Map<String, dynamic> _$StoreGetVariantsParamsToJson(
-        StoreGetVariantsParams instance) =>
-    <String, dynamic>{
-      'ids': instance.ids,
-      'id': instance.id,
-      'sales_channel_id': instance.salesChannelId,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'cart_id': instance.cartId,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-      'title': instance.title,
-      'inventory_quantity': instance.inventoryQuantity?.toJson(),
-    };
+    StoreGetVariantsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('ids', instance.ids);
+  writeNotNull('id', instance.id);
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  writeNotNull('title', instance.title);
+  writeNotNull('inventory_quantity', instance.inventoryQuantity?.toJson());
+  return val;
+}
 
 InventoryQuantity _$InventoryQuantityFromJson(Map<String, dynamic> json) =>
     InventoryQuantity(
@@ -52,10 +60,18 @@ InventoryQuantity _$InventoryQuantityFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as int?,
     );
 
-Map<String, dynamic> _$InventoryQuantityToJson(InventoryQuantity instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$InventoryQuantityToJson(InventoryQuantity instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

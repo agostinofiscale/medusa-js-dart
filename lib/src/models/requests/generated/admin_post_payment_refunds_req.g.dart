@@ -15,9 +15,18 @@ AdminPostPaymentRefundsReq _$AdminPostPaymentRefundsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostPaymentRefundsReqToJson(
-        AdminPostPaymentRefundsReq instance) =>
-    <String, dynamic>{
-      'amount': instance.amount,
-      'reason': instance.reason,
-      'note': instance.note,
-    };
+    AdminPostPaymentRefundsReq instance) {
+  final val = <String, dynamic>{
+    'amount': instance.amount,
+    'reason': instance.reason,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('note', instance.note);
+  return val;
+}

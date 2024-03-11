@@ -25,13 +25,22 @@ DiscountConditionCustomerGroup _$DiscountConditionCustomerGroupFromJson(
     );
 
 Map<String, dynamic> _$DiscountConditionCustomerGroupToJson(
-        DiscountConditionCustomerGroup instance) =>
-    <String, dynamic>{
-      'customer_group_id': instance.customerGroupId,
-      'condition_id': instance.conditionId,
-      'customer_group': instance.customerGroup?.toJson(),
-      'discount_condition': instance.discountCondition?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+    DiscountConditionCustomerGroup instance) {
+  final val = <String, dynamic>{
+    'customer_group_id': instance.customerGroupId,
+    'condition_id': instance.conditionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customer_group', instance.customerGroup?.toJson());
+  writeNotNull('discount_condition', instance.discountCondition?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

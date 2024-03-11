@@ -15,11 +15,21 @@ OAuth _$OAuthFromJson(Map<String, dynamic> json) => OAuth(
       data: json['data'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$OAuthToJson(OAuth instance) => <String, dynamic>{
-      'id': instance.id,
-      'display_name': instance.displayName,
-      'application_name': instance.applicationName,
-      'install_url': instance.installUrl,
-      'uninstall_url': instance.uninstallUrl,
-      'data': instance.data,
-    };
+Map<String, dynamic> _$OAuthToJson(OAuth instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'display_name': instance.displayName,
+    'application_name': instance.applicationName,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('install_url', instance.installUrl);
+  writeNotNull('uninstall_url', instance.uninstallUrl);
+  writeNotNull('data', instance.data);
+  return val;
+}

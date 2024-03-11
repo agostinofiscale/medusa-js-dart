@@ -19,15 +19,25 @@ Invite _$InviteFromJson(Map<String, dynamic> json) => Invite(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$InviteToJson(Invite instance) => <String, dynamic>{
-      'id': instance.id,
-      'user_email': instance.userEmail,
-      'role': instance.role,
-      'accepted': instance.accepted,
-      'token': instance.token,
-      'expires_at': instance.expiresAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$InviteToJson(Invite instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'user_email': instance.userEmail,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('role', instance.role);
+  val['accepted'] = instance.accepted;
+  val['token'] = instance.token;
+  val['expires_at'] = instance.expiresAt;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

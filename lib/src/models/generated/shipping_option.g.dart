@@ -39,25 +39,35 @@ ShippingOption _$ShippingOptionFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ShippingOptionToJson(ShippingOption instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'profile_id': instance.profileId,
-      'profile': instance.profile?.toJson(),
-      'provider_id': instance.providerId,
-      'provider': instance.provider?.toJson(),
-      'price_type': instance.priceType,
-      'amount': instance.amount,
-      'is_return': instance.isReturn,
-      'admin_only': instance.adminOnly,
-      'requirements': instance.requirements?.map((e) => e.toJson()).toList(),
-      'data': instance.data,
-      'includes_tax': instance.includesTax,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ShippingOptionToJson(ShippingOption instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'region_id': instance.regionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region', instance.region?.toJson());
+  val['profile_id'] = instance.profileId;
+  writeNotNull('profile', instance.profile?.toJson());
+  val['provider_id'] = instance.providerId;
+  writeNotNull('provider', instance.provider?.toJson());
+  val['price_type'] = instance.priceType;
+  writeNotNull('amount', instance.amount);
+  val['is_return'] = instance.isReturn;
+  val['admin_only'] = instance.adminOnly;
+  writeNotNull(
+      'requirements', instance.requirements?.map((e) => e.toJson()).toList());
+  val['data'] = instance.data;
+  writeNotNull('includes_tax', instance.includesTax);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

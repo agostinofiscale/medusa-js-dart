@@ -35,21 +35,31 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$CustomerToJson(Customer instance) => <String, dynamic>{
-      'id': instance.id,
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'billing_address_id': instance.billingAddressId,
-      'billing_address': instance.billingAddress?.toJson(),
-      'shipping_addresses':
-          instance.shippingAddresses.map((e) => e.toJson()).toList(),
-      'phone': instance.phone,
-      'has_account': instance.hasAccount,
-      'orders': instance.orders.map((e) => e.toJson()).toList(),
-      'groups': instance.groups.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$CustomerToJson(Customer instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'email': instance.email,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('billing_address_id', instance.billingAddressId);
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  val['shipping_addresses'] =
+      instance.shippingAddresses.map((e) => e.toJson()).toList();
+  writeNotNull('phone', instance.phone);
+  val['has_account'] = instance.hasAccount;
+  val['orders'] = instance.orders.map((e) => e.toJson()).toList();
+  val['groups'] = instance.groups.map((e) => e.toJson()).toList();
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

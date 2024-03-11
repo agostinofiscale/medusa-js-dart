@@ -14,8 +14,16 @@ AdminUpdatePaymentCollectionsReq _$AdminUpdatePaymentCollectionsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminUpdatePaymentCollectionsReqToJson(
-        AdminUpdatePaymentCollectionsReq instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'metadata': instance.metadata,
-    };
+    AdminUpdatePaymentCollectionsReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

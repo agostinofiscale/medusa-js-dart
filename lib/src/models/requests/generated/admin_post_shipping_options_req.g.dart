@@ -26,21 +26,30 @@ AdminPostShippingOptionsReq _$AdminPostShippingOptionsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostShippingOptionsReqToJson(
-        AdminPostShippingOptionsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'provider_id': instance.providerId,
-      'profile_id': instance.profileId,
-      'data': instance.data,
-      'price_type': instance.priceType,
-      'amount': instance.amount,
-      'requirements': instance.requirements.map((e) => e.toJson()).toList(),
-      'is_return': instance.isReturn,
-      'admin_only': instance.adminOnly,
-      'metadata': instance.metadata,
-      'includes_tax': instance.includesTax,
-    };
+    AdminPostShippingOptionsReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'region_id': instance.regionId,
+    'provider_id': instance.providerId,
+    'profile_id': instance.profileId,
+    'data': instance.data,
+    'price_type': instance.priceType,
+    'amount': instance.amount,
+    'requirements': instance.requirements.map((e) => e.toJson()).toList(),
+    'is_return': instance.isReturn,
+    'admin_only': instance.adminOnly,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  val['includes_tax'] = instance.includesTax;
+  return val;
+}
 
 Requirements _$RequirementsFromJson(Map<String, dynamic> json) => Requirements(
       type: json['type'] as String,

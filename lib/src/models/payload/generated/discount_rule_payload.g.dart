@@ -19,15 +19,23 @@ DiscountRulePayload _$DiscountRulePayloadFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$DiscountRulePayloadToJson(
-        DiscountRulePayload instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'type': _$DicountRuleTypeEnumMap[instance.type]!,
-      'value': instance.value,
-      'allocation': _$DiscountRuleAllocationEnumMap[instance.allocation]!,
-      'conditions': instance.conditions?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$DiscountRulePayloadToJson(DiscountRulePayload instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  val['type'] = _$DicountRuleTypeEnumMap[instance.type]!;
+  val['value'] = instance.value;
+  val['allocation'] = _$DiscountRuleAllocationEnumMap[instance.allocation]!;
+  writeNotNull(
+      'conditions', instance.conditions?.map((e) => e.toJson()).toList());
+  return val;
+}
 
 const _$DicountRuleTypeEnumMap = {
   DicountRuleType.fixed: 'fixed',

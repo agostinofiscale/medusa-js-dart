@@ -19,11 +19,20 @@ FulfillmentItem _$FulfillmentItemFromJson(Map<String, dynamic> json) =>
       quantity: json['quantity'] as int,
     );
 
-Map<String, dynamic> _$FulfillmentItemToJson(FulfillmentItem instance) =>
-    <String, dynamic>{
-      'fulfillment_id': instance.fulfillmentId,
-      'item_id': instance.itemId,
-      'fulfillment': instance.fulfillment?.toJson(),
-      'item': instance.item?.toJson(),
-      'quantity': instance.quantity,
-    };
+Map<String, dynamic> _$FulfillmentItemToJson(FulfillmentItem instance) {
+  final val = <String, dynamic>{
+    'fulfillment_id': instance.fulfillmentId,
+    'item_id': instance.itemId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fulfillment', instance.fulfillment?.toJson());
+  writeNotNull('item', instance.item?.toJson());
+  val['quantity'] = instance.quantity;
+  return val;
+}

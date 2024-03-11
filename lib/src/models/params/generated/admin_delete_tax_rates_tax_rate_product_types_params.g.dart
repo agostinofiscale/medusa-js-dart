@@ -19,8 +19,16 @@ AdminDeleteTaxRatesTaxRateProductTypesParams
         );
 
 Map<String, dynamic> _$AdminDeleteTaxRatesTaxRateProductTypesParamsToJson(
-        AdminDeleteTaxRatesTaxRateProductTypesParams instance) =>
-    <String, dynamic>{
-      'fields': instance.fields,
-      'expand': instance.expand,
-    };
+    AdminDeleteTaxRatesTaxRateProductTypesParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  return val;
+}

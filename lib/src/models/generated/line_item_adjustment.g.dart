@@ -22,14 +22,23 @@ LineItemAdjustment _$LineItemAdjustmentFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$LineItemAdjustmentToJson(LineItemAdjustment instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'item_id': instance.itemId,
-      'item': instance.item?.toJson(),
-      'description': instance.description,
-      'discount_id': instance.discountId,
-      'discount': instance.discount?.toJson(),
-      'amount': instance.amount,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$LineItemAdjustmentToJson(LineItemAdjustment instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'item_id': instance.itemId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('item', instance.item?.toJson());
+  val['description'] = instance.description;
+  writeNotNull('discount_id', instance.discountId);
+  writeNotNull('discount', instance.discount?.toJson());
+  val['amount'] = instance.amount;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

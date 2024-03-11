@@ -14,8 +14,16 @@ StoreGetPaymentCollectionsParams _$StoreGetPaymentCollectionsParamsFromJson(
     );
 
 Map<String, dynamic> _$StoreGetPaymentCollectionsParamsToJson(
-        StoreGetPaymentCollectionsParams instance) =>
-    <String, dynamic>{
-      'fields': instance.fields,
-      'expand': instance.expand,
-    };
+    StoreGetPaymentCollectionsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  return val;
+}

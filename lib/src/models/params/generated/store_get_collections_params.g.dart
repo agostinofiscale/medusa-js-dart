@@ -24,14 +24,22 @@ StoreGetCollectionsParams _$StoreGetCollectionsParamsFromJson(
     );
 
 Map<String, dynamic> _$StoreGetCollectionsParamsToJson(
-        StoreGetCollectionsParams instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'handle': instance.handle,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-    };
+    StoreGetCollectionsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  return val;
+}
 
 CreatedAtParams _$CreatedAtParamsFromJson(Map<String, dynamic> json) =>
     CreatedAtParams(
@@ -41,13 +49,21 @@ CreatedAtParams _$CreatedAtParamsFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$CreatedAtParamsToJson(CreatedAtParams instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$CreatedAtParamsToJson(CreatedAtParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}
 
 UpdatedAtParams _$UpdatedAtParamsFromJson(Map<String, dynamic> json) =>
     UpdatedAtParams(
@@ -57,10 +73,18 @@ UpdatedAtParams _$UpdatedAtParamsFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$UpdatedAtParamsToJson(UpdatedAtParams instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$UpdatedAtParamsToJson(UpdatedAtParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

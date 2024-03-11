@@ -21,13 +21,22 @@ ProductTaxRate _$ProductTaxRateFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ProductTaxRateToJson(ProductTaxRate instance) =>
-    <String, dynamic>{
-      'product_id': instance.productId,
-      'product': instance.product?.toJson(),
-      'rate_id': instance.rateId,
-      'tax_rate': instance.taxRate?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ProductTaxRateToJson(ProductTaxRate instance) {
+  final val = <String, dynamic>{
+    'product_id': instance.productId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('product', instance.product?.toJson());
+  val['rate_id'] = instance.rateId;
+  writeNotNull('tax_rate', instance.taxRate?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

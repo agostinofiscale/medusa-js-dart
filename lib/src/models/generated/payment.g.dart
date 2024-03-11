@@ -36,24 +36,34 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
-      'id': instance.id,
-      'swap_id': instance.swapId,
-      'swap': instance.swap?.toJson(),
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'amount': instance.amount,
-      'currency_code': instance.currencyCode,
-      'currency': instance.currency?.toJson(),
-      'amount_refunded': instance.amountRefunded,
-      'provider_id': instance.providerId,
-      'data': instance.data,
-      'captured_at': instance.capturedAt,
-      'canceled_at': instance.canceledAt,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$PaymentToJson(Payment instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('swap_id', instance.swapId);
+  writeNotNull('swap', instance.swap?.toJson());
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  val['amount'] = instance.amount;
+  val['currency_code'] = instance.currencyCode;
+  writeNotNull('currency', instance.currency?.toJson());
+  val['amount_refunded'] = instance.amountRefunded;
+  val['provider_id'] = instance.providerId;
+  val['data'] = instance.data;
+  writeNotNull('captured_at', instance.capturedAt);
+  writeNotNull('canceled_at', instance.canceledAt);
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

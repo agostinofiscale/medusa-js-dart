@@ -44,24 +44,33 @@ StoreGetCustomersCustomerOrdersParams
         );
 
 Map<String, dynamic> _$StoreGetCustomersCustomerOrdersParamsToJson(
-        StoreGetCustomersCustomerOrdersParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'id': instance.id,
-      'status': instance.status,
-      'fulfillment_status': instance.fulfillmentStatus,
-      'payment_status': instance.paymentStatus,
-      'display_id': instance.displayId,
-      'cart_id': instance.cartId,
-      'email': instance.email,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-      'tax_rate': instance.taxRate,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'canceled_at': instance.canceledAt?.toJson(),
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    StoreGetCustomersCustomerOrdersParams instance) {
+  final val = <String, dynamic>{
+    'q': instance.q,
+    'id': instance.id,
+    'status': instance.status,
+    'fulfillment_status': instance.fulfillmentStatus,
+    'payment_status': instance.paymentStatus,
+    'display_id': instance.displayId,
+    'cart_id': instance.cartId,
+    'email': instance.email,
+    'region_id': instance.regionId,
+    'currency_code': instance.currencyCode,
+    'tax_rate': instance.taxRate,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('canceled_at', instance.canceledAt?.toJson());
+  val['limit'] = instance.limit;
+  val['offset'] = instance.offset;
+  val['expand'] = instance.expand;
+  val['fields'] = instance.fields;
+  return val;
+}

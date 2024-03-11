@@ -22,13 +22,22 @@ ShippingTaxRate _$ShippingTaxRateFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ShippingTaxRateToJson(ShippingTaxRate instance) =>
-    <String, dynamic>{
-      'shipping_option_id': instance.shippingOptionId,
-      'shipping_option': instance.shippingOption?.toJson(),
-      'rate_id': instance.rateId,
-      'tax_rate': instance.taxRate?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ShippingTaxRateToJson(ShippingTaxRate instance) {
+  final val = <String, dynamic>{
+    'shipping_option_id': instance.shippingOptionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipping_option', instance.shippingOption?.toJson());
+  val['rate_id'] = instance.rateId;
+  writeNotNull('tax_rate', instance.taxRate?.toJson());
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

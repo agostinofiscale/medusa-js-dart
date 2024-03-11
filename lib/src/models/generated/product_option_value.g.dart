@@ -24,16 +24,25 @@ ProductOptionValue _$ProductOptionValueFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ProductOptionValueToJson(ProductOptionValue instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-      'option_id': instance.optionId,
-      'option': instance.option?.toJson(),
-      'variant_id': instance.variantId,
-      'variant': instance.variant?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ProductOptionValueToJson(ProductOptionValue instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'value': instance.value,
+    'option_id': instance.optionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('option', instance.option?.toJson());
+  val['variant_id'] = instance.variantId;
+  writeNotNull('variant', instance.variant?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

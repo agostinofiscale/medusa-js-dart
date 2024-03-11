@@ -38,16 +38,25 @@ AdminPostOrdersOrderReq _$AdminPostOrdersOrderReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderReqToJson(
-        AdminPostOrdersOrderReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'billing_address': instance.billingAddress?.toJson(),
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'region': instance.region,
-      'discounts': instance.discounts?.map((e) => e.toJson()).toList(),
-      'customer_id': instance.customerId,
-      'payment_method': instance.paymentMethod?.toJson(),
-      'shipping_method': instance.shippingMethod?.toJson(),
-      'no_notification': instance.noNotification,
-    };
+    AdminPostOrdersOrderReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  writeNotNull('region', instance.region);
+  writeNotNull(
+      'discounts', instance.discounts?.map((e) => e.toJson()).toList());
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('payment_method', instance.paymentMethod?.toJson());
+  writeNotNull('shipping_method', instance.shippingMethod?.toJson());
+  writeNotNull('no_notification', instance.noNotification);
+  return val;
+}

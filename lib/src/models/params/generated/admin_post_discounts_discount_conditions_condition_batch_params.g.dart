@@ -14,10 +14,18 @@ AdminPostDiscountsDiscountConditionsConditionBatchParams
           fields: json['fields'] as String?,
         );
 
-Map<String,
-    dynamic> _$AdminPostDiscountsDiscountConditionsConditionBatchParamsToJson(
-        AdminPostDiscountsDiscountConditionsConditionBatchParams instance) =>
-    <String, dynamic>{
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+Map<String, dynamic>
+    _$AdminPostDiscountsDiscountConditionsConditionBatchParamsToJson(
+        AdminPostDiscountsDiscountConditionsConditionBatchParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

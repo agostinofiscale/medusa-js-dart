@@ -21,19 +21,29 @@ DiscountRule _$DiscountRuleFromJson(Map<String, dynamic> json) => DiscountRule(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$DiscountRuleToJson(DiscountRule instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'type': _$DiscountTypeEnumMap[instance.type]!,
-      'description': instance.description,
-      'value': instance.value,
-      'allocation': instance.allocation,
-      'conditions': instance.conditions?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$DiscountRuleToJson(DiscountRule instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'type': _$DiscountTypeEnumMap[instance.type]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  val['value'] = instance.value;
+  writeNotNull('allocation', instance.allocation);
+  writeNotNull(
+      'conditions', instance.conditions?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}
 
 const _$DiscountTypeEnumMap = {
   DiscountType.fixed: 'fixed',

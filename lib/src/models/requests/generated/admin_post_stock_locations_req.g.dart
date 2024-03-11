@@ -19,10 +19,19 @@ AdminPostStockLocationsReq _$AdminPostStockLocationsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostStockLocationsReqToJson(
-        AdminPostStockLocationsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'address_id': instance.addressId,
-      'metadata': instance.metadata,
-      'address': instance.address?.toJson(),
-    };
+    AdminPostStockLocationsReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('address_id', instance.addressId);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('address', instance.address?.toJson());
+  return val;
+}

@@ -37,25 +37,33 @@ AdminPostProductsProductVariantsVariantReq
         );
 
 Map<String, dynamic> _$AdminPostProductsProductVariantsVariantReqToJson(
-        AdminPostProductsProductVariantsVariantReq instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'sku': instance.sku,
-      'ean': instance.ean,
-      'upc': instance.upc,
-      'barcode': instance.barcode,
-      'hs_code': instance.hsCode,
-      'inventory_quantity': instance.inventoryQuantity,
-      'allow_backorder': instance.allowBackorder,
-      'manage_inventory': instance.manageInventory,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'metadata': instance.metadata,
-      'prices': instance.prices?.map((e) => e.toJson()).toList(),
-      'options': instance.options?.map((e) => e.toJson()).toList(),
-    };
+    AdminPostProductsProductVariantsVariantReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('title', instance.title);
+  writeNotNull('sku', instance.sku);
+  writeNotNull('ean', instance.ean);
+  writeNotNull('upc', instance.upc);
+  writeNotNull('barcode', instance.barcode);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('inventory_quantity', instance.inventoryQuantity);
+  writeNotNull('allow_backorder', instance.allowBackorder);
+  writeNotNull('manage_inventory', instance.manageInventory);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('prices', instance.prices?.map((e) => e.toJson()).toList());
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  return val;
+}

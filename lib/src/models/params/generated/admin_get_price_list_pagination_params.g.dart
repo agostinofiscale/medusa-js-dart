@@ -35,20 +35,29 @@ AdminGetPriceListPaginationParams _$AdminGetPriceListPaginationParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetPriceListPaginationParamsToJson(
-        AdminGetPriceListPaginationParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'order': instance.order,
-      'id': instance.id,
-      'q': instance.q,
-      'status': instance.status,
-      'name': instance.name,
-      'customer_groups': instance.customerGroups,
-      'type': instance.type,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-    };
+    AdminGetPriceListPaginationParams instance) {
+  final val = <String, dynamic>{
+    'limit': instance.limit,
+    'offset': instance.offset,
+    'expand': instance.expand,
+    'fields': instance.fields,
+    'order': instance.order,
+    'id': instance.id,
+    'q': instance.q,
+    'status': instance.status,
+    'name': instance.name,
+    'customer_groups': instance.customerGroups,
+    'type': instance.type,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  return val;
+}

@@ -22,13 +22,21 @@ StorePostCustomersCustomerReq _$StorePostCustomersCustomerReqFromJson(
     );
 
 Map<String, dynamic> _$StorePostCustomersCustomerReqToJson(
-        StorePostCustomersCustomerReq instance) =>
-    <String, dynamic>{
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'billing_address': instance.billingAddress?.toJson(),
-      'password': instance.password,
-      'phone': instance.phone,
-      'email': instance.email,
-      'metadata': instance.metadata,
-    };
+    StorePostCustomersCustomerReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  writeNotNull('password', instance.password);
+  writeNotNull('phone', instance.phone);
+  writeNotNull('email', instance.email);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

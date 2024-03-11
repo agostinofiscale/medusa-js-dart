@@ -13,7 +13,15 @@ AdminPostCurrenciesCurrencyReq _$AdminPostCurrenciesCurrencyReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCurrenciesCurrencyReqToJson(
-        AdminPostCurrenciesCurrencyReq instance) =>
-    <String, dynamic>{
-      'includes_tax': instance.includesTax,
-    };
+    AdminPostCurrenciesCurrencyReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('includes_tax', instance.includesTax);
+  return val;
+}

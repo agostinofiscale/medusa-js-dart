@@ -15,9 +15,17 @@ AdminPostCollectionsCollectionReq _$AdminPostCollectionsCollectionReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCollectionsCollectionReqToJson(
-        AdminPostCollectionsCollectionReq instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'handle': instance.handle,
-      'metadata': instance.metadata,
-    };
+    AdminPostCollectionsCollectionReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('title', instance.title);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

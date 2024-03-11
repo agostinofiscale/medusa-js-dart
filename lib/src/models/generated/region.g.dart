@@ -40,26 +40,37 @@ Region _$RegionFromJson(Map<String, dynamic> json) => Region(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$RegionToJson(Region instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'currency_code': instance.currencyCode,
-      'currency': instance.currency?.toJson(),
-      'tax_rate': instance.taxRate,
-      'tax_rates': instance.taxRates?.map((e) => e.toJson()).toList(),
-      'tax_code': instance.taxCode,
-      'gift_cards_taxable': instance.giftCardsTaxable,
-      'automatic_taxes': instance.automaticTaxes,
-      'countries': instance.countries?.map((e) => e.toJson()).toList(),
-      'tax_provider_id': instance.taxProviderId,
-      'tax_provider': instance.taxProvider?.toJson(),
-      'payment_providers':
-          instance.paymentProviders?.map((e) => e.toJson()).toList(),
-      'fulfillment_providers':
-          instance.fulfillmentProviders?.map((e) => e.toJson()).toList(),
-      'includes_tax': instance.includesTax,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$RegionToJson(Region instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'currency_code': instance.currencyCode,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('currency', instance.currency?.toJson());
+  val['tax_rate'] = instance.taxRate;
+  writeNotNull('tax_rates', instance.taxRates?.map((e) => e.toJson()).toList());
+  writeNotNull('tax_code', instance.taxCode);
+  val['gift_cards_taxable'] = instance.giftCardsTaxable;
+  val['automatic_taxes'] = instance.automaticTaxes;
+  writeNotNull(
+      'countries', instance.countries?.map((e) => e.toJson()).toList());
+  writeNotNull('tax_provider_id', instance.taxProviderId);
+  writeNotNull('tax_provider', instance.taxProvider?.toJson());
+  writeNotNull('payment_providers',
+      instance.paymentProviders?.map((e) => e.toJson()).toList());
+  writeNotNull('fulfillment_providers',
+      instance.fulfillmentProviders?.map((e) => e.toJson()).toList());
+  writeNotNull('includes_tax', instance.includesTax);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -25,17 +25,27 @@ Refund _$RefundFromJson(Map<String, dynamic> json) => Refund(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$RefundToJson(Refund instance) => <String, dynamic>{
-      'id': instance.id,
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'payment_id': instance.paymentId,
-      'payment': instance.payment?.toJson(),
-      'amount': instance.amount,
-      'note': instance.note,
-      'reason': instance.reason,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$RefundToJson(Refund instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('payment_id', instance.paymentId);
+  writeNotNull('payment', instance.payment?.toJson());
+  val['amount'] = instance.amount;
+  writeNotNull('note', instance.note);
+  val['reason'] = instance.reason;
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

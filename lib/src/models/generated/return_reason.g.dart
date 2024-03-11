@@ -26,17 +26,27 @@ ReturnReason _$ReturnReasonFromJson(Map<String, dynamic> json) => ReturnReason(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ReturnReasonToJson(ReturnReason instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-      'label': instance.label,
-      'description': instance.description,
-      'parent_return_reason_id': instance.parentReturnReasonId,
-      'parent_return_reason': instance.parentReturnReason?.toJson(),
-      'return_reason_children': instance.returnReasonChildren?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ReturnReasonToJson(ReturnReason instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'value': instance.value,
+    'label': instance.label,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  writeNotNull('parent_return_reason_id', instance.parentReturnReasonId);
+  writeNotNull('parent_return_reason', instance.parentReturnReason?.toJson());
+  writeNotNull(
+      'return_reason_children', instance.returnReasonChildren?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

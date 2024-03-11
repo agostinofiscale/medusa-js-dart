@@ -20,11 +20,20 @@ AdminPostOrdersOrderClaimsClaimReq _$AdminPostOrdersOrderClaimsClaimReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsClaimReqToJson(
-        AdminPostOrdersOrderClaimsClaimReq instance) =>
-    <String, dynamic>{
-      'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
-      'shipping_methods':
-          instance.shippingMethods.map((e) => e.toJson()).toList(),
-      'no_notification': instance.noNotification,
-      'metadata': instance.metadata,
-    };
+    AdminPostOrdersOrderClaimsClaimReq instance) {
+  final val = <String, dynamic>{
+    'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
+    'shipping_methods':
+        instance.shippingMethods.map((e) => e.toJson()).toList(),
+    'no_notification': instance.noNotification,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -13,10 +13,18 @@ DateFilter _$DateFilterFromJson(Map<String, dynamic> json) => DateFilter(
       gte: json['gte'] as int?,
     );
 
-Map<String, dynamic> _$DateFilterToJson(DateFilter instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$DateFilterToJson(DateFilter instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

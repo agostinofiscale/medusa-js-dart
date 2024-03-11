@@ -14,8 +14,16 @@ MultipleErrors _$MultipleErrorsFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$MultipleErrorsToJson(MultipleErrors instance) =>
-    <String, dynamic>{
-      'errors': instance.errors?.map((e) => e.toJson()).toList(),
-      'message': instance.message,
-    };
+Map<String, dynamic> _$MultipleErrorsToJson(MultipleErrors instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('errors', instance.errors?.map((e) => e.toJson()).toList());
+  writeNotNull('message', instance.message);
+  return val;
+}

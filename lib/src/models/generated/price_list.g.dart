@@ -28,19 +28,29 @@ PriceList _$PriceListFromJson(Map<String, dynamic> json) => PriceList(
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$PriceListToJson(PriceList instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'type': instance.type,
-      'status': instance.status,
-      'starts_at': instance.startsAt,
-      'ends_at': instance.endsAt,
-      'customer_groups':
-          instance.customerGroups.map((e) => e.toJson()).toList(),
-      'prices': instance.prices.map((e) => e.toJson()).toList(),
-      'includes_tax': instance.includesTax,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$PriceListToJson(PriceList instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'description': instance.description,
+    'type': instance.type,
+    'status': instance.status,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('starts_at', instance.startsAt);
+  writeNotNull('ends_at', instance.endsAt);
+  val['customer_groups'] =
+      instance.customerGroups.map((e) => e.toJson()).toList();
+  val['prices'] = instance.prices.map((e) => e.toJson()).toList();
+  val['includes_tax'] = instance.includesTax;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

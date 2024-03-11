@@ -28,14 +28,22 @@ AdminPostDraftOrdersDraftOrderReq _$AdminPostDraftOrdersDraftOrderReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostDraftOrdersDraftOrderReqToJson(
-        AdminPostDraftOrdersDraftOrderReq instance) =>
-    <String, dynamic>{
-      'region_id': instance.regionId,
-      'country_code': instance.countryCode,
-      'email': instance.email,
-      'billing_address': instance.billingAddress?.toJson(),
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'discounts': instance.discounts,
-      'no_notification_order': instance.noNotificationOrder,
-      'customer_id': instance.customerId,
-    };
+    AdminPostDraftOrdersDraftOrderReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('country_code', instance.countryCode);
+  writeNotNull('email', instance.email);
+  writeNotNull('billing_address', instance.billingAddress?.toJson());
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('discounts', instance.discounts);
+  writeNotNull('no_notification_order', instance.noNotificationOrder);
+  writeNotNull('customer_id', instance.customerId);
+  return val;
+}

@@ -20,16 +20,25 @@ ReservationItemDTO _$ReservationItemDTOFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$ReservationItemDTOToJson(ReservationItemDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'location_id': instance.locationId,
-      'inventory_item_id': instance.inventoryItemId,
-      'description': instance.description,
-      'created_by': instance.createdBy,
-      'quantity': instance.quantity,
-      'metadata': instance.metadata,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$ReservationItemDTOToJson(ReservationItemDTO instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'location_id': instance.locationId,
+    'inventory_item_id': instance.inventoryItemId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  writeNotNull('created_by', instance.createdBy);
+  val['quantity'] = instance.quantity;
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

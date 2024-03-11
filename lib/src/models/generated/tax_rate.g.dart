@@ -32,21 +32,32 @@ TaxRate _$TaxRateFromJson(Map<String, dynamic> json) => TaxRate(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$TaxRateToJson(TaxRate instance) => <String, dynamic>{
-      'id': instance.id,
-      'rate': instance.rate,
-      'code': instance.code,
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'products': instance.products?.map((e) => e.toJson()).toList(),
-      'product_types': instance.productTypes?.map((e) => e.toJson()).toList(),
-      'shipping_options':
-          instance.shippingOptions?.map((e) => e.toJson()).toList(),
-      'product_count': instance.productCount,
-      'product_type_count': instance.productTypeCount,
-      'shipping_option_count': instance.shippingOptionCount,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$TaxRateToJson(TaxRate instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('rate', instance.rate);
+  writeNotNull('code', instance.code);
+  val['name'] = instance.name;
+  val['region_id'] = instance.regionId;
+  writeNotNull('region', instance.region?.toJson());
+  writeNotNull('products', instance.products?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'product_types', instance.productTypes?.map((e) => e.toJson()).toList());
+  writeNotNull('shipping_options',
+      instance.shippingOptions?.map((e) => e.toJson()).toList());
+  writeNotNull('product_count', instance.productCount);
+  writeNotNull('product_type_count', instance.productTypeCount);
+  writeNotNull('shipping_option_count', instance.shippingOptionCount);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

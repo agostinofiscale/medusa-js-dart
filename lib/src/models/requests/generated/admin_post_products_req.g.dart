@@ -56,34 +56,45 @@ AdminPostProductsReq _$AdminPostProductsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostProductsReqToJson(
-        AdminPostProductsReq instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'subtitle': instance.subtitle,
-      'description': instance.description,
-      'is_giftcard': instance.isGiftcard,
-      'discountable': instance.discountable,
-      'images': instance.images,
-      'thumbnail': instance.thumbnail,
-      'handle': instance.handle,
-      'status': instance.status,
-      'type': instance.type?.toJson(),
-      'collection_id': instance.collectionId,
-      'tags': instance.tags?.map((e) => e.toJson()).toList(),
-      'sales_channels': instance.salesChannels?.map((e) => e.toJson()).toList(),
-      'categories': instance.categories?.map((e) => e.toJson()).toList(),
-      'options': instance.options?.map((e) => e.toJson()).toList(),
-      'variants': instance.variants?.map((e) => e.toJson()).toList(),
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'hs_code': instance.hsCode,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'metadata': instance.metadata,
-    };
+    AdminPostProductsReq instance) {
+  final val = <String, dynamic>{
+    'title': instance.title,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('subtitle', instance.subtitle);
+  writeNotNull('description', instance.description);
+  writeNotNull('is_giftcard', instance.isGiftcard);
+  writeNotNull('discountable', instance.discountable);
+  writeNotNull('images', instance.images);
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('status', instance.status);
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('collection_id', instance.collectionId);
+  writeNotNull('tags', instance.tags?.map((e) => e.toJson()).toList());
+  writeNotNull('sales_channels',
+      instance.salesChannels?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'categories', instance.categories?.map((e) => e.toJson()).toList());
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  writeNotNull('variants', instance.variants?.map((e) => e.toJson()).toList());
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}
 
 AdminPostProductsReqType _$AdminPostProductsReqTypeFromJson(
         Map<String, dynamic> json) =>
@@ -93,11 +104,19 @@ AdminPostProductsReqType _$AdminPostProductsReqTypeFromJson(
     );
 
 Map<String, dynamic> _$AdminPostProductsReqTypeToJson(
-        AdminPostProductsReqType instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-    };
+    AdminPostProductsReqType instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['value'] = instance.value;
+  return val;
+}
 
 AdminPostProductsReqTag _$AdminPostProductsReqTagFromJson(
         Map<String, dynamic> json) =>
@@ -107,11 +126,19 @@ AdminPostProductsReqTag _$AdminPostProductsReqTagFromJson(
     );
 
 Map<String, dynamic> _$AdminPostProductsReqTagToJson(
-        AdminPostProductsReqTag instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'value': instance.value,
-    };
+    AdminPostProductsReqTag instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['value'] = instance.value;
+  return val;
+}
 
 AdminPostProductsReqSalesChannel _$AdminPostProductsReqSalesChannelFromJson(
         Map<String, dynamic> json) =>
@@ -178,25 +205,34 @@ AdminPostProductsReqVariant _$AdminPostProductsReqVariantFromJson(
     );
 
 Map<String, dynamic> _$AdminPostProductsReqVariantToJson(
-        AdminPostProductsReqVariant instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'sku': instance.sku,
-      'ean': instance.ean,
-      'upc': instance.upc,
-      'barcode': instance.barcode,
-      'hs_code': instance.hsCode,
-      'inventory_quantity': instance.inventoryQuantity,
-      'allow_backorder': instance.allowBackorder,
-      'manage_inventory': instance.manageInventory,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'metadata': instance.metadata,
-      'prices': instance.prices?.map((e) => e.toJson()).toList(),
-      'options': instance.options?.map((e) => e.toJson()).toList(),
-    };
+    AdminPostProductsReqVariant instance) {
+  final val = <String, dynamic>{
+    'title': instance.title,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('sku', instance.sku);
+  writeNotNull('ean', instance.ean);
+  writeNotNull('upc', instance.upc);
+  writeNotNull('barcode', instance.barcode);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('inventory_quantity', instance.inventoryQuantity);
+  writeNotNull('allow_backorder', instance.allowBackorder);
+  writeNotNull('manage_inventory', instance.manageInventory);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('prices', instance.prices?.map((e) => e.toJson()).toList());
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  return val;
+}

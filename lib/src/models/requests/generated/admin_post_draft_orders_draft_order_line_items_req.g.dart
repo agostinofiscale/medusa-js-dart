@@ -18,11 +18,19 @@ AdminPostDraftOrdersDraftOrderLineItemsReq
         );
 
 Map<String, dynamic> _$AdminPostDraftOrdersDraftOrderLineItemsReqToJson(
-        AdminPostDraftOrdersDraftOrderLineItemsReq instance) =>
-    <String, dynamic>{
-      'variant_id': instance.variantId,
-      'unit_price': instance.unitPrice,
-      'title': instance.title,
-      'quantity': instance.quantity,
-      'metadata': instance.metadata,
-    };
+    AdminPostDraftOrdersDraftOrderLineItemsReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('variant_id', instance.variantId);
+  writeNotNull('unit_price', instance.unitPrice);
+  writeNotNull('title', instance.title);
+  val['quantity'] = instance.quantity;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

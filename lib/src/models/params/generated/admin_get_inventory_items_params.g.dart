@@ -31,23 +31,31 @@ AdminGetInventoryItemsParams _$AdminGetInventoryItemsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetInventoryItemsParamsToJson(
-        AdminGetInventoryItemsParams instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'q': instance.q,
-      'location_id': instance.locationId,
-      'id': instance.id,
-      'sku': instance.sku,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'hs_code': instance.hsCode,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'requires_shipping': instance.requiresShipping,
-    };
+    AdminGetInventoryItemsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('q', instance.q);
+  writeNotNull('location_id', instance.locationId);
+  writeNotNull('id', instance.id);
+  writeNotNull('sku', instance.sku);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('requires_shipping', instance.requiresShipping);
+  return val;
+}

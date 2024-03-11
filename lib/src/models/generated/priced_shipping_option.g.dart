@@ -47,31 +47,41 @@ PricedShippingOption _$PricedShippingOptionFromJson(
     );
 
 Map<String, dynamic> _$PricedShippingOptionToJson(
-        PricedShippingOption instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'profile_id': instance.profileId,
-      'profile': instance.profile?.toJson(),
-      'provider_id': instance.providerId,
-      'provider': instance.provider?.toJson(),
-      'price_type': instance.priceType,
-      'amount': instance.amount,
-      'is_return': instance.isReturn,
-      'admin_only': instance.adminOnly,
-      'requirements': instance.requirements?.map((e) => e.toJson()).toList(),
-      'data': instance.data,
-      'includes_tax': instance.includesTax,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'price_incl_tax': instance.priceInclTax,
-      'tax_rates': instance.taxRates?.map((e) => e.toJson()).toList(),
-      'tax_amount': instance.taxAmount,
-    };
+    PricedShippingOption instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'region_id': instance.regionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region', instance.region?.toJson());
+  val['profile_id'] = instance.profileId;
+  writeNotNull('profile', instance.profile?.toJson());
+  val['provider_id'] = instance.providerId;
+  writeNotNull('provider', instance.provider?.toJson());
+  val['price_type'] = instance.priceType;
+  writeNotNull('amount', instance.amount);
+  val['is_return'] = instance.isReturn;
+  val['admin_only'] = instance.adminOnly;
+  writeNotNull(
+      'requirements', instance.requirements?.map((e) => e.toJson()).toList());
+  val['data'] = instance.data;
+  writeNotNull('includes_tax', instance.includesTax);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('price_incl_tax', instance.priceInclTax);
+  writeNotNull('tax_rates', instance.taxRates?.map((e) => e.toJson()).toList());
+  writeNotNull('tax_amount', instance.taxAmount);
+  return val;
+}
 
 PricedShippingOptionTaxRate _$PricedShippingOptionTaxRateFromJson(
         Map<String, dynamic> json) =>
@@ -82,9 +92,17 @@ PricedShippingOptionTaxRate _$PricedShippingOptionTaxRateFromJson(
     );
 
 Map<String, dynamic> _$PricedShippingOptionTaxRateToJson(
-        PricedShippingOptionTaxRate instance) =>
-    <String, dynamic>{
-      'rate': instance.rate,
-      'name': instance.name,
-      'code': instance.code,
-    };
+    PricedShippingOptionTaxRate instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('rate', instance.rate);
+  writeNotNull('name', instance.name);
+  writeNotNull('code', instance.code);
+  return val;
+}
