@@ -12,8 +12,16 @@ ReturnShipping _$ReturnShippingFromJson(Map<String, dynamic> json) =>
       price: (json['price'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$ReturnShippingToJson(ReturnShipping instance) =>
-    <String, dynamic>{
-      'option_id': instance.optionId,
-      'price': instance.price,
-    };
+Map<String, dynamic> _$ReturnShippingToJson(ReturnShipping instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('option_id', instance.optionId);
+  writeNotNull('price', instance.price);
+  return val;
+}

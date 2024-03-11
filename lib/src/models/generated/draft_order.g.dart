@@ -27,20 +27,29 @@ DraftOrder _$DraftOrderFromJson(Map<String, dynamic> json) => DraftOrder(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$DraftOrderToJson(DraftOrder instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'status': instance.status,
-      'display_id': instance.displayId,
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'canceled_at': instance.canceledAt,
-      'completed_at': instance.completedAt,
-      'no_notification_order': instance.noNotificationOrder,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$DraftOrderToJson(DraftOrder instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'status': instance.status,
+    'display_id': instance.displayId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('canceled_at', instance.canceledAt);
+  writeNotNull('completed_at', instance.completedAt);
+  writeNotNull('no_notification_order', instance.noNotificationOrder);
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

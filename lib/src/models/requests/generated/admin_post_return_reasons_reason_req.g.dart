@@ -16,10 +16,19 @@ AdminPostReturnReasonsReasonReq _$AdminPostReturnReasonsReasonReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostReturnReasonsReasonReqToJson(
-        AdminPostReturnReasonsReasonReq instance) =>
-    <String, dynamic>{
-      'label': instance.label,
-      'value': instance.value,
-      'description': instance.description,
-      'metadata': instance.metadata,
-    };
+    AdminPostReturnReasonsReasonReq instance) {
+  final val = <String, dynamic>{
+    'label': instance.label,
+    'value': instance.value,
+    'description': instance.description,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

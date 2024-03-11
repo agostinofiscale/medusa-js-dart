@@ -18,12 +18,20 @@ AdminGetCurrenciesParams _$AdminGetCurrenciesParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetCurrenciesParamsToJson(
-        AdminGetCurrenciesParams instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'includes_tax': instance.includesTax,
-      'order': instance.order,
-      'q': instance.q,
-      'offset': instance.offset,
-      'limit': instance.limit,
-    };
+    AdminGetCurrenciesParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code', instance.code);
+  writeNotNull('includes_tax', instance.includesTax);
+  writeNotNull('order', instance.order);
+  writeNotNull('q', instance.q);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  return val;
+}

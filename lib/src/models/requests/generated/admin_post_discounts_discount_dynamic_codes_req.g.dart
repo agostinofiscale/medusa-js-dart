@@ -16,9 +16,18 @@ AdminPostDiscountsDiscountDynamicCodesReq
         );
 
 Map<String, dynamic> _$AdminPostDiscountsDiscountDynamicCodesReqToJson(
-        AdminPostDiscountsDiscountDynamicCodesReq instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'usage_limit': instance.usageLimit,
-      'metadata': instance.metadata,
-    };
+    AdminPostDiscountsDiscountDynamicCodesReq instance) {
+  final val = <String, dynamic>{
+    'code': instance.code,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('usage_limit', instance.usageLimit);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

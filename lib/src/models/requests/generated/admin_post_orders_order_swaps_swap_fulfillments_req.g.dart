@@ -16,9 +16,17 @@ AdminPostOrdersOrderSwapsSwapFulfillmentsReq
         );
 
 Map<String, dynamic> _$AdminPostOrdersOrderSwapsSwapFulfillmentsReqToJson(
-        AdminPostOrdersOrderSwapsSwapFulfillmentsReq instance) =>
-    <String, dynamic>{
-      'metadata': instance.metadata,
-      'no_notification': instance.noNotification,
-      'location_id': instance.locationId,
-    };
+    AdminPostOrdersOrderSwapsSwapFulfillmentsReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  val['no_notification'] = instance.noNotification;
+  val['location_id'] = instance.locationId;
+  return val;
+}

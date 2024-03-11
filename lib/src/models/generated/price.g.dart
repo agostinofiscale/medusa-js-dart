@@ -16,12 +16,21 @@ Price _$PriceFromJson(Map<String, dynamic> json) => Price(
       maxQuantity: json['max_quantity'] as int?,
     );
 
-Map<String, dynamic> _$PriceToJson(Price instance) => <String, dynamic>{
-      'id': instance.id,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-      'variant_id': instance.variantId,
-      'amount': instance.amount,
-      'min_quantity': instance.minQuantity,
-      'max_quantity': instance.maxQuantity,
-    };
+Map<String, dynamic> _$PriceToJson(Price instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  writeNotNull('variant_id', instance.variantId);
+  writeNotNull('amount', instance.amount);
+  writeNotNull('min_quantity', instance.minQuantity);
+  writeNotNull('max_quantity', instance.maxQuantity);
+  return val;
+}

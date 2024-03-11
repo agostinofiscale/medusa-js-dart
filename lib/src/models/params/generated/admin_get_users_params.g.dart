@@ -28,19 +28,26 @@ AdminGetUsersParams _$AdminGetUsersParamsFromJson(Map<String, dynamic> json) =>
       fields: json['fields'] as String?,
     );
 
-Map<String, dynamic> _$AdminGetUsersParamsToJson(
-        AdminGetUsersParams instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'q': instance.q,
-      'order': instance.order,
-      'id': instance.id,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'fields': instance.fields,
-    };
+Map<String, dynamic> _$AdminGetUsersParamsToJson(AdminGetUsersParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('q', instance.q);
+  writeNotNull('order', instance.order);
+  writeNotNull('id', instance.id);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

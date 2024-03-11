@@ -17,14 +17,22 @@ StorePostCartReq _$StorePostCartReqFromJson(Map<String, dynamic> json) =>
       context: json['context'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$StorePostCartReqToJson(StorePostCartReq instance) =>
-    <String, dynamic>{
-      'region_id': instance.regionId,
-      'sales_channel_id': instance.salesChannelId,
-      'country_code': instance.countryCode,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'context': instance.context,
-    };
+Map<String, dynamic> _$StorePostCartReqToJson(StorePostCartReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('country_code', instance.countryCode);
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  writeNotNull('context', instance.context);
+  return val;
+}
 
 CartItem _$CartItemFromJson(Map<String, dynamic> json) => CartItem(
       variantId: json['variant_id'] as String,

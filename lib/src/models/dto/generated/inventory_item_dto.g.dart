@@ -28,24 +28,32 @@ InventoryItemDTO _$InventoryItemDTOFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$InventoryItemDTOToJson(InventoryItemDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'sku': instance.sku,
-      'hs_code': instance.hsCode,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'title': instance.title,
-      'description': instance.description,
-      'thumbnail': instance.thumbnail,
-      'material': instance.material,
-      'weight': instance.weight,
-      'height': instance.height,
-      'width': instance.width,
-      'length': instance.length,
-      'requires_shipping': instance.requiresShipping,
-      'metadata': instance.metadata,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$InventoryItemDTOToJson(InventoryItemDTO instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['sku'] = instance.sku;
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('material', instance.material);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('length', instance.length);
+  writeNotNull('requires_shipping', instance.requiresShipping);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

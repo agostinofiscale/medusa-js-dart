@@ -12,11 +12,20 @@ Error _$ErrorFromJson(Map<String, dynamic> json) => Error(
       type: $enumDecodeNullable(_$ErrorTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$ErrorToJson(Error instance) => <String, dynamic>{
-      'code': _$ErrorCodeEnumMap[instance.code],
-      'message': instance.message,
-      'type': _$ErrorTypeEnumMap[instance.type],
-    };
+Map<String, dynamic> _$ErrorToJson(Error instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code', _$ErrorCodeEnumMap[instance.code]);
+  writeNotNull('message', instance.message);
+  writeNotNull('type', _$ErrorTypeEnumMap[instance.type]);
+  return val;
+}
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.invalidStateError: 'invalid_state_error',

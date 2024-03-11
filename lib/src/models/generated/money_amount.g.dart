@@ -32,21 +32,30 @@ MoneyAmount _$MoneyAmountFromJson(Map<String, dynamic> json) => MoneyAmount(
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$MoneyAmountToJson(MoneyAmount instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'currency_code': instance.currencyCode,
-      'currency': instance.currency?.toJson(),
-      'amount': instance.amount,
-      'min_quantity': instance.minQuantity,
-      'max_quantity': instance.maxQuantity,
-      'price_list_id': instance.priceListId,
-      'price_list': instance.priceList?.toJson(),
-      'variant_id': instance.variantId,
-      'variant': instance.variant?.toJson(),
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$MoneyAmountToJson(MoneyAmount instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'currency_code': instance.currencyCode,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('currency', instance.currency?.toJson());
+  val['amount'] = instance.amount;
+  writeNotNull('min_quantity', instance.minQuantity);
+  writeNotNull('max_quantity', instance.maxQuantity);
+  writeNotNull('price_list_id', instance.priceListId);
+  writeNotNull('price_list', instance.priceList?.toJson());
+  writeNotNull('variant_id', instance.variantId);
+  writeNotNull('variant', instance.variant?.toJson());
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('region', instance.region?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

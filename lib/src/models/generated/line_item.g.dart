@@ -67,47 +67,58 @@ LineItem _$LineItemFromJson(Map<String, dynamic> json) => LineItem(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$LineItemToJson(LineItem instance) => <String, dynamic>{
-      'id': instance.id,
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'swap_id': instance.swapId,
-      'swap': instance.swap?.toJson(),
-      'claim_order_id': instance.claimOrderId,
-      'claim_order': instance.claimOrder?.toJson(),
-      'tax_lines': instance.taxLines?.map((e) => e.toJson()).toList(),
-      'adjustments': instance.adjustments?.map((e) => e.toJson()).toList(),
-      'original_item_id': instance.originalItemId,
-      'order_edit_id': instance.orderEditId,
-      'order_edit': instance.orderEdit?.toJson(),
-      'title': instance.title,
-      'description': instance.description,
-      'thumbnail': instance.thumbnail,
-      'is_return': instance.isReturn,
-      'is_giftcard': instance.isGiftcard,
-      'should_merge': instance.shouldMerge,
-      'allow_discounts': instance.allowDiscounts,
-      'has_shipping': instance.hasShipping,
-      'unit_price': instance.unitPrice,
-      'variant_id': instance.variantId,
-      'variant': instance.variant?.toJson(),
-      'quantity': instance.quantity,
-      'fulfilled_quantity': instance.fulfilledQuantity,
-      'returned_quantity': instance.returnedQuantity,
-      'shipped_quantity': instance.shippedQuantity,
-      'refundable': instance.refundable,
-      'subtotal': instance.subtotal,
-      'tax_total': instance.taxTotal,
-      'total': instance.total,
-      'original_total': instance.originalTotal,
-      'original_tax_total': instance.originalTaxTotal,
-      'discount_total': instance.discountTotal,
-      'raw_discount_total': instance.rawDiscountTotal,
-      'gift_card_total': instance.giftCardTotal,
-      'includes_tax': instance.includesTax,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$LineItemToJson(LineItem instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  writeNotNull('order_id', instance.orderId);
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('swap_id', instance.swapId);
+  writeNotNull('swap', instance.swap?.toJson());
+  writeNotNull('claim_order_id', instance.claimOrderId);
+  writeNotNull('claim_order', instance.claimOrder?.toJson());
+  writeNotNull('tax_lines', instance.taxLines?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'adjustments', instance.adjustments?.map((e) => e.toJson()).toList());
+  writeNotNull('original_item_id', instance.originalItemId);
+  writeNotNull('order_edit_id', instance.orderEditId);
+  writeNotNull('order_edit', instance.orderEdit?.toJson());
+  val['title'] = instance.title;
+  writeNotNull('description', instance.description);
+  writeNotNull('thumbnail', instance.thumbnail);
+  val['is_return'] = instance.isReturn;
+  val['is_giftcard'] = instance.isGiftcard;
+  val['should_merge'] = instance.shouldMerge;
+  val['allow_discounts'] = instance.allowDiscounts;
+  writeNotNull('has_shipping', instance.hasShipping);
+  val['unit_price'] = instance.unitPrice;
+  writeNotNull('variant_id', instance.variantId);
+  writeNotNull('variant', instance.variant?.toJson());
+  val['quantity'] = instance.quantity;
+  writeNotNull('fulfilled_quantity', instance.fulfilledQuantity);
+  writeNotNull('returned_quantity', instance.returnedQuantity);
+  writeNotNull('shipped_quantity', instance.shippedQuantity);
+  writeNotNull('refundable', instance.refundable);
+  writeNotNull('subtotal', instance.subtotal);
+  writeNotNull('tax_total', instance.taxTotal);
+  writeNotNull('total', instance.total);
+  writeNotNull('original_total', instance.originalTotal);
+  writeNotNull('original_tax_total', instance.originalTaxTotal);
+  writeNotNull('discount_total', instance.discountTotal);
+  writeNotNull('raw_discount_total', instance.rawDiscountTotal);
+  writeNotNull('gift_card_total', instance.giftCardTotal);
+  writeNotNull('includes_tax', instance.includesTax);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

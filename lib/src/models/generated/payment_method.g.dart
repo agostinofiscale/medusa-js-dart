@@ -12,8 +12,16 @@ PaymentMethod _$PaymentMethodFromJson(Map<String, dynamic> json) =>
       data: json['data'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) =>
-    <String, dynamic>{
-      'provider_id': instance.providerId,
-      'data': instance.data,
-    };
+Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('provider_id', instance.providerId);
+  writeNotNull('data', instance.data);
+  return val;
+}

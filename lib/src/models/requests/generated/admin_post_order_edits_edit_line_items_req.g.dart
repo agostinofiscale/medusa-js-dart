@@ -15,9 +15,18 @@ AdminPostOrderEditsEditLineItemsReq
         );
 
 Map<String, dynamic> _$AdminPostOrderEditsEditLineItemsReqToJson(
-        AdminPostOrderEditsEditLineItemsReq instance) =>
-    <String, dynamic>{
-      'variant_id': instance.variantId,
-      'quantity': instance.quantity,
-      'metadata': instance.metadata,
-    };
+    AdminPostOrderEditsEditLineItemsReq instance) {
+  final val = <String, dynamic>{
+    'variant_id': instance.variantId,
+    'quantity': instance.quantity,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

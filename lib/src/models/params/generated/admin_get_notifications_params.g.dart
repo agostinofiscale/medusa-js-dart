@@ -21,15 +21,23 @@ AdminGetNotificationsParams _$AdminGetNotificationsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetNotificationsParamsToJson(
-        AdminGetNotificationsParams instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'fields': instance.fields,
-      'expand': instance.expand,
-      'event_name': instance.eventName,
-      'resource_type': instance.resourceType,
-      'resource_id': instance.resourceId,
-      'to': instance.to,
-      'include_resends': instance.includeResends,
-    };
+    AdminGetNotificationsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('event_name', instance.eventName);
+  writeNotNull('resource_type', instance.resourceType);
+  writeNotNull('resource_id', instance.resourceId);
+  writeNotNull('to', instance.to);
+  writeNotNull('include_resends', instance.includeResends);
+  return val;
+}

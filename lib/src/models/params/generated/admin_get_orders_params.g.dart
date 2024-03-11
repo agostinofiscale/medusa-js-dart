@@ -46,27 +46,35 @@ AdminGetOrdersParams _$AdminGetOrdersParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetOrdersParamsToJson(
-        AdminGetOrdersParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'id': instance.id,
-      'status': instance.status,
-      'fulfillment_status': instance.fulfillmentStatus,
-      'payment_status': instance.paymentStatus,
-      'display_id': instance.displayId,
-      'cart_id': instance.cartId,
-      'customer_id': instance.customerId,
-      'email': instance.email,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-      'tax_rate': instance.taxRate,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'canceled_at': instance.canceledAt?.toJson(),
-      'sales_channel_id': instance.salesChannelId,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'order': instance.order,
-    };
+    AdminGetOrdersParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('id', instance.id);
+  writeNotNull('status', instance.status);
+  writeNotNull('fulfillment_status', instance.fulfillmentStatus);
+  writeNotNull('payment_status', instance.paymentStatus);
+  writeNotNull('display_id', instance.displayId);
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('email', instance.email);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  writeNotNull('tax_rate', instance.taxRate);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('canceled_at', instance.canceledAt?.toJson());
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('order', instance.order);
+  return val;
+}

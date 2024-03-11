@@ -29,17 +29,25 @@ AdminPostRegionsRegionReq _$AdminPostRegionsRegionReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostRegionsRegionReqToJson(
-        AdminPostRegionsRegionReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'currency_code': instance.currencyCode,
-      'automatic_taxes': instance.automaticTaxes,
-      'gift_cards_taxable': instance.giftCardsTaxable,
-      'tax_provider_id': instance.taxProviderId,
-      'tax_code': instance.taxCode,
-      'tax_rate': instance.taxRate,
-      'includes_tax': instance.includesTax,
-      'payment_providers': instance.paymentProviders,
-      'fulfillment_providers': instance.fulfillmentProviders,
-      'countries': instance.countries,
-    };
+    AdminPostRegionsRegionReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('currency_code', instance.currencyCode);
+  writeNotNull('automatic_taxes', instance.automaticTaxes);
+  writeNotNull('gift_cards_taxable', instance.giftCardsTaxable);
+  writeNotNull('tax_provider_id', instance.taxProviderId);
+  writeNotNull('tax_code', instance.taxCode);
+  writeNotNull('tax_rate', instance.taxRate);
+  writeNotNull('includes_tax', instance.includesTax);
+  writeNotNull('payment_providers', instance.paymentProviders);
+  writeNotNull('fulfillment_providers', instance.fulfillmentProviders);
+  writeNotNull('countries', instance.countries);
+  return val;
+}

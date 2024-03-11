@@ -15,9 +15,17 @@ AdminGetDraftOrdersParams _$AdminGetDraftOrdersParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetDraftOrdersParamsToJson(
-        AdminGetDraftOrdersParams instance) =>
-    <String, dynamic>{
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'q': instance.q,
-    };
+    AdminGetDraftOrdersParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('q', instance.q);
+  return val;
+}

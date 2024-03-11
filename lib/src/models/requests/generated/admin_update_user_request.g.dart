@@ -17,14 +17,22 @@ AdminUpdateUserRequest _$AdminUpdateUserRequestFromJson(
     );
 
 Map<String, dynamic> _$AdminUpdateUserRequestToJson(
-        AdminUpdateUserRequest instance) =>
-    <String, dynamic>{
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'role': _$UserRoleEnumMap[instance.role],
-      'api_token': instance.apiToken,
-      'metadata': instance.metadata,
-    };
+    AdminUpdateUserRequest instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('role', _$UserRoleEnumMap[instance.role]);
+  writeNotNull('api_token', instance.apiToken);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}
 
 const _$UserRoleEnumMap = {
   UserRole.admin: 'admin',

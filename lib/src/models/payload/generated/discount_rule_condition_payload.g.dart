@@ -29,15 +29,24 @@ DiscountRuleConditionPayload _$DiscountRuleConditionPayloadFromJson(
     );
 
 Map<String, dynamic> _$DiscountRuleConditionPayloadToJson(
-        DiscountRuleConditionPayload instance) =>
-    <String, dynamic>{
-      'operator': _$DiscountRuleConditionOperatorEnumMap[instance.operator]!,
-      'products': instance.products,
-      'product_types': instance.productTypes,
-      'product_collections': instance.productCollections,
-      'product_tags': instance.productTags,
-      'customer_groups': instance.customerGroups,
-    };
+    DiscountRuleConditionPayload instance) {
+  final val = <String, dynamic>{
+    'operator': _$DiscountRuleConditionOperatorEnumMap[instance.operator]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('products', instance.products);
+  writeNotNull('product_types', instance.productTypes);
+  writeNotNull('product_collections', instance.productCollections);
+  writeNotNull('product_tags', instance.productTags);
+  writeNotNull('customer_groups', instance.customerGroups);
+  return val;
+}
 
 const _$DiscountRuleConditionOperatorEnumMap = {
   DiscountRuleConditionOperator.resourceIn: 'in',

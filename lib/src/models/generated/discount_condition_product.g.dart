@@ -24,13 +24,22 @@ DiscountConditionProduct _$DiscountConditionProductFromJson(
     );
 
 Map<String, dynamic> _$DiscountConditionProductToJson(
-        DiscountConditionProduct instance) =>
-    <String, dynamic>{
-      'product_id': instance.productId,
-      'condition_id': instance.conditionId,
-      'product': instance.product?.toJson(),
-      'discount_condition': instance.discountCondition?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+    DiscountConditionProduct instance) {
+  final val = <String, dynamic>{
+    'product_id': instance.productId,
+    'condition_id': instance.conditionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('discount_condition', instance.discountCondition?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

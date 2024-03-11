@@ -65,40 +65,52 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'subtitle': instance.subtitle,
-      'description': instance.description,
-      'handle': instance.handle,
-      'is_giftcard': instance.isGiftcard,
-      'status': instance.status,
-      'images': instance.images?.map((e) => e.toJson()).toList(),
-      'thumbnail': instance.thumbnail,
-      'options': instance.options?.map((e) => e.toJson()).toList(),
-      'categories': instance.categories?.map((e) => e.toJson()).toList(),
-      'profile_id': instance.profileId,
-      'profile': instance.profile?.toJson(),
-      'profiles': instance.profiles?.map((e) => e.toJson()).toList(),
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'hs_code': instance.hsCode,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'collection_id': instance.collectionId,
-      'collection': instance.collection?.toJson(),
-      'type_id': instance.typeId,
-      'type': instance.type?.toJson(),
-      'tags': instance.tags?.map((e) => e.toJson()).toList(),
-      'discountable': instance.discountable,
-      'external_id': instance.externalId,
-      'sales_channels': instance.salesChannels?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'variants': instance.variants?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$ProductToJson(Product instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'title': instance.title,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('subtitle', instance.subtitle);
+  writeNotNull('description', instance.description);
+  writeNotNull('handle', instance.handle);
+  val['is_giftcard'] = instance.isGiftcard;
+  val['status'] = instance.status;
+  writeNotNull('images', instance.images?.map((e) => e.toJson()).toList());
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'categories', instance.categories?.map((e) => e.toJson()).toList());
+  val['profile_id'] = instance.profileId;
+  writeNotNull('profile', instance.profile?.toJson());
+  writeNotNull('profiles', instance.profiles?.map((e) => e.toJson()).toList());
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('collection_id', instance.collectionId);
+  writeNotNull('collection', instance.collection?.toJson());
+  writeNotNull('type_id', instance.typeId);
+  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('tags', instance.tags?.map((e) => e.toJson()).toList());
+  val['discountable'] = instance.discountable;
+  writeNotNull('external_id', instance.externalId);
+  writeNotNull('sales_channels',
+      instance.salesChannels?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('variants', instance.variants?.map((e) => e.toJson()).toList());
+  return val;
+}

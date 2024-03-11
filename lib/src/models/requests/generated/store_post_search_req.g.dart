@@ -14,10 +14,18 @@ StorePostSearchReq _$StorePostSearchReqFromJson(Map<String, dynamic> json) =>
       filter: json['filter'],
     );
 
-Map<String, dynamic> _$StorePostSearchReqToJson(StorePostSearchReq instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'filter': instance.filter,
-    };
+Map<String, dynamic> _$StorePostSearchReqToJson(StorePostSearchReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('filter', instance.filter);
+  return val;
+}

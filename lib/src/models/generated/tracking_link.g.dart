@@ -21,16 +21,25 @@ TrackingLink _$TrackingLinkFromJson(Map<String, dynamic> json) => TrackingLink(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$TrackingLinkToJson(TrackingLink instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'url': instance.url,
-      'tracking_number': instance.trackingNumber,
-      'fulfillment_id': instance.fulfillmentId,
-      'fulfillment': instance.fulfillment?.toJson(),
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$TrackingLinkToJson(TrackingLink instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('url', instance.url);
+  val['tracking_number'] = instance.trackingNumber;
+  val['fulfillment_id'] = instance.fulfillmentId;
+  writeNotNull('fulfillment', instance.fulfillment?.toJson());
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

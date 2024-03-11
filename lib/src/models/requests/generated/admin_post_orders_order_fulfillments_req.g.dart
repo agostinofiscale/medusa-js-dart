@@ -18,10 +18,19 @@ AdminPostOrdersOrderFulfillmentsReq
         );
 
 Map<String, dynamic> _$AdminPostOrdersOrderFulfillmentsReqToJson(
-        AdminPostOrdersOrderFulfillmentsReq instance) =>
-    <String, dynamic>{
-      'items': instance.items.map((e) => e.toJson()).toList(),
-      'location_id': instance.locationId,
-      'no_notification': instance.noNotification,
-      'metadata': instance.metadata,
-    };
+    AdminPostOrdersOrderFulfillmentsReq instance) {
+  final val = <String, dynamic>{
+    'items': instance.items.map((e) => e.toJson()).toList(),
+    'location_id': instance.locationId,
+    'no_notification': instance.noNotification,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

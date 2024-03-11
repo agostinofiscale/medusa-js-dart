@@ -17,8 +17,17 @@ AdminPostOrdersOrderClaimsClaimShipmentsReq
         );
 
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsClaimShipmentsReqToJson(
-        AdminPostOrdersOrderClaimsClaimShipmentsReq instance) =>
-    <String, dynamic>{
-      'fulfillment_id': instance.fulfillmentId,
-      'tracking_numbers': instance.trackingNumbers,
-    };
+    AdminPostOrdersOrderClaimsClaimShipmentsReq instance) {
+  final val = <String, dynamic>{
+    'fulfillment_id': instance.fulfillmentId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('tracking_numbers', instance.trackingNumbers);
+  return val;
+}

@@ -27,15 +27,24 @@ StockLocationExpandedDTO _$StockLocationExpandedDTOFromJson(
     );
 
 Map<String, dynamic> _$StockLocationExpandedDTOToJson(
-        StockLocationExpandedDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'address_id': instance.addressId,
-      'name': instance.name,
-      'address': instance.address?.toJson(),
-      'metadata': instance.metadata,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'sales_channel': instance.salesChannel?.toJson(),
-    };
+    StockLocationExpandedDTO instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'address_id': instance.addressId,
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('address', instance.address?.toJson());
+  writeNotNull('metadata', instance.metadata);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('sales_channel', instance.salesChannel?.toJson());
+  return val;
+}

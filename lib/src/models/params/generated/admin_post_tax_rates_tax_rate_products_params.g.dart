@@ -19,8 +19,16 @@ AdminPostTaxRatesTaxRateProductsParams
         );
 
 Map<String, dynamic> _$AdminPostTaxRatesTaxRateProductsParamsToJson(
-        AdminPostTaxRatesTaxRateProductsParams instance) =>
-    <String, dynamic>{
-      'fields': instance.fields,
-      'expand': instance.expand,
-    };
+    AdminPostTaxRatesTaxRateProductsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('fields', instance.fields);
+  writeNotNull('expand', instance.expand);
+  return val;
+}

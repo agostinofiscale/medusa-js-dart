@@ -23,16 +23,25 @@ AdminPostDiscountsReq _$AdminPostDiscountsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostDiscountsReqToJson(
-        AdminPostDiscountsReq instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'is_dynamic': instance.isDynamic,
-      'rule': instance.rule.toJson(),
-      'is_disabled': instance.isDisabled,
-      'starts_at': instance.startsAt,
-      'ends_at': instance.endsAt,
-      'valid_duration': instance.validDuration,
-      'regions': instance.regions,
-      'usage_limit': instance.usageLimit,
-      'metadata': instance.metadata,
-    };
+    AdminPostDiscountsReq instance) {
+  final val = <String, dynamic>{
+    'code': instance.code,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('is_dynamic', instance.isDynamic);
+  val['rule'] = instance.rule.toJson();
+  writeNotNull('is_disabled', instance.isDisabled);
+  writeNotNull('starts_at', instance.startsAt);
+  writeNotNull('ends_at', instance.endsAt);
+  writeNotNull('valid_duration', instance.validDuration);
+  val['regions'] = instance.regions;
+  writeNotNull('usage_limit', instance.usageLimit);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

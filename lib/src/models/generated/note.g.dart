@@ -21,15 +21,25 @@ Note _$NoteFromJson(Map<String, dynamic> json) => Note(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$NoteToJson(Note instance) => <String, dynamic>{
-      'id': instance.id,
-      'resource_type': instance.resourceType,
-      'resource_id': instance.resourceId,
-      'value': instance.value,
-      'author_id': instance.authorId,
-      'author': instance.author?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$NoteToJson(Note instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'resource_type': instance.resourceType,
+    'resource_id': instance.resourceId,
+    'value': instance.value,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('author_id', instance.authorId);
+  writeNotNull('author', instance.author?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

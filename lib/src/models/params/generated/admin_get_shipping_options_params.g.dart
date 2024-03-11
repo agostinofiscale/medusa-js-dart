@@ -26,20 +26,28 @@ AdminGetShippingOptionsParams _$AdminGetShippingOptionsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetShippingOptionsParamsToJson(
-        AdminGetShippingOptionsParams instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'region_id': instance.regionId,
-      'is_return': instance.isReturn,
-      'admin_only': instance.adminOnly,
-      'q': instance.q,
-      'order': instance.order,
-      'id': instance.id,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminGetShippingOptionsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('is_return', instance.isReturn);
+  writeNotNull('admin_only', instance.adminOnly);
+  writeNotNull('q', instance.q);
+  writeNotNull('order', instance.order);
+  writeNotNull('id', instance.id);
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

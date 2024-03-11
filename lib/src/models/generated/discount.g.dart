@@ -33,23 +33,33 @@ Discount _$DiscountFromJson(Map<String, dynamic> json) => Discount(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$DiscountToJson(Discount instance) => <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'is_dynamic': instance.isDynamic,
-      'rule_id': instance.ruleId,
-      'rule': instance.rule?.toJson(),
-      'is_disabled': instance.isDisabled,
-      'parent_discount_id': instance.parentDiscountId,
-      'parent_discount': instance.parentDiscount?.toJson(),
-      'starts_at': instance.startsAt,
-      'ends_at': instance.endsAt,
-      'valid_duration': instance.validDuration,
-      'regions': instance.regions?.map((e) => e.toJson()).toList(),
-      'usage_limit': instance.usageLimit,
-      'usage_count': instance.usageCount,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$DiscountToJson(Discount instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'code': instance.code,
+    'is_dynamic': instance.isDynamic,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('rule_id', instance.ruleId);
+  writeNotNull('rule', instance.rule?.toJson());
+  val['is_disabled'] = instance.isDisabled;
+  writeNotNull('parent_discount_id', instance.parentDiscountId);
+  writeNotNull('parent_discount', instance.parentDiscount?.toJson());
+  val['starts_at'] = instance.startsAt;
+  writeNotNull('ends_at', instance.endsAt);
+  writeNotNull('valid_duration', instance.validDuration);
+  writeNotNull('regions', instance.regions?.map((e) => e.toJson()).toList());
+  writeNotNull('usage_limit', instance.usageLimit);
+  val['usage_count'] = instance.usageCount;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

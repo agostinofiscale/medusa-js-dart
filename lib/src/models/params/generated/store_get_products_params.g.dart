@@ -45,28 +45,36 @@ StoreGetProductsParams _$StoreGetProductsParamsFromJson(
       ..currencyCode = json['currency_code'] as String?;
 
 Map<String, dynamic> _$StoreGetProductsParamsToJson(
-        StoreGetProductsParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'id': instance.id,
-      'sales_channel_id': instance.salesChannelId,
-      'collection_id': instance.collectionId,
-      'type_id': instance.typeId,
-      'tags': instance.tags,
-      'title': instance.title,
-      'description': instance.description,
-      'handle': instance.handle,
-      'is_giftcard': instance.isGiftcard,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'category_id': instance.categoryId,
-      'include_category_children': instance.includeCategoryChildren,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'order': instance.order,
-      'cart_id': instance.cartId,
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-    };
+    StoreGetProductsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('id', instance.id);
+  writeNotNull('sales_channel_id', instance.salesChannelId);
+  writeNotNull('collection_id', instance.collectionId);
+  writeNotNull('type_id', instance.typeId);
+  writeNotNull('tags', instance.tags);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('is_giftcard', instance.isGiftcard);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('category_id', instance.categoryId);
+  writeNotNull('include_category_children', instance.includeCategoryChildren);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('order', instance.order);
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  return val;
+}

@@ -18,12 +18,20 @@ PublishableApiKeySalesChannel _$PublishableApiKeySalesChannelFromJson(
     );
 
 Map<String, dynamic> _$PublishableApiKeySalesChannelToJson(
-        PublishableApiKeySalesChannel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'sales_channel_id': instance.salesChannelId,
-      'publishable_key_id': instance.publishableKeyId,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+    PublishableApiKeySalesChannel instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['sales_channel_id'] = instance.salesChannelId;
+  val['publishable_key_id'] = instance.publishableKeyId;
+  writeNotNull('created_at', instance.createdAt);
+  writeNotNull('updated_at', instance.updatedAt);
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

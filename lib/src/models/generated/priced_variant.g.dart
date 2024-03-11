@@ -59,42 +59,51 @@ PricedVariant _$PricedVariantFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$PricedVariantToJson(PricedVariant instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'product_id': instance.productId,
-      'product': instance.product?.toJson(),
-      'prices': instance.prices?.map((e) => e.toJson()).toList(),
-      'sku': instance.sku,
-      'barcode': instance.barcode,
-      'ean': instance.ean,
-      'upc': instance.upc,
-      'variant_rank': instance.variantRank,
-      'inventory_quantity': instance.inventoryQuantity,
-      'allow_backorder': instance.allowBackorder,
-      'manage_inventory': instance.manageInventory,
-      'hs_code': instance.hsCode,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'options': instance.options?.map((e) => e.toJson()).toList(),
-      'inventory_items':
-          instance.inventoryItems?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'purchasable': instance.purchasable,
-      'original_price': instance.originalPrice,
-      'calculated_price': instance.calculatedPrice,
-      'original_price_incl_tax': instance.originalPriceInclTax,
-      'calculated_price_incl_tax': instance.calculatedPriceInclTax,
-      'original_tax': instance.originalTax,
-      'calculated_tax': instance.calculatedTax,
-      'tax_rates': instance.taxRates.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$PricedVariantToJson(PricedVariant instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'title': instance.title,
+    'product_id': instance.productId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('product', instance.product?.toJson());
+  writeNotNull('prices', instance.prices?.map((e) => e.toJson()).toList());
+  writeNotNull('sku', instance.sku);
+  writeNotNull('barcode', instance.barcode);
+  writeNotNull('ean', instance.ean);
+  writeNotNull('upc', instance.upc);
+  writeNotNull('variant_rank', instance.variantRank);
+  val['inventory_quantity'] = instance.inventoryQuantity;
+  val['allow_backorder'] = instance.allowBackorder;
+  val['manage_inventory'] = instance.manageInventory;
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  writeNotNull('inventory_items',
+      instance.inventoryItems?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('purchasable', instance.purchasable);
+  writeNotNull('original_price', instance.originalPrice);
+  writeNotNull('calculated_price', instance.calculatedPrice);
+  writeNotNull('original_price_incl_tax', instance.originalPriceInclTax);
+  writeNotNull('calculated_price_incl_tax', instance.calculatedPriceInclTax);
+  writeNotNull('original_tax', instance.originalTax);
+  writeNotNull('calculated_tax', instance.calculatedTax);
+  val['tax_rates'] = instance.taxRates.map((e) => e.toJson()).toList();
+  return val;
+}

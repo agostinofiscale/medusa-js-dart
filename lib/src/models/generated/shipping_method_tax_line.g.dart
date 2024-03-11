@@ -24,15 +24,24 @@ ShippingMethodTaxLine _$ShippingMethodTaxLineFromJson(
     );
 
 Map<String, dynamic> _$ShippingMethodTaxLineToJson(
-        ShippingMethodTaxLine instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'name': instance.name,
-      'rate': instance.rate,
-      'shipping_method_id': instance.shippingMethodId,
-      'shipping_method': instance.shippingMethod?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+    ShippingMethodTaxLine instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code', instance.code);
+  val['name'] = instance.name;
+  val['rate'] = instance.rate;
+  val['shipping_method_id'] = instance.shippingMethodId;
+  writeNotNull('shipping_method', instance.shippingMethod?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

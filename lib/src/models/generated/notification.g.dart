@@ -34,21 +34,30 @@ Notification _$NotificationFromJson(Map<String, dynamic> json) => Notification(
       updatedAt: json['updated_at'] as String,
     );
 
-Map<String, dynamic> _$NotificationToJson(Notification instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'event_name': instance.eventName,
-      'resource_type': instance.resourceType,
-      'resource_id': instance.resourceId,
-      'customer_id': instance.customerId,
-      'customer': instance.customer?.toJson(),
-      'to': instance.to,
-      'data': instance.data,
-      'parent_id': instance.parentId,
-      'parent_notification': instance.parentNotification?.toJson(),
-      'resends': instance.resends?.map((e) => e.toJson()).toList(),
-      'provider_id': instance.providerId,
-      'provider': instance.provider?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-    };
+Map<String, dynamic> _$NotificationToJson(Notification instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('event_name', instance.eventName);
+  val['resource_type'] = instance.resourceType;
+  val['resource_id'] = instance.resourceId;
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('customer', instance.customer?.toJson());
+  val['to'] = instance.to;
+  val['data'] = instance.data;
+  writeNotNull('parent_id', instance.parentId);
+  writeNotNull('parent_notification', instance.parentNotification?.toJson());
+  writeNotNull('resends', instance.resends?.map((e) => e.toJson()).toList());
+  writeNotNull('provider_id', instance.providerId);
+  writeNotNull('provider', instance.provider?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  return val;
+}

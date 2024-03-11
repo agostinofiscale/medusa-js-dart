@@ -14,7 +14,15 @@ GetPublishableApiKeySalesChannelsParams
         );
 
 Map<String, dynamic> _$GetPublishableApiKeySalesChannelsParamsToJson(
-        GetPublishableApiKeySalesChannelsParams instance) =>
-    <String, dynamic>{
-      'query': instance.query,
-    };
+    GetPublishableApiKeySalesChannelsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('query', instance.query);
+  return val;
+}

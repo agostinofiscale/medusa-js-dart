@@ -18,12 +18,21 @@ AdminPostCustomersReq _$AdminPostCustomersReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCustomersReqToJson(
-        AdminPostCustomersReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'password': instance.password,
-      'phone': instance.phone,
-      'metadata': instance.metadata,
-    };
+    AdminPostCustomersReq instance) {
+  final val = <String, dynamic>{
+    'email': instance.email,
+    'first_name': instance.firstName,
+    'last_name': instance.lastName,
+    'password': instance.password,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('phone', instance.phone);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

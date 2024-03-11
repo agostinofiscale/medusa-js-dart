@@ -39,24 +39,31 @@ AdminGetBatchParams _$AdminGetBatchParamsFromJson(Map<String, dynamic> json) =>
           : DateRange.fromJson(json['updated_at'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AdminGetBatchParamsToJson(
-        AdminGetBatchParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'id': instance.id,
-      'type': instance.type,
-      'confirmed_at': instance.confirmedAt?.toJson(),
-      'pre_processed_at': instance.preProcessedAt?.toJson(),
-      'completed_at': instance.completedAt?.toJson(),
-      'failed_at': instance.failedAt?.toJson(),
-      'canceled_at': instance.canceledAt?.toJson(),
-      'order': instance.order,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-    };
+Map<String, dynamic> _$AdminGetBatchParamsToJson(AdminGetBatchParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('id', instance.id);
+  writeNotNull('type', instance.type);
+  writeNotNull('confirmed_at', instance.confirmedAt?.toJson());
+  writeNotNull('pre_processed_at', instance.preProcessedAt?.toJson());
+  writeNotNull('completed_at', instance.completedAt?.toJson());
+  writeNotNull('failed_at', instance.failedAt?.toJson());
+  writeNotNull('canceled_at', instance.canceledAt?.toJson());
+  writeNotNull('order', instance.order);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  return val;
+}
 
 DateRange _$DateRangeFromJson(Map<String, dynamic> json) => DateRange(
       lt: json['lt'] as String?,
@@ -65,9 +72,18 @@ DateRange _$DateRangeFromJson(Map<String, dynamic> json) => DateRange(
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$DateRangeToJson(DateRange instance) => <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$DateRangeToJson(DateRange instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

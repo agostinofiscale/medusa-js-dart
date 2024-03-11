@@ -23,17 +23,26 @@ AddressCreatePayload _$AddressCreatePayloadFromJson(
     );
 
 Map<String, dynamic> _$AddressCreatePayloadToJson(
-        AddressCreatePayload instance) =>
-    <String, dynamic>{
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'phone': instance.phone,
-      'company': instance.company,
-      'address1': instance.address1,
-      'address2': instance.address2,
-      'city': instance.city,
-      'country_code': instance.countryCode,
-      'province': instance.province,
-      'postal_code': instance.postalCode,
-      'metadata': instance.metadata,
-    };
+    AddressCreatePayload instance) {
+  final val = <String, dynamic>{
+    'first_name': instance.firstName,
+    'last_name': instance.lastName,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('phone', instance.phone);
+  writeNotNull('company', instance.company);
+  val['address1'] = instance.address1;
+  writeNotNull('address2', instance.address2);
+  val['city'] = instance.city;
+  val['country_code'] = instance.countryCode;
+  writeNotNull('province', instance.province);
+  val['postal_code'] = instance.postalCode;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -21,14 +21,23 @@ AdminPostProductCategoriesCategoryReq
         );
 
 Map<String, dynamic> _$AdminPostProductCategoriesCategoryReqToJson(
-        AdminPostProductCategoriesCategoryReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'handle': instance.handle,
-      'is_internal': instance.isInternal,
-      'is_active': instance.isActive,
-      'parent_category_id': instance.parentCategoryId,
-      'rank': instance.rank,
-      'metadata': instance.metadata,
-    };
+    AdminPostProductCategoriesCategoryReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'description': instance.description,
+    'handle': instance.handle,
+    'is_internal': instance.isInternal,
+    'is_active': instance.isActive,
+    'parent_category_id': instance.parentCategoryId,
+    'rank': instance.rank,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

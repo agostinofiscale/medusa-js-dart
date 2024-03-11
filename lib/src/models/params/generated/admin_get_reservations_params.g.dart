@@ -35,19 +35,27 @@ AdminGetReservationsParams _$AdminGetReservationsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetReservationsParamsToJson(
-        AdminGetReservationsParams instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-      'inventory_item_id': instance.inventoryItemId,
-      'line_item_id': instance.lineItemId,
-      'quantity': instance.quantity?.toJson(),
-      'description': instance.description?.toJson(),
-      'created_at': instance.createdAt?.toJson(),
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminGetReservationsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('location_id', instance.locationId);
+  writeNotNull('inventory_item_id', instance.inventoryItemId);
+  writeNotNull('line_item_id', instance.lineItemId);
+  writeNotNull('quantity', instance.quantity?.toJson());
+  writeNotNull('description', instance.description?.toJson());
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}
 
 ReservationDescriptionFilter _$ReservationDescriptionFilterFromJson(
         Map<String, dynamic> json) =>
@@ -58,9 +66,17 @@ ReservationDescriptionFilter _$ReservationDescriptionFilterFromJson(
     );
 
 Map<String, dynamic> _$ReservationDescriptionFilterToJson(
-        ReservationDescriptionFilter instance) =>
-    <String, dynamic>{
-      'contains': instance.contains,
-      'starts_with': instance.startsWith,
-      'ends_with': instance.endsWith,
-    };
+    ReservationDescriptionFilter instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('contains', instance.contains);
+  writeNotNull('starts_with', instance.startsWith);
+  writeNotNull('ends_with', instance.endsWith);
+  return val;
+}

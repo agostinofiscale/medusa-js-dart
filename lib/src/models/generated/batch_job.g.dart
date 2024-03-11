@@ -27,22 +27,32 @@ BatchJob _$BatchJobFromJson(Map<String, dynamic> json) => BatchJob(
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$BatchJobToJson(BatchJob instance) => <String, dynamic>{
-      'id': instance.id,
-      'type': instance.type,
-      'status': instance.status,
-      'created_by': instance.createdBy,
-      'created_by_user': instance.createdByUser.toJson(),
-      'context': instance.context,
-      'dry_run': instance.dryRun,
-      'result': instance.result,
-      'pre_processed_at': instance.preProcessedAt,
-      'processing_at': instance.processingAt,
-      'confirmed_at': instance.confirmedAt,
-      'completed_at': instance.completedAt,
-      'canceled_at': instance.canceledAt,
-      'failed_at': instance.failedAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$BatchJobToJson(BatchJob instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'type': instance.type,
+    'status': instance.status,
+    'created_by': instance.createdBy,
+    'created_by_user': instance.createdByUser.toJson(),
+    'context': instance.context,
+    'dry_run': instance.dryRun,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('result', instance.result);
+  val['pre_processed_at'] = instance.preProcessedAt;
+  val['processing_at'] = instance.processingAt;
+  val['confirmed_at'] = instance.confirmedAt;
+  val['completed_at'] = instance.completedAt;
+  val['canceled_at'] = instance.canceledAt;
+  val['failed_at'] = instance.failedAt;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

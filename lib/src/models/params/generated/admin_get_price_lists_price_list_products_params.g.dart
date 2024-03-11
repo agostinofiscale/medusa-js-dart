@@ -43,24 +43,32 @@ AdminGetPriceListsPriceListProductsParams
         );
 
 Map<String, dynamic> _$AdminGetPriceListsPriceListProductsParamsToJson(
-        AdminGetPriceListsPriceListProductsParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'id': instance.id,
-      'status': instance.status,
-      'collection_id': instance.collectionId,
-      'tags': instance.tags,
-      'title': instance.title,
-      'description': instance.description,
-      'handle': instance.handle,
-      'is_giftcard': instance.isGiftcard,
-      'type': instance.type,
-      'order': instance.order,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminGetPriceListsPriceListProductsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('id', instance.id);
+  writeNotNull('status', instance.status);
+  writeNotNull('collection_id', instance.collectionId);
+  writeNotNull('tags', instance.tags);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('is_giftcard', instance.isGiftcard);
+  writeNotNull('type', instance.type);
+  writeNotNull('order', instance.order);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

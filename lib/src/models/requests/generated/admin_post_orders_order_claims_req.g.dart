@@ -34,18 +34,27 @@ AdminPostOrdersOrderClaimsReq _$AdminPostOrdersOrderClaimsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostOrdersOrderClaimsReqToJson(
-        AdminPostOrdersOrderClaimsReq instance) =>
-    <String, dynamic>{
-      'type': instance.type,
-      'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
-      'return_shipping': instance.returnShipping?.toJson(),
-      'additional_items':
-          instance.additionalItems?.map((e) => e.toJson()).toList(),
-      'shipping_methods':
-          instance.shippingMethods?.map((e) => e.toJson()).toList(),
-      'shipping_address': instance.shippingAddress?.toJson(),
-      'refund_amount': instance.refundAmount,
-      'no_notification': instance.noNotification,
-      'return_location_id': instance.returnLocationId,
-      'metadata': instance.metadata,
-    };
+    AdminPostOrdersOrderClaimsReq instance) {
+  final val = <String, dynamic>{
+    'type': instance.type,
+    'claim_items': instance.claimItems.map((e) => e.toJson()).toList(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('return_shipping', instance.returnShipping?.toJson());
+  writeNotNull('additional_items',
+      instance.additionalItems?.map((e) => e.toJson()).toList());
+  writeNotNull('shipping_methods',
+      instance.shippingMethods?.map((e) => e.toJson()).toList());
+  writeNotNull('shipping_address', instance.shippingAddress?.toJson());
+  writeNotNull('refund_amount', instance.refundAmount);
+  writeNotNull('no_notification', instance.noNotification);
+  writeNotNull('return_location_id', instance.returnLocationId);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -27,19 +27,27 @@ StockLocationAddressDTO _$StockLocationAddressDTOFromJson(
     );
 
 Map<String, dynamic> _$StockLocationAddressDTOToJson(
-        StockLocationAddressDTO instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'address1': instance.address1,
-      'address2': instance.address2,
-      'company': instance.company,
-      'country_code': instance.countryCode,
-      'city': instance.city,
-      'phone': instance.phone,
-      'postal_code': instance.postalCode,
-      'province': instance.province,
-      'metadata': instance.metadata,
-      'created_at': instance.createdAt.toIso8601String(),
-      'updated_at': instance.updatedAt.toIso8601String(),
-      'deleted_at': instance.deletedAt?.toIso8601String(),
-    };
+    StockLocationAddressDTO instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  val['address1'] = instance.address1;
+  writeNotNull('address2', instance.address2);
+  writeNotNull('company', instance.company);
+  val['country_code'] = instance.countryCode;
+  writeNotNull('city', instance.city);
+  writeNotNull('phone', instance.phone);
+  writeNotNull('postal_code', instance.postalCode);
+  writeNotNull('province', instance.province);
+  writeNotNull('metadata', instance.metadata);
+  val['created_at'] = instance.createdAt.toIso8601String();
+  val['updated_at'] = instance.updatedAt.toIso8601String();
+  writeNotNull('deleted_at', instance.deletedAt?.toIso8601String());
+  return val;
+}

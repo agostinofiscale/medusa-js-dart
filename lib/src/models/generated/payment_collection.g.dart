@@ -35,24 +35,33 @@ PaymentCollection _$PaymentCollectionFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$PaymentCollectionToJson(PaymentCollection instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'type': instance.type,
-      'status': instance.status,
-      'description': instance.description,
-      'amount': instance.amount,
-      'authorized_amount': instance.authorizedAmount,
-      'region_id': instance.regionId,
-      'region': instance.region?.toJson(),
-      'currency_code': instance.currencyCode,
-      'currency': instance.currency?.toJson(),
-      'payment_sessions':
-          instance.paymentSessions?.map((e) => e.toJson()).toList(),
-      'payments': instance.payments?.map((e) => e.toJson()).toList(),
-      'created_by': instance.createdBy,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$PaymentCollectionToJson(PaymentCollection instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'type': instance.type,
+    'status': instance.status,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  val['amount'] = instance.amount;
+  writeNotNull('authorized_amount', instance.authorizedAmount);
+  val['region_id'] = instance.regionId;
+  writeNotNull('region', instance.region?.toJson());
+  val['currency_code'] = instance.currencyCode;
+  writeNotNull('currency', instance.currency?.toJson());
+  writeNotNull('payment_sessions',
+      instance.paymentSessions?.map((e) => e.toJson()).toList());
+  writeNotNull('payments', instance.payments?.map((e) => e.toJson()).toList());
+  val['created_by'] = instance.createdBy;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

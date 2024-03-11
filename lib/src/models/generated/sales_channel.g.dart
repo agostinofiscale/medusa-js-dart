@@ -29,19 +29,29 @@ SalesChannel _$SalesChannelFromJson(Map<String, dynamic> json) => SalesChannel(
           .toList(),
     );
 
-Map<String, dynamic> _$SalesChannelToJson(SalesChannel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'is_disabled': instance.isDisabled,
-      'locations': instance.locations?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-      'carts': instance.carts?.map((e) => e.toJson()).toList(),
-      'orders': instance.orders?.map((e) => e.toJson()).toList(),
-      'publishable_keys':
-          instance.publishableKeys?.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$SalesChannelToJson(SalesChannel instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  val['is_disabled'] = instance.isDisabled;
+  writeNotNull(
+      'locations', instance.locations?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  writeNotNull('carts', instance.carts?.map((e) => e.toJson()).toList());
+  writeNotNull('orders', instance.orders?.map((e) => e.toJson()).toList());
+  writeNotNull('publishable_keys',
+      instance.publishableKeys?.map((e) => e.toJson()).toList());
+  return val;
+}

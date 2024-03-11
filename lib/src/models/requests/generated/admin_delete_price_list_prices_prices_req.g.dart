@@ -15,7 +15,15 @@ AdminDeletePriceListPricesPricesReq
         );
 
 Map<String, dynamic> _$AdminDeletePriceListPricesPricesReqToJson(
-        AdminDeletePriceListPricesPricesReq instance) =>
-    <String, dynamic>{
-      'price_ids': instance.priceIds,
-    };
+    AdminDeletePriceListPricesPricesReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('price_ids', instance.priceIds);
+  return val;
+}

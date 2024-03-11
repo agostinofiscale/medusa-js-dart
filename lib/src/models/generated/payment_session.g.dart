@@ -25,19 +25,28 @@ PaymentSession _$PaymentSessionFromJson(Map<String, dynamic> json) =>
       updatedAt: json['updated_at'] as String,
     );
 
-Map<String, dynamic> _$PaymentSessionToJson(PaymentSession instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'cart_id': instance.cartId,
-      'cart': instance.cart?.toJson(),
-      'provider_id': instance.providerId,
-      'is_selected': instance.isSelected,
-      'is_initiated': instance.isInitiated,
-      'status': instance.status,
-      'data': instance.data,
-      'idempotency_key': instance.idempotencyKey,
-      'amount': instance.amount,
-      'payment_authorized_at': instance.paymentAuthorizedAt,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-    };
+Map<String, dynamic> _$PaymentSessionToJson(PaymentSession instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('cart_id', instance.cartId);
+  writeNotNull('cart', instance.cart?.toJson());
+  val['provider_id'] = instance.providerId;
+  writeNotNull('is_selected', instance.isSelected);
+  val['is_initiated'] = instance.isInitiated;
+  val['status'] = instance.status;
+  val['data'] = instance.data;
+  writeNotNull('idempotency_key', instance.idempotencyKey);
+  writeNotNull('amount', instance.amount);
+  writeNotNull('payment_authorized_at', instance.paymentAuthorizedAt);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  return val;
+}

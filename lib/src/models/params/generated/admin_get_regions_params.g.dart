@@ -28,16 +28,24 @@ AdminGetRegionsParams _$AdminGetRegionsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetRegionsParamsToJson(
-        AdminGetRegionsParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'order': instance.order,
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-    };
+    AdminGetRegionsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('order', instance.order);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  return val;
+}
 
 CreatedAtFilter _$CreatedAtFilterFromJson(Map<String, dynamic> json) =>
     CreatedAtFilter(
@@ -47,13 +55,21 @@ CreatedAtFilter _$CreatedAtFilterFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$CreatedAtFilterToJson(CreatedAtFilter instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$CreatedAtFilterToJson(CreatedAtFilter instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}
 
 UpdatedAtFilter _$UpdatedAtFilterFromJson(Map<String, dynamic> json) =>
     UpdatedAtFilter(
@@ -63,13 +79,21 @@ UpdatedAtFilter _$UpdatedAtFilterFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$UpdatedAtFilterToJson(UpdatedAtFilter instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$UpdatedAtFilterToJson(UpdatedAtFilter instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}
 
 DeletedAtFilter _$DeletedAtFilterFromJson(Map<String, dynamic> json) =>
     DeletedAtFilter(
@@ -79,10 +103,18 @@ DeletedAtFilter _$DeletedAtFilterFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$DeletedAtFilterToJson(DeletedAtFilter instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$DeletedAtFilterToJson(DeletedAtFilter instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

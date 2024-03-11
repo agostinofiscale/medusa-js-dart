@@ -21,13 +21,21 @@ AdminPostCustomersCustomerReq _$AdminPostCustomersCustomerReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCustomersCustomerReqToJson(
-        AdminPostCustomersCustomerReq instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'phone': instance.phone,
-      'password': instance.password,
-      'groups': instance.groups?.map((e) => e.toJson()).toList(),
-      'metadata': instance.metadata,
-    };
+    AdminPostCustomersCustomerReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('phone', instance.phone);
+  writeNotNull('password', instance.password);
+  writeNotNull('groups', instance.groups?.map((e) => e.toJson()).toList());
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

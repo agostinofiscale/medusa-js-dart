@@ -16,13 +16,20 @@ GetOrderEditsParams _$GetOrderEditsParamsFromJson(Map<String, dynamic> json) =>
       fields: json['fields'] as String?,
     );
 
-Map<String, dynamic> _$GetOrderEditsParamsToJson(
-        GetOrderEditsParams instance) =>
-    <String, dynamic>{
-      'search_term': instance.searchTerm,
-      'order_i_d': instance.orderID,
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+Map<String, dynamic> _$GetOrderEditsParamsToJson(GetOrderEditsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('search_term', instance.searchTerm);
+  writeNotNull('order_i_d', instance.orderID);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

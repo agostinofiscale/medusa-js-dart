@@ -17,11 +17,19 @@ AdminPostGiftCardsReq _$AdminPostGiftCardsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostGiftCardsReqToJson(
-        AdminPostGiftCardsReq instance) =>
-    <String, dynamic>{
-      'value': instance.value,
-      'is_disabled': instance.isDisabled,
-      'ends_at': instance.endsAt,
-      'region_id': instance.regionId,
-      'metadata': instance.metadata,
-    };
+    AdminPostGiftCardsReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('value', instance.value);
+  writeNotNull('is_disabled', instance.isDisabled);
+  writeNotNull('ends_at', instance.endsAt);
+  val['region_id'] = instance.regionId;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

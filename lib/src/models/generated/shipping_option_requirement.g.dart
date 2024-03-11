@@ -21,12 +21,21 @@ ShippingOptionRequirement _$ShippingOptionRequirementFromJson(
     );
 
 Map<String, dynamic> _$ShippingOptionRequirementToJson(
-        ShippingOptionRequirement instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'shipping_option_id': instance.shippingOptionId,
-      'shipping_option': instance.shippingOption?.toJson(),
-      'type': instance.type,
-      'amount': instance.amount,
-      'deleted_at': instance.deletedAt,
-    };
+    ShippingOptionRequirement instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'shipping_option_id': instance.shippingOptionId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('shipping_option', instance.shippingOption?.toJson());
+  val['type'] = instance.type;
+  val['amount'] = instance.amount;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

@@ -18,12 +18,21 @@ AdminPostReservationsReq _$AdminPostReservationsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostReservationsReqToJson(
-        AdminPostReservationsReq instance) =>
-    <String, dynamic>{
-      'line_item_id': instance.line_itemId,
-      'location_id': instance.locationId,
-      'inventory_item_id': instance.inventory_itemId,
-      'quantity': instance.quantity,
-      'description': instance.description,
-      'metadata': instance.metadata,
-    };
+    AdminPostReservationsReq instance) {
+  final val = <String, dynamic>{
+    'line_item_id': instance.line_itemId,
+    'location_id': instance.locationId,
+    'inventory_item_id': instance.inventory_itemId,
+    'quantity': instance.quantity,
+    'description': instance.description,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -22,16 +22,24 @@ AdminGetProductCategoriesParams _$AdminGetProductCategoriesParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetProductCategoriesParamsToJson(
-        AdminGetProductCategoriesParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'handle': instance.handle,
-      'is_internal': instance.isInternal,
-      'is_active': instance.isActive,
-      'include_descendants_tree': instance.includeDescendantsTree,
-      'parent_category_id': instance.parentCategoryId,
-      'offset': instance.offset,
-      'limit': instance.limit,
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminGetProductCategoriesParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('is_internal', instance.isInternal);
+  writeNotNull('is_active', instance.isActive);
+  writeNotNull('include_descendants_tree', instance.includeDescendantsTree);
+  writeNotNull('parent_category_id', instance.parentCategoryId);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

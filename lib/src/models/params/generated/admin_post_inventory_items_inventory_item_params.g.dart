@@ -15,8 +15,16 @@ AdminPostInventoryItemsInventoryItemParams
         );
 
 Map<String, dynamic> _$AdminPostInventoryItemsInventoryItemParamsToJson(
-        AdminPostInventoryItemsInventoryItemParams instance) =>
-    <String, dynamic>{
-      'expand': instance.expand,
-      'fields': instance.fields,
-    };
+    AdminPostInventoryItemsInventoryItemParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  return val;
+}

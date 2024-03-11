@@ -28,16 +28,24 @@ AdminGetCollectionsParams _$AdminGetCollectionsParamsFromJson(
     );
 
 Map<String, dynamic> _$AdminGetCollectionsParamsToJson(
-        AdminGetCollectionsParams instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'title': instance.title,
-      'handle': instance.handle,
-      'q': instance.q,
-      'order': instance.order,
-      'discount_condition_id': instance.discountConditionId,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'deleted_at': instance.deletedAt?.toJson(),
-    };
+    AdminGetCollectionsParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('title', instance.title);
+  writeNotNull('handle', instance.handle);
+  writeNotNull('q', instance.q);
+  writeNotNull('order', instance.order);
+  writeNotNull('discount_condition_id', instance.discountConditionId);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('deleted_at', instance.deletedAt?.toJson());
+  return val;
+}

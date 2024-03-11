@@ -27,18 +27,26 @@ GetPublishableApiKeysParams _$GetPublishableApiKeysParamsFromJson(
     );
 
 Map<String, dynamic> _$GetPublishableApiKeysParamsToJson(
-        GetPublishableApiKeysParams instance) =>
-    <String, dynamic>{
-      'q': instance.q,
-      'limit': instance.limit,
-      'offset': instance.offset,
-      'expand': instance.expand,
-      'fields': instance.fields,
-      'order': instance.order,
-      'created_at': instance.createdAt?.toJson(),
-      'updated_at': instance.updatedAt?.toJson(),
-      'revoked_at': instance.revokedAt?.toJson(),
-    };
+    GetPublishableApiKeysParams instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('q', instance.q);
+  writeNotNull('limit', instance.limit);
+  writeNotNull('offset', instance.offset);
+  writeNotNull('expand', instance.expand);
+  writeNotNull('fields', instance.fields);
+  writeNotNull('order', instance.order);
+  writeNotNull('created_at', instance.createdAt?.toJson());
+  writeNotNull('updated_at', instance.updatedAt?.toJson());
+  writeNotNull('revoked_at', instance.revokedAt?.toJson());
+  return val;
+}
 
 CreatedAtRange _$CreatedAtRangeFromJson(Map<String, dynamic> json) =>
     CreatedAtRange(
@@ -48,13 +56,21 @@ CreatedAtRange _$CreatedAtRangeFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$CreatedAtRangeToJson(CreatedAtRange instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$CreatedAtRangeToJson(CreatedAtRange instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}
 
 UpdatedAtRange _$UpdatedAtRangeFromJson(Map<String, dynamic> json) =>
     UpdatedAtRange(
@@ -64,13 +80,21 @@ UpdatedAtRange _$UpdatedAtRangeFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$UpdatedAtRangeToJson(UpdatedAtRange instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$UpdatedAtRangeToJson(UpdatedAtRange instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}
 
 RevokedAtRange _$RevokedAtRangeFromJson(Map<String, dynamic> json) =>
     RevokedAtRange(
@@ -80,10 +104,18 @@ RevokedAtRange _$RevokedAtRangeFromJson(Map<String, dynamic> json) =>
       gte: json['gte'] as String?,
     );
 
-Map<String, dynamic> _$RevokedAtRangeToJson(RevokedAtRange instance) =>
-    <String, dynamic>{
-      'lt': instance.lt,
-      'gt': instance.gt,
-      'lte': instance.lte,
-      'gte': instance.gte,
-    };
+Map<String, dynamic> _$RevokedAtRangeToJson(RevokedAtRange instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lt', instance.lt);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('lte', instance.lte);
+  writeNotNull('gte', instance.gte);
+  return val;
+}

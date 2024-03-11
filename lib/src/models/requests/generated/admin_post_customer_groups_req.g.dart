@@ -14,8 +14,17 @@ AdminPostCustomerGroupsReq _$AdminPostCustomerGroupsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostCustomerGroupsReqToJson(
-        AdminPostCustomerGroupsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'metadata': instance.metadata,
-    };
+    AdminPostCustomerGroupsReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

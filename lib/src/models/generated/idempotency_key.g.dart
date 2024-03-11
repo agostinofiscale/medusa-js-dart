@@ -20,16 +20,25 @@ IdempotencyKey _$IdempotencyKeyFromJson(Map<String, dynamic> json) =>
       recoveryPoint: json['recovery_point'] as String,
     );
 
-Map<String, dynamic> _$IdempotencyKeyToJson(IdempotencyKey instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'idempotency_key': instance.idempotencyKey,
-      'created_at': instance.createdAt,
-      'locked_at': instance.lockedAt,
-      'request_method': instance.requestMethod,
-      'request_params': instance.requestParams,
-      'request_path': instance.requestPath,
-      'response_code': instance.responseCode,
-      'response_body': instance.responseBody,
-      'recovery_point': instance.recoveryPoint,
-    };
+Map<String, dynamic> _$IdempotencyKeyToJson(IdempotencyKey instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'idempotency_key': instance.idempotencyKey,
+    'created_at': instance.createdAt,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('locked_at', instance.lockedAt);
+  writeNotNull('request_method', instance.requestMethod);
+  writeNotNull('request_params', instance.requestParams);
+  writeNotNull('request_path', instance.requestPath);
+  writeNotNull('response_code', instance.responseCode);
+  writeNotNull('response_body', instance.responseBody);
+  val['recovery_point'] = instance.recoveryPoint;
+  return val;
+}

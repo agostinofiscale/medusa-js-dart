@@ -15,9 +15,18 @@ AdminPostSalesChannelsReq _$AdminPostSalesChannelsReqFromJson(
     );
 
 Map<String, dynamic> _$AdminPostSalesChannelsReqToJson(
-        AdminPostSalesChannelsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'is_disabled': instance.isDisabled,
-    };
+    AdminPostSalesChannelsReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  writeNotNull('is_disabled', instance.isDisabled);
+  return val;
+}

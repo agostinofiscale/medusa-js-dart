@@ -25,18 +25,26 @@ AdminPostInventoryItemsInventoryItemReq
         );
 
 Map<String, dynamic> _$AdminPostInventoryItemsInventoryItemReqToJson(
-        AdminPostInventoryItemsInventoryItemReq instance) =>
-    <String, dynamic>{
-      'hs_code': instance.hsCode,
-      'origin_country': instance.originCountry,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'weight': instance.weight,
-      'height': instance.height,
-      'width': instance.width,
-      'length': instance.length,
-      'title': instance.title,
-      'description': instance.description,
-      'thumbnail': instance.thumbnail,
-      'requires_shipping': instance.requiresShipping,
-    };
+    AdminPostInventoryItemsInventoryItemReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  writeNotNull('length', instance.length);
+  writeNotNull('title', instance.title);
+  writeNotNull('description', instance.description);
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('requires_shipping', instance.requiresShipping);
+  return val;
+}

@@ -22,14 +22,23 @@ ProductVariantInventoryItem _$ProductVariantInventoryItemFromJson(
     );
 
 Map<String, dynamic> _$ProductVariantInventoryItemToJson(
-        ProductVariantInventoryItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'inventory_item_id': instance.inventoryItemId,
-      'variant_id': instance.variantId,
-      'variant': instance.variant?.toJson(),
-      'required_quantity': instance.requiredQuantity,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+    ProductVariantInventoryItem instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'inventory_item_id': instance.inventoryItemId,
+    'variant_id': instance.variantId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('variant', instance.variant?.toJson());
+  val['required_quantity'] = instance.requiredQuantity;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

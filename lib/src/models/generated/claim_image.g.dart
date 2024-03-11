@@ -19,14 +19,23 @@ ClaimImage _$ClaimImageFromJson(Map<String, dynamic> json) => ClaimImage(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ClaimImageToJson(ClaimImage instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'claim_item_id': instance.claimItemId,
-      'claim_item': instance.claimItem?.toJson(),
-      'url': instance.url,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ClaimImageToJson(ClaimImage instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'claim_item_id': instance.claimItemId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('claim_item', instance.claimItem?.toJson());
+  val['url'] = instance.url;
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

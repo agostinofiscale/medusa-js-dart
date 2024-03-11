@@ -14,8 +14,17 @@ StorePostCartsCartLineItemsItemReq _$StorePostCartsCartLineItemsItemReqFromJson(
     );
 
 Map<String, dynamic> _$StorePostCartsCartLineItemsItemReqToJson(
-        StorePostCartsCartLineItemsItemReq instance) =>
-    <String, dynamic>{
-      'quantity': instance.quantity,
-      'metadata': instance.metadata,
-    };
+    StorePostCartsCartLineItemsItemReq instance) {
+  final val = <String, dynamic>{
+    'quantity': instance.quantity,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

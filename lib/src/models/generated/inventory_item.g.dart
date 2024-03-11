@@ -33,26 +33,35 @@ InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'created_at': instance.createdAt.toIso8601String(),
-      'updated_at': instance.updatedAt.toIso8601String(),
-      'deleted_at': instance.deletedAt?.toIso8601String(),
-      'sku': instance.sku,
-      'origin_country': instance.originCountry,
-      'hs_code': instance.hsCode,
-      'mid_code': instance.midCode,
-      'material': instance.material,
-      'weight': instance.weight,
-      'length': instance.length,
-      'height': instance.height,
-      'width': instance.width,
-      'requires_shipping': instance.requiresShipping,
-      'description': instance.description,
-      'title': instance.title,
-      'thumbnail': instance.thumbnail,
-      'metadata': instance.metadata,
-      'inventory_levels':
-          instance.inventoryLevels.map((e) => e.toJson()).toList(),
-    };
+Map<String, dynamic> _$InventoryItemToJson(InventoryItem instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'created_at': instance.createdAt.toIso8601String(),
+    'updated_at': instance.updatedAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('deleted_at', instance.deletedAt?.toIso8601String());
+  writeNotNull('sku', instance.sku);
+  writeNotNull('origin_country', instance.originCountry);
+  writeNotNull('hs_code', instance.hsCode);
+  writeNotNull('mid_code', instance.midCode);
+  writeNotNull('material', instance.material);
+  writeNotNull('weight', instance.weight);
+  writeNotNull('length', instance.length);
+  writeNotNull('height', instance.height);
+  writeNotNull('width', instance.width);
+  val['requires_shipping'] = instance.requiresShipping;
+  writeNotNull('description', instance.description);
+  writeNotNull('title', instance.title);
+  writeNotNull('thumbnail', instance.thumbnail);
+  writeNotNull('metadata', instance.metadata);
+  val['inventory_levels'] =
+      instance.inventoryLevels.map((e) => e.toJson()).toList();
+  return val;
+}

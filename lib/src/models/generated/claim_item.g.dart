@@ -35,21 +35,31 @@ ClaimItem _$ClaimItemFromJson(Map<String, dynamic> json) => ClaimItem(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ClaimItemToJson(ClaimItem instance) => <String, dynamic>{
-      'id': instance.id,
-      'images': instance.images?.map((e) => e.toJson()).toList(),
-      'claim_order_id': instance.claimOrderId,
-      'claim_order': instance.claimOrder?.toJson(),
-      'item_id': instance.itemId,
-      'item': instance.item?.toJson(),
-      'variant_id': instance.variantId,
-      'variant': instance.variant?.toJson(),
-      'reason': instance.reason,
-      'note': instance.note,
-      'quantity': instance.quantity,
-      'tags': instance.tags?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ClaimItemToJson(ClaimItem instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('images', instance.images?.map((e) => e.toJson()).toList());
+  val['claim_order_id'] = instance.claimOrderId;
+  writeNotNull('claim_order', instance.claimOrder?.toJson());
+  val['item_id'] = instance.itemId;
+  writeNotNull('item', instance.item?.toJson());
+  val['variant_id'] = instance.variantId;
+  writeNotNull('variant', instance.variant?.toJson());
+  val['reason'] = instance.reason;
+  writeNotNull('note', instance.note);
+  val['quantity'] = instance.quantity;
+  writeNotNull('tags', instance.tags?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

@@ -47,34 +47,44 @@ OrderEdit _$OrderEditFromJson(Map<String, dynamic> json) => OrderEdit(
       updatedAt: json['updated_at'] as String,
     );
 
-Map<String, dynamic> _$OrderEditToJson(OrderEdit instance) => <String, dynamic>{
-      'id': instance.id,
-      'order_id': instance.orderId,
-      'order': instance.order?.toJson(),
-      'changes': instance.changes?.map((e) => e.toJson()).toList(),
-      'internal_note': instance.internalNote,
-      'created_by': instance.createdBy,
-      'requested_by': instance.requestedBy,
-      'requested_at': instance.requestedAt,
-      'confirmed_by': instance.confirmedBy,
-      'confirmed_at': instance.confirmedAt,
-      'declined_by': instance.declinedBy,
-      'declined_at': instance.declinedAt,
-      'declined_reason': instance.declinedReason,
-      'canceled_by': instance.canceledBy,
-      'canceled_at': instance.canceledAt,
-      'subtotal': instance.subtotal,
-      'discount_total': instance.discountTotal,
-      'shipping_total': instance.shippingTotal,
-      'gift_card_total': instance.giftCardTotal,
-      'gift_card_tax_total': instance.giftCardTaxTotal,
-      'tax_total': instance.taxTotal,
-      'total': instance.total,
-      'difference_due': instance.differenceDue,
-      'status': instance.status,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'payment_collection_id': instance.paymentCollectionId,
-      'payment_collection': instance.paymentCollection?.toJson(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-    };
+Map<String, dynamic> _$OrderEditToJson(OrderEdit instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'order_id': instance.orderId,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('order', instance.order?.toJson());
+  writeNotNull('changes', instance.changes?.map((e) => e.toJson()).toList());
+  writeNotNull('internal_note', instance.internalNote);
+  val['created_by'] = instance.createdBy;
+  writeNotNull('requested_by', instance.requestedBy);
+  writeNotNull('requested_at', instance.requestedAt);
+  writeNotNull('confirmed_by', instance.confirmedBy);
+  writeNotNull('confirmed_at', instance.confirmedAt);
+  writeNotNull('declined_by', instance.declinedBy);
+  writeNotNull('declined_at', instance.declinedAt);
+  writeNotNull('declined_reason', instance.declinedReason);
+  writeNotNull('canceled_by', instance.canceledBy);
+  writeNotNull('canceled_at', instance.canceledAt);
+  writeNotNull('subtotal', instance.subtotal);
+  writeNotNull('discount_total', instance.discountTotal);
+  writeNotNull('shipping_total', instance.shippingTotal);
+  writeNotNull('gift_card_total', instance.giftCardTotal);
+  writeNotNull('gift_card_tax_total', instance.giftCardTaxTotal);
+  writeNotNull('tax_total', instance.taxTotal);
+  writeNotNull('total', instance.total);
+  writeNotNull('difference_due', instance.differenceDue);
+  val['status'] = instance.status;
+  writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
+  writeNotNull('payment_collection_id', instance.paymentCollectionId);
+  writeNotNull('payment_collection', instance.paymentCollection?.toJson());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  return val;
+}

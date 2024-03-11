@@ -18,14 +18,23 @@ InventoryLevelDTO _$InventoryLevelDTOFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] as String?,
     );
 
-Map<String, dynamic> _$InventoryLevelDTOToJson(InventoryLevelDTO instance) =>
-    <String, dynamic>{
-      'location_id': instance.locationId,
-      'stocked_quantity': instance.stockedQuantity,
-      'reserved_quantity': instance.reservedQuantity,
-      'incoming_quantity': instance.incomingQuantity,
-      'metadata': instance.metadata,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-    };
+Map<String, dynamic> _$InventoryLevelDTOToJson(InventoryLevelDTO instance) {
+  final val = <String, dynamic>{
+    'location_id': instance.locationId,
+    'stocked_quantity': instance.stockedQuantity,
+    'reserved_quantity': instance.reservedQuantity,
+    'incoming_quantity': instance.incomingQuantity,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('metadata', instance.metadata);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  return val;
+}

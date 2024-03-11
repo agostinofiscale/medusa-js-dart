@@ -31,23 +31,33 @@ Address _$AddressFromJson(Map<String, dynamic> json) => Address(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$AddressToJson(Address instance) => <String, dynamic>{
-      'id': instance.id,
-      'customer_id': instance.customerId,
-      'customer': instance.customer?.toJson(),
-      'company': instance.company,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'address1': instance.address1,
-      'address2': instance.address2,
-      'city': instance.city,
-      'country_code': instance.countryCode,
-      'country': instance.country?.toJson(),
-      'province': instance.province,
-      'postal_code': instance.postalCode,
-      'phone': instance.phone,
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'deleted_at': instance.deletedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$AddressToJson(Address instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customer_id', instance.customerId);
+  writeNotNull('customer', instance.customer?.toJson());
+  writeNotNull('company', instance.company);
+  writeNotNull('first_name', instance.firstName);
+  writeNotNull('last_name', instance.lastName);
+  writeNotNull('address1', instance.address1);
+  writeNotNull('address2', instance.address2);
+  writeNotNull('city', instance.city);
+  writeNotNull('country_code', instance.countryCode);
+  writeNotNull('country', instance.country?.toJson());
+  writeNotNull('province', instance.province);
+  writeNotNull('postal_code', instance.postalCode);
+  writeNotNull('phone', instance.phone);
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('deleted_at', instance.deletedAt);
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

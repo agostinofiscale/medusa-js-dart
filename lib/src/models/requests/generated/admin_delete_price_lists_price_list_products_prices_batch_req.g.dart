@@ -17,7 +17,15 @@ AdminDeletePriceListsPriceListProductsPricesBatchReq
 
 Map<String, dynamic>
     _$AdminDeletePriceListsPriceListProductsPricesBatchReqToJson(
-            AdminDeletePriceListsPriceListProductsPricesBatchReq instance) =>
-        <String, dynamic>{
-          'product_ids': instance.productIds,
-        };
+        AdminDeletePriceListsPriceListProductsPricesBatchReq instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('product_ids', instance.productIds);
+  return val;
+}

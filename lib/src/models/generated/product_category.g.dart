@@ -32,22 +32,31 @@ ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'handle': instance.handle,
-      'mpath': instance.mpath,
-      'is_internal': instance.isInternal,
-      'is_active': instance.isActive,
-      'rank': instance.rank,
-      'category_children':
-          instance.categoryChildren.map((e) => e.toJson()).toList(),
-      'parent_category_id': instance.parentCategoryId,
-      'parent_category': instance.parentCategory?.toJson(),
-      'products': instance.products?.map((e) => e.toJson()).toList(),
-      'created_at': instance.createdAt,
-      'updated_at': instance.updatedAt,
-      'metadata': instance.metadata,
-    };
+Map<String, dynamic> _$ProductCategoryToJson(ProductCategory instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  val['handle'] = instance.handle;
+  writeNotNull('mpath', instance.mpath);
+  val['is_internal'] = instance.isInternal;
+  val['is_active'] = instance.isActive;
+  writeNotNull('rank', instance.rank);
+  val['category_children'] =
+      instance.categoryChildren.map((e) => e.toJson()).toList();
+  writeNotNull('parent_category_id', instance.parentCategoryId);
+  writeNotNull('parent_category', instance.parentCategory?.toJson());
+  writeNotNull('products', instance.products?.map((e) => e.toJson()).toList());
+  val['created_at'] = instance.createdAt;
+  val['updated_at'] = instance.updatedAt;
+  writeNotNull('metadata', instance.metadata);
+  return val;
+}

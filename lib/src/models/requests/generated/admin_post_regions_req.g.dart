@@ -23,15 +23,23 @@ AdminPostRegionsReq _$AdminPostRegionsReqFromJson(Map<String, dynamic> json) =>
       includesTax: json['includes_tax'] as bool?,
     );
 
-Map<String, dynamic> _$AdminPostRegionsReqToJson(
-        AdminPostRegionsReq instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'currency_code': instance.currencyCode,
-      'tax_code': instance.taxCode,
-      'tax_rate': instance.taxRate,
-      'payment_providers': instance.paymentProviders,
-      'fulfillment_providers': instance.fulfillmentProviders,
-      'countries': instance.countries,
-      'includes_tax': instance.includesTax,
-    };
+Map<String, dynamic> _$AdminPostRegionsReqToJson(AdminPostRegionsReq instance) {
+  final val = <String, dynamic>{
+    'name': instance.name,
+    'currency_code': instance.currencyCode,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('tax_code', instance.taxCode);
+  val['tax_rate'] = instance.taxRate;
+  val['payment_providers'] = instance.paymentProviders;
+  val['fulfillment_providers'] = instance.fulfillmentProviders;
+  val['countries'] = instance.countries;
+  writeNotNull('includes_tax', instance.includesTax);
+  return val;
+}

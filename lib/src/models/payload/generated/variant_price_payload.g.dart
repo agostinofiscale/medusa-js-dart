@@ -15,12 +15,19 @@ VariantPricePayload _$VariantPricePayloadFromJson(Map<String, dynamic> json) =>
       maxQuantity: json['max_quantity'] as int?,
     );
 
-Map<String, dynamic> _$VariantPricePayloadToJson(
-        VariantPricePayload instance) =>
-    <String, dynamic>{
-      'region_id': instance.regionId,
-      'currency_code': instance.currencyCode,
-      'amount': instance.amount,
-      'min_quantity': instance.minQuantity,
-      'max_quantity': instance.maxQuantity,
-    };
+Map<String, dynamic> _$VariantPricePayloadToJson(VariantPricePayload instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('region_id', instance.regionId);
+  writeNotNull('currency_code', instance.currencyCode);
+  val['amount'] = instance.amount;
+  writeNotNull('min_quantity', instance.minQuantity);
+  writeNotNull('max_quantity', instance.maxQuantity);
+  return val;
+}
