@@ -22,28 +22,28 @@ class Invite {
   Map<String, dynamic> toJson() => _$InviteToJson(this);
 
   /// The invite's ID
-  late String id;
+  final String id;
 
   /// The email of the user being invited.
-  late String userEmail;
+  final String userEmail;
 
   /// The user's role. These roles don't change the privileges of the user.
   String? role;
 
   /// Whether the invite was accepted or not.
-  late bool accepted;
+  final bool accepted;
 
   /// The token used to accept the invite.
-  late String token;
+  final String token;
 
   /// The date the invite expires at.
-  late String expiresAt;
+  final String expiresAt;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   String? deletedAt;

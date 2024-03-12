@@ -25,32 +25,32 @@ class TrackingLink {
   Map<String, dynamic> toJson() => _$TrackingLinkToJson(this);
 
   /// The tracking link's ID
-  late String id;
+  final String id;
 
   /// The URL at which the status of the shipment can be tracked.
-  late String? url;
+  final String? url;
 
   /// The tracking number given by the shipping carrier.
-  late String trackingNumber;
+  final String trackingNumber;
 
   /// The ID of the fulfillment that the tracking link belongs to.
-  late String fulfillmentId;
+  final String fulfillmentId;
 
   /// The details of the fulfillment that the tracking link belongs to.
-  late Fulfillment? fulfillment;
+  final Fulfillment? fulfillment;
 
   /// Randomly generated key used to continue the completion of a process in case of failure.
-  late String? idempotencyKey;
+  final String? idempotencyKey;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
-  late String? deletedAt;
+  final String? deletedAt;
 
   /// An optional key-value map with additional details
-  late Map<String, dynamic>? metadata;
+  final Map<String, dynamic>? metadata;
 }

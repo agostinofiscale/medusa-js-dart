@@ -20,20 +20,20 @@ class ShippingOptionRequirement {
   Map<String, dynamic> toJson() => _$ShippingOptionRequirementToJson(this);
 
   /// The shipping option requirement's ID
-  late String id;
+  final String id;
 
   /// The ID of the shipping option that the requirements belong to.
-  late String shippingOptionId;
+  final String shippingOptionId;
 
   /// The details of the shipping option that the requirements belong to.
   ShippingOption? shippingOption;
 
   /// The type of the requirement, this defines how the value will be compared to the Cart's total. `minSubtotal` requirements define the minimum subtotal that is needed for the Shipping Option to be available, while the `maxSubtotal` defines the maximum subtotal that the Cart can have for the Shipping Option to be available.
-  late String type;
+  final String type;
 
   /// The amount to compare the Cart subtotal to.
-  late num amount;
+  final num amount;
 
   /// The date with timezone at which the resource was deleted.
-  late String? deletedAt;
+  final String? deletedAt;
 }

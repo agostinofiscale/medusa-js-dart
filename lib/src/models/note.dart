@@ -23,16 +23,16 @@ class Note {
   Map<String, dynamic> toJson() => _$NoteToJson(this);
 
   /// The note's ID
-  late String id;
+  final String id;
 
   /// The type of resource that the Note refers to.
-  late String resourceType;
+  final String resourceType;
 
   /// The ID of the resource that the Note refers to.
-  late String resourceId;
+  final String resourceId;
 
   /// The contents of the note.
-  late String value;
+  final String value;
 
   /// The ID of the user that created the note.
   String? authorId;
@@ -41,10 +41,10 @@ class Note {
   User? author;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   String? deletedAt;

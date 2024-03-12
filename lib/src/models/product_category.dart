@@ -29,31 +29,31 @@ class ProductCategory {
   Map<String, dynamic> toJson() => _$ProductCategoryToJson(this);
 
   /// The product category's ID
-  late String id;
+  final String id;
 
   /// The product category's name
-  late String name;
+  final String name;
 
   /// The product category's description.
   String? description;
 
   /// A unique string that identifies the Product Category - can for example be used in slug structures.
-  late String handle;
+  final String handle;
 
   /// A string for Materialized Paths - used for finding ancestors and descendents
   String? mpath;
 
   /// A flag to make product category an internal category for admins
-  late bool isInternal;
+  final bool isInternal;
 
   /// A flag to make product category visible/hidden in the store front
-  late bool isActive;
+  final bool isActive;
 
   /// An integer that depicts the rank of category in a tree node
   int? rank;
 
   /// The details of the category's children.
-  late List<ProductCategory> categoryChildren;
+  final List<ProductCategory> categoryChildren;
 
   /// The ID of the parent category.
   String? parentCategoryId;
@@ -65,10 +65,10 @@ class ProductCategory {
   List<Product>? products;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
   Map<String, dynamic>? metadata;

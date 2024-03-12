@@ -20,10 +20,10 @@ class FulfillmentItem {
   Map<String, dynamic> toJson() => _$FulfillmentItemToJson(this);
 
   /// The ID of the Fulfillment that the Fulfillment Item belongs to.
-  late String fulfillmentId;
+  final String fulfillmentId;
 
   /// The ID of the Line Item that the Fulfillment Item references.
-  late String itemId;
+  final String itemId;
 
   /// The details of the fulfillment.
   Fulfillment? fulfillment;
@@ -32,5 +32,5 @@ class FulfillmentItem {
   LineItem? item;
 
   /// The quantity of the Line Item that is included in the Fulfillment.
-  late int quantity;
+  final int quantity;
 }

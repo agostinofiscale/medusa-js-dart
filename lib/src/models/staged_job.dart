@@ -17,13 +17,13 @@ class StagedJob {
   Map<String, dynamic> toJson() => _$StagedJobToJson(this);
 
   /// The staged job's ID
-  late String id;
+  final String id;
 
   /// The name of the event
-  late String eventName;
+  final String eventName;
 
   /// Data necessary for the job
-  late Map<String, dynamic> data;
+  final Map<String, dynamic> data;
 
   /// The staged job's option
   Map<String, dynamic>? option;

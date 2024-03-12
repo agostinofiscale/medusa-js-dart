@@ -27,7 +27,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
       categories: (json['categories'] as List<dynamic>?)
           ?.map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
           .toList(),
-      profileId: json['profile_id'] as String,
+      profileId: json['profile_id'] as String?,
       profile: json['profile'] == null
           ? null
           : ShippingProfile.fromJson(json['profile'] as Map<String, dynamic>),
@@ -87,7 +87,7 @@ Map<String, dynamic> _$ProductToJson(Product instance) {
   writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
   writeNotNull(
       'categories', instance.categories?.map((e) => e.toJson()).toList());
-  val['profile_id'] = instance.profileId;
+  writeNotNull('profile_id', instance.profileId);
   writeNotNull('profile', instance.profile?.toJson());
   writeNotNull('profiles', instance.profiles?.map((e) => e.toJson()).toList());
   writeNotNull('weight', instance.weight);

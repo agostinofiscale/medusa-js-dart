@@ -30,19 +30,19 @@ class GiftCard {
   Map<String, dynamic> toJson() => _$GiftCardToJson(this);
 
   /// The gift card's ID
-  late String id;
+  final String id;
 
   /// The unique code that identifies the Gift Card. This is used by the Customer to redeem the value of the Gift Card.
-  late String code;
+  final String code;
 
   /// The value that the Gift Card represents.
-  late double value;
+  final double value;
 
   /// The remaining value on the Gift Card.
-  late double balance;
+  final double balance;
 
   /// The ID of the region this gift card is available in.
-  late String regionId;
+  final String regionId;
 
   /// The details of the region this gift card is available in.
   Region? region;
@@ -54,7 +54,7 @@ class GiftCard {
   Order? order;
 
   /// Whether the Gift Card has been disabled. Disabled Gift Cards cannot be applied to carts.
-  late bool isDisabled;
+  final bool isDisabled;
 
   /// The time at which the Gift Card can no longer be used.
   String? endsAt;
@@ -63,10 +63,10 @@ class GiftCard {
   double? taxRate;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   String? deletedAt;

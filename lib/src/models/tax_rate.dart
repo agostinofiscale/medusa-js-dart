@@ -32,7 +32,7 @@ class TaxRate {
   Map<String, dynamic> toJson() => _$TaxRateToJson(this);
 
   /// The tax rate's ID
-  late String id;
+  final String id;
 
   /// The numeric rate to charge
   double? rate;
@@ -41,10 +41,10 @@ class TaxRate {
   String? code;
 
   /// A human friendly name for the tax
-  late String name;
+  final String name;
 
   /// The ID of the region that the rate belongs to.
-  late String regionId;
+  final String regionId;
 
   /// The details of the region that the rate belongs to.
   Region? region;
@@ -68,10 +68,10 @@ class TaxRate {
   int? shippingOptionCount;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// An optional key-value map with additional details
   Map<String, dynamic>? metadata;

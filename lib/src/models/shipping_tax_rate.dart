@@ -21,13 +21,13 @@ class ShippingTaxRate {
   Map<String, dynamic> toJson() => _$ShippingTaxRateToJson(this);
 
   /// The ID of the shipping option.
-  late String shippingOptionId;
+  final String shippingOptionId;
 
   /// The details of the shipping option.
   ShippingOption? shippingOption;
 
   /// The ID of the associated tax rate.
-  late String rateId;
+  final String rateId;
 
   /// The details of the associated tax rate.
   TaxRate? taxRate;

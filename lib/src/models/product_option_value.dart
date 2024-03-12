@@ -25,28 +25,28 @@ class ProductOptionValue {
   Map<String, dynamic> toJson() => _$ProductOptionValueToJson(this);
 
   /// The product option value's ID
-  late String id;
+  final String id;
 
   /// The value that the Product Variant has defined for the specific Product Option (e.g. if the Product Option is "Size" this value could be `Small`, `Medium` or `Large`).
-  late String value;
+  final String value;
 
   /// The ID of the Product Option that the Product Option Value belongs to.
-  late String optionId;
+  final String optionId;
 
   /// The details of the product option that the Product Option Value belongs to.
   ProductOption? option;
 
   /// The ID of the product variant that uses this product option value.
-  late String variantId;
+  final String variantId;
 
   /// The details of the product variant that uses this product option value.
   ProductVariant? variant;
 
   /// The date with timezone at which the resource was created.
-  late String createdAt;
+  final String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  late String updatedAt;
+  final String updatedAt;
 
   /// The date with timezone at which the resource was deleted.
   String? deletedAt;

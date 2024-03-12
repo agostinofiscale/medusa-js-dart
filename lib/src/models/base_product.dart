@@ -79,7 +79,9 @@ abstract class BaseProduct {
   List<ProductCategory>? categories;
 
   /// The ID of the shipping profile that the product belongs to. The shipping profile has a set of defined shipping options that can be used to fulfill the product.
-  String profileId;
+  ///
+  /// TODO: This shoudn't be nullable but in the listing response it is.
+  String? profileId;
 
   /// The details of the shipping profile that the product belongs to. The shipping profile has a set of defined shipping options that can be used to fulfill the product.
   ShippingProfile? profile;
