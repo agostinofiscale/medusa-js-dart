@@ -8,9 +8,12 @@ class AdminDeleteDiscountsDiscountConditionsConditionBatchReq {
     this.resources,
   );
 
+  factory AdminDeleteDiscountsDiscountConditionsConditionBatchReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminDeleteDiscountsDiscountConditionsConditionBatchReqFromJson(json);
+
   final List<String> resources;
 
-  factory AdminDeleteDiscountsDiscountConditionsConditionBatchReq.fromJson(Map<String, dynamic> json) => _$AdminDeleteDiscountsDiscountConditionsConditionBatchReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminDeleteDiscountsDiscountConditionsConditionBatchReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminDeleteDiscountsDiscountConditionsConditionBatchReqToJson(this);
 }

@@ -6,9 +6,12 @@ part 'generated/admin_post_notifications_notification_resend_req.g.dart';
 class AdminPostNotificationsNotificationResendReq {
   AdminPostNotificationsNotificationResendReq({this.to});
 
+  factory AdminPostNotificationsNotificationResendReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostNotificationsNotificationResendReqFromJson(json);
+
   String? to;
 
-  factory AdminPostNotificationsNotificationResendReq.fromJson(Map<String, dynamic> json) => _$AdminPostNotificationsNotificationResendReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostNotificationsNotificationResendReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostNotificationsNotificationResendReqToJson(this);
 }

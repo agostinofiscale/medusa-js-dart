@@ -11,12 +11,15 @@ class AdminGetGroupsGroupCustomersParams {
     this.q,
   });
 
+  factory AdminGetGroupsGroupCustomersParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminGetGroupsGroupCustomersParamsFromJson(json);
+
   int? limit;
   int? offset;
   String? expand;
   String? q;
 
-  factory AdminGetGroupsGroupCustomersParams.fromJson(Map<String, dynamic> json) => _$AdminGetGroupsGroupCustomersParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminGetGroupsGroupCustomersParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminGetGroupsGroupCustomersParamsToJson(this);
 }

@@ -6,9 +6,10 @@ part 'generated/admin_post_uploads_download_url_req.g.dart';
 class AdminPostUploadsDownloadUrlReq {
   AdminPostUploadsDownloadUrlReq({required this.fileKey});
 
-  final String fileKey;
+  factory AdminPostUploadsDownloadUrlReq.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostUploadsDownloadUrlReqFromJson(json);
 
-  factory AdminPostUploadsDownloadUrlReq.fromJson(Map<String, dynamic> json) => _$AdminPostUploadsDownloadUrlReqFromJson(json);
+  final String fileKey;
 
   Map<String, dynamic> toJson() => _$AdminPostUploadsDownloadUrlReqToJson(this);
 }

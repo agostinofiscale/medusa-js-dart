@@ -8,9 +8,12 @@ class StorePostCustomersCustomerAcceptClaimReq {
     required this.token,
   });
 
+  factory StorePostCustomersCustomerAcceptClaimReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePostCustomersCustomerAcceptClaimReqFromJson(json);
+
   String token;
 
-  factory StorePostCustomersCustomerAcceptClaimReq.fromJson(Map<String, dynamic> json) => _$StorePostCustomersCustomerAcceptClaimReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePostCustomersCustomerAcceptClaimReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePostCustomersCustomerAcceptClaimReqToJson(this);
 }

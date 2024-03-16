@@ -7,7 +7,8 @@ class AdminDeleteProductsFromCollectionReq {
   AdminDeleteProductsFromCollectionReq({required this.productIds});
 
   factory AdminDeleteProductsFromCollectionReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteProductsFromCollectionReqFromJson(json);
 
   final List<String> productIds;

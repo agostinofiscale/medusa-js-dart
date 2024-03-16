@@ -6,9 +6,12 @@ part 'generated/store_payment_collection_sessions_req.g.dart';
 class StorePaymentCollectionSessionsReq {
   StorePaymentCollectionSessionsReq({required this.providerId});
 
+  factory StorePaymentCollectionSessionsReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePaymentCollectionSessionsReqFromJson(json);
+
   String providerId;
 
-  factory StorePaymentCollectionSessionsReq.fromJson(Map<String, dynamic> json) => _$StorePaymentCollectionSessionsReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePaymentCollectionSessionsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePaymentCollectionSessionsReqToJson(this);
 }

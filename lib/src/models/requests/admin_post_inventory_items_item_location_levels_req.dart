@@ -11,7 +11,8 @@ class AdminPostInventoryItemsItemLocationLevelsReq {
   });
 
   factory AdminPostInventoryItemsItemLocationLevelsReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostInventoryItemsItemLocationLevelsReqFromJson(json);
 
   String locationId;

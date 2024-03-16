@@ -9,10 +9,13 @@ class AdminDeleteProductCategoriesCategoryProductsBatchParams {
     this.fields,
   });
 
+  factory AdminDeleteProductCategoriesCategoryProductsBatchParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminDeleteProductCategoriesCategoryProductsBatchParamsFromJson(json);
+
   final String? expand;
   final String? fields;
 
-  factory AdminDeleteProductCategoriesCategoryProductsBatchParams.fromJson(Map<String, dynamic> json) => _$AdminDeleteProductCategoriesCategoryProductsBatchParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminDeleteProductCategoriesCategoryProductsBatchParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminDeleteProductCategoriesCategoryProductsBatchParamsToJson(this);
 }

@@ -6,9 +6,12 @@ part 'generated/store_post_carts_cart_payment_session_update_req.g.dart';
 class StorePostCartsCartPaymentSessionUpdateReq {
   StorePostCartsCartPaymentSessionUpdateReq({required this.data});
 
+  factory StorePostCartsCartPaymentSessionUpdateReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePostCartsCartPaymentSessionUpdateReqFromJson(json);
+
   final Map<String, dynamic> data;
 
-  factory StorePostCartsCartPaymentSessionUpdateReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartPaymentSessionUpdateReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePostCartsCartPaymentSessionUpdateReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePostCartsCartPaymentSessionUpdateReqToJson(this);
 }

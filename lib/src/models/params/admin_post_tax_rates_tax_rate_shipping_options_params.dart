@@ -9,11 +9,14 @@ class AdminPostTaxRatesTaxRateShippingOptionsParams {
     required this.expand,
   });
 
+  factory AdminPostTaxRatesTaxRateShippingOptionsParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostTaxRatesTaxRateShippingOptionsParamsFromJson(json);
+
   List<String> fields;
 
   List<String> expand;
 
-  factory AdminPostTaxRatesTaxRateShippingOptionsParams.fromJson(Map<String, dynamic> json) => _$AdminPostTaxRatesTaxRateShippingOptionsParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateShippingOptionsParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostTaxRatesTaxRateShippingOptionsParamsToJson(this);
 }

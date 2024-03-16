@@ -10,7 +10,8 @@ class StoreGetProductCategoriesCategoryParams {
   });
 
   factory StoreGetProductCategoriesCategoryParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StoreGetProductCategoriesCategoryParamsFromJson(json);
 
   String fields;

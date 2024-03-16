@@ -7,7 +7,8 @@ class AdminPostPublishableApiKeysPublishableApiKeyReq {
   AdminPostPublishableApiKeysPublishableApiKeyReq({required this.title});
 
   factory AdminPostPublishableApiKeysPublishableApiKeyReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostPublishableApiKeysPublishableApiKeyReqFromJson(json);
 
   final String title;

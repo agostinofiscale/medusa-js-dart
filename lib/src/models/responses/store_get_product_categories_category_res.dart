@@ -11,7 +11,8 @@ class StoreGetProductCategoriesCategoryRes {
   });
 
   factory StoreGetProductCategoriesCategoryRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StoreGetProductCategoriesCategoryResFromJson(json);
 
   final ProductCategory productCategory;

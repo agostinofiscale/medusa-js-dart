@@ -15,7 +15,8 @@ class AdminPostShippingOptionsOptionReq {
   });
 
   factory AdminPostShippingOptionsOptionReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostShippingOptionsOptionReqFromJson(json);
 
   String? name;

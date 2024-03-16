@@ -13,7 +13,8 @@ class AdminPostReturnsReturnReceiveReq {
   });
 
   factory AdminPostReturnsReturnReceiveReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostReturnsReturnReceiveReqFromJson(json);
 
   List<LineItem> items;

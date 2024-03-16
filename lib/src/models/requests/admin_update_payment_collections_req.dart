@@ -10,7 +10,8 @@ class AdminUpdatePaymentCollectionsReq {
   });
 
   factory AdminUpdatePaymentCollectionsReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminUpdatePaymentCollectionsReqFromJson(json);
 
   String? description;

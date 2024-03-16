@@ -11,7 +11,8 @@ class AdminProductCategoriesCategoryDeleteRes {
   });
 
   factory AdminProductCategoriesCategoryDeleteRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminProductCategoriesCategoryDeleteResFromJson(json);
 
   final String id;

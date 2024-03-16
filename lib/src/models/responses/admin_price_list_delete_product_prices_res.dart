@@ -11,7 +11,8 @@ class AdminPriceListDeleteProductPricesRes {
   });
 
   factory AdminPriceListDeleteProductPricesRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPriceListDeleteProductPricesResFromJson(json);
 
   List<String> ids;

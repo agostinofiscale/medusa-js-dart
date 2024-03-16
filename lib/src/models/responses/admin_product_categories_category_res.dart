@@ -9,7 +9,8 @@ class AdminProductCategoriesCategoryRes {
   AdminProductCategoriesCategoryRes({required this.productCategory});
 
   factory AdminProductCategoriesCategoryRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminProductCategoriesCategoryResFromJson(json);
 
   ProductCategory productCategory;

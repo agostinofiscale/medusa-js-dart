@@ -8,9 +8,10 @@ class AdminResetPasswordTokenRequest {
     required this.email,
   });
 
-  final String email;
+  factory AdminResetPasswordTokenRequest.fromJson(Map<String, dynamic> json) =>
+      _$AdminResetPasswordTokenRequestFromJson(json);
 
-  factory AdminResetPasswordTokenRequest.fromJson(Map<String, dynamic> json) => _$AdminResetPasswordTokenRequestFromJson(json);
+  final String email;
 
   Map<String, dynamic> toJson() => _$AdminResetPasswordTokenRequestToJson(this);
 }

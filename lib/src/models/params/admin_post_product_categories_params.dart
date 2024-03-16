@@ -6,10 +6,13 @@ part 'generated/admin_post_product_categories_params.g.dart';
 class AdminPostProductCategoriesParams {
   AdminPostProductCategoriesParams({this.expand, this.fields});
 
+  factory AdminPostProductCategoriesParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostProductCategoriesParamsFromJson(json);
+
   final String? expand;
   final String? fields;
 
-  factory AdminPostProductCategoriesParams.fromJson(Map<String, dynamic> json) => _$AdminPostProductCategoriesParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostProductCategoriesParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductCategoriesParamsToJson(this);
 }

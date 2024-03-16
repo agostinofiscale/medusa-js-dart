@@ -9,7 +9,8 @@ class AdminDeleteProductCategoriesCategoryProductsBatchReq {
   });
 
   factory AdminDeleteProductCategoriesCategoryProductsBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteProductCategoriesCategoryProductsBatchReqFromJson(json);
 
   List<String> productIds;

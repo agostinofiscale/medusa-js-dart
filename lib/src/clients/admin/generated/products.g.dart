@@ -182,6 +182,278 @@ class _ProductsResource implements ProductsResource {
     return value;
   }
 
+  @override
+  Future<AdminProductsListVariantsRes> listVariants(
+    String id, {
+    AdminGetProductsVariantsParams? query,
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AdminProductsListVariantsRes>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/variants',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsListVariantsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> createVariant(
+    String id,
+    AdminPostProductsProductVariantsReq body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/variants',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> updateVariant(
+    String id,
+    String variantId,
+    AdminPostProductsProductVariantsVariantReq body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/variants/${variantId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsDeleteVariantRes> deleteVariant(
+    String id,
+    String variantId, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AdminProductsDeleteVariantRes>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/variants/${variantId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsDeleteVariantRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> addOption(
+    String id,
+    AdminPostProductsProductOptionsReq body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/options',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> updateOption(
+    String id,
+    String optionId,
+    AdminPostProductsProductOptionsOption body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/options/${optionId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> deleteOption(
+    String id,
+    String optionId, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/options/${optionId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AdminProductsRes> addMetadata(
+    String id,
+    AdminPostProductsProductMetadataReq body, {
+    Map<String, String>? customHeaders,
+  }) async {
+    final _extra = <String, dynamic>{};
+    _extra.addAll(customHeaders ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AdminProductsRes>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/admin/products/${id}/metadata',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdminProductsRes.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

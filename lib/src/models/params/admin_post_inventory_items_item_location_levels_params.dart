@@ -10,7 +10,8 @@ class AdminPostInventoryItemsItemLocationLevelsParams {
   });
 
   factory AdminPostInventoryItemsItemLocationLevelsParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostInventoryItemsItemLocationLevelsParamsFromJson(json);
 
   final String? expand;

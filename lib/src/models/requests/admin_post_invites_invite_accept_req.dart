@@ -8,10 +8,12 @@ part 'generated/admin_post_invites_invite_accept_req.g.dart';
 class AdminPostInvitesInviteAcceptReq {
   AdminPostInvitesInviteAcceptReq({required this.token, required this.user});
 
+  factory AdminPostInvitesInviteAcceptReq.fromJson(Map<String, dynamic> json) =>
+      _$AdminPostInvitesInviteAcceptReqFromJson(json);
+
   final String token;
   final User user;
 
-  factory AdminPostInvitesInviteAcceptReq.fromJson(Map<String, dynamic> json) => _$AdminPostInvitesInviteAcceptReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostInvitesInviteAcceptReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostInvitesInviteAcceptReqToJson(this);
 }

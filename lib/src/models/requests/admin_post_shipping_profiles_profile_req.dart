@@ -13,7 +13,8 @@ class AdminPostShippingProfilesProfileReq {
   });
 
   factory AdminPostShippingProfilesProfileReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostShippingProfilesProfileReqFromJson(json);
 
   String? name;

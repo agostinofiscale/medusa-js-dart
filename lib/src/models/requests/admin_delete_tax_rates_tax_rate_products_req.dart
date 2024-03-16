@@ -8,9 +8,12 @@ class AdminDeleteTaxRatesTaxRateProductsReq {
     required this.products,
   });
 
+  factory AdminDeleteTaxRatesTaxRateProductsReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminDeleteTaxRatesTaxRateProductsReqFromJson(json);
+
   List<String> products;
 
-  factory AdminDeleteTaxRatesTaxRateProductsReq.fromJson(Map<String, dynamic> json) => _$AdminDeleteTaxRatesTaxRateProductsReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminDeleteTaxRatesTaxRateProductsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminDeleteTaxRatesTaxRateProductsReqToJson(this);
 }

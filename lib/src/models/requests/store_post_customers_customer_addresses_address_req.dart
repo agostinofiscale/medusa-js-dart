@@ -7,9 +7,12 @@ part 'generated/store_post_customers_customer_addresses_address_req.g.dart';
 class StorePostCustomersCustomerAddressesAddressReq {
   StorePostCustomersCustomerAddressesAddressReq(this.address);
 
+  factory StorePostCustomersCustomerAddressesAddressReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePostCustomersCustomerAddressesAddressReqFromJson(json);
+
   final AddressPayload address;
 
-  factory StorePostCustomersCustomerAddressesAddressReq.fromJson(Map<String, dynamic> json) => _$StorePostCustomersCustomerAddressesAddressReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePostCustomersCustomerAddressesAddressReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePostCustomersCustomerAddressesAddressReqToJson(this);
 }

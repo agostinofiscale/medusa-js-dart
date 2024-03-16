@@ -7,7 +7,8 @@ class AdminGetCustomerGroupsGroupParams {
   AdminGetCustomerGroupsGroupParams({this.expand, this.fields});
 
   factory AdminGetCustomerGroupsGroupParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetCustomerGroupsGroupParamsFromJson(json);
 
   String? expand;

@@ -11,6 +11,10 @@ class AdminPostReservationsReservationReq {
     this.metadata,
   });
 
+  factory AdminPostReservationsReservationReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostReservationsReservationReqFromJson(json);
+
   String? locationId;
 
   int? quantity;
@@ -19,7 +23,6 @@ class AdminPostReservationsReservationReq {
 
   Map<String, dynamic>? metadata;
 
-  factory AdminPostReservationsReservationReq.fromJson(Map<String, dynamic> json) => _$AdminPostReservationsReservationReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostReservationsReservationReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostReservationsReservationReqToJson(this);
 }

@@ -27,7 +27,8 @@ class AdminGetPriceListsPriceListProductsParams {
   });
 
   factory AdminGetPriceListsPriceListProductsParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetPriceListsPriceListProductsParamsFromJson(json);
 
   String? q;

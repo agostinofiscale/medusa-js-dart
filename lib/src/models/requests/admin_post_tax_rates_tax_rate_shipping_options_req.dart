@@ -6,9 +6,12 @@ part 'generated/admin_post_tax_rates_tax_rate_shipping_options_req.g.dart';
 class AdminPostTaxRatesTaxRateShippingOptionsReq {
   AdminPostTaxRatesTaxRateShippingOptionsReq({required this.shippingOptions});
 
+  factory AdminPostTaxRatesTaxRateShippingOptionsReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(json);
+
   final List<String> shippingOptions;
 
-  factory AdminPostTaxRatesTaxRateShippingOptionsReq.fromJson(Map<String, dynamic> json) => _$AdminPostTaxRatesTaxRateShippingOptionsReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostTaxRatesTaxRateShippingOptionsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostTaxRatesTaxRateShippingOptionsReqToJson(this);
 }

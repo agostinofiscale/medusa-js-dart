@@ -11,7 +11,8 @@ class StorePostCustomersResetPasswordReq {
   });
 
   factory StorePostCustomersResetPasswordReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePostCustomersResetPasswordReqFromJson(json);
 
   String email;

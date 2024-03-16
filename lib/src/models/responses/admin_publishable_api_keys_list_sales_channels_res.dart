@@ -9,7 +9,8 @@ class AdminPublishableApiKeysListSalesChannelsRes {
   AdminPublishableApiKeysListSalesChannelsRes({required this.salesChannels});
 
   factory AdminPublishableApiKeysListSalesChannelsRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPublishableApiKeysListSalesChannelsResFromJson(json);
 
   List<SalesChannel> salesChannels;

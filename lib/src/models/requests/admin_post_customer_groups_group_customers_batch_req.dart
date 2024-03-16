@@ -9,7 +9,8 @@ class AdminPostCustomerGroupsGroupCustomersBatchReq {
   });
 
   factory AdminPostCustomerGroupsGroupCustomersBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostCustomerGroupsGroupCustomersBatchReqFromJson(json);
 
   final List<String> customerIds;

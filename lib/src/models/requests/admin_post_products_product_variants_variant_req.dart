@@ -29,6 +29,10 @@ class AdminPostProductsProductVariantsVariantReq {
     this.options,
   });
 
+  factory AdminPostProductsProductVariantsVariantReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostProductsProductVariantsVariantReqFromJson(json);
+
   String? title;
   String? sku;
   String? ean;
@@ -49,7 +53,6 @@ class AdminPostProductsProductVariantsVariantReq {
   List<Price>? prices;
   List<ProductOptionValue>? options;
 
-  factory AdminPostProductsProductVariantsVariantReq.fromJson(Map<String, dynamic> json) => _$AdminPostProductsProductVariantsVariantReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostProductsProductVariantsVariantReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostProductsProductVariantsVariantReqToJson(this);
 }

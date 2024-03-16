@@ -7,7 +7,8 @@ class AdminGetInventoryItemsItemParams {
   AdminGetInventoryItemsItemParams({this.expand, this.fields});
 
   factory AdminGetInventoryItemsItemParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetInventoryItemsItemParamsFromJson(json);
 
   String? expand;

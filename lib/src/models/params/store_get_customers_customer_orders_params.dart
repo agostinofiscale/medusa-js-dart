@@ -27,7 +27,8 @@ class StoreGetCustomersCustomerOrdersParams {
   });
 
   factory StoreGetCustomersCustomerOrdersParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StoreGetCustomersCustomerOrdersParamsFromJson(json);
 
   String q;

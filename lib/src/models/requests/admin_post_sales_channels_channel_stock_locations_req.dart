@@ -6,9 +6,12 @@ part 'generated/admin_post_sales_channels_channel_stock_locations_req.g.dart';
 class AdminPostSalesChannelsChannelStockLocationsReq {
   AdminPostSalesChannelsChannelStockLocationsReq({required this.locationId});
 
+  factory AdminPostSalesChannelsChannelStockLocationsReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(json);
+
   final String locationId;
 
-  factory AdminPostSalesChannelsChannelStockLocationsReq.fromJson(Map<String, dynamic> json) => _$AdminPostSalesChannelsChannelStockLocationsReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostSalesChannelsChannelStockLocationsReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostSalesChannelsChannelStockLocationsReqToJson(this);
 }

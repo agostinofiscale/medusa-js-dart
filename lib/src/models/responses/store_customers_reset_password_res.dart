@@ -8,9 +8,10 @@ part 'generated/store_customers_reset_password_res.g.dart';
 class StoreCustomersResetPasswordRes {
   StoreCustomersResetPasswordRes({required this.customer});
 
-  Customer customer;
+  factory StoreCustomersResetPasswordRes.fromJson(Map<String, dynamic> json) =>
+      _$StoreCustomersResetPasswordResFromJson(json);
 
-  factory StoreCustomersResetPasswordRes.fromJson(Map<String, dynamic> json) => _$StoreCustomersResetPasswordResFromJson(json);
+  Customer customer;
 
   Map<String, dynamic> toJson() => _$StoreCustomersResetPasswordResToJson(this);
 }

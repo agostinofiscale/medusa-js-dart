@@ -9,7 +9,8 @@ class AdminPostProductsToCollectionReq {
   });
 
   factory AdminPostProductsToCollectionReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsToCollectionReqFromJson(json);
 
   final List<String> productIds;

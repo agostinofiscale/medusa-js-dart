@@ -14,7 +14,8 @@ class AdminInventoryItemsListWithVariantsAndLocationLevelsRes {
   });
 
   factory AdminInventoryItemsListWithVariantsAndLocationLevelsRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminInventoryItemsListWithVariantsAndLocationLevelsResFromJson(json);
 
   List<DecoratedInventoryItemDTO> inventoryItems;

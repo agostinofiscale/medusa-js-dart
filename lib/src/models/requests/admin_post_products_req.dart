@@ -103,7 +103,8 @@ class AdminPostProductsReqSalesChannel {
   });
 
   factory AdminPostProductsReqSalesChannel.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsReqSalesChannelFromJson(json);
 
   String id;

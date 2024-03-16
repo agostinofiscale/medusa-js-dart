@@ -7,7 +7,8 @@ class GetPublishableApiKeySalesChannelsParams {
   GetPublishableApiKeySalesChannelsParams({this.query});
 
   factory GetPublishableApiKeySalesChannelsParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$GetPublishableApiKeySalesChannelsParamsFromJson(json);
 
   String? query;

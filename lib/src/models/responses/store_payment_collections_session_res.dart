@@ -8,9 +8,12 @@ part 'generated/store_payment_collections_session_res.g.dart';
 class StorePaymentCollectionsSessionRes {
   StorePaymentCollectionsSessionRes({required this.paymentSession});
 
+  factory StorePaymentCollectionsSessionRes.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePaymentCollectionsSessionResFromJson(json);
+
   PaymentSession paymentSession;
 
-  factory StorePaymentCollectionsSessionRes.fromJson(Map<String, dynamic> json) => _$StorePaymentCollectionsSessionResFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePaymentCollectionsSessionResToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePaymentCollectionsSessionResToJson(this);
 }

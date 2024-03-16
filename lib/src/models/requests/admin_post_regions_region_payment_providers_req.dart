@@ -6,9 +6,12 @@ part 'generated/admin_post_regions_region_payment_providers_req.g.dart';
 class AdminPostRegionsRegionPaymentProvidersReq {
   AdminPostRegionsRegionPaymentProvidersReq({required this.providerId});
 
+  factory AdminPostRegionsRegionPaymentProvidersReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostRegionsRegionPaymentProvidersReqFromJson(json);
+
   String providerId;
 
-  factory AdminPostRegionsRegionPaymentProvidersReq.fromJson(Map<String, dynamic> json) => _$AdminPostRegionsRegionPaymentProvidersReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostRegionsRegionPaymentProvidersReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostRegionsRegionPaymentProvidersReqToJson(this);
 }

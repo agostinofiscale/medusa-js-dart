@@ -9,7 +9,8 @@ class StoreCustomersListPaymentMethodsRes {
   StoreCustomersListPaymentMethodsRes(this.paymentMethods);
 
   factory StoreCustomersListPaymentMethodsRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StoreCustomersListPaymentMethodsResFromJson(json);
 
   List<PaymentMethod> paymentMethods;

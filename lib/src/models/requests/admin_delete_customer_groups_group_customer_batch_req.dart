@@ -9,7 +9,8 @@ class AdminDeleteCustomerGroupsGroupCustomerBatchReq {
   });
 
   factory AdminDeleteCustomerGroupsGroupCustomerBatchReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteCustomerGroupsGroupCustomerBatchReqFromJson(json);
 
   final List<String> customerIds;

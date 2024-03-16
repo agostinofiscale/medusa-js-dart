@@ -13,7 +13,8 @@ class AdminPostDraftOrdersDraftOrderLineItemsReq {
   });
 
   factory AdminPostDraftOrdersDraftOrderLineItemsReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostDraftOrdersDraftOrderLineItemsReqFromJson(json);
 
   String? variantId;

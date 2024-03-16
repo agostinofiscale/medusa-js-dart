@@ -1,16 +1,18 @@
-import 'package:test/test.dart';
 import 'package:medusa_js_dart/medusa_js_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Medusa', () {
     late Medusa medusa;
 
     setUp(() {
-      medusa = Medusa(const Configuration(
-        baseUrl: 'https://localhost:9000',
-        maxRetries: 3,
-        debug: true,
-      ));
+      medusa = Medusa(
+        const Configuration(
+          baseUrl: 'https://localhost:9000',
+          maxRetries: 3,
+          debug: true,
+        ),
+      );
     });
 
     test('should create Medusa instance with the given configuration', () {
@@ -27,7 +29,9 @@ void main() {
     test('should set API key', () {
       medusa.setApiKey('API_KEY');
       expect(
-          medusa.configuration.authenticationType, AuthenticationType.apiKey);
+        medusa.configuration.authenticationType,
+        AuthenticationType.apiKey,
+      );
       expect(medusa.configuration.apiKey, 'API_KEY');
     });
 

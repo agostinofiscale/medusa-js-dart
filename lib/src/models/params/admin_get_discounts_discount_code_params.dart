@@ -9,10 +9,13 @@ class AdminGetDiscountsDiscountCodeParams {
     required this.fields,
   });
 
+  factory AdminGetDiscountsDiscountCodeParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminGetDiscountsDiscountCodeParamsFromJson(json);
+
   String expand;
   String fields;
 
-  factory AdminGetDiscountsDiscountCodeParams.fromJson(Map<String, dynamic> json) => _$AdminGetDiscountsDiscountCodeParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminGetDiscountsDiscountCodeParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminGetDiscountsDiscountCodeParamsToJson(this);
 }

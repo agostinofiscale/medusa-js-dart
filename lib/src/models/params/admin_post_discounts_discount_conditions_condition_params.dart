@@ -9,10 +9,13 @@ class AdminPostDiscountsDiscountConditionsConditionParams {
     this.fields,
   });
 
+  factory AdminPostDiscountsDiscountConditionsConditionParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostDiscountsDiscountConditionsConditionParamsFromJson(json);
+
   String? expand;
   String? fields;
 
-  factory AdminPostDiscountsDiscountConditionsConditionParams.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountConditionsConditionParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostDiscountsDiscountConditionsConditionParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostDiscountsDiscountConditionsConditionParamsToJson(this);
 }

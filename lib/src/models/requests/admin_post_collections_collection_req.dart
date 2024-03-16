@@ -11,7 +11,8 @@ class AdminPostCollectionsCollectionReq {
   });
 
   factory AdminPostCollectionsCollectionReq.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostCollectionsCollectionReqFromJson(json);
 
   String? title;

@@ -18,6 +18,10 @@ class AdminPostPriceListsPriceListPriceListReq {
     this.includesTax,
   });
 
+  factory AdminPostPriceListsPriceListPriceListReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminPostPriceListsPriceListPriceListReqFromJson(json);
+
   String? name;
   String? description;
   String? startsAt;
@@ -28,7 +32,6 @@ class AdminPostPriceListsPriceListPriceListReq {
   List<String>? customerGroups;
   bool? includesTax;
 
-  factory AdminPostPriceListsPriceListPriceListReq.fromJson(Map<String, dynamic> json) => _$AdminPostPriceListsPriceListPriceListReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminPostPriceListsPriceListPriceListReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminPostPriceListsPriceListPriceListReqToJson(this);
 }

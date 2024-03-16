@@ -9,10 +9,13 @@ class StorePostCartsCartLineItemsItemReq {
     this.metadata = const {},
   });
 
+  factory StorePostCartsCartLineItemsItemReq.fromJson(
+          Map<String, dynamic> json) =>
+      _$StorePostCartsCartLineItemsItemReqFromJson(json);
+
   final int quantity;
   final Map<String, dynamic>? metadata;
 
-  factory StorePostCartsCartLineItemsItemReq.fromJson(Map<String, dynamic> json) => _$StorePostCartsCartLineItemsItemReqFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StorePostCartsCartLineItemsItemReqToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$StorePostCartsCartLineItemsItemReqToJson(this);
 }

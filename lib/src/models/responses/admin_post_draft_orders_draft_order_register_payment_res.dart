@@ -11,7 +11,8 @@ class AdminPostDraftOrdersDraftOrderRegisterPaymentRes {
   });
 
   factory AdminPostDraftOrdersDraftOrderRegisterPaymentRes.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostDraftOrdersDraftOrderRegisterPaymentResFromJson(json);
 
   final Order order;

@@ -10,7 +10,8 @@ class AdminGetPaymentCollectionsParams {
   });
 
   factory AdminGetPaymentCollectionsParams.fromJson(
-          Map<String, dynamic> json,) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetPaymentCollectionsParamsFromJson(json);
 
   final String expand;

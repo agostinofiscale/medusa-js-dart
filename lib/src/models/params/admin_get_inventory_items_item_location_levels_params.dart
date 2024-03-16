@@ -10,11 +10,14 @@ class AdminGetInventoryItemsItemLocationLevelsParams {
     this.fields,
   });
 
+  factory AdminGetInventoryItemsItemLocationLevelsParams.fromJson(
+          Map<String, dynamic> json) =>
+      _$AdminGetInventoryItemsItemLocationLevelsParamsFromJson(json);
+
   List<String>? locationId;
   String? expand;
   String? fields;
 
-  factory AdminGetInventoryItemsItemLocationLevelsParams.fromJson(Map<String, dynamic> json) => _$AdminGetInventoryItemsItemLocationLevelsParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AdminGetInventoryItemsItemLocationLevelsParamsToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$AdminGetInventoryItemsItemLocationLevelsParamsToJson(this);
 }
