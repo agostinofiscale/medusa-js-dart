@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:medusa_js_dart/src/models/payload/product_option_value_payload.dart';
 import 'package:medusa_js_dart/src/models/payload/variant_price_payload.dart';
-import 'package:medusa_js_dart/src/models/product_option_value.dart';
 
 part 'generated/admin_post_products_product_variants_req.g.dart';
 
@@ -29,7 +29,8 @@ class AdminPostProductsProductVariantsReq {
   });
 
   factory AdminPostProductsProductVariantsReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsProductVariantsReqFromJson(json);
 
   String title;
@@ -50,7 +51,7 @@ class AdminPostProductsProductVariantsReq {
   String material;
   Map<String, dynamic>? metadata;
   List<VariantPricePayload> prices;
-  List<ProductOptionValue> options;
+  List<ProductOptionValuePayload> options;
 
   Map<String, dynamic> toJson() =>
       _$AdminPostProductsProductVariantsReqToJson(this);

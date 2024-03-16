@@ -11,7 +11,8 @@ class AdminSalesChannelsDeleteLocationRes {
   });
 
   factory AdminSalesChannelsDeleteLocationRes.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminSalesChannelsDeleteLocationResFromJson(json);
 
   String id;

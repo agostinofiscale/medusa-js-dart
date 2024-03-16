@@ -14,7 +14,8 @@ class AdminDiscountConditionsDeleteRes {
   });
 
   factory AdminDiscountConditionsDeleteRes.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDiscountConditionsDeleteResFromJson(json);
 
   final String id;

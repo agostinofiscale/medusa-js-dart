@@ -10,7 +10,8 @@ class StorePostCartsCartShippingMethodReq {
   });
 
   factory StorePostCartsCartShippingMethodReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePostCartsCartShippingMethodReqFromJson(json);
 
   String optionId;

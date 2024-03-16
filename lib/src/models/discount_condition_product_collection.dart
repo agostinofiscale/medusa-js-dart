@@ -18,7 +18,8 @@ class DiscountConditionProductCollection {
   });
 
   factory DiscountConditionProductCollection.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$DiscountConditionProductCollectionFromJson(json);
 
   /// The ID of the Product Collection

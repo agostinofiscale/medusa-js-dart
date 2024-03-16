@@ -14,7 +14,8 @@ class AdminPostOrdersOrderFulfillmentsReq {
   );
 
   factory AdminPostOrdersOrderFulfillmentsReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostOrdersOrderFulfillmentsReqFromJson(json);
 
   List<FulfillmentItem> items;

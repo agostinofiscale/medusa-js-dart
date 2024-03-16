@@ -11,7 +11,8 @@ class AdminPostOrdersOrderSwapsSwapFulfillmentsReq {
   });
 
   factory AdminPostOrdersOrderSwapsSwapFulfillmentsReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostOrdersOrderSwapsSwapFulfillmentsReqFromJson(json);
 
   Map<String, dynamic>? metadata;

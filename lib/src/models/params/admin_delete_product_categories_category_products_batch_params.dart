@@ -10,7 +10,8 @@ class AdminDeleteProductCategoriesCategoryProductsBatchParams {
   });
 
   factory AdminDeleteProductCategoriesCategoryProductsBatchParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteProductCategoriesCategoryProductsBatchParamsFromJson(json);
 
   final String? expand;

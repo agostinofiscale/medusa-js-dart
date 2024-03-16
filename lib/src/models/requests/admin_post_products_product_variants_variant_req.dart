@@ -30,7 +30,8 @@ class AdminPostProductsProductVariantsVariantReq {
   });
 
   factory AdminPostProductsProductVariantsVariantReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsProductVariantsVariantReqFromJson(json);
 
   String? title;

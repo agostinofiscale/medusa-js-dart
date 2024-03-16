@@ -7,7 +7,8 @@ class AdminPostNotificationsNotificationResendReq {
   AdminPostNotificationsNotificationResendReq({this.to});
 
   factory AdminPostNotificationsNotificationResendReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostNotificationsNotificationResendReqFromJson(json);
 
   String? to;

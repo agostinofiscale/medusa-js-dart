@@ -7,7 +7,8 @@ class StorePaymentCollectionSessionsReq {
   StorePaymentCollectionSessionsReq({required this.providerId});
 
   factory StorePaymentCollectionSessionsReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePaymentCollectionSessionsReqFromJson(json);
 
   String providerId;

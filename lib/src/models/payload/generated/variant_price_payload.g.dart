@@ -8,6 +8,7 @@ part of '../variant_price_payload.dart';
 
 VariantPricePayload _$VariantPricePayloadFromJson(Map<String, dynamic> json) =>
     VariantPricePayload(
+      id: json['id'] as String?,
       regionId: json['region_id'] as String?,
       currencyCode: json['currency_code'] as String?,
       amount: json['amount'] as int,
@@ -24,6 +25,7 @@ Map<String, dynamic> _$VariantPricePayloadToJson(VariantPricePayload instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull('region_id', instance.regionId);
   writeNotNull('currency_code', instance.currencyCode);
   val['amount'] = instance.amount;

@@ -10,7 +10,8 @@ class AdminPostTaxRatesTaxRateProductTypesParams {
   });
 
   factory AdminPostTaxRatesTaxRateProductTypesParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostTaxRatesTaxRateProductTypesParamsFromJson(json);
 
   List<String> fields;

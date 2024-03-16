@@ -9,7 +9,8 @@ class AdminDeleteDiscountsDiscountConditionsConditionBatchReq {
   );
 
   factory AdminDeleteDiscountsDiscountConditionsConditionBatchReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteDiscountsDiscountConditionsConditionBatchReqFromJson(json);
 
   final List<String> resources;

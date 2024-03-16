@@ -12,7 +12,8 @@ class AdminPostPriceListPricesPricesReq {
   });
 
   factory AdminPostPriceListPricesPricesReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostPriceListPricesPricesReqFromJson(json);
 
   final List<Price> prices;

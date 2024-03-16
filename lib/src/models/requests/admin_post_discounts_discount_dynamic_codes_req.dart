@@ -11,7 +11,8 @@ class AdminPostDiscountsDiscountDynamicCodesReq {
   });
 
   factory AdminPostDiscountsDiscountDynamicCodesReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostDiscountsDiscountDynamicCodesReqFromJson(json);
 
   /// A unique code that will be used to redeem the Discount

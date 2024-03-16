@@ -15,7 +15,8 @@ class AdminPostOrdersOrderClaimsClaimReq {
   });
 
   factory AdminPostOrdersOrderClaimsClaimReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostOrdersOrderClaimsClaimReqFromJson(json);
 
   List<ClaimItem> claimItems;

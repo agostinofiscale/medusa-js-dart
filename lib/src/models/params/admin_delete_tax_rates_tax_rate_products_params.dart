@@ -10,7 +10,8 @@ class AdminDeleteTaxRatesTaxRateProductsParams {
   });
 
   factory AdminDeleteTaxRatesTaxRateProductsParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminDeleteTaxRatesTaxRateProductsParamsFromJson(json);
 
   List<String> fields;

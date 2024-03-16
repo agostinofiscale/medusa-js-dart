@@ -10,7 +10,8 @@ class AdminPostOrdersOrderClaimsClaimShipmentsReq {
   });
 
   factory AdminPostOrdersOrderClaimsClaimShipmentsReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostOrdersOrderClaimsClaimShipmentsReqFromJson(json);
 
   String fulfillmentId;

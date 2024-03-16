@@ -12,7 +12,8 @@ class AdminPostReservationsReservationReq {
   });
 
   factory AdminPostReservationsReservationReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostReservationsReservationReqFromJson(json);
 
   String? locationId;

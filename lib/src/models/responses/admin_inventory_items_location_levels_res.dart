@@ -11,7 +11,8 @@ class AdminInventoryItemsLocationLevelsRes {
   });
 
   factory AdminInventoryItemsLocationLevelsRes.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminInventoryItemsLocationLevelsResFromJson(json);
 
   InventoryItem inventoryItem;

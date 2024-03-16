@@ -9,7 +9,8 @@ class StorePostCustomersCustomerAcceptClaimReq {
   });
 
   factory StorePostCustomersCustomerAcceptClaimReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePostCustomersCustomerAcceptClaimReqFromJson(json);
 
   String token;

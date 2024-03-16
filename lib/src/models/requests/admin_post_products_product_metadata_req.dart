@@ -7,7 +7,8 @@ class AdminPostProductsProductMetadataReq {
   AdminPostProductsProductMetadataReq({required this.key, required this.value});
 
   factory AdminPostProductsProductMetadataReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductsProductMetadataReqFromJson(json);
 
   final String key;

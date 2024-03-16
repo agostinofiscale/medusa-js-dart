@@ -9,7 +9,8 @@ class AdminPostRegionsRegionCountriesReq {
   });
 
   factory AdminPostRegionsRegionCountriesReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostRegionsRegionCountriesReqFromJson(json);
 
   final String countryCode;

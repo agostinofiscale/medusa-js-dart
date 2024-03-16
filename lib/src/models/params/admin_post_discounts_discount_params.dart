@@ -10,7 +10,8 @@ class AdminPostDiscountsDiscountParams {
   });
 
   factory AdminPostDiscountsDiscountParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostDiscountsDiscountParamsFromJson(json);
 
   String expand;

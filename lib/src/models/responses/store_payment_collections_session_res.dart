@@ -9,7 +9,8 @@ class StorePaymentCollectionsSessionRes {
   StorePaymentCollectionsSessionRes({required this.paymentSession});
 
   factory StorePaymentCollectionsSessionRes.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePaymentCollectionsSessionResFromJson(json);
 
   PaymentSession paymentSession;

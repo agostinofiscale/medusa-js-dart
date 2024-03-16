@@ -12,7 +12,8 @@ class AdminGetGroupsGroupCustomersParams {
   });
 
   factory AdminGetGroupsGroupCustomersParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetGroupsGroupCustomersParamsFromJson(json);
 
   int? limit;

@@ -31,8 +31,8 @@ AdminPostProductsProductVariantsReq
                   VariantPricePayload.fromJson(e as Map<String, dynamic>))
               .toList(),
           options: (json['options'] as List<dynamic>)
-              .map(
-                  (e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
+              .map((e) =>
+                  ProductOptionValuePayload.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 

@@ -10,7 +10,8 @@ class AdminGetRegionsRegionFulfillmentOptionsRes {
   });
 
   factory AdminGetRegionsRegionFulfillmentOptionsRes.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetRegionsRegionFulfillmentOptionsResFromJson(json);
 
   List<FulfillmentOption> fulfillmentOptions;

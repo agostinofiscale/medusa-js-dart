@@ -7,7 +7,8 @@ class AdminPostProductCategoriesParams {
   AdminPostProductCategoriesParams({this.expand, this.fields});
 
   factory AdminPostProductCategoriesParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostProductCategoriesParamsFromJson(json);
 
   final String? expand;

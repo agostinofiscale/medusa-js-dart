@@ -9,7 +9,8 @@ class StorePostPaymentCollectionsBatchSessionsAuthorizeReq {
   });
 
   factory StorePostPaymentCollectionsBatchSessionsAuthorizeReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$StorePostPaymentCollectionsBatchSessionsAuthorizeReqFromJson(json);
 
   final List<String> sessionIds;

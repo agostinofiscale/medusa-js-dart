@@ -7,7 +7,8 @@ class AdminPostTaxRatesTaxRateProductTypesReq {
   AdminPostTaxRatesTaxRateProductTypesReq({required this.productTypes});
 
   factory AdminPostTaxRatesTaxRateProductTypesReq.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminPostTaxRatesTaxRateProductTypesReqFromJson(json);
 
   final List<String> productTypes;

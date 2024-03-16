@@ -7,7 +7,8 @@ class AdminGetStockLocationsLocationParams {
   AdminGetStockLocationsLocationParams({this.expand, this.fields});
 
   factory AdminGetStockLocationsLocationParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$AdminGetStockLocationsLocationParamsFromJson(json);
 
   String? expand;
