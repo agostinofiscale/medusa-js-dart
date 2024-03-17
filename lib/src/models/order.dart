@@ -106,7 +106,7 @@ class Order {
   String cartId;
 
   /// The details of the cart associated with the order.
-  Cart cart;
+  Cart? cart;
 
   /// The ID of the customer associated with the order
   String customerId;
@@ -118,16 +118,16 @@ class Order {
   String email;
 
   /// The ID of the billing address associated with the order
-  String billingAddressId;
+  String? billingAddressId;
 
   /// The details of the billing address associated with the order.
-  Address billingAddress;
+  Address? billingAddress;
 
   /// The ID of the shipping address associated with the order
-  String shippingAddressId;
+  String? shippingAddressId;
 
   /// The details of the shipping address associated with the order.
-  Address shippingAddress;
+  Address? shippingAddress;
 
   /// The ID of the region this order was created in.
   String regionId;
@@ -139,10 +139,10 @@ class Order {
   String currencyCode;
 
   /// The details of the currency used in the order.
-  Currency currency;
+  Currency? currency;
 
   /// The order's tax rate
-  double taxRate;
+  double? taxRate;
 
   /// The details of the discounts applied on the order.
   List<Discount> discounts;
@@ -172,31 +172,31 @@ class Order {
   List<Swap> swaps;
 
   /// The ID of the draft order this order was created from.
-  String draftOrderId;
+  String? draftOrderId;
 
   /// The details of the draft order this order was created from.
-  DraftOrder draftOrder;
+  DraftOrder? draftOrder;
 
   /// The details of the line items that belong to the order.
   List<LineItem> items;
 
   /// The details of the order edits done on the order.
-  List<OrderEdit> edits;
+  List<OrderEdit>? edits;
 
   /// The gift card transactions made in the order.
   List<GiftCardTransaction> giftCardTransactions;
 
   /// The date the order was canceled on.
-  String canceledAt;
+  String? canceledAt;
 
   /// Flag for describing whether or not notifications related to this should be send.
-  bool noNotification;
+  bool? noNotification;
 
   /// Randomly generated key used to continue the processing of the order in case of failure.
-  String idempotencyKey;
+  String? idempotencyKey;
 
   /// The ID of an external order.
-  String externalId;
+  String? externalId;
 
   /// The ID of the sales channel this order belongs to.
   String salesChannelId;
@@ -205,46 +205,46 @@ class Order {
   SalesChannel salesChannel;
 
   /// The total of shipping
-  double shippingTotal;
+  double? shippingTotal;
 
   /// The tax total applied on shipping
-  double shippingTaxTotal;
+  double? shippingTaxTotal;
 
   /// The total of discount
-  double rawDiscountTotal;
+  double? rawDiscountTotal;
 
   /// The total of discount rounded
-  double discountTotal;
+  double? discountTotal;
 
   /// The total of tax
-  double taxTotal;
+  double? taxTotal;
 
   /// The tax total applied on items
-  double itemTaxTotal;
+  double? itemTaxTotal;
 
   /// The total amount refunded if the order is returned.
-  double refundedTotal;
+  double? refundedTotal;
 
   /// The total amount of the order
-  double total;
+  double? total;
 
   /// The subtotal of the order
-  double subtotal;
+  double? subtotal;
 
   /// The total amount paid
-  double paidTotal;
+  double? paidTotal;
 
   /// The amount that can be refunded
-  double refundableAmount;
+  double? refundableAmount;
 
   /// The total of gift cards
-  double giftCardTotal;
+  double? giftCardTotal;
 
   /// The total of gift cards with taxes
-  double giftCardTaxTotal;
+  double? giftCardTaxTotal;
 
   /// The details of the line items that are returnable as part of the order, swaps, or claims
-  List<LineItem> returnableItems;
+  List<LineItem>? returnableItems;
 
   /// The date with timezone at which the resource was created.
   String createdAt;
@@ -256,5 +256,5 @@ class Order {
   Map<String, dynamic>? metadata;
 
   /// The associated sales channels.
-  List<SalesChannel> salesChannels;
+  List<SalesChannel>? salesChannels;
 }
