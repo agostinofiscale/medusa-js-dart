@@ -8,24 +8,24 @@ part 'generated/admin_post_products_product_variants_req.g.dart';
 class AdminPostProductsProductVariantsReq {
   AdminPostProductsProductVariantsReq({
     required this.title,
-    required this.sku,
-    required this.ean,
-    required this.upc,
-    required this.barcode,
-    required this.hsCode,
-    required this.inventoryQuantity,
-    required this.allowBackorder,
-    required this.manageInventory,
-    required this.weight,
-    required this.length,
-    required this.height,
-    required this.width,
-    required this.originCountry,
-    required this.midCode,
-    required this.material,
+    this.sku,
+    this.ean,
+    this.upc,
+    this.barcode,
+    this.hsCode,
+    this.inventoryQuantity = 0,
+    this.allowBackorder = false,
+    this.manageInventory = false,
+    this.weight,
+    this.length,
+    this.height,
+    this.width,
+    this.originCountry,
+    this.midCode,
+    this.material,
     this.metadata,
-    required this.prices,
-    required this.options,
+    this.prices = const [],
+    this.options = const [],
   });
 
   factory AdminPostProductsProductVariantsReq.fromJson(
@@ -33,24 +33,61 @@ class AdminPostProductsProductVariantsReq {
   ) =>
       _$AdminPostProductsProductVariantsReqFromJson(json);
 
+  /// The title of the product variant.
   String title;
-  String sku;
-  String ean;
-  String upc;
-  String barcode;
-  String hsCode;
+
+  /// The unique SKU of the product variant.
+  String? sku;
+
+  /// The EAN number of the product variant.
+  String? ean;
+
+  /// The UPC number of the product variant.
+  String? upc;
+
+  /// A generic GTIN field of the product variant.
+  String? barcode;
+
+  /// The Harmonized System Code of the product variant.
+  String? hsCode;
+
+  /// The inventory quantity of the product variant.
   int inventoryQuantity;
-  bool allowBackorder;
-  bool manageInventory;
-  int weight;
-  int length;
-  int height;
-  int width;
-  String originCountry;
-  String midCode;
-  String material;
+
+  /// Whether the product variant can be purchased when out of stock.
+  bool? allowBackorder;
+
+  /// Whether Medusa should keep track of the inventory of this product variant.
+  bool? manageInventory;
+
+  /// The wieght of the product variant.
+  int? weight;
+
+  /// The length of the product variant.
+  int? length;
+
+  /// The height of the product variant.
+  int? height;
+
+  /// The width of the product variant.
+  int? width;
+
+  /// The country of origin of the product variant.
+  String? originCountry;
+
+  /// The Manufacturer Identification code of the product variant.
+  String? midCode;
+
+  /// The material composition of the product variant.
+  String? material;
+
+  /// An optional set of key-value pairs with additional information.
   Map<String, dynamic>? metadata;
+
+  /// An array of product variant prices. A product variant can have different prices for each region or currency code.
   List<VariantPricePayload> prices;
+
+  /// An array of Product Option values that the variant corresponds to.
   List<ProductOptionValuePayload> options;
 
   Map<String, dynamic> toJson() =>

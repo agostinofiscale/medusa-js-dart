@@ -10,30 +10,32 @@ AdminPostProductsProductVariantsReq
     _$AdminPostProductsProductVariantsReqFromJson(Map<String, dynamic> json) =>
         AdminPostProductsProductVariantsReq(
           title: json['title'] as String,
-          sku: json['sku'] as String,
-          ean: json['ean'] as String,
-          upc: json['upc'] as String,
-          barcode: json['barcode'] as String,
-          hsCode: json['hs_code'] as String,
-          inventoryQuantity: json['inventory_quantity'] as int,
-          allowBackorder: json['allow_backorder'] as bool,
-          manageInventory: json['manage_inventory'] as bool,
-          weight: json['weight'] as int,
-          length: json['length'] as int,
-          height: json['height'] as int,
-          width: json['width'] as int,
-          originCountry: json['origin_country'] as String,
-          midCode: json['mid_code'] as String,
-          material: json['material'] as String,
+          sku: json['sku'] as String?,
+          ean: json['ean'] as String?,
+          upc: json['upc'] as String?,
+          barcode: json['barcode'] as String?,
+          hsCode: json['hs_code'] as String?,
+          inventoryQuantity: json['inventory_quantity'] as int? ?? 0,
+          allowBackorder: json['allow_backorder'] as bool? ?? false,
+          manageInventory: json['manage_inventory'] as bool? ?? false,
+          weight: json['weight'] as int?,
+          length: json['length'] as int?,
+          height: json['height'] as int?,
+          width: json['width'] as int?,
+          originCountry: json['origin_country'] as String?,
+          midCode: json['mid_code'] as String?,
+          material: json['material'] as String?,
           metadata: json['metadata'] as Map<String, dynamic>?,
-          prices: (json['prices'] as List<dynamic>)
-              .map((e) =>
-                  VariantPricePayload.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          options: (json['options'] as List<dynamic>)
-              .map((e) =>
-                  ProductOptionValuePayload.fromJson(e as Map<String, dynamic>))
-              .toList(),
+          prices: (json['prices'] as List<dynamic>?)
+                  ?.map((e) =>
+                      VariantPricePayload.fromJson(e as Map<String, dynamic>))
+                  .toList() ??
+              const [],
+          options: (json['options'] as List<dynamic>?)
+                  ?.map((e) => ProductOptionValuePayload.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList() ??
+              const [],
         );
 
 Map<String, dynamic> _$AdminPostProductsProductVariantsReqToJson(
