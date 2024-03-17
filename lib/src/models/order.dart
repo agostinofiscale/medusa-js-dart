@@ -103,13 +103,13 @@ class Order {
   int displayId;
 
   /// The ID of the cart associated with the order
-  String cartId;
+  String? cartId;
 
   /// The details of the cart associated with the order.
   Cart? cart;
 
   /// The ID of the customer associated with the order
-  String customerId;
+  String? customerId;
 
   /// The details of the customer associated with the order.
   Customer customer;
@@ -130,10 +130,10 @@ class Order {
   Address? shippingAddress;
 
   /// The ID of the region this order was created in.
-  String regionId;
+  String? regionId;
 
   /// The details of the region this order was created in.
-  Region region;
+  Region? region;
 
   /// The 3 character currency code that is used in the order
   String currencyCode;
@@ -145,31 +145,31 @@ class Order {
   double? taxRate;
 
   /// The details of the discounts applied on the order.
-  List<Discount> discounts;
+  List<Discount>? discounts;
 
   /// The details of the gift card used in the order.
-  List<GiftCard> giftCards;
+  List<GiftCard>? giftCards;
 
   /// The details of the shipping methods used in the order.
-  List<ShippingMethod> shippingMethods;
+  List<ShippingMethod>? shippingMethods;
 
   /// The details of the payments used in the order.
-  List<Payment> payments;
+  List<Payment>? payments;
 
   /// The details of the fulfillments created for the order.
-  List<Fulfillment> fulfillments;
+  List<Fulfillment>? fulfillments;
 
   /// The details of the returns created for the order.
-  List<Return> returns;
+  List<Return>? returns;
 
   /// The details of the claims created for the order.
-  List<ClaimOrder> claims;
+  List<ClaimOrder>? claims;
 
   /// The details of the refunds created for the order.
-  List<Refund> refunds;
+  List<Refund>? refunds;
 
   /// The details of the swaps created for the order.
-  List<Swap> swaps;
+  List<Swap>? swaps;
 
   /// The ID of the draft order this order was created from.
   String? draftOrderId;
@@ -178,13 +178,13 @@ class Order {
   DraftOrder? draftOrder;
 
   /// The details of the line items that belong to the order.
-  List<LineItem> items;
+  List<LineItem>? items;
 
   /// The details of the order edits done on the order.
   List<OrderEdit>? edits;
 
   /// The gift card transactions made in the order.
-  List<GiftCardTransaction> giftCardTransactions;
+  List<GiftCardTransaction>? giftCardTransactions;
 
   /// The date the order was canceled on.
   String? canceledAt;
@@ -199,7 +199,7 @@ class Order {
   String? externalId;
 
   /// The ID of the sales channel this order belongs to.
-  String salesChannelId;
+  String? salesChannelId;
 
   /// The details of the sales channel this order belongs to.
   SalesChannel salesChannel;
@@ -250,7 +250,7 @@ class Order {
   String createdAt;
 
   /// The date with timezone at which the resource was updated.
-  String updatedAt;
+  String? updatedAt;
 
   /// An optional key-value map with additional details
   Map<String, dynamic>? metadata;
