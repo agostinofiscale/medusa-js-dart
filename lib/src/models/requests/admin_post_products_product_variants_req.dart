@@ -4,7 +4,7 @@ import 'package:medusa_js_dart/src/models/payload/variant_price_payload.dart';
 
 part 'generated/admin_post_products_product_variants_req.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class AdminPostProductsProductVariantsReq {
   AdminPostProductsProductVariantsReq({
     required this.title,

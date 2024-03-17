@@ -37,34 +37,25 @@ AdminPostProductsProductVariantsReq
         );
 
 Map<String, dynamic> _$AdminPostProductsProductVariantsReqToJson(
-    AdminPostProductsProductVariantsReq instance) {
-  final val = <String, dynamic>{
-    'title': instance.title,
-    'sku': instance.sku,
-    'ean': instance.ean,
-    'upc': instance.upc,
-    'barcode': instance.barcode,
-    'hs_code': instance.hsCode,
-    'inventory_quantity': instance.inventoryQuantity,
-    'allow_backorder': instance.allowBackorder,
-    'manage_inventory': instance.manageInventory,
-    'weight': instance.weight,
-    'length': instance.length,
-    'height': instance.height,
-    'width': instance.width,
-    'origin_country': instance.originCountry,
-    'mid_code': instance.midCode,
-    'material': instance.material,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('metadata', instance.metadata);
-  val['prices'] = instance.prices.map((e) => e.toJson()).toList();
-  val['options'] = instance.options.map((e) => e.toJson()).toList();
-  return val;
-}
+        AdminPostProductsProductVariantsReq instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'sku': instance.sku,
+      'ean': instance.ean,
+      'upc': instance.upc,
+      'barcode': instance.barcode,
+      'hs_code': instance.hsCode,
+      'inventory_quantity': instance.inventoryQuantity,
+      'allow_backorder': instance.allowBackorder,
+      'manage_inventory': instance.manageInventory,
+      'weight': instance.weight,
+      'length': instance.length,
+      'height': instance.height,
+      'width': instance.width,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
+      'material': instance.material,
+      'metadata': instance.metadata,
+      'prices': instance.prices.map((e) => e.toJson()).toList(),
+      'options': instance.options.map((e) => e.toJson()).toList(),
+    };
