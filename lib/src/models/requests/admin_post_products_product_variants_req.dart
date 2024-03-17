@@ -55,10 +55,10 @@ class AdminPostProductsProductVariantsReq {
   int inventoryQuantity;
 
   /// Whether the product variant can be purchased when out of stock.
-  bool? allowBackorder;
+  bool allowBackorder;
 
   /// Whether Medusa should keep track of the inventory of this product variant.
-  bool? manageInventory;
+  bool manageInventory;
 
   /// The wieght of the product variant.
   int? weight;
